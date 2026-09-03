@@ -12,7 +12,7 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 | 구역 | 상태 |
 |---|---|
 | **Sidebar** | ✅ 완료 (PC 100vw 레이아웃) |
-| **Header** | ✅ 완료 (PC / 56px / 홈·태그·방명록 `sm` 버튼) |
+| **Header** | ✅ 완료 (PC / 56px / 홈·태그·방명록·즐겨찾기 `icon-sm` 아이콘 버튼 + hover 툴팁) |
 | Content (목록/본문) | ⬜ 미착수 — 다음 구역 |
 | 댓글 / 방명록 / 검색결과 / 커버 | ⬜ 미착수 |
 | 반응형(태블릿·모바일) | ⬜ 미착수 — sidebar 스펙 §7-4/§7-5 · header 스펙 §6-4에 방향만 기록됨 |
@@ -36,8 +36,8 @@ dashboard-skin/
 ├── components/
 │   ├── sidebar.css           ← Sidebar 구역 스타일 ([data-slot] 셀렉터 기반)
 │   ├── sidebar.js            ← Sidebar 구역 동작 (토글 / 쿠키 / Ctrl+B / 테마 / 활성표시)
-│   ├── header.css            ← Header 구역 + 공용 프리미티브(Button / Breadcrumb)
-│   └── header.js             ← Header 구역 동작 (브레드크럼 중복 크럼 접기)
+│   ├── header.css            ← Header 구역 + 공용 프리미티브(Button / Breadcrumb / Tooltip)
+│   └── header.js             ← Header 구역 동작 (브레드크럼 중복 크럼 접기 / 즐겨찾기 토글 / 툴팁)
 ├── tools/
 │   ├── make-preview.mjs      ← 티스토리 치환자를 더미로 바꾼 로컬 목업 생성
 │   └── serve.mjs             ← 로컬 검증용 정적 서버 (쿠키 검증에 필요)
