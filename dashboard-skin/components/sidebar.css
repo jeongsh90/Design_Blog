@@ -723,33 +723,24 @@
   background-color: var(--color-background);
 }
 
-/* ── [SPEC §7-6] 접힘 상태 전용 CSS 툴팁 (Tooltip 프리미티브 없음) ──
+/* ── [SPEC §7-6, 2026-09-03 Tooltip 프리미티브로 교체] 접힘 상태 전용 툴팁 ──
    Radix Portal이 없어 툴팁이 sidebar-container의 overflow:hidden에 잘린다.
-   → 접힘 상태에서만 해당 조상들의 overflow를 열어준다(펼침 상태는 그대로). */
+   → 접힘 상태에서만 해당 조상들의 overflow를 열어준다(펼침 상태는 그대로).
+   (기존엔 sidebar-menu-button 자신도 overflow:visible로 열었었다 — 그때는
+   툴팁이 버튼의 ::after 가상요소였기 때문. 지금은 tooltip-content가 버튼이
+   아니라 sidebar-menu-item의 형제 자식이라(skin.html, 아래 [data-tooltip]
+   주석·tooltip.js 참고) 버튼 자신의 overflow는 더 이상 관련 없다.) */
 [data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-container"],
 [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-inner"],
-[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-content"],
-[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"] {
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-content"] {
   overflow: visible;
 }
 
-[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"][data-tooltip]:hover::after,
-[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"][data-tooltip]:focus-visible::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: 50%;
-  left: calc(100% + var(--spacing) * 2);
-  z-index: 50;
-  transform: translateY(-50%);
-  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
-  border-radius: var(--radius-md);
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
-  font: var(--font-weight-medium) var(--text-xs)/1 var(--font-sans);
-  letter-spacing: var(--tracking-xs);
-  white-space: nowrap;
-  pointer-events: none;
-}
+/* [data-tooltip] 자체는 CSS에서 더 이상 쓰이지 않는다 — tooltip.js가 트리거를
+   찾는 마커 속성일 뿐이다(실제 텍스트/포지셔닝은 tooltip.css의 Tooltip
+   프리미티브 + skin.html에 형제로 둔 [data-slot="tooltip-content"]가 담당).
+   접힘 여부 판정도 CSS가 아니라 tooltip.js의 bindTooltip({onlyWhenCollapsed:
+   true})가 sidebar-wrapper의 data-state를 읽어 처리한다. */
 
 /* ── 테마 토글: 아이콘·라벨 전환을 JS 없이 CSS로만 (FOUC 없음) ── */
 html:not(.dark) [data-theme-when="dark"] {

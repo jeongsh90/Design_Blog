@@ -16,6 +16,8 @@
 
 <!-- 로컬에서 빌드한 Tailwind v4 산출물 → 티스토리 [스킨 편집 → HTML 편집 → 파일 업로드]로 올린다 -->
 <link rel="stylesheet" href="./images/tailwind.css" />
+<!-- [2026-09-03] Tooltip은 sidebar·header 둘 다 쓰는 공용 프리미티브라 먼저 로드한다. -->
+<link rel="stylesheet" href="./images/tooltip.css" />
 <link rel="stylesheet" href="./images/sidebar.css" />
 <link rel="stylesheet" href="./images/header.css" />
 
@@ -83,6 +85,17 @@
                   <span data-slot="desc">[##_desc_##]</span>
                 </span>
               </a>
+              <!-- [2026-09-03 요청] "접힌 사이드메뉴도 툴팁으로 적용" — Tooltip
+                   프리미티브(tooltip.css/js)를 재사용하되, 헤더처럼 `[data-slot=
+                   "tooltip"]`로 감싸지 않는다. sidebar.css의 배지·활성 표시
+                   규칙이 sidebar-menu-button을 menu-item의 "직계 자식"으로
+                   요구해서(예: `:has(> [data-slot="sidebar-menu-badge"]) >
+                   [data-slot="sidebar-menu-button"]`) 감싸면 그 관계가 깨진다
+                   — 대신 형제로 두고(menu-item은 이미 position:relative)
+                   data-tooltip 속성으로 트리거를 표시, tooltip.js가 형제
+                   tooltip-content와 짝짓는다(패턴 B). 펼침 상태에는 라벨이
+                   이미 보이므로 접힘 상태에서만 연다. -->
+              <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">[##_title_##]</div>
             </li>
           </ul>
         </div>
@@ -124,6 +137,9 @@
                     <span data-slot="label">Design</span>
                   </a>
                   <span data-slot="sidebar-menu-badge">0</span>
+                  <!-- [2026-09-03 요청] 접힘 전용 툴팁 — 브랜드 로고 항목과 동일한
+                       패턴(패턴 B, tooltip.js 참고). -->
+                  <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Design</div>
                   <ul data-slot="sidebar-menu-sub">
                     <li data-slot="sidebar-menu-sub-item">
                       <a href="/category/Design/Logo" data-slot="sidebar-menu-sub-button"><span>Logo</span></a>
@@ -142,6 +158,7 @@
                     <span data-slot="label">Ai</span>
                   </a>
                   <span data-slot="sidebar-menu-badge">0</span>
+                  <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Ai</div>
                 </li>
               </ul>
             </div>
@@ -160,6 +177,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16v-3"/><path d="M12 16V8"/><path d="M17 16v-6"/></svg>
                 <span data-slot="label">Today [##_count_today_##] · Total [##_count_total_##]</span>
               </div>
+              <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Today [##_count_today_##] · Total [##_count_total_##]</div>
             </li>
             </s_sidebar_element></s_sidebar>
           </ul>
@@ -324,6 +342,7 @@
 
 </s_t3>
 
+<script src="./images/tooltip.js"></script>
 <script src="./images/sidebar.js"></script>
 <script src="./images/header.js"></script>
 </body>

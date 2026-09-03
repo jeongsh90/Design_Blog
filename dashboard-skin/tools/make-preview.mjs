@@ -56,7 +56,7 @@ html = html.replace(/\[##_([a-z_0-9]+)_##\]/g, (whole, key) =>
 //    같은 파일을 가리켜야 활성 표시 검증이 가능하다.
 html = html
   .replace(
-    /\.\/images\/((?:sidebar|header)\.(?:css|js))/g,
+    /\.\/images\/((?:sidebar|header|tooltip)\.(?:css|js))/g,
     "/dashboard-skin/components/$1"
   )
   .replace(/\.\/images\//g, "/dashboard-skin/");

@@ -11,7 +11,7 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 
 | 구역 | 상태 |
 |---|---|
-| **Sidebar** | ✅ 완료 (PC 100vw 레이아웃) |
+| **Sidebar** | ✅ 완료 (PC 100vw 레이아웃 / 접힘 시 4개 항목 hover 툴팁) |
 | **Header** | ✅ 완료 (PC / 56px / 홈·태그·방명록·즐겨찾기 `icon-sm` 아이콘 버튼 + hover 툴팁) |
 | Content (목록/본문) | ⬜ 미착수 — 다음 구역 |
 | 댓글 / 방명록 / 검색결과 / 커버 | ⬜ 미착수 |
@@ -34,10 +34,12 @@ dashboard-skin/
 ├── src/
 │   └── input.css             ← Tailwind v4 엔트리 (색상 토큰 / @theme / 다크 변형)
 ├── components/
+│   ├── tooltip.css           ← 공용 프리미티브 Tooltip (sidebar·header 둘 다 사용)
+│   ├── tooltip.js            ← Tooltip 동작 (hover/focus 열기, 뷰포트 경계 보정)
 │   ├── sidebar.css           ← Sidebar 구역 스타일 ([data-slot] 셀렉터 기반)
 │   ├── sidebar.js            ← Sidebar 구역 동작 (토글 / 쿠키 / Ctrl+B / 테마 / 활성표시)
-│   ├── header.css            ← Header 구역 + 공용 프리미티브(Button / Breadcrumb / Tooltip)
-│   └── header.js             ← Header 구역 동작 (브레드크럼 중복 크럼 접기 / 즐겨찾기 토글 / 툴팁)
+│   ├── header.css            ← Header 구역 + 공용 프리미티브(Button / Breadcrumb)
+│   └── header.js             ← Header 구역 동작 (브레드크럼 중복 크럼 접기 / 즐겨찾기 토글)
 ├── tools/
 │   ├── make-preview.mjs      ← 티스토리 치환자를 더미로 바꾼 로컬 목업 생성
 │   └── serve.mjs             ← 로컬 검증용 정적 서버 (쿠키 검증에 필요)
@@ -75,8 +77,10 @@ bun run skin:serve          # http://localhost:4321/
 관리자 → 꾸미기 → **스킨 편집 → html 편집** → 우측 **파일 업로드** 탭
 (`https://daitnu.tistory.com/manage/design/skin/edit#/source/file`)
 
-1. **파일 업로드** 탭에서 다음 5개를 올린다.
+1. **파일 업로드** 탭에서 다음 7개를 올린다.
    - `dashboard-skin/tailwind.css`
+   - `dashboard-skin/components/tooltip.css`
+   - `dashboard-skin/components/tooltip.js`
    - `dashboard-skin/components/sidebar.css`
    - `dashboard-skin/components/sidebar.js`
    - `dashboard-skin/components/header.css`
@@ -85,8 +89,8 @@ bun run skin:serve          # http://localhost:4321/
 3. 저장 → 미리보기로 확인 후 적용.
 
 > **경로 규칙:** 티스토리는 업로드한 파일을 전부 `./images/` 아래에 평면으로 서빙한다.
-> 그래서 `skin.html`은 `./images/tailwind.css`, `./images/sidebar.css`, `./images/sidebar.js`,
-> `./images/header.css`, `./images/header.js`를
+> 그래서 `skin.html`은 `./images/tailwind.css`, `./images/tooltip.css`, `./images/tooltip.js`,
+> `./images/sidebar.css`, `./images/sidebar.js`, `./images/header.css`, `./images/header.js`를
 > 참조한다(로컬 저장소에서는 `components/` 하위에 있지만 업로드하면 같은 폴더가 된다).
 > `make-preview.mjs`가 이 경로 차이를 목업 생성 시 자동으로 보정한다.
 
