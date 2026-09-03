@@ -122,6 +122,62 @@
     justify-content: center;
   }
 
+  /* ── Footer 방문자 수 — 접힘/펼침 두 표현 전환 (2026-09-03 요청) ──
+     "카드형태로 1행으로 나열, 접힌상태에서는 현재상태 유지" — skin.html에 두 개의
+     <li>를 나란히 두고(하나는 기존 아이콘+tooltip, 하나는 아래 카드 2장) 이 두
+     규칙으로 정확히 하나만 보이게 한다(shadcn 원본에 없는 이 프로젝트 전용 패턴 —
+     sidebar-menu-button의 `tooltip` prop이 라벨만 접었다 폈다 하는 것과 달리,
+     여기는 표현 자체가 아예 다른 마크업이라 서로 완전히 다른 두 요소를 토글해야 함). */
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-footer"] [data-footer-stat="expanded"] {
+    display: none;
+  }
+
+  [data-slot="sidebar-wrapper"]:not([data-state="collapsed"]) [data-slot="sidebar-footer"] [data-footer-stat="collapsed"] {
+    display: none;
+  }
+
+  /* ── Footer 방문자 수 카드 (펼침 전용) ──
+     Design-system Card(`components.css` 6278행, bg-card/radius-xl/링 섀도)를
+     그대로 쓰기엔 이 자리가 좁아(사이드바 16rem − 패딩) 과하다 — 배경·보더·radius
+     "언어"만 가져오되 sidebar 전용 토큰(--color-sidebar-accent/-border)으로
+     축소 재구성한 미니 통계 카드다. */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-stat-row"] {
+    display: flex;
+    gap: calc(var(--spacing) * 2);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-stat-card"] {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 0.5);
+    min-width: 0;
+    padding: calc(var(--spacing) * 2);
+    border: 1px solid var(--color-sidebar-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-sidebar-accent);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-stat-label"] {
+    overflow: hidden;
+    font: var(--font-weight-normal) var(--text-xs)/1 var(--font-sans);
+    letter-spacing: var(--tracking-xs);
+    color: var(--color-sidebar-foreground);
+    opacity: 0.6;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-stat-value"] {
+    overflow: hidden;
+    font: var(--font-weight-semibold) var(--text-sm)/var(--leading-snug) var(--font-sans);
+    letter-spacing: var(--tracking-sm);
+    color: var(--color-sidebar-foreground);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   /* ── Content ── */
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-content"] {
     display: flex;

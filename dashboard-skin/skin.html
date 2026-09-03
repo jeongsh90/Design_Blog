@@ -168,16 +168,36 @@
 
         <!-- ── Footer : 방문자 수 ([SPEC §8-Q4], 테마 토글은 2026-09-02 요청으로 제거 —
              헤더의 [data-header-theme-toggle]이 PC에서도 노출되도록 바뀌어 그쪽이 이 역할을 이어받는다.
-             [HEADER SPEC §6-4] 참고. -->
+             [HEADER SPEC §6-4] 참고.
+             [2026-09-03 요청] "카드형태로 1행으로 나열, 접힌상태에서는 현재상태 유지" —
+             펼침/접힘 두 표현을 완전히 분리했다. 접힘: 기존 그대로(아이콘 하나 +
+             hover 시 tooltip, sidebar-menu-button/[data-muted] 패턴 유지 — 손대지
+             않음). 펼침: 그 자리를 Today/Total 두 장의 작은 카드(sidebar-stat-card,
+             Design-system Card의 배경·radius·보더 언어를 sidebar 전용 토큰
+             (--color-sidebar-accent/-border)으로 축소 재구성 — sidebar-menu-item
+             높이 32px 규격에 맞는 전체 Card 컴포넌트는 이 좁은 자리에 과함)가
+             대신한다. 두 표현은 [data-slot="sidebar-wrapper"]의 data-state로
+             sidebar.css가 서로 반대로 숨긴다(아래 두 li 중 하나만 항상 보임). -->
         <div data-slot="sidebar-footer">
           <ul data-slot="sidebar-menu">
             <s_sidebar><s_sidebar_element>
-            <li data-slot="sidebar-menu-item">
+            <li data-slot="sidebar-menu-item" data-footer-stat="collapsed">
               <div data-slot="sidebar-menu-button" data-muted="true" data-tooltip="Today [##_count_today_##] / Total [##_count_total_##]">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16v-3"/><path d="M12 16V8"/><path d="M17 16v-6"/></svg>
-                <span data-slot="label">Today [##_count_today_##] · Total [##_count_total_##]</span>
               </div>
               <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Today [##_count_today_##] · Total [##_count_total_##]</div>
+            </li>
+            <li data-slot="sidebar-menu-item" data-footer-stat="expanded">
+              <div data-slot="sidebar-stat-row">
+                <div data-slot="sidebar-stat-card">
+                  <span data-slot="sidebar-stat-label">Today</span>
+                  <span data-slot="sidebar-stat-value">[##_count_today_##]</span>
+                </div>
+                <div data-slot="sidebar-stat-card">
+                  <span data-slot="sidebar-stat-label">Total</span>
+                  <span data-slot="sidebar-stat-value">[##_count_total_##]</span>
+                </div>
+              </div>
             </li>
             </s_sidebar_element></s_sidebar>
           </ul>
