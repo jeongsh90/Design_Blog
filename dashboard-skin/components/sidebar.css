@@ -218,13 +218,11 @@
     padding: 0 calc(var(--spacing) * 2);
     border-radius: var(--radius-md);
     font: var(--font-weight-medium) var(--text-xs)/var(--leading-normal) var(--font-sans);
-    /* [SPEC §5-1] 포트는 --tracking-sm이지만 스펙 표는 Caption 12/500 → --tracking-xs */
     letter-spacing: var(--tracking-xs);
     color: var(--color-sidebar-foreground);
     opacity: 0.7;
     overflow: hidden;
     white-space: nowrap;
-    /* [SPEC §5-1] 한글 라벨이므로 uppercase / 양수 자간을 쓰지 않는다. */
     text-transform: none;
   }
 

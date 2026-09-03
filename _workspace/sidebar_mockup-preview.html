@@ -724,8 +724,14 @@
 
 
 
+<!-- [2026-09-03 요청] "모든 스크롤은 부드러운 스크롤링" — GSAP core(플러그인 불필요,
+     이유는 smooth-scroll.js 머리말 참고: ScrollSmoother는 transform 기반이라
+     헤더/우측 위젯 패널의 position:sticky를 깨뜨려 채택하지 않았다). 다른 구역
+     JS가 나중에 GSAP를 쓸 수도 있어 전부보다 먼저 로드한다. 버전 고정(3.15.0). -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
 <script src="/dashboard-skin/components/tooltip.js"></script>
 <script src="/dashboard-skin/components/sidebar.js"></script>
 <script src="/dashboard-skin/components/header.js"></script>
+<script src="/dashboard-skin/components/smooth-scroll.js"></script>
 </body>
 </html>

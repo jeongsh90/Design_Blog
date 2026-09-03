@@ -226,7 +226,7 @@ function render(source, { emptyWidgets = false } = {}) {
   //    같은 파일을 가리켜야 활성 표시 검증이 가능하다.
   html = html
     .replace(
-      /\.\/images\/((?:sidebar|header|tooltip|card|widgets)\.(?:css|js))/g,
+      /\.\/images\/((?:sidebar|header|tooltip|card|widgets|smooth-scroll)\.(?:css|js))/g,
       "/dashboard-skin/components/$1"
     )
     .replace(/\.\/images\//g, "/dashboard-skin/");

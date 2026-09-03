@@ -18,6 +18,11 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 | 댓글 / 방명록 / 검색결과 / 커버 | ⬜ 미착수 |
 | 반응형(태블릿·모바일) | ⬜ 미착수 — sidebar 스펙 §7-4/§7-5 · header 스펙 §6-4에 방향만 기록됨 |
 
+**셸 전체 동작(특정 구역 소유 아님):**
+| 기능 | 상태 |
+|---|---|
+| **스무스 스크롤(GSAP)** | ✅ 완료 — 문서/좌측 사이드바/우측 위젯 패널 3곳 전부 마우스 휠 스무딩(`components/smooth-scroll.js`). `position:sticky`를 깨뜨리는 GSAP ScrollSmoother는 의도적으로 미채택(사유는 파일 머리말 참고). 키보드/터치는 네이티브 그대로(스코프 밖), `prefers-reduced-motion: reduce`에서 자동 비활성. |
+
 `skin.html`의 `[data-slot="content-inner"]` 안쪽(글 목록/본문)은 **다음 구역에서 만들 자리를
 잡아두기 위한 최소 뼈대**다(의도적으로 스타일 없음). 지금 이 상태로 실제 블로그에 적용하면
 사이드바·헤더·우측 위젯만 대시보드고 본문은 브라우저 기본 스타일로 보인다 —
@@ -81,7 +86,7 @@ bun run skin:serve          # http://localhost:4321/
 관리자 → 꾸미기 → **스킨 편집 → html 편집** → 우측 **파일 업로드** 탭
 (`https://daitnu.tistory.com/manage/design/skin/edit#/source/file`)
 
-1. **파일 업로드** 탭에서 다음 9개를 올린다.
+1. **파일 업로드** 탭에서 다음 10개를 올린다.
    - `dashboard-skin/tailwind.css`
    - `dashboard-skin/components/tooltip.css`
    - `dashboard-skin/components/tooltip.js`
@@ -91,18 +96,25 @@ bun run skin:serve          # http://localhost:4321/
    - `dashboard-skin/components/header.css`
    - `dashboard-skin/components/header.js`
    - `dashboard-skin/components/widgets.css`
+   - `dashboard-skin/components/smooth-scroll.js`
 2. **HTML** 탭에 `dashboard-skin/skin.html`의 내용을 통째로 붙여넣는다.
 3. 저장 → 미리보기로 확인 후 적용.
 
 > **경로 규칙:** 티스토리는 업로드한 파일을 전부 `./images/` 아래에 평면으로 서빙한다.
 > 그래서 `skin.html`은 `./images/tailwind.css`, `./images/tooltip.css`, `./images/tooltip.js`,
 > `./images/card.css`, `./images/sidebar.css`, `./images/sidebar.js`, `./images/header.css`,
-> `./images/header.js`, `./images/widgets.css`를 참조한다(로컬 저장소에서는 `components/`
-> 하위에 있지만 업로드하면 같은 폴더가 된다).
+> `./images/header.js`, `./images/widgets.css`, `./images/smooth-scroll.js`를 참조한다
+> (로컬 저장소에서는 `components/` 하위에 있지만 업로드하면 같은 폴더가 된다).
 > `make-preview.mjs`가 이 경로 차이를 목업 생성 시 자동으로 보정한다.
 >
 > **CSS 로드 순서를 지킬 것:** `tailwind → tooltip → card → sidebar → header → widgets`.
 > 프리미티브(tooltip/card)가 먼저, 그것을 쓰는 구역 스타일이 나중이다.
+>
+> **GSAP는 업로드 파일이 아니다.** `smooth-scroll.js`가 의존하는 GSAP core는
+> `skin.html`의 HTML 탭 안에 `<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js">`로
+> 이미 포함돼 있다(CDN 참조라 파일 업로드 목록에는 없음) — HTML 탭 내용을 통째로
+> 붙여넣으면(2번) 자동으로 함께 로드된다. 스크립트 순서: `GSAP CDN → tooltip.js →
+> sidebar.js → header.js → smooth-scroll.js`(GSAP가 다른 구역 JS보다 먼저 와야 함).
 
 ### ⚠ 업로드 후 반드시 해야 하는 관리자 설정 — "글은 5개까지만"
 
