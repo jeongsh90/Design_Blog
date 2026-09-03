@@ -1,0 +1,775 @@
+/* ════════════════════════════════════════════════════════════════
+   Sidebar — shadcn/ui 바닐라 포트
+   ────────────────────────────────────────────────────────────────
+   기반(baseline): D:\MyCloud\2026포트폴리오\Design-system\css\components.css
+                   368–789행 (`[data-slot="sidebar-*"]` 포트)
+                   → 새로 짜지 않고 그대로 가져와 스펙대로 수정/확장했다.
+   스펙:           _workspace/sidebar_designer-spec.md
+   변경분은 전부 `[SPEC …]` 주석으로 표시했다.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Wrapper ── */
+[data-slot="sidebar-wrapper"] {
+  --sidebar-width: calc(var(--spacing) * 64);        /* 16rem / 256px */
+  --sidebar-width-icon: calc(var(--spacing) * 12);   /* 3rem  / 48px  */
+  /* [SPEC §7-4] 모바일 Sheet용. 이번 구역에서는 선언만 하고 쓰지 않는다. */
+  --sidebar-width-mobile: calc(var(--spacing) * 72); /* 18rem / 288px */
+
+  /* [SPEC §4-4 / 요구사항 "100vw"] 데모의 .app-shell이 하던 레이아웃 역할을
+     wrapper 자신이 맡는다. */
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 100svh;
+}
+
+[data-slot="sidebar-wrapper"] > [data-slot="sidebar"] {
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  color: var(--color-sidebar-foreground);
+}
+
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"] > [data-slot="sidebar-gap"] {
+    width: var(--sidebar-width);
+    background-color: transparent;
+  }
+
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"][data-state="collapsed"][data-collapsible="icon"] > [data-slot="sidebar-gap"] {
+    width: var(--sidebar-width-icon);
+  }
+
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"] > [data-slot="sidebar-container"] {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    width: var(--sidebar-width);
+    height: 100svh;
+    border-right: 1px solid var(--color-sidebar-border);
+    overflow: hidden;
+  }
+
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"][data-state="collapsed"][data-collapsible="icon"] > [data-slot="sidebar-container"] {
+    width: var(--sidebar-width-icon);
+  }
+
+  /* [SPEC §7-2 보강] wrapper 레벨 상태만으로도 폭이 확정되게 한다.
+     skin.html은 wrapper 여는 태그 직후의 동기 스크립트로 wrapper에만
+     data-state를 심는다(그 시점에 자식 <aside>는 아직 파싱 전이다).
+     이 규칙이 없으면 첫 페인트에서 폭이 튄다. 위의 원본 규칙은 그대로 둔다. */
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-gap"],
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-container"] {
+    width: var(--sidebar-width-icon);
+  }
+
+  /* [SPEC §7-2] <head> 인라인 스크립트가 심는 초기 힌트.
+     JS가 실제 data-state를 세팅하는 순간 :not([data-state])가 풀려 정상 규칙이 이긴다. */
+  html[data-sidebar-init="collapsed"] [data-slot="sidebar-wrapper"]:not([data-state]) [data-slot="sidebar-gap"],
+  html[data-sidebar-init="collapsed"] [data-slot="sidebar-wrapper"]:not([data-state]) [data-slot="sidebar-container"] {
+    width: var(--sidebar-width-icon);
+  }
+
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"] > [data-slot="sidebar-container"] > [data-slot="sidebar-inner"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    background-color: var(--color-sidebar);
+  }
+
+  /* [SPEC §4-3(1)] 전환 애니메이션 — 포트에 transition이 하나도 없어 접힘이 튄다.
+     shadcn 원본: transition-[width,left,right] duration-200 ease-linear */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-gap"],
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-container"] {
+    transition-property: width, left, right;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"],
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub-button"],
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-action"],
+  [data-slot="sidebar-trigger"] {
+    transition-property: background-color, color;
+    transition-duration: var(--default-transition-duration);
+    transition-timing-function: var(--default-transition-timing-function);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-slot="sidebar-wrapper"] [data-slot="sidebar-gap"],
+    [data-slot="sidebar-wrapper"] [data-slot="sidebar-container"] {
+      transition: none;
+    }
+  }
+
+  /* ── Header / Footer ── */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-header"],
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-footer"] {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: calc(var(--spacing) * 2);
+    padding: calc(var(--spacing) * 2);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-header"] {
+    height: calc(var(--spacing) * 14);   /* 56px — [SPEC §8-Q3] 다음 구역 header와 동일 */
+    padding-block: 0;
+    justify-content: center;
+  }
+
+  /* ── Content ── */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-content"] {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-content"] {
+    overflow: hidden;
+  }
+
+  /* ── Group ── */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-group"] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    width: 100%;
+    min-width: 0;
+    padding: calc(var(--spacing) * 2);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-group-content"] {
+    width: 100%;
+    min-width: 0;
+    font-size: var(--text-sm);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-group-label"] {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: calc(var(--spacing) * 8);
+    padding: 0 calc(var(--spacing) * 2);
+    border-radius: var(--radius-md);
+    font: var(--font-weight-medium) var(--text-xs)/var(--leading-normal) var(--font-sans);
+    /* [SPEC §5-1] 포트는 --tracking-sm이지만 스펙 표는 Caption 12/500 → --tracking-xs */
+    letter-spacing: var(--tracking-xs);
+    color: var(--color-sidebar-foreground);
+    opacity: 0.7;
+    overflow: hidden;
+    white-space: nowrap;
+    /* [SPEC §5-1] 한글 라벨이므로 uppercase / 양수 자간을 쓰지 않는다. */
+    text-transform: none;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-group-label"] {
+    display: none;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-group"][data-hide-on-collapse] {
+    display: none;
+  }
+
+  /* ── Menu ── */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu"] {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 1);
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-item"] {
+    position: relative;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"] {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
+    width: 100%;
+    min-width: 0;
+    height: calc(var(--spacing) * 8);
+    padding: calc(var(--spacing) * 2);
+    overflow: hidden;
+    border: none;
+    border-radius: var(--radius-md);
+    background-color: transparent;
+    font: var(--font-weight-normal) var(--text-sm)/var(--leading-normal) var(--font-sans);
+    letter-spacing: var(--tracking-sm);
+    color: inherit;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"] > svg,
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"] > i:not([data-slot]) {
+    flex-shrink: 0;
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"] > [data-slot="label"] {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"] > [data-slot="meta"] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    line-height: var(--leading-snug);
+    overflow: hidden;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"] > [data-slot="meta"] > [data-slot="title"] {
+    overflow: hidden;
+    font: var(--font-weight-medium) var(--text-sm)/var(--leading-snug) var(--font-sans);
+    letter-spacing: var(--tracking-sm);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"] > [data-slot="meta"] > [data-slot="desc"] {
+    overflow: hidden;
+    font: var(--font-weight-normal) var(--text-xs)/var(--leading-normal) var(--font-sans);
+    letter-spacing: var(--tracking-xs);
+    color: var(--color-muted-foreground);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"] > [data-slot="chevron"] {
+    flex-shrink: 0;
+    margin-left: auto;
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="collapsible"][data-state="open"] [data-slot="chevron"] {
+    transform: rotate(90deg);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-size="lg"] {
+    height: calc(var(--spacing) * 12);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-size="sm"] {
+    height: calc(var(--spacing) * 7);
+    font-size: var(--text-xs);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-size="sm"] > svg,
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-size="sm"] > i:not([data-slot]) {
+    width: calc(var(--spacing) * 3.5);
+    height: calc(var(--spacing) * 3.5);
+  }
+
+  /* [SPEC §3-3(c)] hover는 배경만 바꾼다 — 원본에 있던
+     `color: var(--color-sidebar-accent-foreground)` 선언을 의도적으로 제거했다.
+     accent-foreground가 파랑이 된 이상 이 선언을 두면 hover와 active가 동일해진다. */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"]:hover,
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-state="open"] {
+    background-color: var(--color-sidebar-accent);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"]:focus-visible {
+    outline: calc(var(--spacing) * 0.5) solid var(--color-sidebar-ring);
+    outline-offset: calc(var(--spacing) * 0.5);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-active="true"] {
+    background-color: var(--color-sidebar-accent);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-sidebar-accent-foreground);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-muted="true"] {
+    opacity: 0.7;
+  }
+
+  /* 상호작용하지 않는 표시용 행(예: 방문자 수)은 포인터 커서를 주지 않는다.
+     hover 배경도 뜨지 않게 한다 — 누를 수 있는 것처럼 보이면 안 된다. */
+  [data-slot="sidebar-wrapper"] div[data-slot="sidebar-menu-button"] {
+    cursor: default;
+  }
+
+  [data-slot="sidebar-wrapper"] div[data-slot="sidebar-menu-button"]:hover {
+    background-color: transparent;
+  }
+
+  /* ── 접힘(icon) 상태 ── */
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] {
+    --sidebar-icon-size: calc(var(--spacing) * 8);
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-header"],
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-group"] {
+    align-items: stretch;
+    padding-inline: calc(var(--spacing) * 2);
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-header"] {
+    height: calc(var(--spacing) * 14);
+    padding-block: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-item"] {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu"] {
+    align-items: center;
+    width: 100%;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"] {
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 0;
+    width: var(--sidebar-icon-size);
+    height: var(--sidebar-icon-size);
+    min-width: var(--sidebar-icon-size);
+    min-height: var(--sidebar-icon-size);
+    padding: 0;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"][data-size="lg"] {
+    width: var(--sidebar-icon-size);
+    height: var(--sidebar-icon-size);
+    min-width: var(--sidebar-icon-size);
+    min-height: var(--sidebar-icon-size);
+    padding: 0;
+    background-color: transparent;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"][data-size="lg"]:hover {
+    background-color: transparent;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"][data-size="lg"]:hover [data-slot="sidebar-icon-box"] {
+    filter: brightness(0.95);
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-icon-box"] {
+    width: var(--sidebar-icon-size);
+    height: var(--sidebar-icon-size);
+    flex-shrink: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  /* 헤더 로고 버튼의 좌우 패딩을 제거해 접힘/펼침 모두 icon-box 위치를 header padding(8px) 기준으로 고정 */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-header"] [data-slot="sidebar-menu-button"][data-size="lg"] {
+    padding-inline: 0;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"] > [data-slot="label"],
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"] > [data-slot="meta"],
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"] > [data-slot="chevron"] {
+    display: none;
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-sub"] {
+    display: none;
+  }
+
+  /* ── Team / Avatar icon box ── */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-icon-box"] {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--spacing) * 8);
+    height: calc(var(--spacing) * 8);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-sidebar-primary);
+    color: var(--color-sidebar-primary-foreground);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-icon-box"] > svg,
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-icon-box"] > i:not([data-slot]) {
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-avatar"] {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--spacing) * 8);
+    height: calc(var(--spacing) * 8);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-sidebar-accent);
+    font: var(--font-weight-medium) var(--text-sm)/var(--leading-normal) var(--font-sans);
+    color: var(--color-sidebar-accent-foreground);
+  }
+
+  /* ── Sub menu ── */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub"] {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 1);
+    margin: calc(var(--spacing) * 0.5) calc(var(--spacing) * 3.5);
+    padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 2.5);
+    border-left: 1px solid var(--color-sidebar-border);
+    list-style: none;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub-item"] {
+    position: relative;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub-button"] {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
+    height: calc(var(--spacing) * 7);
+    min-width: 0;
+    padding: 0 calc(var(--spacing) * 2);
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    font: var(--font-weight-normal) var(--text-sm)/var(--leading-normal) var(--font-sans);
+    letter-spacing: var(--tracking-sm);
+    color: var(--color-sidebar-foreground);
+    text-decoration: none;
+  }
+
+  /* [SPEC §3-3(c)] menu-button과 같은 이유로 hover에서는 색을 바꾸지 않는다. */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub-button"]:hover {
+    background-color: var(--color-sidebar-accent);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub-button"][data-active="true"] {
+    background-color: var(--color-sidebar-accent);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-sidebar-accent-foreground);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub-button"]:focus-visible {
+    outline: calc(var(--spacing) * 0.5) solid var(--color-sidebar-ring);
+    outline-offset: calc(var(--spacing) * 0.5);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub-button"] > span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  /* ── Menu action ── */
+  /* 접힘에서는 action 자체가 display:none이므로 예약 패딩도 주지 않는다.
+     (:has 선택자는 특이성이 높아 접힘의 `padding: 0`을 이기므로 여기서 제외해야 한다 —
+      badge 쪽에서 실제로 아이콘이 왼쪽으로 밀리는 버그가 났던 것과 같은 구조다.) */
+  [data-slot="sidebar-wrapper"]:not([data-state="collapsed"]) [data-slot="sidebar-menu-item"]:has([data-slot="sidebar-menu-action"]) [data-slot="sidebar-menu-button"] {
+    padding-right: calc(var(--spacing) * 8);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-action"] {
+    position: absolute;
+    top: calc(var(--spacing) * 1.5);
+    right: calc(var(--spacing) * 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-md);
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-item"]:hover [data-slot="sidebar-menu-action"],
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-action"][data-state="open"] {
+    opacity: 1;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-action"]:hover {
+    background-color: var(--color-sidebar-accent);
+    color: var(--color-sidebar-accent-foreground);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-action"] > svg {
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-action"] {
+    display: none;
+  }
+
+/* ════════════════════════════════════════════════════════════════
+   여기서부터는 Design-system 포트에 없던 슬롯 — 스펙 §4-3 신규 작성분
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── [SPEC §4-3(6)] sidebar-menu-badge ── */
+/* 펼침에서만 배지 자리를 예약한다.
+   접힘에서는 배지가 display:none인데도 이 규칙이 살아 있으면(`:has` + 자식 결합자라
+   접힘의 `padding: 0`보다 특이성이 높다) 오른쪽 패딩 28px가 남아 아이콘이 왼쪽으로
+   밀리고 잘렸다 — 배지가 있는 Design/Ai만 헤더·푸터 아이콘과 중심이 어긋났던 원인. */
+[data-slot="sidebar-wrapper"]:not([data-state="collapsed"]) [data-slot="sidebar-menu-item"]:has(> [data-slot="sidebar-menu-badge"]) > [data-slot="sidebar-menu-button"] {
+  /* 배지 폭(20) + 여백 — 스펙 §4-1의 라벨 가용폭 계산과 동일한 예약 */
+  padding-right: calc(var(--spacing) * 7);
+}
+
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-badge"] {
+  position: absolute;
+  top: calc(var(--spacing) * 1.5);
+  right: calc(var(--spacing) * 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(var(--spacing) * 5);
+  height: calc(var(--spacing) * 5);
+  padding-inline: calc(var(--spacing) * 1.5);
+  border-radius: var(--radius-md);
+  font: var(--font-weight-medium) var(--text-xs)/1 var(--font-sans);
+  letter-spacing: var(--tracking-xs);
+  font-variant-numeric: tabular-nums;
+  /* [SPEC §5-2] 별도 회색 토큰 대신 전경색 + opacity로 구성해
+     라이트/다크 양쪽에서 한 줄로 동작하고, 활성 시 자연스럽게 살아난다. */
+  color: var(--color-sidebar-foreground);
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+}
+
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-item"]:has(> [data-slot="sidebar-menu-button"][data-active="true"]) > [data-slot="sidebar-menu-badge"] {
+  color: var(--color-sidebar-accent-foreground);
+  opacity: 1;
+}
+
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-badge"] {
+  display: none;
+}
+
+/* ── sidebar-group-action ──
+   스펙 §0 누락표에는 없지만 shadcn 원본에는 있는 슬롯이다(그룹 우상단 액션).
+   다음 구역에서 바로 쓸 수 있도록 menu-action과 같은 규격으로 스타일만 만들어 둔다.
+   이번 구역의 마크업에서는 사용하지 않는다. */
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-group-action"] {
+  position: absolute;
+  top: calc(var(--spacing) * 3.5);
+  right: calc(var(--spacing) * 3.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing) * 5);
+  height: calc(var(--spacing) * 5);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-group-action"]:hover {
+  background-color: var(--color-sidebar-accent);
+  color: var(--color-sidebar-accent-foreground);
+}
+
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-group-action"] > svg {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+}
+
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-group-action"] {
+  display: none;
+}
+
+/* ── [SPEC §4-3(7)] sidebar-separator ── */
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-separator"] {
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+  height: 1px;
+  margin-inline: calc(var(--spacing) * 2);
+  background-color: var(--color-sidebar-border);
+}
+
+/* ── [SPEC §4-3(5)] sidebar-input (검색) ── */
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-search-form"] {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-search-icon"] {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--spacing) * 2);
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+  transform: translateY(-50%);
+  color: var(--color-muted-foreground);
+  pointer-events: none;
+}
+
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-input"] {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  /* [SPEC §4-3(5)] 기본 input은 36px이지만 메뉴 버튼(32px)과 리듬을 맞춘다. */
+  height: calc(var(--spacing) * 8);
+  padding-block: calc(var(--spacing) * 1);
+  padding-left: calc(var(--spacing) * 8);
+  padding-right: calc(var(--spacing) * 3);
+  border: 1px solid var(--color-input);
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  font: var(--font-weight-normal) var(--text-sm)/var(--leading-normal) var(--font-sans);
+  letter-spacing: var(--tracking-sm);
+  color: var(--color-foreground);
+  box-shadow: var(--shadow-xs);
+  outline: none;
+  transition-property: color, border-color, box-shadow;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+  appearance: none;
+}
+
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-input"]::placeholder {
+  color: var(--color-muted-foreground);
+}
+
+[data-slot="sidebar-wrapper"] [data-slot="sidebar-input"]:focus-visible {
+  border-color: var(--color-sidebar-ring);
+  box-shadow: 0 0 0 calc(var(--spacing) * 0.75) color-mix(in oklab, var(--color-sidebar-ring) 35%, transparent);
+}
+
+.dark [data-slot="sidebar-wrapper"] [data-slot="sidebar-input"] {
+  background-color: color-mix(in oklab, var(--color-input) 30%, transparent);
+}
+
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-input"],
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-search-form"] {
+  display: none;
+}
+
+/* ── [SPEC §4-3(2)] sidebar-trigger — ghost 버튼 기반 ── */
+[data-slot="sidebar-trigger"] {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing) * 7);   /* 28px */
+  height: calc(var(--spacing) * 7);
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+[data-slot="sidebar-trigger"] > svg {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+  pointer-events: none;
+}
+
+[data-slot="sidebar-trigger"]:hover {
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
+}
+
+[data-slot="sidebar-trigger"]:focus-visible {
+  outline: calc(var(--spacing) * 0.5) solid var(--color-ring);
+  outline-offset: calc(var(--spacing) * 0.5);
+}
+
+/* ── [SPEC §4-3(3)] sidebar-rail — 삭제 ──
+   사용자 요청("사이드메뉴 오른쪽 모서리 클릭 시 접히는 기능 제거")으로
+   마크업에서 rail 버튼을 뺐다. 16px 히트영역 / cursor:w-resize·e-resize /
+   hover 시 세로선 강조(::after) 규칙 전부 죽은 코드라 함께 제거한다.
+   사이드바 우측 경계선 자체는 sidebar-container의 border-right가 계속 그린다
+   (장식용이며 클릭해도 아무 일도 일어나지 않는다). */
+
+/* ── [SPEC §4-3(4)] sidebar-inset — 본문 영역(다음 구역에서 확장) ── */
+[data-slot="sidebar-inset"] {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--color-background);
+}
+
+/* ── [SPEC §7-6] 접힘 상태 전용 CSS 툴팁 (Tooltip 프리미티브 없음) ──
+   Radix Portal이 없어 툴팁이 sidebar-container의 overflow:hidden에 잘린다.
+   → 접힘 상태에서만 해당 조상들의 overflow를 열어준다(펼침 상태는 그대로). */
+[data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-container"],
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-inner"],
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-content"],
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"] {
+  overflow: visible;
+}
+
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"][data-tooltip]:hover::after,
+[data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-menu-button"][data-tooltip]:focus-visible::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + var(--spacing) * 2);
+  z-index: 50;
+  transform: translateY(-50%);
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  font: var(--font-weight-medium) var(--text-xs)/1 var(--font-sans);
+  letter-spacing: var(--tracking-xs);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ── 테마 토글: 아이콘·라벨 전환을 JS 없이 CSS로만 (FOUC 없음) ── */
+html:not(.dark) [data-theme-when="dark"] {
+  display: none;
+}
+
+html.dark [data-theme-when="light"] {
+  display: none;
+}
+
+/* ── 스크린리더 전용 텍스트 (shadcn sr-only 대응) ── */
+[data-slot="sidebar-wrapper"] .sr-only,
+[data-slot="sidebar-trigger"] .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

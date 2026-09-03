@@ -1,0 +1,15 @@
+# 재생성 가능 — 커밋 대상 아님
+node_modules/
+
+# Playwright MCP 세션 캐시(스냅샷/콘솔 로그) — 도구 부산물이지 프로젝트 콘텐츠가 아님
+.playwright-mcp/
+
+# macOS zip 압축해제 잔여물 — daitnu-skin-v1.01.zip 안에 원래 들어있던 쓰레기
+**/__MACOSX/
+**/.DS_Store
+
+# 재배포 금지 라이선스(daitnu-skin-v1.01 베이스 스킨) 관련 산출물 — 공개 저장소 업로드 금지
+daitnu-skin-v1.01.zip
+daitnu-skin-v1.01/
+skin/
+skin.zip

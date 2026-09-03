@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><title>overflow harness</title>
+<style>body{margin:0;font:12px monospace} iframe{border:0;display:block}</style></head>
+<body>
+<div id="out">running…</div>
+<div id="frames"></div>
+<script>
+const PAGES = ['index-list.html','index-card.html','index-thumbnail.html','index-card-circle.html','index-list-square.html','post-wide.html','post-default.html'];
+const WIDTHS = [390, 820, 1440];
+const frames = document.getElementById('frames');
+async function run(){
+  const results = [];
+  for (const w of WIDTHS){
+    for (const p of PAGES){
+      const f = document.createElement('iframe');
+      f.width = w; f.height = 900; f.src = p;
+      frames.appendChild(f);
+      await new Promise(r => f.addEventListener('load', r, {once:true}));
+      await new Promise(r => setTimeout(r, 350));
+      const d = f.contentDocument;
+      const de = d.documentElement;
+      results.push({ page:p, width:w, clientW: de.clientWidth, scrollW: de.scrollWidth,
+        overflow: de.scrollWidth > de.clientWidth + 1 });
+      frames.removeChild(f);
+    }
+  }
+  document.getElementById('out').textContent = JSON.stringify(results.filter(r=>r.overflow), null, 1) || 'none';
+  window.__results = results;
+  window.__done = true;
+}
+run();
+</script>
+</body></html>
