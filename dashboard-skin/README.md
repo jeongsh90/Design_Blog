@@ -21,7 +21,7 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 **셸 전체 동작(특정 구역 소유 아님):**
 | 기능 | 상태 |
 |---|---|
-| **스무스 스크롤(GSAP)** | ✅ 완료 — 문서/좌측 사이드바/우측 위젯 패널 3곳 전부 마우스 휠 스무딩(`components/smooth-scroll.js`). `position:sticky`를 깨뜨리는 GSAP ScrollSmoother는 의도적으로 미채택(사유는 파일 머리말 참고). 키보드/터치는 네이티브 그대로(스코프 밖), `prefers-reduced-motion: reduce`에서 자동 비활성. |
+| **스무스 스크롤(Lenis + GSAP)** | ✅ 완료 — 문서/좌측 사이드바/우측 위젯 패널 3곳 전부 독립 스무스 스크롤(`components/smooth-scroll.js`). `D:\MyCloud\frontend`가 실사용 중인 조합(Lenis + GSAP ticker 연동)을 그대로 재현(사용자가 "같은 스크롤 들어가있으니 참고해서" 요청). `position:sticky`를 깨뜨리는 GSAP ScrollSmoother는 채택하지 않음(사유는 파일 머리말 참고). 좌측 사이드바·우측 위젯 패널은 `data-lenis-prevent`로 문서 Lenis에게서 분리(D:\MyCloud FilePreview.tsx 선례 — 없으면 중첩 스크롤 시 안쪽 대신 바깥 문서가 움직인다). `prefers-reduced-motion: reduce`에서 자동 비활성. |
 
 `skin.html`의 `[data-slot="content-inner"]` 안쪽(글 목록/본문)은 **다음 구역에서 만들 자리를
 잡아두기 위한 최소 뼈대**다(의도적으로 스타일 없음). 지금 이 상태로 실제 블로그에 적용하면
@@ -110,11 +110,16 @@ bun run skin:serve          # http://localhost:4321/
 > **CSS 로드 순서를 지킬 것:** `tailwind → tooltip → card → sidebar → header → widgets`.
 > 프리미티브(tooltip/card)가 먼저, 그것을 쓰는 구역 스타일이 나중이다.
 >
-> **GSAP는 업로드 파일이 아니다.** `smooth-scroll.js`가 의존하는 GSAP core는
-> `skin.html`의 HTML 탭 안에 `<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js">`로
-> 이미 포함돼 있다(CDN 참조라 파일 업로드 목록에는 없음) — HTML 탭 내용을 통째로
-> 붙여넣으면(2번) 자동으로 함께 로드된다. 스크립트 순서: `GSAP CDN → tooltip.js →
-> sidebar.js → header.js → smooth-scroll.js`(GSAP가 다른 구역 JS보다 먼저 와야 함).
+> **GSAP·Lenis는 업로드 파일이 아니다.** `smooth-scroll.js`가 의존하는
+> GSAP core·ScrollTrigger·Lenis는 `skin.html`의 HTML 탭 안에 CDN
+> `<script>` 3줄로 이미 포함돼 있다(파일 업로드 목록에는 없음) — HTML
+> 탭 내용을 통째로 붙여넣으면(2번) 자동으로 함께 로드된다.
+> `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js`,
+> `.../3.15.0/ScrollTrigger.min.js`,
+> `https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js`(D:\MyCloud
+> frontend의 package.json과 동일 버전). 스크립트 순서: `GSAP → ScrollTrigger
+> → Lenis → tooltip.js → sidebar.js → header.js → smooth-scroll.js`(세
+> 전역이 다른 구역 JS보다 먼저 와야 함).
 
 ### ⚠ 업로드 후 반드시 해야 하는 관리자 설정 — "글은 5개까지만"
 

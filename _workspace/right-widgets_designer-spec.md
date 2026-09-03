@@ -335,8 +335,8 @@ Card 컴포넌트가 `--color-card` / `--color-card-foreground`를 요구하는�
 [data-slot="widget-title"] {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
   font: var(--font-weight-medium) var(--text-sm)/var(--leading-snug) var(--font-sans);
   letter-spacing: var(--tracking-sm);

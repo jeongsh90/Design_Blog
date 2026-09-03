@@ -54,6 +54,13 @@
 [data-slot="widgets"] {
   --widgets-width: calc(var(--spacing) * 80);   /* 320px — 근거 §2-3 */
   --widgets-top: calc(var(--spacing) * 14);     /* 56px — 헤더 높이와 동일 */
+  /* [2026-09-03 요청] "리스트 제목에 적용된 색상과 hover색상의 중간색으로
+     ...(변수생성)" — muted-foreground(기존 기본색)와 card-foreground(hover색,
+     그대로 유지)의 정확히 50:50 지점을 새 토큰으로 만든다. 기존 색상 값을
+     둘 다 그대로 쓰고 그 사이만 계산하므로 라이트/다크 전환에도 자동으로
+     맞는다(값을 새로 정의하지 않음 — color-mix는 이 프로젝트가 이미 여러
+     곳(header.css hover, card.css 링 섀도)에서 쓰는 관용구). */
+  --widget-title-color: color-mix(in oklab, var(--color-muted-foreground) 50%, var(--color-card-foreground) 50%);
 
   position: sticky;
   top: var(--widgets-top);
@@ -66,6 +73,12 @@
   gap: calc(var(--spacing) * 4);
   width: var(--widgets-width);
   max-height: calc(100svh - var(--widgets-top));
+  /* [2026-09-03, D:\MyCloud SmoothScrollArea.tsx 선례] overflow-y:auto만
+     주면 CSS 스펙상 overflow-x도 auto로 계산돼(둘 중 하나만 visible이
+     아니면 나머지도 auto가 됨) 살짝 넘치는 콘텐츠가 숨겨진 가로 스크롤로만
+     닿을 수 있는 상태가 된다 — 그 프로젝트에서 실제로 여러 페이지가 동시에
+     "우측이 잘린다"로 나타났던 버그와 같은 원인이라 명시적으로 막아둔다. */
+  overflow-x: hidden;
   overflow-y: auto;
   padding: calc(var(--spacing) * 4);
   /* [SPEC §2-5] 우측 하단 테마 토글 FAB(bottom 24px + 36px = 60px) 회피 —
@@ -97,6 +110,38 @@
   margin: 0;
 }
 
+/* [2026-09-03 요청] "카드 타이틀 sidebar-group-label의 여백 제외한 속성
+   동일하게" — sidebar.css의 [data-slot="sidebar-group-label"](213~227행)과
+   글꼴/자간/색상/투명도/줄바꿈 규칙을 그대로 맞춘다. height/padding/
+   border-radius(=여백)는 가져오지 않는다(위 margin:0과 card.css의 기존
+   card-header 패딩을 그대로 쓴다). color만 --color-sidebar-foreground가
+   아니라 --color-card-foreground를 쓴다 — 값 자체는 라이트/다크 둘 다
+   완전히 동일하다(input.css 실측 확인, #000000/#fafafa로 같음). 이 위젯
+   구역은 스펙 §4-3에서 --color-sidebar-* 네임스페이스를 밖으로 유출하지
+   않기로 이미 확정했으므로, 같은 원칙을 여기서도 지킨다. card.css 원본
+   card-title(text-base/leading-snug/tracking-base, 카드 헤더 제목용)은
+   건드리지 않는다 — 이 스코프 안에서만 재정의. */
+[data-slot="widgets"] [data-slot="card-title"] {
+  font: var(--font-weight-medium) var(--text-xs)/var(--leading-normal) var(--font-sans);
+  letter-spacing: var(--tracking-xs);
+  color: var(--color-card-foreground);
+  opacity: 0.7;
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: none;
+}
+
+/* [2026-09-03 요청] "카드 배경색 제거, 보더라인제거" — card.css 원본의
+   배경(--color-card)과 보더 역할을 하던 링 섀도(box-shadow)를 위젯
+   스코프에서만 걷어낸다. 패널 자체가 이미 --color-background라 카드가
+   패널에 완전히 스며들고, 위젯 사이 구분은 카드 간 gap(§2-2)과 항목
+   구분선(widget-item)만으로 이뤄진다. card.css 원본은 그대로 둔다 —
+   content 구역이 나중에 배경·보더 있는 카드를 다시 쓸 수 있다. */
+[data-slot="widgets"] [data-slot="card"] {
+  background-color: transparent;
+  box-shadow: none;
+}
+
 /* ════════════════════════════════════════════════════════════════
    3. 공통 리스트 프리미티브  [SPEC §5-1]
    ════════════════════════════════════════════════════════════════ */
@@ -117,22 +162,30 @@
   gap: calc(var(--spacing) * 3);
   padding-block: calc(var(--spacing) * 2.5);
   padding-inline: calc(var(--spacing) * 2);
-  /* hover 배경이 카드 안쪽 여백까지 자연스럽게 번지도록 */
+  /* [2026-09-03 요청 이후에도 유지] hover 배경은 없어졌지만(아래 참고),
+     패딩+음수 마진 조합 자체는 클릭 히트박스를 카드 안쪽 여백까지
+     넓히는 역할을 여전히 한다 — 실제 보이는 콘텐츠(썸네일/제목) 위치는
+     그대로 두고 클릭 가능 영역만 넓어진다. */
   margin-inline: calc(var(--spacing) * -2);
   border-radius: var(--radius-md);
   color: inherit;
   text-decoration: none;
-  transition-property: background-color, color;
+  transition-property: color;
   transition-duration: var(--default-transition-duration);
   transition-timing-function: var(--default-transition-timing-function);
 }
 
-[data-slot="widget-link"]:hover {
-  background-color: var(--color-accent);
-}
+/* [2026-09-03 요청] "블로그 위젯의 리스트 호버시 배경색 제거" —
+   기존 hover 배경(--color-accent)을 걷어냈다. 인터랙션 신호는 이제
+   아래 widget-title의 색상 단계 변화(낮음→hover 시 한 단계 올림)만으로
+   전달한다. */
 
+/* [2026-09-03 요청] "리스트의 제목의 색상을 한단계 낮추고 hover시 한단계
+   올라가게" — 기본은 muted-foreground(카테고리·날짜 메타와 같은 톤보다는
+   진하지만 카드 전경색보다는 낮은 중간 단계), hover 시 카드 전경색
+   (원래 기본값이던 색)으로 올라간다. */
 [data-slot="widget-link"]:hover [data-slot="widget-title"] {
-  color: var(--color-accent-foreground);
+  color: var(--color-card-foreground);
 }
 
 /* breadcrumb-link(header.css 258행)와 동일 규격 */
@@ -146,17 +199,29 @@
   flex: 1 1 auto;
 }
 
+/* [2026-09-03 요청] "글은 한줄처리 넘어가는건 점점점 처리" — 기존 2줄
+   -webkit-line-clamp에서 단일 행 말줄임으로 교체. 한 줄로만 자르므로
+   word-break/overflow-wrap(멀티라인 줄바꿈 규칙)도 더 이상 의미가 없어
+   함께 제거했다 — nowrap이 이미 줄바꿈 자체를 막는다.
+   [2026-09-03 재수정 — "점점점처리 누락됨"] <span>은 기본 display:inline이라
+   overflow/text-overflow가 적용되지 않는 상자를 만들지 못해 실제로는
+   줄바꿈만 됐다(실측 확인). display:block을 명시해야 ellipsis가 실제로
+   동작한다 — widget-body가 이미 min-width:0인 블록 컨테이너라 폭 제약은
+   그대로 상속된다. */
 [data-slot="widget-title"] {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  display: block;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font: var(--font-weight-medium) var(--text-sm)/var(--leading-snug) var(--font-sans);
   letter-spacing: var(--tracking-sm);
-  color: var(--color-card-foreground);
-  word-break: keep-all;      /* pretendard 규칙: 한글 어절 단위 줄바꿈 */
-  overflow-wrap: anywhere;   /* 긴 영문/URL 제목이 폭을 밀지 않도록 */
+  /* [2026-09-03 요청] "현재 색상과 hover색상의 중간색으로(변수생성)" —
+     --widget-title-color(위 [data-slot="widgets"] 참고). hover색은
+     아래 :hover 규칙 그대로 유지. */
+  color: var(--widget-title-color);
+  transition-property: color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
 }
 
 [data-slot="widget-meta"] {
