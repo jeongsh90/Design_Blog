@@ -13,13 +13,15 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 |---|---|
 | **Sidebar** | ✅ 완료 (PC 100vw 레이아웃 / 접힘 시 4개 항목 hover 툴팁 / 펼침 시 방문자 수 카드 2장) |
 | **Header** | ✅ 완료 (PC / 56px / 홈·태그·방명록·즐겨찾기 `icon-sm` 아이콘 버튼 + hover 툴팁) |
+| **우측 위젯 사이드바** | ✅ 완료 (PC / 320px sticky 패널 / 공지·최근 글·인기 글·태그·최근 댓글 5장, JS 없음) |
 | Content (목록/본문) | ⬜ 미착수 — 다음 구역 |
 | 댓글 / 방명록 / 검색결과 / 커버 | ⬜ 미착수 |
 | 반응형(태블릿·모바일) | ⬜ 미착수 — sidebar 스펙 §7-4/§7-5 · header 스펙 §6-4에 방향만 기록됨 |
 
-`skin.html`의 `[data-slot="content"]` 안쪽은 **다음 구역에서 만들 자리를 잡아두기 위한
-최소 뼈대**다(의도적으로 스타일 없음). 지금 이 상태로 실제 블로그에 적용하면 사이드바·헤더만
-대시보드고 본문은 브라우저 기본 스타일로 보인다 — **지금 단계에서 실사용 배포를 권하지 않는다.**
+`skin.html`의 `[data-slot="content-inner"]` 안쪽(글 목록/본문)은 **다음 구역에서 만들 자리를
+잡아두기 위한 최소 뼈대**다(의도적으로 스타일 없음). 지금 이 상태로 실제 블로그에 적용하면
+사이드바·헤더·우측 위젯만 대시보드고 본문은 브라우저 기본 스타일로 보인다 —
+**지금 단계에서 실사용 배포를 권하지 않는다.**
 
 > 임시 슬롯 `skin-scaffold-header` / `-title` / `-body`는 Header 구역에서 **전부 걷어냈다.**
 
@@ -36,12 +38,14 @@ dashboard-skin/
 ├── components/
 │   ├── tooltip.css           ← 공용 프리미티브 Tooltip (sidebar·header 둘 다 사용)
 │   ├── tooltip.js            ← Tooltip 동작 (hover/focus 열기, 뷰포트 경계 보정)
+│   ├── card.css              ← 공용 프리미티브 Card + Badge(outline) — 우측 위젯·향후 글 목록
 │   ├── sidebar.css           ← Sidebar 구역 스타일 ([data-slot] 셀렉터 기반)
 │   ├── sidebar.js            ← Sidebar 구역 동작 (토글 / 쿠키 / Ctrl+B / 테마 / 활성표시)
 │   ├── header.css            ← Header 구역 + 공용 프리미티브(Button / Breadcrumb)
-│   └── header.js             ← Header 구역 동작 (브레드크럼 중복 크럼 접기 / 즐겨찾기 토글)
+│   ├── header.js             ← Header 구역 동작 (브레드크럼 중복 크럼 접기 / 즐겨찾기 토글)
+│   └── widgets.css           ← 우측 위젯 구역 (본문/패널 2단 레이아웃 + 위젯 5종) — JS 없음
 ├── tools/
-│   ├── make-preview.mjs      ← 티스토리 치환자를 더미로 바꾼 로컬 목업 생성
+│   ├── make-preview.mjs      ← 티스토리 치환자를 더미로 바꾼 로컬 목업 생성 (+위젯 반복 확장)
 │   └── serve.mjs             ← 로컬 검증용 정적 서버 (쿠키 검증에 필요)
 └── README.md
 ```
@@ -77,22 +81,39 @@ bun run skin:serve          # http://localhost:4321/
 관리자 → 꾸미기 → **스킨 편집 → html 편집** → 우측 **파일 업로드** 탭
 (`https://daitnu.tistory.com/manage/design/skin/edit#/source/file`)
 
-1. **파일 업로드** 탭에서 다음 7개를 올린다.
+1. **파일 업로드** 탭에서 다음 9개를 올린다.
    - `dashboard-skin/tailwind.css`
    - `dashboard-skin/components/tooltip.css`
    - `dashboard-skin/components/tooltip.js`
+   - `dashboard-skin/components/card.css`
    - `dashboard-skin/components/sidebar.css`
    - `dashboard-skin/components/sidebar.js`
    - `dashboard-skin/components/header.css`
    - `dashboard-skin/components/header.js`
+   - `dashboard-skin/components/widgets.css`
 2. **HTML** 탭에 `dashboard-skin/skin.html`의 내용을 통째로 붙여넣는다.
 3. 저장 → 미리보기로 확인 후 적용.
 
 > **경로 규칙:** 티스토리는 업로드한 파일을 전부 `./images/` 아래에 평면으로 서빙한다.
 > 그래서 `skin.html`은 `./images/tailwind.css`, `./images/tooltip.css`, `./images/tooltip.js`,
-> `./images/sidebar.css`, `./images/sidebar.js`, `./images/header.css`, `./images/header.js`를
-> 참조한다(로컬 저장소에서는 `components/` 하위에 있지만 업로드하면 같은 폴더가 된다).
+> `./images/card.css`, `./images/sidebar.css`, `./images/sidebar.js`, `./images/header.css`,
+> `./images/header.js`, `./images/widgets.css`를 참조한다(로컬 저장소에서는 `components/`
+> 하위에 있지만 업로드하면 같은 폴더가 된다).
 > `make-preview.mjs`가 이 경로 차이를 목업 생성 시 자동으로 보정한다.
+>
+> **CSS 로드 순서를 지킬 것:** `tailwind → tooltip → card → sidebar → header → widgets`.
+> 프리미티브(tooltip/card)가 먼저, 그것을 쓰는 구역 스타일이 나중이다.
+
+### ⚠ 업로드 후 반드시 해야 하는 관리자 설정 — "글은 5개까지만"
+
+우측 위젯의 **노출 개수는 스킨 코드로 통제할 수 없다.** 티스토리 공식 문서 어디에도 반복
+개수를 지정하는 스킨측 문법이 없고, 서버가 관리자 설정값만큼만 반복해 내려준다.
+
+→ **꾸미기 > 사이드바 설정**에서 공지사항 / 최근 글 / 인기 글 / 태그 / 최근 댓글 각 위젯의
+**노출 개수를 5로 설정**해야 요청("글은 5개까지만")이 실제로 충족된다.
+
+그래서 `skin.html`의 `<s_..._rep>` 블록은 **항목 1개짜리 템플릿으로 딱 한 번만** 들어 있다.
+**절대 복붙해서 늘리지 말 것** — 실사이트에서 (설정 개수 × 복붙 수)로 곱해져 렌더된다.
 
 ---
 
@@ -139,6 +160,25 @@ bun run skin:serve          # http://localhost:4321/
   프리미티브이므로, 다른 구역에서 본격적으로 쓰기 시작하면 `button.css`로 분리할 것.
   `--secondary` / `--destructive` / `--sys-*` 토큰이 아직 없어 그 변형들은 이식하지 않았다.
 
+### 우측 위젯 사이드바 (Right Widgets 구역)
+
+- `[data-slot="content"]` 안에 `content-layout`(flex row) / `content-inner`(본문) 두 겹을 끼우고,
+  그 두 번째 자식으로 `<aside data-slot="widgets">`를 뒀다. **`content` 슬롯 이름은 그대로**다 —
+  content 구역이 이어받을 자리는 이제 `content-inner`.
+- 폭 **320px** 고정, `position: sticky; top: 56px`(헤더 높이), 패널 자체 `overflow-y:auto`.
+  1440px 기준 본문 폭은 펼침 864px / 접힘 1072px.
+- **JS가 없다.** 인기 글 순위(01~05)는 CSS counter, 반복은 서버, 접기 토글은 만들지 않았다.
+- **위젯 5종은 shadcn이 아니라 Tistory 치환자 기능**이다. `skin.html`의 `<s_rct_notice>`,
+  `<s_rctps_rep>`, `<s_rctps_popular_rep>`, `<s_random_tags>`, `<s_rctrp_rep>` 문자열을
+  **한 글자도 바꾸지 말 것** — 서버는 정확히 이 문자열만 찾는다(바꾸면 그 블록이 화면에
+  그대로 노출되거나 통째로 사라진다). 사이드바 위젯의 태그는 태그로그 페이지의
+  `<s_tag>`/`<s_tag_rep>`가 아니라 `<s_random_tags>`다.
+- 카드/뱃지는 `card.css`(Design-system Card·Badge 포팅)를 쓴다. `--card`/`--card-foreground`
+  토큰을 `src/input.css`에 새로 추가했다.
+- **패널 자식에 `flex-shrink: 0`이 반드시 있어야 한다**(`widgets.css`) — 없으면 카드가
+  눌려 내용이 잘리고 패널 스크롤이 발동하지 않는다(실측으로 확인한 버그).
+- 우측 하단 테마 토글 FAB와 겹치지 않도록 패널 `padding-bottom: 64px`.
+
 ### 다크 모드
 
 `<html>`의 `.dark` 클래스 + `localStorage.theme` (Design-system과 동일 방식).
@@ -150,4 +190,7 @@ bun run skin:serve          # http://localhost:4321/
   `[##_count_total_##]`)가 실제로 치환되는지.
 - 검색 폼이 이동하는 `/search/{키워드}` URL이 실제 블로그에서 동작하는지.
 - 티스토리가 자동 주입하는 요소(관리 메뉴바, 광고 `[##_revenue_list_*_##]` 등)가
-  사이드바 레이아웃과 충돌하지 않는지.
+  사이드바 레이아웃 / sticky 우측 패널과 충돌하지 않는지.
+- 우측 위젯 5종이 관리자 사이드바 설정과 무관하게 `skin.html`에 적은 위치 그대로 렌더되는지.
+- `<s_sidebar_element>`가 관리자 사이드바 설정과 정확히 어떤 방식으로 연동되는지
+  (기존 푸터 방문자 수의 `<s_sidebar>` 2겹 관례를 정리해도 되는지도 이때 함께 판단).

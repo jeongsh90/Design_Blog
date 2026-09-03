@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- 자동 생성 파일 — 직접 수정하지 말 것. 원본: dashboard-skin/skin.html -->
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>[##_page_title_##] :: [##_title_##]</title>
-<meta name="description" content="[##_desc_##]" />
-<meta http-equiv="author" content="[##_blogger_##]" />
-<meta property="og:title" content="[##_page_title_##] :: [##_title_##]" />
+<title>홈 :: 다잇누</title>
+<meta name="description" content="디자인 · 코드 · AI 아카이브" />
+<meta http-equiv="author" content="daitnu" />
+<meta property="og:title" content="홈 :: 다잇누" />
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <!-- Pretendard 변수 폰트 — 기존 확정대로 orioncactus 공식 CDN 유지 -->
@@ -15,15 +16,15 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 
 <!-- 로컬에서 빌드한 Tailwind v4 산출물 → 티스토리 [스킨 편집 → HTML 편집 → 파일 업로드]로 올린다 -->
-<link rel="stylesheet" href="./images/tailwind.css" />
+<link rel="stylesheet" href="/dashboard-skin/tailwind.css" />
 <!-- [2026-09-03] Tooltip은 sidebar·header 둘 다 쓰는 공용 프리미티브라 먼저 로드한다. -->
-<link rel="stylesheet" href="./images/tooltip.css" />
+<link rel="stylesheet" href="/dashboard-skin/components/tooltip.css" />
 <!-- [2026-09-03 RIGHT-WIDGETS SPEC §8] Card/Badge도 공용 프리미티브다 —
      구역 스타일(sidebar/header/widgets)보다 먼저 로드한다. -->
-<link rel="stylesheet" href="./images/card.css" />
-<link rel="stylesheet" href="./images/sidebar.css" />
-<link rel="stylesheet" href="./images/header.css" />
-<link rel="stylesheet" href="./images/widgets.css" />
+<link rel="stylesheet" href="/dashboard-skin/components/card.css" />
+<link rel="stylesheet" href="/dashboard-skin/components/sidebar.css" />
+<link rel="stylesheet" href="/dashboard-skin/components/header.css" />
+<link rel="stylesheet" href="/dashboard-skin/components/widgets.css" />
 
 <!--
   [SPEC §7-2] FOUC 방지 인라인 동기 스크립트.
@@ -50,8 +51,8 @@
 </script>
 </head>
 
-<body id="[##_body_id_##]">
-<s_t3>
+<body id="tt-body-index">
+
 
 <div data-slot="sidebar-wrapper">
 <!--
@@ -80,13 +81,13 @@
         <div data-slot="sidebar-header">
           <ul data-slot="sidebar-menu">
             <li data-slot="sidebar-menu-item">
-              <a href="[##_blog_link_##]" data-slot="sidebar-menu-button" data-size="lg" data-tooltip="[##_title_##]">
+              <a href="/" data-slot="sidebar-menu-button" data-size="lg" data-tooltip="다잇누">
                 <span data-slot="sidebar-icon-box">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2h10"/><path d="M5 6h14"/><rect width="18" height="12" x="3" y="10" rx="2"/></svg>
                 </span>
                 <span data-slot="meta">
-                  <span data-slot="title">[##_title_##]</span>
-                  <span data-slot="desc">[##_desc_##]</span>
+                  <span data-slot="title">다잇누</span>
+                  <span data-slot="desc">디자인 · 코드 · AI 아카이브</span>
                 </span>
               </a>
               <!-- [2026-09-03 요청] "접힌 사이드메뉴도 툴팁으로 적용" — Tooltip
@@ -99,7 +100,7 @@
                    data-tooltip 속성으로 트리거를 표시, tooltip.js가 형제
                    tooltip-content와 짝짓는다(패턴 B). 펼침 상태에는 라벨이
                    이미 보이므로 접힘 상태에서만 연다. -->
-              <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">[##_title_##]</div>
+              <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">다잇누</div>
             </li>
           </ul>
         </div>
@@ -184,26 +185,26 @@
              sidebar.css가 서로 반대로 숨긴다(아래 두 li 중 하나만 항상 보임). -->
         <div data-slot="sidebar-footer">
           <ul data-slot="sidebar-menu">
-            <s_sidebar><s_sidebar_element>
+            
             <li data-slot="sidebar-menu-item" data-footer-stat="collapsed">
-              <div data-slot="sidebar-menu-button" data-muted="true" data-tooltip="Today [##_count_today_##] / Total [##_count_total_##]">
+              <div data-slot="sidebar-menu-button" data-muted="true" data-tooltip="Today 12 / Total 1,024">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16v-3"/><path d="M12 16V8"/><path d="M17 16v-6"/></svg>
               </div>
-              <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Today [##_count_today_##] · Total [##_count_total_##]</div>
+              <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Today 12 · Total 1,024</div>
             </li>
             <li data-slot="sidebar-menu-item" data-footer-stat="expanded">
               <div data-slot="sidebar-stat-row">
                 <div data-slot="sidebar-stat-card">
                   <span data-slot="sidebar-stat-label">Today</span>
-                  <span data-slot="sidebar-stat-value">[##_count_today_##]</span>
+                  <span data-slot="sidebar-stat-value">12</span>
                 </div>
                 <div data-slot="sidebar-stat-card">
                   <span data-slot="sidebar-stat-label">Total</span>
-                  <span data-slot="sidebar-stat-value">[##_count_total_##]</span>
+                  <span data-slot="sidebar-stat-value">1,024</span>
                 </div>
               </div>
             </li>
-            </s_sidebar_element></s_sidebar>
+            
           </ul>
         </div>
 
@@ -245,13 +246,13 @@
           <nav data-slot="breadcrumb" aria-label="breadcrumb">
             <ol data-slot="breadcrumb-list">
               <li data-slot="breadcrumb-item" data-crumb="blog">
-                <a href="[##_blog_link_##]" data-slot="breadcrumb-link">[##_title_##]</a>
+                <a href="/" data-slot="breadcrumb-link">다잇누</a>
               </li>
               <li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </li>
               <li data-slot="breadcrumb-item">
-                <span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page">[##_page_title_##]</span>
+                <span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page">홈</span>
               </li>
             </ol>
           </nav>
@@ -274,7 +275,7 @@
         <div data-slot="header-actions">
           <div data-slot="tooltip">
             <span data-slot="tooltip-trigger">
-              <a href="[##_blog_link_##]" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="홈">
+              <a href="/" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="홈">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
               </a>
             </span>
@@ -282,7 +283,7 @@
           </div>
           <div data-slot="tooltip">
             <span data-slot="tooltip-trigger">
-              <a href="[##_taglog_link_##]" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="태그">
+              <a href="/tag" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="태그">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
               </a>
             </span>
@@ -290,7 +291,7 @@
           </div>
           <div data-slot="tooltip">
             <span data-slot="tooltip-trigger">
-              <a href="[##_guestbook_link_##]" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="방명록">
+              <a href="/guestbook" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="방명록">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </a>
             </span>
@@ -341,34 +342,34 @@
     <div data-slot="content">
       <div data-slot="content-layout">
         <div data-slot="content-inner">
-          [##_revenue_list_upper_##]
+          
 
-          <s_list>
-            <s_list_empty><p>글이 없습니다.</p></s_list_empty>
-          </s_list>
+          
+            <p>글이 없습니다.</p>
+          
 
-          <s_article_rep>
-            <s_index_article_rep>
+          
+            
               <article>
-                <a href="[##_article_rep_link_##]"><h2>[##_article_rep_title_##]</h2></a>
-                <p>[##_article_rep_category_##] · [##_article_rep_simple_date_##]</p>
-                <p>[##_article_rep_summary_##]</p>
+                <a href="/1"><h2>샘플 글 제목</h2></a>
+                <p>Design · 2026.09.02</p>
+                <p>본문 영역은 다음 구역(header / content)에서 구현합니다.</p>
               </article>
-            </s_index_article_rep>
-            <s_permalink_article_rep>
+            
+            
               <article>
-                <h1>[##_article_rep_title_##]</h1>
-                <p>[##_article_rep_category_##] · [##_article_rep_date_##]</p>
-                <div>[##_article_rep_desc_##]</div>
+                <h1>샘플 글 제목</h1>
+                <p>Design · 2026. 9. 2. 21:00</p>
+                <div>본문 영역은 다음 구역(header / content)에서 구현합니다.</div>
               </article>
-            </s_permalink_article_rep>
-          </s_article_rep>
+            
+          
 
-          <s_paging>
-            <nav><s_paging_rep><a href="[##_paging_rep_link_##]">[##_paging_rep_link_num_##]</a></s_paging_rep></nav>
-          </s_paging>
+          
+            <nav><a href="#">1</a></nav>
+          
 
-          [##_revenue_list_lower_##]
+          
         </div>
 
         <!-- ══════════════════════════════════════════════════════
@@ -398,26 +399,9 @@
           <!-- ── 1. 공지사항 ──
                s_rct_notice 를 카드 바깥(s_sidebar_element 안쪽)에 둔다 —
                공지가 0건이면 제목만 덩그러니 남지 않고 카드째 사라져야 한다. -->
-          <s_sidebar_element>
-            <s_rct_notice>
-              <section data-slot="card" data-size="sm" data-widget="notice">
-                <div data-slot="card-header"><h2 data-slot="card-title">공지사항</h2></div>
-                <div data-slot="card-content">
-                  <ul data-slot="widget-list">
-                    <s_rct_notice_rep>
-                      <li data-slot="widget-item">
-                        <a href="[##_notice_rep_link_##]" data-slot="widget-link">
-                          <span data-slot="widget-body">
-                            <span data-slot="widget-title">[##_notice_rep_title_##]</span>
-                          </span>
-                        </a>
-                      </li>
-                    </s_rct_notice_rep>
-                  </ul>
-                </div>
-              </section>
-            </s_rct_notice>
-          </s_sidebar_element>
+          
+            
+          
 
           <!-- ── 2. 최근 글 ── 썸네일 + 카테고리·날짜 [SPEC §5-3]
                의도적으로 쓰지 않는 치환자:
@@ -427,32 +411,16 @@
                    "0일 때 숨김" 조건 태그가 없다. 댓글은 5번 위젯이 담당.
                  [##_rctps_rep_date_##]    — 320px 메타 한 줄에 과함(_simple_date_ 사용).
                  [##_rctps_rep_author_##]  — 팀블로그 전용. -->
-          <s_sidebar_element>
+          
             <section data-slot="card" data-size="sm" data-widget="recent">
               <div data-slot="card-header"><h2 data-slot="card-title">최근 글</h2></div>
               <div data-slot="card-content">
                 <ul data-slot="widget-list">
-                  <s_rctps_rep>
-                    <li data-slot="widget-item">
-                      <a href="[##_rctps_rep_link_##]" data-slot="widget-link">
-                        <s_rctps_rep_thumbnail>
-                          <img data-slot="widget-thumb" src="[##_rctps_rep_thumbnail_##]" alt="" loading="lazy" />
-                        </s_rctps_rep_thumbnail>
-                        <span data-slot="widget-body">
-                          <span data-slot="widget-title">[##_rctps_rep_title_##]</span>
-                          <span data-slot="widget-meta">
-                            <span>[##_rctps_rep_category_##]</span>
-                            <span data-slot="widget-dot" aria-hidden="true">·</span>
-                            <span>[##_rctps_rep_simple_date_##]</span>
-                          </span>
-                        </span>
-                      </a>
-                    </li>
-                  </s_rctps_rep>
+                  
                 </ul>
               </div>
             </section>
-          </s_sidebar_element>
+          
 
           <!-- ── 3. 인기 글 ── [SPEC §5-4]
                반복 태그만 s_rctps_popular_rep 로 다르고 안쪽 치환자 이름은
@@ -460,69 +428,44 @@
                그래서 시각 구분을 두 가지로 준다:
                  (1) 썸네일 블록을 아예 넣지 않는다
                  (2) 순위 01~05 — widgets.css의 CSS counter가 그린다(마크업에 숫자 없음) -->
-          <s_sidebar_element>
+          
             <section data-slot="card" data-size="sm" data-widget="popular">
               <div data-slot="card-header"><h2 data-slot="card-title">인기 글</h2></div>
               <div data-slot="card-content">
                 <ul data-slot="widget-list">
-                  <s_rctps_popular_rep>
-                    <li data-slot="widget-item">
-                      <a href="[##_rctps_rep_link_##]" data-slot="widget-link">
-                        <span data-slot="widget-rank" aria-hidden="true"></span>
-                        <span data-slot="widget-body">
-                          <span data-slot="widget-title">[##_rctps_rep_title_##]</span>
-                          <span data-slot="widget-meta"><span>[##_rctps_rep_category_##]</span></span>
-                        </span>
-                      </a>
-                    </li>
-                  </s_rctps_popular_rep>
+                  
                 </ul>
               </div>
             </section>
-          </s_sidebar_element>
+          
 
           <!-- ── 4. 태그 ── [SPEC §5-5]
                사이드바 위젯의 반복 태그는 s_random_tags 하나뿐이다
                (태그로그 페이지의 s_tag / s_tag_rep 와 다르다 — 혼동 주의).
                chip은 card.css의 Badge outline 변형. [##_tag_class_##]가
                넣어주는 cloud1~5는 widgets.css에서 색/굵기 5단계로 처리한다. -->
-          <s_sidebar_element>
+          
             <section data-slot="card" data-size="sm" data-widget="tags">
               <div data-slot="card-header"><h2 data-slot="card-title">태그</h2></div>
               <div data-slot="card-content">
                 <div data-slot="widget-tags">
-                  <s_random_tags>
-                    <a href="[##_tag_link_##]" data-slot="badge" data-variant="outline" class="[##_tag_class_##]">[##_tag_name_##]</a>
-                  </s_random_tags>
+                  
                 </div>
               </div>
             </section>
-          </s_sidebar_element>
+          
 
           <!-- ── 5. 최근 댓글 ── [SPEC §5-6] -->
-          <s_sidebar_element>
+          
             <section data-slot="card" data-size="sm" data-widget="comments">
               <div data-slot="card-header"><h2 data-slot="card-title">최근 댓글</h2></div>
               <div data-slot="card-content">
                 <ul data-slot="widget-list">
-                  <s_rctrp_rep>
-                    <li data-slot="widget-item">
-                      <a href="[##_rctrp_rep_link_##]" data-slot="widget-link">
-                        <span data-slot="widget-body">
-                          <span data-slot="widget-title">[##_rctrp_rep_desc_##]</span>
-                          <span data-slot="widget-meta">
-                            <span>[##_rctrp_rep_name_##]</span>
-                            <span data-slot="widget-dot" aria-hidden="true">·</span>
-                            <span>[##_rctrp_rep_time_##]</span>
-                          </span>
-                        </span>
-                      </a>
-                    </li>
-                  </s_rctrp_rep>
+                  
                 </ul>
               </div>
             </section>
-          </s_sidebar_element>
+          
 
         </aside>
       </div>
@@ -531,10 +474,10 @@
   </main>
 </div>
 
-</s_t3>
 
-<script src="./images/tooltip.js"></script>
-<script src="./images/sidebar.js"></script>
-<script src="./images/header.js"></script>
+
+<script src="/dashboard-skin/components/tooltip.js"></script>
+<script src="/dashboard-skin/components/sidebar.js"></script>
+<script src="/dashboard-skin/components/header.js"></script>
 </body>
 </html>
