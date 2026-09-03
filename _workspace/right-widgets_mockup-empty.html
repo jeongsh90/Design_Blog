@@ -19,6 +19,10 @@
 <link rel="stylesheet" href="/dashboard-skin/tailwind.css" />
 <!-- [2026-09-03] Tooltip은 sidebar·header 둘 다 쓰는 공용 프리미티브라 먼저 로드한다. -->
 <link rel="stylesheet" href="/dashboard-skin/components/tooltip.css" />
+<!-- [2026-09-03 요청] "기본스크롤 제거하고 lenis제공 스크롤 처리" — smooth-scroll.js가
+     Lenis를 붙이는 html/sidebar-content/widgets 3곳의 네이티브 스크롤바를 숨긴다
+     (D:\MyCloud frontend의 .scrollbar-hidden과 동일 규칙). -->
+<link rel="stylesheet" href="/dashboard-skin/components/smooth-scroll.css" />
 <!-- [2026-09-03 RIGHT-WIDGETS SPEC §8] Card/Badge도 공용 프리미티브다 —
      구역 스타일(sidebar/header/widgets)보다 먼저 로드한다. -->
 <link rel="stylesheet" href="/dashboard-skin/components/card.css" />
