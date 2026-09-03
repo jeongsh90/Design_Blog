@@ -724,7 +724,7 @@
   padding-right: calc(var(--spacing) * 3);
   border: 1px solid var(--color-input);
   border-radius: var(--radius-md);
-  background-color: transparent;
+  background-color: var(--color-background);
   font: var(--font-weight-normal) var(--text-sm)/var(--leading-normal) var(--font-sans);
   letter-spacing: var(--tracking-sm);
   color: var(--color-foreground);

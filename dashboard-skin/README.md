@@ -21,7 +21,7 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 **셸 전체 동작(특정 구역 소유 아님):**
 | 기능 | 상태 |
 |---|---|
-| **스무스 스크롤(Lenis + GSAP)** | ✅ 완료 — 문서/좌측 사이드바/우측 위젯 패널 3곳 전부 독립 스무스 스크롤(`components/smooth-scroll.js`). `D:\MyCloud\frontend`가 실사용 중인 조합(Lenis + GSAP ticker 연동)을 그대로 재현(사용자가 "같은 스크롤 들어가있으니 참고해서" 요청). `position:sticky`를 깨뜨리는 GSAP ScrollSmoother는 채택하지 않음(사유는 파일 머리말 참고). 좌측 사이드바·우측 위젯 패널은 `data-lenis-prevent`로 문서 Lenis에게서 분리(D:\MyCloud FilePreview.tsx 선례 — 없으면 중첩 스크롤 시 안쪽 대신 바깥 문서가 움직인다). 같은 3곳의 네이티브 스크롤바는 `components/smooth-scroll.css`로 숨김(D:\MyCloud의 `.scrollbar-hidden`과 동일 규칙 — 스크롤 기능 자체가 아니라 시각적 트랙/썸만 제거, 접근성엔 영향 없음). `prefers-reduced-motion: reduce`에서 자동 비활성. |
+| **스무스 스크롤(Lenis + GSAP)** | ✅ 완료 — 문서/좌측 사이드바/우측 위젯 패널 3곳 전부 독립 스무스 스크롤(`components/smooth-scroll.js`). `D:\MyCloud\frontend`가 실사용 중인 조합(Lenis + GSAP ticker 연동)을 그대로 재현(사용자가 "같은 스크롤 들어가있으니 참고해서" 요청). `position:sticky`를 깨뜨리는 GSAP ScrollSmoother는 채택하지 않음(사유는 파일 머리말 참고). 좌측 사이드바·우측 위젯 패널은 `data-lenis-prevent`로 문서 Lenis에게서 분리(D:\MyCloud FilePreview.tsx 선례 — 없으면 중첩 스크롤 시 안쪽 대신 바깥 문서가 움직인다). 문서·좌측 사이드바의 네이티브 스크롤바는 `components/smooth-scroll.css`로 숨김(D:\MyCloud의 `.scrollbar-hidden`과 동일 규칙 — 스크롤 기능 자체가 아니라 시각적 트랙/썸만 제거, 접근성엔 영향 없음). 우측 위젯 패널만 완전 숨김 대신 Design-system `globals.css`와 동일한 얇은 pill형 커스텀 스크롤바(`widgets.css` §8, 라이트/다크 색 분기)로 표시. `prefers-reduced-motion: reduce`에서 스무딩 자동 비활성. |
 
 `skin.html`의 `[data-slot="content-inner"]` 안쪽(글 목록/본문)은 **다음 구역에서 만들 자리를
 잡아두기 위한 최소 뼈대**다(의도적으로 스타일 없음). 지금 이 상태로 실제 블로그에 적용하면

@@ -314,3 +314,49 @@
   letter-spacing: var(--tracking-xs);
   color: var(--color-muted-foreground);
 }
+
+/* ════════════════════════════════════════════════════════════════
+   8. 커스텀 스크롤바  [2026-09-03 요청]
+   "위젯영역 커스텀 스크롤바 표시 (기본 스크롤x)" —
+   smooth-scroll.css에서 위젯 패널을 숨김 대상에서 제외하고,
+   Design-system globals.css 21120~21150행과 동일한 방식으로
+   이 패널 스코프에만 얇은 pill형 커스텀 스크롤바를 적용한다.
+
+   색상 토큰: Design-system globals.css 21121~21128행과 동일
+     라이트 --scrollbar-thumb: #d4d4d4 (neutral-300)
+     다크   --scrollbar-thumb: #3f3f46 (zinc-700)
+   트랙은 transparent — 위젯 패널이 이미 --color-background라
+   트랙을 칠하면 패딩 공간이 떠 보인다.
+
+   Lenis와 공존: Lenis는 네이티브 scrollTop을 직접 움직이므로
+   CSS 커스텀 스크롤바는 실제 스크롤 위치를 기반으로 thumb 위치를
+   정확하게 그린다(transform 방식의 ScrollSmoother와 달리 문제 없음).
+   ════════════════════════════════════════════════════════════════ */
+
+/* 색상 토큰 + Firefox 스크롤바 — widgets 스코프에서만 덮어쓴다(전역 오염 없음)
+   scrollbar-width:thin = 시스템 정의 얇은 스크롤바(Firefox), thumb/track 색은 scrollbar-color */
+[data-slot="widgets"] {
+  --scrollbar-thumb: #d4d4d4;
+  --scrollbar-track: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+.dark [data-slot="widgets"] {
+  --scrollbar-thumb: #3f3f46;
+}
+
+/* Webkit(Chrome/Edge/Safari) — 6px 너비, pill 형 thumb */
+[data-slot="widgets"]::-webkit-scrollbar {
+  width: 6px;
+}
+[data-slot="widgets"]::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+[data-slot="widgets"]::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+[data-slot="widgets"]::-webkit-scrollbar-thumb:hover {
+  /* Design-system 21150행과 동일 공식 */
+  background-color: color-mix(in oklab, var(--scrollbar-thumb) 80%, #000);
+}

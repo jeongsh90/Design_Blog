@@ -17,16 +17,16 @@
    스크린리더 등 접근성 동작에는 영향이 없다(scrollbar-width:none은
    스크롤 자체를 막지 않는, 순수 표시 속성).
    ════════════════════════════════════════════════════════════════ */
+/* [2026-09-03 커스텀 스크롤바 교체] 위젯 패널은 기본 스크롤바를 숨기지 않고
+   widgets.css에서 정의하는 커스텀 스크롤바로 교체한다 — 문서·사이드바만 숨김. */
 html,
-[data-slot="sidebar-content"],
-[data-slot="widgets"] {
+[data-slot="sidebar-content"] {
   scrollbar-width: none;      /* Firefox */
   -ms-overflow-style: none;   /* 구 Edge/IE */
 }
 
 html::-webkit-scrollbar,
-[data-slot="sidebar-content"]::-webkit-scrollbar,
-[data-slot="widgets"]::-webkit-scrollbar {
+[data-slot="sidebar-content"]::-webkit-scrollbar {
   width: 0;
   height: 0;
   display: none;              /* Chrome/Edge/Safari(Blink·WebKit) */
