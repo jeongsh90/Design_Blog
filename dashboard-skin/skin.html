@@ -241,9 +241,14 @@
              data-size="sm"(텍스트 버튼) → "icon-sm"(32px 정사각, 이전과 동일한
              풋프린트)로 교체. 라벨이 사라진 만큼 aria-label로 접근성을 보강하고,
              "hover시 툴팁" 요청에 따라 각 버튼을 Tooltip 프리미티브(header.css/js에
-             신규 포팅, 디자인시스템 pages/tooltip.html 마크업 그대로)로 감싼다. -->
+             신규 포팅, 디자인시스템 pages/tooltip.html 마크업 그대로)로 감싼다.
+             [2026-09-03 요청] "사이드메뉴 툴팁 기준으로 맞춰" — 처음엔 여기 4개에만
+             `data-delay-duration="300"`을 줬는데, sidebar의 접힘 툴팁(패턴 B, tooltip.js)은
+             래퍼가 없어 이 속성을 읽을 대상 자체가 없다 보니 항상 지연 0으로 즉시 뜨고
+             있었다 — 그래서 둘의 등장 속도가 달라 보였다. 속성을 제거해(=지연 0, tooltip.js
+             bindTooltip()의 기본값) sidebar와 동일하게 즉시 뜨도록 맞췄다. -->
         <div data-slot="header-actions">
-          <div data-slot="tooltip" data-delay-duration="300">
+          <div data-slot="tooltip">
             <span data-slot="tooltip-trigger">
               <a href="[##_blog_link_##]" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="홈">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
@@ -251,7 +256,7 @@
             </span>
             <div data-slot="tooltip-content" data-state="closed" data-side="bottom" role="tooltip">홈</div>
           </div>
-          <div data-slot="tooltip" data-delay-duration="300">
+          <div data-slot="tooltip">
             <span data-slot="tooltip-trigger">
               <a href="[##_taglog_link_##]" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="태그">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
@@ -259,7 +264,7 @@
             </span>
             <div data-slot="tooltip-content" data-state="closed" data-side="bottom" role="tooltip">태그</div>
           </div>
-          <div data-slot="tooltip" data-delay-duration="300">
+          <div data-slot="tooltip">
             <span data-slot="tooltip-trigger">
               <a href="[##_guestbook_link_##]" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="방명록">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -276,7 +281,7 @@
                구역이 없어 현재 페이지(URL) 단위로 localStorage에 저장하는 최소 동작만
                구현했다 — 즐겨찾기 목록을 모아보는 화면은 아직 없다(향후 구역 후보).
                [2026-09-03 요청] 나머지 3개와 동일하게 아이콘 전용(icon-sm) + 툴팁. -->
-          <div data-slot="tooltip" data-delay-duration="300">
+          <div data-slot="tooltip">
             <span data-slot="tooltip-trigger">
               <button type="button" data-slot="button" data-variant="default" data-size="icon-sm"
                       data-favorite-toggle data-favorited="false" aria-label="즐겨찾기" aria-pressed="false">

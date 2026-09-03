@@ -63,14 +63,14 @@
 }
 
 [data-slot="tooltip-content"][data-side="top"] {
-  bottom: 100%;
+  bottom: calc(100% + (var(--spacing) * 3));
   left: 50%;
   translate: -50% calc(var(--tooltip-side-offset, 0px) * -1);
   transform-origin: center bottom;
 }
 
 [data-slot="tooltip-content"][data-side="bottom"] {
-  top: 100%;
+  top: calc(100% + (var(--spacing) * 3));
   left: 50%;
   translate: -50% var(--tooltip-side-offset, 0px);
   transform-origin: center top;
@@ -130,14 +130,14 @@
 }
 
 [data-slot="tooltip-content"][data-side="left"] {
-  right: 100%;
+  right: calc(100% + (var(--spacing) * 3));
   top: 50%;
   translate: calc(var(--tooltip-side-offset, 0px) * -1) -50%;
   transform-origin: right center;
 }
 
 [data-slot="tooltip-content"][data-side="right"] {
-  left: 100%;
+  left: calc(100% + (var(--spacing) * 3));
   top: 50%;
   translate: var(--tooltip-side-offset, 0px) -50%;
   transform-origin: left center;
@@ -151,6 +151,7 @@
   border-radius: 2px;
   background-color: var(--color-foreground);
   pointer-events: none;
+  display: none;
 }
 
 [data-slot="tooltip-content"][data-side="top"] [data-slot="tooltip-arrow"] {

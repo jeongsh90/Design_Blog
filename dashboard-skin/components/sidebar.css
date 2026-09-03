@@ -184,7 +184,7 @@
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu"] {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing) * 1);
+    gap: calc(var(--spacing) * 2);
     width: 100%;
     min-width: 0;
     margin: 0;

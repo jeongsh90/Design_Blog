@@ -334,7 +334,7 @@ a[data-slot="button"] {
 [data-slot="header-actions"] {
   display: flex;
   align-items: center;
-  gap: calc(var(--spacing) * 1);
+  gap: calc(var(--spacing) * 2);
   flex-shrink: 0;
 }
 
