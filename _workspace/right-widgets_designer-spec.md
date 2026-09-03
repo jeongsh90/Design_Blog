@@ -311,7 +311,7 @@ Card 컴포넌트가 `--color-card` / `--color-card-foreground`를 요구하는�
 
 [data-slot="widget-link"] {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: calc(var(--spacing) * 3);
   padding-block: calc(var(--spacing) * 2.5);
   padding-inline: calc(var(--spacing) * 2);

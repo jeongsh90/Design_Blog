@@ -107,6 +107,31 @@
               <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">다잇누</div>
             </li>
           </ul>
+
+          <!-- [2026-09-03 요청] "로고 우측에 시스템아이콘 추가" — 티스토리
+               관리 페이지로 바로 연결(사유는 sidebar.css의 [data-slot=
+               "sidebar-header-action"] 주석 참고: 계정/블로그 전환 UI는
+               스킨에 직접 만들지 않고 티스토리 자체 관리 메뉴바에 맡긴다).
+               헤더 버튼(Tooltip 패턴 A)과 동일한 구조·아이콘 사이즈.
+               [2026-09-03 오버플로 버그 수정] data-side="bottom"이었을 때
+               실측 확인된 문제 — tooltip.css의 bottom 배치가 트리거 아래
+               spacing*3(12px) 간격을 두는데(헤더 툴팁을 위한 값, 그쪽은
+               아래가 빈 문서 영역이라 문제 없음), 이 아이콘 바로 아래는
+               검색창이 거의 붙어 있어 툴팁이 검색창과 겹치고, 동시에
+               sidebar-container의 overflow:hidden에 오른쪽이 잘렸다
+               (Playwright 스크린샷으로 "티스토리 관..." 잘림 재현 확인).
+               이 아이콘은 사이드바 우측 끝(216px 지점, 폭 256px)에 붙어
+               있어 side="right"도 곧바로 잘리는 건 마찬가지 — 로고 텍스트
+               쪽으로 열리는 side="left"만 세로로는 헤더 행 안에 머물고
+               가로로도 216px의 여유 공간이 있어 잘리지 않는다. -->
+          <div data-slot="tooltip">
+            <span data-slot="tooltip-trigger">
+              <a href="/manage" data-slot="button" data-sidebar-header-action data-variant="ghost" data-size="icon-sm" aria-label="티스토리 관리">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+              </a>
+            </span>
+            <div data-slot="tooltip-content" data-state="closed" data-side="left" role="tooltip">티스토리 관리</div>
+          </div>
         </div>
 
         <!-- ── Content ── -->
