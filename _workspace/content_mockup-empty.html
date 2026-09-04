@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 자동 생성 파일 — 직접 수정하지 말 것. 원본: dashboard-skin/skin.html -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>홈 :: 다잇누</title>
+<meta name="description" content="디자인 · 코드 · AI 아카이브" />
+<meta http-equiv="author" content="daitnu" />
+<meta property="og:title" content="홈 :: 다잇누" />
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+<link rel="stylesheet" as="style" crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+
+<link rel="stylesheet" href="/dashboard-skin/tailwind.css" />
+
+<link rel="stylesheet" href="/dashboard-skin/components/tooltip.css" />
+
+<link rel="stylesheet" href="/dashboard-skin/components/scrollbar.css" />
+
+<link rel="stylesheet" href="/dashboard-skin/components/smooth-scroll.css" />
+
+<link rel="stylesheet" href="/dashboard-skin/components/card.css" />
+<link rel="stylesheet" href="/dashboard-skin/components/sidebar.css" />
+<link rel="stylesheet" href="/dashboard-skin/components/header.css" />
+<link rel="stylesheet" href="/dashboard-skin/components/widgets.css" />
+
+<link rel="stylesheet" href="/dashboard-skin/components/content.css" />
+
+
+<script>
+(function () {
+  try {
+    var m = document.cookie.match(/(?:^|; )sidebar_state=([^;]*)/);
+    if (m && m[1] === 'false') {
+      document.documentElement.setAttribute('data-sidebar-init', 'collapsed');
+    }
+  } catch (e) {}
+  try {
+    var t = localStorage.getItem('theme');
+    var dark = t === 'dark' ||
+      (t !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark', dark);
+  } catch (e) {}
+})();
+</script>
+</head>
+
+<body id="tt-body-index">
+
+
+<div data-slot="sidebar-wrapper">
+
+<script>
+(function () {
+  try {
+    var w = document.currentScript && document.currentScript.parentElement;
+    if (!w) return;
+    var m = document.cookie.match(/(?:^|; )sidebar_state=([^;]*)/);
+    w.setAttribute('data-state', m && m[1] === 'false' ? 'collapsed' : 'expanded');
+  } catch (e) {}
+})();
+</script>
+
+  <aside id="sidebar" data-slot="sidebar" data-variant="sidebar" data-side="left" data-collapsible="">
+    <div data-slot="sidebar-gap"></div>
+    <div data-slot="sidebar-container">
+      <div data-slot="sidebar-inner">
+
+
+        <div data-slot="sidebar-header">
+          <ul data-slot="sidebar-menu">
+            <li data-slot="sidebar-menu-item">
+              <a href="/" data-slot="sidebar-menu-button" data-size="lg" data-tooltip="다잇누">
+                <span data-slot="sidebar-icon-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2h10"/><path d="M5 6h14"/><rect width="18" height="12" x="3" y="10" rx="2"/></svg>
+                </span>
+                <span data-slot="meta">
+                  <span data-slot="title">다잇누</span>
+                  <span data-slot="desc">디자인 · 코드 · AI 아카이브</span>
+                </span>
+              </a>
+
+              <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">다잇누</div>
+
+
+              <a href="/manage" data-slot="sidebar-menu-action" aria-label="티스토리 관리" title="티스토리 관리">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <div data-slot="sidebar-content" data-lenis-prevent>
+
+
+          <div data-slot="sidebar-group" data-hide-on-collapse>
+            <div data-slot="sidebar-group-content">
+              <form data-slot="sidebar-search-form" role="search" action="/search" method="get">
+                <svg data-slot="sidebar-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <label class="sr-only" for="sidebar-search">검색</label>
+                <input id="sidebar-search" name="q" type="search" autocomplete="off"
+                       data-slot="sidebar-input" placeholder="검색" />
+              </form>
+            </div>
+          </div>
+
+
+          <div data-slot="sidebar-separator" role="separator" aria-orientation="horizontal"></div>
+
+
+          <div data-slot="sidebar-group">
+            <div data-slot="sidebar-group-label">아카이브</div>
+            <div data-slot="sidebar-group-content">
+              <ul data-slot="sidebar-menu">
+                <li data-slot="sidebar-menu-item">
+                  <a href="/category/Design" data-slot="sidebar-menu-button" data-tooltip="Design">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2"/></svg>
+                    <span data-slot="label">Design</span>
+                  </a>
+                  <span data-slot="sidebar-menu-badge">0</span>
+
+                  <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Design</div>
+                  <ul data-slot="sidebar-menu-sub">
+                    <li data-slot="sidebar-menu-sub-item">
+                      <a href="/category/Design/Logo" data-slot="sidebar-menu-sub-button"><span>Logo</span></a>
+                    </li>
+                    <li data-slot="sidebar-menu-sub-item">
+                      <a href="/category/Design/Font" data-slot="sidebar-menu-sub-button"><span>Font</span></a>
+                    </li>
+                    <li data-slot="sidebar-menu-sub-item">
+                      <a href="/category/Design/Figma" data-slot="sidebar-menu-sub-button"><span>Figma</span></a>
+                    </li>
+                  </ul>
+                </li>
+                <li data-slot="sidebar-menu-item">
+                  <a href="/category/Ai" data-slot="sidebar-menu-button" data-tooltip="Ai">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                    <span data-slot="label">Ai</span>
+                  </a>
+                  <span data-slot="sidebar-menu-badge">0</span>
+                  <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Ai</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div data-slot="sidebar-footer">
+          <ul data-slot="sidebar-menu">
+            
+            <li data-slot="sidebar-menu-item" data-footer-stat="collapsed">
+              <div data-slot="sidebar-menu-button" data-muted="true" data-tooltip="Today 12 / Total 1,024">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16v-3"/><path d="M12 16V8"/><path d="M17 16v-6"/></svg>
+              </div>
+              <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Today 12 · Total 1,024</div>
+            </li>
+            <li data-slot="sidebar-menu-item" data-footer-stat="expanded">
+              <div data-slot="sidebar-stat-row">
+                <div data-slot="sidebar-stat-card">
+                  <span data-slot="sidebar-stat-label">Today</span>
+                  <span data-slot="sidebar-stat-value">12</span>
+                </div>
+                <div data-slot="sidebar-stat-card">
+                  <span data-slot="sidebar-stat-label">Total</span>
+                  <span data-slot="sidebar-stat-value">1,024</span>
+                </div>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+
+
+
+  <main data-slot="sidebar-inset">
+
+
+    <header data-slot="header">
+      <div data-slot="header-inner">
+
+        <div data-slot="header-start">
+
+          <button type="button" data-slot="sidebar-trigger" aria-label="사이드바 토글">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+            <span class="sr-only">사이드바 토글</span>
+          </button>
+
+
+          <nav data-slot="breadcrumb" aria-label="breadcrumb">
+            <ol data-slot="breadcrumb-list">
+              <li data-slot="breadcrumb-item" data-crumb="blog">
+                <a href="/" data-slot="breadcrumb-link">다잇누</a>
+              </li>
+              <li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </li>
+              <li data-slot="breadcrumb-item">
+                <span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page">홈</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+
+        <div data-slot="header-actions">
+          <button type="button"
+                  data-slot="button"
+                  data-variant="default"
+                  data-size="sm"
+                  class="#subscribe"
+                  data-url="/"
+                  data-device="web_pc"
+                  aria-label="구독하기">
+            구독하기
+          </button>
+
+          <button type="button" data-theme-toggle data-slot="button" data-variant="ghost"
+                  data-size="icon-sm" aria-label="테마 전환" aria-pressed="false">
+            <svg data-theme-when="light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg data-theme-when="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+
+    <div data-slot="content">
+      <div data-slot="content-layout">
+
+        <div data-slot="content-inner" class="scroll-fade-y" data-view="list" data-lenis-prevent data-custom-scrollbar>
+
+          
+
+
+          <div data-slot="content-grid">
+
+
+            <header data-slot="content-title">
+              <div data-slot="content-title-copy">
+                <h1 data-slot="content-title-text">홈</h1>
+                <p data-slot="content-title-desc">디자인 · 코드 · AI 아카이브</p>
+              </div>
+              <div data-slot="content-view-toggle" role="group" aria-label="목록 보기 형식">
+                <button type="button" data-view-mode="list"
+                        data-slot="button" data-variant="outline" data-size="icon-sm"
+                        aria-label="리스트형" aria-pressed="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg>
+                </button>
+                <button type="button" data-view-mode="thumb"
+                        data-slot="button" data-variant="ghost" data-size="icon-sm"
+                        aria-label="썸네일형" aria-pressed="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                </button>
+              </div>
+            </header>
+
+
+            
+              
+                <div data-slot="post-empty">
+                  <p data-slot="post-empty-text">아직 글이 없습니다.</p>
+                </div>
+              
+            
+
+
+            <div data-slot="post-list">
+              
+                
+
+
+                
+              
+            </div>
+
+
+            
+
+          </div>
+
+          
+        </div>
+
+
+
+
+        <aside data-slot="widgets" class="scroll-fade-y" aria-label="블로그 위젯" data-lenis-prevent data-custom-scrollbar>
+
+
+          
+            
+              <section data-slot="card" data-size="sm" data-widget="notice">
+                <div data-slot="card-header"><h2 data-slot="card-title">공지사항</h2></div>
+                <div data-slot="card-content">
+                  <ul data-slot="widget-list">
+                    
+                      <li data-slot="widget-item">
+                        <a href="/notice/1" data-slot="widget-link">
+                          <span data-slot="widget-body">
+                            <span data-slot="widget-title">블로그 운영 원칙과 자료 이용 안내</span>
+                          </span>
+                        </a>
+                      </li>
+                    
+                      <li data-slot="widget-item">
+                        <a href="/notice/2" data-slot="widget-link">
+                          <span data-slot="widget-body">
+                            <span data-slot="widget-title">댓글·방명록 이용 안내</span>
+                          </span>
+                        </a>
+                      </li>
+                    
+                      <li data-slot="widget-item">
+                        <a href="/notice/3" data-slot="widget-link">
+                          <span data-slot="widget-body">
+                            <span data-slot="widget-title">폰트 라이선스 관련 공지</span>
+                          </span>
+                        </a>
+                      </li>
+                    
+                  </ul>
+                </div>
+              </section>
+            
+          
+
+
+          
+            <section data-slot="card" data-size="sm" data-widget="recent">
+              <div data-slot="card-header"><h2 data-slot="card-title">최근 글</h2></div>
+              <div data-slot="card-content">
+                <ul data-slot="widget-list">
+                  
+                    <li data-slot="widget-item">
+                      <a href="/101" data-slot="widget-link">
+                        
+                          <img data-slot="widget-thumb" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2296%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23d4d4d4%22%2F%3E%3C%2Fsvg%3E" alt="" loading="lazy" />
+                        
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">Pretendard 자간·행간을 실제로 어디까지 좁혀야 하나</span>
+                          <span data-slot="widget-meta">
+                            <span>Design</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.01</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/102" data-slot="widget-link">
+                        
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">shadcn/ui 사이드바를 바닐라 CSS로 1:1 포팅하기</span>
+                          <span data-slot="widget-meta">
+                            <span>Design</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.02</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/103" data-slot="widget-link">
+                        
+                          <img data-slot="widget-thumb" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2296%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23d4d4d4%22%2F%3E%3C%2Fsvg%3E" alt="" loading="lazy" />
+                        
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">로고 리디자인 전후 비교</span>
+                          <span data-slot="widget-meta">
+                            <span>Design</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.03</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/104" data-slot="widget-link">
+                        
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">티스토리 스킨에서 Tailwind v4를 쓰는 법</span>
+                          <span data-slot="widget-meta">
+                            <span>Ai</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.04</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/105" data-slot="widget-link">
+                        
+                          <img data-slot="widget-thumb" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2296%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23d4d4d4%22%2F%3E%3C%2Fsvg%3E" alt="" loading="lazy" />
+                        
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">AI 프롬프트 아카이브를 시작하며</span>
+                          <span data-slot="widget-meta">
+                            <span>Ai</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.05</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </section>
+          
+
+
+          
+            <section data-slot="card" data-size="sm" data-widget="popular">
+              <div data-slot="card-header"><h2 data-slot="card-title">인기 글</h2></div>
+              <div data-slot="card-content">
+                <ul data-slot="widget-list">
+                  
+                    <li data-slot="widget-item">
+                      <a href="/201" data-slot="widget-link">
+                        <span data-slot="widget-rank" aria-hidden="true"></span>
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">무료 상업용 한글 폰트 30종 총정리</span>
+                          <span data-slot="widget-meta"><span>Design</span></span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/202" data-slot="widget-link">
+                        <span data-slot="widget-rank" aria-hidden="true"></span>
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">Figma 변수(Variables)로 다크모드 만들기</span>
+                          <span data-slot="widget-meta"><span>Design</span></span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/203" data-slot="widget-link">
+                        <span data-slot="widget-rank" aria-hidden="true"></span>
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">shadcn/ui를 처음 쓸 때 헷갈리는 것들</span>
+                          <span data-slot="widget-meta"><span>Ai</span></span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/204" data-slot="widget-link">
+                        <span data-slot="widget-rank" aria-hidden="true"></span>
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">로고 파일 형식(AI·SVG·PNG) 언제 뭘 쓰나</span>
+                          <span data-slot="widget-meta"><span>Design</span></span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/205" data-slot="widget-link">
+                        <span data-slot="widget-rank" aria-hidden="true"></span>
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">프롬프트를 재사용 가능한 스킬로 만드는 법</span>
+                          <span data-slot="widget-meta"><span>Ai</span></span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </section>
+          
+
+
+          
+            <section data-slot="card" data-size="sm" data-widget="tags">
+              <div data-slot="card-header"><h2 data-slot="card-title">태그</h2></div>
+              <div data-slot="card-content">
+                <div data-slot="widget-tags">
+                  
+                    <a href="/tag/0" data-slot="badge" data-variant="outline" class="cloud5">Pretendard</a>
+                  
+                    <a href="/tag/1" data-slot="badge" data-variant="outline" class="cloud4">shadcn</a>
+                  
+                    <a href="/tag/2" data-slot="badge" data-variant="outline" class="cloud4">Tailwind</a>
+                  
+                    <a href="/tag/3" data-slot="badge" data-variant="outline" class="cloud3">타이포그래피</a>
+                  
+                    <a href="/tag/4" data-slot="badge" data-variant="outline" class="cloud3">로고</a>
+                  
+                    <a href="/tag/5" data-slot="badge" data-variant="outline" class="cloud3">Figma</a>
+                  
+                    <a href="/tag/6" data-slot="badge" data-variant="outline" class="cloud2">프롬프트</a>
+                  
+                    <a href="/tag/7" data-slot="badge" data-variant="outline" class="cloud2">스킨</a>
+                  
+                    <a href="/tag/8" data-slot="badge" data-variant="outline" class="cloud2">CSS</a>
+                  
+                    <a href="/tag/9" data-slot="badge" data-variant="outline" class="cloud1">다크모드</a>
+                  
+                    <a href="/tag/10" data-slot="badge" data-variant="outline" class="cloud1">아카이브</a>
+                  
+                    <a href="/tag/11" data-slot="badge" data-variant="outline" class="cloud1">디자인시스템</a>
+                  
+                </div>
+              </div>
+            </section>
+          
+
+
+          
+            <section data-slot="card" data-size="sm" data-widget="comments">
+              <div data-slot="card-header"><h2 data-slot="card-title">최근 댓글</h2></div>
+              <div data-slot="card-content">
+                <ul data-slot="widget-list">
+                  
+                    <li data-slot="widget-item">
+                      <a href="/101#comment" data-slot="widget-link">
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">이 스킨 정말 깔끔하네요. 혹시 배포 계획도 있으신가요?</span>
+                          <span data-slot="widget-meta">
+                            <span>김디자</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.01 10:00</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/102#comment" data-slot="widget-link">
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">자간 값 참고해서 저도 적용해봤습니다 감사합니다</span>
+                          <span data-slot="widget-meta">
+                            <span>무명</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.02 11:01</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/103#comment" data-slot="widget-link">
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">폰트 CDN 링크가 궁금합니다</span>
+                          <span data-slot="widget-meta">
+                            <span>publisher</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.03 12:02</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/104#comment" data-slot="widget-link">
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">두 번째 이미지가 안 보여요</span>
+                          <span data-slot="widget-meta">
+                            <span>지나가던 개발자</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.04 13:03</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                    <li data-slot="widget-item">
+                      <a href="/105#comment" data-slot="widget-link">
+                        <span data-slot="widget-body">
+                          <span data-slot="widget-title">잘 보고 갑니다</span>
+                          <span data-slot="widget-meta">
+                            <span>이웃</span>
+                            <span data-slot="widget-dot" aria-hidden="true">·</span>
+                            <span>2026.09.05 14:04</span>
+                          </span>
+                        </span>
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </section>
+          
+
+        </aside>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
+<script src="/dashboard-skin/components/tooltip.js"></script>
+<script src="/dashboard-skin/components/sidebar.js"></script>
+<script src="/dashboard-skin/components/header.js"></script>
+<script src="/dashboard-skin/components/content.js"></script>
+<script src="/dashboard-skin/components/smooth-scroll.js"></script>
+</body>
+</html>

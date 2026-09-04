@@ -1,0 +1,52 @@
+===== DARK =====
+
+[1] 페이지 로드 직후(스크롤 이력 없음)
+   {"attr":null,"alpha":0,"raw":"oklab(0 0 0 / 0) rgba(0, 0, 0, 0)","ink":0,"px":null}
+
+[2] 휠 스크롤 시작 직후 — 페이드인 진행도
+   t≈353ms attr=true alpha=0 ink=0
+   t≈686ms attr=true alpha=0.49975 ink=48.11
+   t≈980ms attr=true alpha=0.929756 ink=81.38
+   t≈1255ms attr=true alpha=0.999396 ink=84.97
+   t≈1522ms attr=true alpha=1 ink=84.97
+   t≈1793ms attr=true alpha=1 ink=84.97
+   t≈2058ms attr=true alpha=1 ink=84.97
+
+[4] 연속 휠(0.4s 간격 6회, 총 ~2.4s) 동안 계속 보이는지
+   #0 attr=true alpha=1 ink=84.97
+   #1 attr=true alpha=1 ink=84.97
+   #2 attr=true alpha=1 ink=84.97
+   #3 attr=true alpha=1 ink=84.97
+   #4 attr=true alpha=1 ink=84.97
+   #5 attr=true alpha=1 ink=84.97
+
+[3] 스크롤 정지 후 (idle 3s → 1s 페이드아웃)
+   정지후 t≈779ms attr=true alpha=1 ink=84.97
+   정지후 t≈1775ms attr=true alpha=1 ink=84.97
+   정지후 t≈2803ms attr=true alpha=1 ink=84.97
+   정지후 t≈3175ms attr=null alpha=1 ink=84.97
+   정지후 t≈3477ms attr=null alpha=0.999399 ink=84.97
+   정지후 t≈3764ms attr=null alpha=0.587439 ink=42.99
+   정지후 t≈4051ms attr=null alpha=0.124111 ink=8.19
+   정지후 t≈4336ms attr=null alpha=0.00781489 ink=0
+   정지후 t≈4612ms attr=null alpha=0 ink=0
+   정지후 t≈4889ms attr=null alpha=0 ink=0
+   정지후 t≈5486ms attr=null alpha=0 ink=0
+
+[5] scroll-fade-y(콘텐츠 상하 페이드) 동시 동작
+    {"hasClass":true,"t":"calc(0% + min(12%, 40px))","b":"calc(0% + min(12%, 40px))","maskImage":"linear-gradient(rgba(0, 0, 0, 0) 0px, rgb(0, 0, 0) calc(0% +","scrollTop":560,"scrollHeight":1608,"clientHeight":844}
+   scrollTop=0 → --scroll-fade-t=calc(0% + (0 * min(12%, 40px))) --scroll-fade-b=calc(0% + min(12%, 40px))
+   scrollTop=48 → --scroll-fade-t=calc(0% + (0.5 * min(12%, 40px))) --scroll-fade-b=calc(0% + min(12%, 40px))
+   scrollTop=96 → --scroll-fade-t=calc(0% + min(12%, 40px)) --scroll-fade-b=calc(0% + min(12%, 40px))
+   scrollTop=400 → --scroll-fade-t=calc(0% + min(12%, 40px)) --scroll-fade-b=calc(0% + min(12%, 40px))
+
+[6] Lenis 감속 곡선(위젯 패널) — 휠 1회 후 프레임별 scrollTop
+   위젯 패널 scrollTop: [48,196,297,376,417,450,466,480,488,492,494,496]
+   같은 시간 문서 scrollTop: 0 (0이어야 정상 — 이벤트 스코프 분리)
+
+[8] 가로 오버플로
+    {"scrollWidth":1600,"innerWidth":1600,"bodyScrollWidth":1600} OK
+
+[콘솔 에러] ["Failed to load resource: the server responded with a status of 404 (Not Found)"]
+
+스크린샷 저장: c:/Users/geon_/Desktop/d-ti/_workspace/widgets-scrollbar-fade-shots

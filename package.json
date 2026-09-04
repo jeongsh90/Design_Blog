@@ -5,11 +5,14 @@
     "skin:build": "tailwindcss -i dashboard-skin/src/input.css -o dashboard-skin/tailwind.css --minify",
     "skin:watch": "tailwindcss -i dashboard-skin/src/input.css -o dashboard-skin/tailwind.css --watch",
     "skin:preview": "bun dashboard-skin/tools/make-preview.mjs",
-    "skin:serve": "bun dashboard-skin/tools/serve.mjs"
+    "skin:serve": "bun dashboard-skin/tools/serve.mjs",
+    "skin:verify:content": "bun dashboard-skin/tools/verify-content.mjs"
   },
   "dependencies": {},
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
+    "playwright": "^1.62.1",
+    "puppeteer-core": "^25.10.0",
     "tailwindcss": "^4.3.3"
   }
 }

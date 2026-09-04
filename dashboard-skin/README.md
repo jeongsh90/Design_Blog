@@ -11,22 +11,21 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 
 | 구역 | 상태 |
 |---|---|
-| **Sidebar** | ✅ 완료 (PC 100vw 레이아웃 / 접힘 시 4개 항목 hover 툴팁 / 펼침 시 방문자 수 카드 2장 / 로고 우측 시스템 아이콘→`/manage`) |
+| **Sidebar** | ✅ 완료 (PC 100vw 레이아웃 / 접힘 시 4개 항목 hover 툴팁 / 펼침 시 방문자 수 카드 2장 / 로고 행 안 `sidebar-menu-action` 시스템 아이콘→`/manage`, 행 hover 시 노출) |
 | **Header** | ✅ 완료 (PC / 56px / 홈·태그·방명록·즐겨찾기 `icon-sm` 아이콘 버튼 + hover 툴팁) |
-| **우측 위젯 사이드바** | ✅ 완료 (PC / 320px sticky 패널 / 공지·최근 글·인기 글·태그·최근 댓글 5장, JS 없음) |
-| Content (목록/본문) | ⬜ 미착수 — 다음 구역 |
+| **우측 위젯 사이드바** | ✅ 완료 (PC / 320px sticky 패널 / 공지·최근 글·인기 글·태그·최근 댓글 5장 / shadcn `scroll-fade-y` 상하 스크롤 페이드 / 스크롤 중에만 보이는 커스텀 스크롤바) |
+| **Content (목록/본문)** | ✅ 완료 (PC / 격자 배경 6열×160px 행 / 독립 스크롤 + scroll-fade + 커스텀 스크롤바 / 페이징 Button + content.js 현재페이지 / index·empty·permalink 목업 분리) |
 | 댓글 / 방명록 / 검색결과 / 커버 | ⬜ 미착수 |
-| 반응형(태블릿·모바일) | ⬜ 미착수 — sidebar 스펙 §7-4/§7-5 · header 스펙 §6-4에 방향만 기록됨 |
+| 반응형(태블릿·모바일) | ⬜ 미착수 — sidebar 스펙 §7-4/§7-5 · header 스펙 §6-4 · content 스펙 §15-Q9에 방향만 기록됨 |
 
 **셸 전체 동작(특정 구역 소유 아님):**
 | 기능 | 상태 |
 |---|---|
-| **스무스 스크롤(Lenis + GSAP)** | ✅ 완료 — 문서/좌측 사이드바/우측 위젯 패널 3곳 전부 독립 스무스 스크롤(`components/smooth-scroll.js`). `D:\MyCloud\frontend`가 실사용 중인 조합(Lenis + GSAP ticker 연동)을 그대로 재현(사용자가 "같은 스크롤 들어가있으니 참고해서" 요청). `position:sticky`를 깨뜨리는 GSAP ScrollSmoother는 채택하지 않음(사유는 파일 머리말 참고). 좌측 사이드바·우측 위젯 패널은 `data-lenis-prevent`로 문서 Lenis에게서 분리(D:\MyCloud FilePreview.tsx 선례 — 없으면 중첩 스크롤 시 안쪽 대신 바깥 문서가 움직인다). 문서·좌측 사이드바의 네이티브 스크롤바는 `components/smooth-scroll.css`로 숨김(D:\MyCloud의 `.scrollbar-hidden`과 동일 규칙 — 스크롤 기능 자체가 아니라 시각적 트랙/썸만 제거, 접근성엔 영향 없음). 우측 위젯 패널만 완전 숨김 대신 Design-system `globals.css`와 동일한 얇은 pill형 커스텀 스크롤바(`widgets.css` §8, 라이트/다크 색 분기)로 표시. `prefers-reduced-motion: reduce`에서 스무딩 자동 비활성. |
+| **스무스 스크롤(Lenis + GSAP)** | ✅ 완료 — 문서/좌측 사이드바/우측 위젯 패널 3곳 전부 독립 스무스 스크롤(`components/smooth-scroll.js`). `D:\MyCloud\frontend`가 실사용 중인 조합(Lenis + GSAP ticker 연동)을 그대로 재현(사용자가 "같은 스크롤 들어가있으니 참고해서" 요청). `position:sticky`를 깨뜨리는 GSAP ScrollSmoother는 채택하지 않음(사유는 파일 머리말 참고). 좌측 사이드바·우측 위젯 패널은 `data-lenis-prevent`로 문서 Lenis에게서 분리(D:\MyCloud FilePreview.tsx 선례 — 없으면 중첩 스크롤 시 안쪽 대신 바깥 문서가 움직인다). 문서·좌측 사이드바의 네이티브 스크롤바는 `components/smooth-scroll.css`로 숨김(D:\MyCloud의 `.scrollbar-hidden`과 동일 규칙 — 스크롤 기능 자체가 아니라 시각적 트랙/썸만 제거, 접근성엔 영향 없음). 우측 위젯 패널만 완전 숨김 대신 Design-system `globals.css`와 동일한 얇은 pill형 커스텀 스크롤바(`widgets.css` §8, 라이트/다크 색 분기)로 표시하고, 그 스크롤바는 **스크롤 중에만 보인다**(기본 투명 → 스크롤 시 1초 페이드인 → 활동 정지 3초 후 1초 페이드아웃, `smooth-scroll.js`의 `initScrollbarAutoHide`가 기존 위젯 Lenis 인스턴스와 네이티브 `scroll` 이벤트 양쪽에서 활동을 감지해 `data-scrolling` 토글). `prefers-reduced-motion: reduce`에서 스무딩 자동 비활성(이때 위젯 스크롤바는 상시 노출로 고정). |
 
-`skin.html`의 `[data-slot="content-inner"]` 안쪽(글 목록/본문)은 **다음 구역에서 만들 자리를
-잡아두기 위한 최소 뼈대**다(의도적으로 스타일 없음). 지금 이 상태로 실제 블로그에 적용하면
-사이드바·헤더·우측 위젯만 대시보드고 본문은 브라우저 기본 스타일로 보인다 —
-**지금 단계에서 실사용 배포를 권하지 않는다.**
+`skin.html`의 `[data-slot="content-inner"]`는 Content 구역에서 **격자 배경 글 목록**으로
+채워졌다. 단일 글(`post-single`)은 격자·타이틀을 끄는 최소 대응만 있고, 본문 타이포·댓글·
+TOC는 아직 다음 구역이다. 반응형도 미착수라 **좁은 뷰포트 실사용 배포는 아직 이르다.**
 
 > 임시 슬롯 `skin-scaffold-header` / `-title` / `-body`는 Header 구역에서 **전부 걷어냈다.**
 
@@ -48,10 +47,15 @@ dashboard-skin/
 │   ├── sidebar.js            ← Sidebar 구역 동작 (토글 / 쿠키 / Ctrl+B / 테마 / 활성표시)
 │   ├── header.css            ← Header 구역 + 공용 프리미티브(Button / Breadcrumb)
 │   ├── header.js             ← Header 구역 동작 (브레드크럼 중복 크럼 접기 / 즐겨찾기 토글)
-│   └── widgets.css           ← 우측 위젯 구역 (본문/패널 2단 레이아웃 + 위젯 5종) — JS 없음
+│   ├── scrollbar.css         ← 공용 커스텀 스크롤바 프리미티브 (`[data-custom-scrollbar]`)
+│   ├── widgets.css           ← 우측 위젯 구역 (본문/패널 2단 레이아웃 + 위젯 5종)
+│   ├── content.css           ← Content 구역 (격자 배경 / 글 목록 / 페이징 / permalink 최소)
+│   ├── content.js            ← 페이징 현재 페이지 표시 (`aria-current` + outline)
+│   └── smooth-scroll.js/.css ← Lenis+GSAP 스무스 스크롤 + 스크롤바 자동 숨김
 ├── tools/
-│   ├── make-preview.mjs      ← 티스토리 치환자를 더미로 바꾼 로컬 목업 생성 (+위젯 반복 확장)
-│   └── serve.mjs             ← 로컬 검증용 정적 서버 (쿠키 검증에 필요)
+│   ├── make-preview.mjs      ← 티스토리 치환자 더미 목업 (index/empty/permalink/widgets)
+│   ├── serve.mjs             ← 로컬 검증용 정적 서버 (쿠키 검증에 필요)
+│   └── verify-content.mjs    ← Content 구역 §14-2 체크리스트 자동 검증
 └── README.md
 ```
 
@@ -70,8 +74,9 @@ bun run skin:build          # → dashboard-skin/tailwind.css (minified)
 ## 로컬 검증
 
 ```bash
-bun run skin:preview        # _workspace/sidebar_mockup-preview.html 생성
+bun run skin:preview        # _workspace/*_mockup-*.html 생성
 bun run skin:serve          # http://localhost:4321/
+bun run skin:verify:content # Content §14-2 체크리스트 (서버가 떠 있어야 함)
 ```
 
 - `file://`에서는 Chromium이 `document.cookie`를 막아 **쿠키 복원 검증이 불가능**하다.
@@ -86,10 +91,11 @@ bun run skin:serve          # http://localhost:4321/
 관리자 → 꾸미기 → **스킨 편집 → html 편집** → 우측 **파일 업로드** 탭
 (`https://daitnu.tistory.com/manage/design/skin/edit#/source/file`)
 
-1. **파일 업로드** 탭에서 다음 11개를 올린다.
+1. **파일 업로드** 탭에서 다음 14개를 올린다.
    - `dashboard-skin/tailwind.css`
    - `dashboard-skin/components/tooltip.css`
    - `dashboard-skin/components/tooltip.js`
+   - `dashboard-skin/components/scrollbar.css`
    - `dashboard-skin/components/smooth-scroll.css`
    - `dashboard-skin/components/card.css`
    - `dashboard-skin/components/sidebar.css`
@@ -97,19 +103,24 @@ bun run skin:serve          # http://localhost:4321/
    - `dashboard-skin/components/header.css`
    - `dashboard-skin/components/header.js`
    - `dashboard-skin/components/widgets.css`
+   - `dashboard-skin/components/content.css`
+   - `dashboard-skin/components/content.js`
    - `dashboard-skin/components/smooth-scroll.js`
 2. **HTML** 탭에 `dashboard-skin/skin.html`의 내용을 통째로 붙여넣는다.
 3. 저장 → 미리보기로 확인 후 적용.
 
 > **경로 규칙:** 티스토리는 업로드한 파일을 전부 `./images/` 아래에 평면으로 서빙한다.
 > 그래서 `skin.html`은 `./images/tailwind.css`, `./images/tooltip.css`, `./images/tooltip.js`,
-> `./images/smooth-scroll.css`, `./images/card.css`, `./images/sidebar.css`, `./images/sidebar.js`,
-> `./images/header.css`, `./images/header.js`, `./images/widgets.css`, `./images/smooth-scroll.js`를
-> 참조한다(로컬 저장소에서는 `components/` 하위에 있지만 업로드하면 같은 폴더가 된다).
+> `./images/scrollbar.css`, `./images/smooth-scroll.css`, `./images/card.css`,
+> `./images/sidebar.css`, `./images/sidebar.js`, `./images/header.css`, `./images/header.js`,
+> `./images/widgets.css`, `./images/content.css`, `./images/content.js`,
+> `./images/smooth-scroll.js`를 참조한다(로컬 저장소에서는 `components/` 하위에 있지만
+> 업로드하면 같은 폴더가 된다).
 > `make-preview.mjs`가 이 경로 차이를 목업 생성 시 자동으로 보정한다.
 >
-> **CSS 로드 순서를 지킬 것:** `tailwind → tooltip → smooth-scroll → card → sidebar → header → widgets`.
-> 프리미티브(tooltip/smooth-scroll/card)가 먼저, 그것을 쓰는 구역 스타일이 나중이다.
+> **CSS 로드 순서를 지킬 것:**
+> `tailwind → tooltip → scrollbar → smooth-scroll → card → sidebar → header → widgets → content`.
+> 프리미티브(tooltip/scrollbar/smooth-scroll/card)가 먼저, 그것을 쓰는 구역 스타일이 나중이다.
 >
 > **GSAP·Lenis는 업로드 파일이 아니다.** `smooth-scroll.js`가 의존하는
 > GSAP core·ScrollTrigger·Lenis는 `skin.html`의 HTML 탭 안에 CDN
@@ -119,7 +130,7 @@ bun run skin:serve          # http://localhost:4321/
 > `.../3.15.0/ScrollTrigger.min.js`,
 > `https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js`(D:\MyCloud
 > frontend의 package.json과 동일 버전). 스크립트 순서: `GSAP → ScrollTrigger
-> → Lenis → tooltip.js → sidebar.js → header.js → smooth-scroll.js`(세
+> → Lenis → tooltip.js → sidebar.js → header.js → smooth-scroll.js → content.js`(세
 > 전역이 다른 구역 JS보다 먼저 와야 함).
 
 ### ⚠ 업로드 후 반드시 해야 하는 관리자 설정 — "글은 5개까지만"
@@ -196,6 +207,32 @@ bun run skin:serve          # http://localhost:4321/
 - **패널 자식에 `flex-shrink: 0`이 반드시 있어야 한다**(`widgets.css`) — 없으면 카드가
   눌려 내용이 잘리고 패널 스크롤이 발동하지 않는다(실측으로 확인한 버그).
 - 우측 하단 테마 토글 FAB와 겹치지 않도록 패널 `padding-bottom: 64px`.
+- **스크롤 페이드(2026-09-04)** — 패널에 `class="scroll-fade-y"`가 붙어 있다. shadcn 공식
+  `scroll-fade` 유틸리티(`shadcn@4.20.1` `dist/tailwind.css` 원문 그대로 `src/input.css`에
+  이식)로, JS 없이 `animation-timeline: scroll(self y)` + `mask-image`만으로 위/아래
+  가장자리를 스크롤 진행도에 맞춰 페이드한다(최상단이면 위쪽 페이드 0, 맨 아래면 아래쪽
+  페이드 0). **클래스 이름은 반드시 `skin.html`에 리터럴로 있어야 한다** — Tailwind CLI가
+  `@source` 스캔으로 찾는 방식이라 JS로 붙이면 유틸리티가 생성되지 않는다. 마크업이
+  바뀌면 `bun run skin:build` 재실행 필수.
+- **커스텀 스크롤바는 스크롤 중에만 보인다(2026-09-04)** — 기본은 완전 투명, 스크롤이
+  시작되면 1초에 걸쳐 나타나고, 스크롤 활동이 멈춘 뒤 **3초**가 지나면 1초에 걸쳐
+  사라진다(`widgets.css` §8-1 + `smooth-scroll.js`의 `initScrollbarAutoHide`).
+  상태는 `[data-slot="widgets"][data-scrolling="true"]` 한 개, 3초 타이머는 JS,
+  1초 페이드는 CSS가 담당한다.
+  - **`opacity`가 아니라 `scrollbar-color`의 알파를 transition 한다.** 스크롤바는
+    엘리먼트가 아니라 패널 자신의 장식이라 패널에 `opacity`를 걸 수 없다(콘텐츠까지
+    사라진다). Chromium 151 실측: `scrollbar-width`/`scrollbar-color`가 지정되면
+    표준 경로가 이기고 `::-webkit-scrollbar*` 규칙은 **통째로 무시**되며,
+    `::-webkit-scrollbar-thumb`의 `opacity`는 아예 먹지 않고 `background-color`는
+    transition 없이 즉시 점프한다. 반면 `scrollbar-color`는 Chromium이 색을
+    보간해준다(알파 0→0.28→0.54→0.85→1.0을 실측).
+  - 남겨둔 `::-webkit-scrollbar*` 블록은 `scrollbar-color`를 모르는 구버전 WebKit
+    전용 폴백이다 — 그 엔진에서는 페이드 없이 즉시 나타났다 사라진다.
+  - `prefers-reduced-motion: reduce`에서는 자동 숨김 자체를 끄고 **상시 노출**로
+    고정한다(스무딩용 Lenis도 같은 조건에서 비활성되므로, 그렇게 하지 않으면
+    스크롤바가 영영 안 보일 수 있다).
+  - 이 변경은 순수 CSS/JS라 `tailwind.css` 재빌드가 필요 없다(빌드 결과가 바이트
+    단위로 동일함을 확인).
 
 ### 다크 모드
 

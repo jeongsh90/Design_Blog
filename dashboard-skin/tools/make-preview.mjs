@@ -7,10 +7,20 @@
  *  - 남은 `[##_..._##]` 치환자를 전역 더미 값으로 바꾼다
  *  - `./images/...` (티스토리 업로드 경로)를 로컬 상대경로로 되돌린다
  *
- * 출력 3종:
+ * 출력 5종:
  *  - _workspace/sidebar_mockup-preview.html      전체 프리뷰 (이름은 낡았지만 경로 호환을 위해 유지)
+ *                                                 = 인덱스 페이지 / 글 7개 / 페이지 5개
  *  - _workspace/sidebar_mockup-nojs.html         FOUC 검증용 (sidebar.js 제거 사본)
  *  - _workspace/right-widgets_mockup-empty.html  위젯 0건 폴백 검증용 (RIGHT-WIDGETS SPEC §7-3)
+ *  - _workspace/content_mockup-empty.html        글 0개 → <s_list_empty> 검증용 (CONTENT SPEC §7)
+ *  - _workspace/content_mockup-permalink.html    단일 글 모드 검증용 (CONTENT SPEC §9)
+ *
+ * [2026-09-04 CONTENT SPEC §14-1] ★ index / permalink를 **반드시 따로** 출력해야 한다.
+ *   이 생성기는 원래 `<s_*>` 마커만 벗기는 방식이라, 그대로 두면
+ *   `<s_index_article_rep>`와 `<s_permalink_article_rep>`가 **동시에** 렌더돼
+ *   content.css의 `:has([data-slot="post-single"])` 분기가 항상 permalink로
+ *   판정된다(= 인덱스에서 격자 배경이 사라진다). 실사이트에서는 서버가 둘 중
+ *   하나만 내려주므로, 목업도 그 동작을 흉내내야 검증이 의미를 갖는다.
  *
  * 실행: bun dashboard-skin/tools/make-preview.mjs
  */
@@ -37,11 +47,21 @@ const SUBSTITUTIONS = {
   article_rep_link: "/1",
   article_rep_title: "샘플 글 제목",
   article_rep_category: "Design",
+  article_rep_category_link: "/category/Design",
   article_rep_simple_date: "2026.09.02",
   article_rep_date: "2026. 9. 2. 21:00",
-  article_rep_summary: "본문 영역은 다음 구역(header / content)에서 구현합니다.",
-  article_rep_desc: "본문 영역은 다음 구역(header / content)에서 구현합니다.",
-  paging_rep_link: "#",
+  article_rep_summary: "본문 영역은 다음 구역에서 구현합니다.",
+  article_rep_desc: "본문 영역은 다음 구역에서 구현합니다.",
+  /* [CONTENT SPEC §0-2-c] ★ 이 세 치환자는 href 값이 아니라 **href="…" 속성
+     전체**를 내려준다(공식 예제가 `<a [##_prev_page_##]>`로 쓴다). 목업도
+     반드시 같은 형태여야 skin.html의 교정된 마크업을 실제로 검증할 수 있다. */
+  prev_page: 'href="/"',
+  next_page: 'href="/?page=2"',
+  /* 더 이상 이전/다음이 없을 때 서버가 넣어주는 클래스명. 1페이지 상태를
+     재현하려고 prev만 비활성으로 둔다(next는 빈 문자열 = 활성). */
+  no_more_prev: "no_more_prev",
+  no_more_next: "",
+  paging_rep_link: 'href="/"',
   paging_rep_link_num: "1",
 };
 
@@ -148,6 +168,72 @@ const REPEATS = [
   },
 ];
 
+/* ── [CONTENT SPEC §14-1] 글 목록 / 페이징 반복 블록 ──────────────────
+   실사이트에서는 서버가 글 개수만큼 <s_index_article_rep>를, 페이지 수만큼
+   <s_paging_rep>을 반복해 내려준다. skin.html에는 **정확히 한 번**만 적혀
+   있으므로(복붙하면 실사이트에서 배수로 곱해진다) 로컬 검증용 반복은
+   전적으로 이 생성기의 몫이다.
+   위젯용 REPEATS와 배열을 분리한 이유: right-widgets 목업이 쓰는
+   `{count: 0}` 오버라이드가 글 목록까지 0으로 만들어버리면 안 된다. */
+const POST_COUNT_DEFAULT = 7; // 160px×7 + 타이틀 160 + 페이징 160 = 1440px → 실제로 스크롤이 생긴다
+const POST_REPEATS = [
+  {
+    tag: "s_index_article_rep",
+    count: POST_COUNT_DEFAULT,
+    /* 짝수 인덱스만 썸네일 — 없는 글은 텍스트 전폭 레이아웃 검증용 */
+    conditional: { tag: "s_article_rep_thumbnail", when: (i) => i % 2 === 0 },
+    item: (i) => ({
+      article_rep_link: `/${301 + i}`,
+      article_rep_title: [
+        "Pretendard 자간·행간을 실제로 어디까지 좁혀야 하나",
+        "shadcn/ui 사이드바를 바닐라 CSS로 1:1 포팅하기 — React state를 data 속성으로 옮기는 아주 긴 제목의 경우 두 줄까지만 보이고 말줄임 처리된다",
+        "티스토리 스킨에서 Tailwind v4를 쓰는 법",
+        "로고 리디자인 전후 비교",
+        "AI 프롬프트 아카이브를 시작하며",
+        "Figma 변수(Variables)로 다크모드 만들기",
+        "무료 상업용 한글 폰트 30종 총정리",
+      ][i % 7],
+      article_rep_category: ["Design", "Design", "Design", "Design", "Ai", "Design", "Design"][i % 7],
+      article_rep_category_link: "/category/Design",
+      article_rep_simple_date: `2026.09.0${(i % 7) + 1}`,
+      article_rep_thumbnail_url: THUMB,
+      /* [CONTENT SPEC §6-5] ⚠ [##_article_rep_summary_##]는 본문에서 추출되므로
+         HTML 태그가 섞여 나올 수 있다. content.css의 정규화 규칙(미디어 숨김 +
+         폰트/색 상속)이 실제로 격자 높이를 지켜내는지 보려고, 두 번째 항목에
+         일부러 <strong>/<img>/<p>를 섞어 둔다. */
+      article_rep_summary:
+        i % 7 === 1
+          ? '<p><strong>HTML이 섞인 요약</strong>도 격자 높이를 깨뜨리지 않아야 한다.</p><img src="' +
+            THUMB +
+            '" alt=""><p>두 번째 문단은 2줄 클램프에 걸려 잘린다.</p>'
+          : [
+              "Design-system globals.css의 한글 전용 자간 스케일을 실측해 어디까지가 안전한 범위인지 정리했다.",
+              "",
+              "Tistory에는 빌드 서버가 없다. 로컬에서 정적 CSS로 만들어 업로드하는 파이프라인을 세운 기록.",
+              "브랜드 마크가 라이트 테마에서 검정 네모로 읽히던 문제를 액센트 컬러로 해결한 과정.",
+              "재사용 가능한 스킬 형태로 프롬프트를 관리하기 시작했다.",
+              "Figma 변수로 라이트/다크 두 벌을 한 번에 관리하는 방법.",
+              "라이선스 조건까지 한 번에 확인할 수 있게 표로 정리했다.",
+            ][i % 7],
+    }),
+  },
+];
+
+const PAGING_REPEATS = [
+  {
+    tag: "s_paging_rep",
+    count: 5,
+    item: (i) => ({
+      /* ★ href 값이 아니라 속성 전체다(위 SUBSTITUTIONS 주석 참고).
+         i===0을 `href="/"`로 두는 건 의도적이다 — 목업 서버의 현재 URL이
+         `/`이므로 content.js의 "현재 페이지" 판정(aria-current + outline)이
+         로컬에서 실제로 한 번 발동해 검증 가능해진다. */
+      paging_rep_link: i === 0 ? 'href="/"' : `href="/?page=${i + 1}"`,
+      paging_rep_link_num: String(i + 1),
+    }),
+  },
+];
+
 /**
  * 반복 블록을 count번 복제하면서 항목별 값을 그 자리에 리터럴로 박아 넣는다.
  * 주의 1) 정규식은 반드시 non-greedy — greedy면 최근 글 여는 태그부터
@@ -185,7 +271,10 @@ function expandRepeats(html, repeats, { count: countOverride } = {}) {
 
 const raw = readFileSync(resolve(root, "dashboard-skin", "skin.html"), "utf8");
 
-function render(source, { emptyWidgets = false } = {}) {
+function render(
+  source,
+  { emptyWidgets = false, posts = POST_COUNT_DEFAULT, mode = "index" } = {}
+) {
   /* [실측 버그 수정] HTML 주석 격리.
      skin.html의 주석은 문서화를 위해 `<s_rctps_popular_rep>` 같은 태그 이름을
      문자열 그대로 적고 있다. 그대로 두면 아래 0단계의 반복 확장 정규식이
@@ -211,6 +300,28 @@ function render(source, { emptyWidgets = false } = {}) {
     html = expandRepeats(html, REPEATS);
   }
 
+  // 0-b) [CONTENT SPEC §9, §14-1] 페이지 타입 분기 — 서버가 하는 일과 동일하게
+  //      index / permalink 중 **한쪽 블록을 통째로 제거**한다. 둘 다 남기면
+  //      content.css의 :has([data-slot="post-single"])가 항상 참이 되어
+  //      인덱스 페이지에서도 격자 배경/타이틀영역이 꺼진다.
+  if (mode === "permalink") {
+    html = html.replace(/<s_index_article_rep>[\s\S]*?<\/s_index_article_rep>/g, "");
+    // 단일 글 페이지에는 목록 빈 상태도, 목록 페이징도 없다.
+    html = html.replace(/<s_list>[\s\S]*?<\/s_list>/g, "");
+    html = html.replace(/<s_paging>[\s\S]*?<\/s_paging>/g, "");
+  } else {
+    html = html.replace(/<s_permalink_article_rep>[\s\S]*?<\/s_permalink_article_rep>/g, "");
+    if (posts > 0) {
+      // 글이 있으면 서버는 <s_list_empty>를 내려주지 않는다(빈 상태는 0개일 때만).
+      html = html.replace(/<s_list>[\s\S]*?<\/s_list>/g, "");
+      html = expandRepeats(html, PAGING_REPEATS);
+    } else {
+      // 글이 0개면 페이지도 없다 — 페이징 블록 자체가 안 내려온다.
+      html = html.replace(/<s_paging>[\s\S]*?<\/s_paging>/g, "");
+    }
+    html = expandRepeats(html, POST_REPEATS, { count: posts });
+  }
+
   // 1) 티스토리 조건 블록 마커 제거 (내용은 유지)
   html = html.replace(/<\/?s_[a-z_0-9]+>/g, "");
 
@@ -226,7 +337,7 @@ function render(source, { emptyWidgets = false } = {}) {
   //    같은 파일을 가리켜야 활성 표시 검증이 가능하다.
   html = html
     .replace(
-      /\.\/images\/((?:sidebar|header|tooltip|card|widgets|smooth-scroll)\.(?:css|js))/g,
+      /\.\/images\/((?:sidebar|header|tooltip|card|widgets|content|scrollbar|smooth-scroll)\.(?:css|js))/g,
       "/dashboard-skin/components/$1"
     )
     .replace(/\.\/images\//g, "/dashboard-skin/");
@@ -267,6 +378,33 @@ writeFileSync(
   "utf8"
 );
 
+// [CONTENT SPEC §7] 글 0개 — <s_list_empty>(2행 320px)가 뜨고, 그 아래 남은
+// 캔버스도 content-grid의 min-height 덕에 격자로 가득 차야 한다.
+// (min-height에 퍼센트를 썼다면 0으로 계산돼 격자가 사라졌을 자리다.)
+writeFileSync(
+  resolve(root, "_workspace", "content_mockup-empty.html"),
+  render(raw, { posts: 0 }),
+  "utf8"
+);
+
+// [CONTENT SPEC §9] 단일 글 모드 — 격자 배경과 타이틀영역이 :has()로 꺼지는지.
+writeFileSync(
+  resolve(root, "_workspace", "content_mockup-permalink.html"),
+  render(raw, {
+    mode: "permalink",
+    // 긴 본문이 content-inner 안에서 스크롤되는지 보려면 길이가 필요하다.
+  }).replace(
+    "본문 영역은 다음 구역에서 구현합니다.",
+    Array.from(
+      { length: 14 },
+      (_, i) =>
+        `<p>${i + 1}. 단일 글 본문 스타일 전체(인용/코드/표/댓글)는 다음 구역의 몫이다. 이 목업은 격자 배경과 타이틀영역이 :has() 분기로 꺼지는지, 그리고 긴 본문이 문서가 아니라 content-inner 안에서 스크롤되는지만 확인하기 위한 것이다.</p>`
+    ).join("\n")
+  ),
+  "utf8"
+);
+
 console.log(
-  "wrote _workspace/sidebar_mockup-preview.html, _workspace/sidebar_mockup-nojs.html, _workspace/right-widgets_mockup-empty.html"
+  "wrote _workspace/sidebar_mockup-preview.html, sidebar_mockup-nojs.html, " +
+    "right-widgets_mockup-empty.html, content_mockup-empty.html, content_mockup-permalink.html"
 );

@@ -1,0 +1,352 @@
+{
+  "passed": 27,
+  "failed": 0,
+  "total": 27,
+  "results": [
+    {
+      "id": 1,
+      "name": "title bottom == first grid line",
+      "pass": true,
+      "titleBottom": 240,
+      "expected": 240
+    },
+    {
+      "id": 2,
+      "name": "all post-item heights == 160",
+      "pass": true,
+      "heights": [
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160
+      ],
+      "count": 7
+    },
+    {
+      "id": 2.1,
+      "name": "content-title height == 160",
+      "pass": true,
+      "titleHeight": 160
+    },
+    {
+      "id": 3,
+      "name": "card tops accumulate with 0 error",
+      "pass": true,
+      "tops": [
+        240,
+        400,
+        560,
+        720,
+        880,
+        1040,
+        1200
+      ],
+      "expected": [
+        240,
+        400,
+        560,
+        720,
+        880,
+        1040,
+        1200
+      ]
+    },
+    {
+      "id": 4,
+      "name": "title/summary column alignment",
+      "pass": true,
+      "postTitleLeft": 280,
+      "summaryLeft": 280,
+      "summaryRight": 817.328125,
+      "gridLeft": 280,
+      "expectedSummaryRight": 817.3333333333334
+    },
+    {
+      "id": 6,
+      "name": "dot marker darker at intersection",
+      "pass": true,
+      "atDot": {
+        "r": 189,
+        "g": 189,
+        "b": 189,
+        "luma": 189
+      },
+      "atMid": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "luma": 254.99999999999997
+      },
+      "coords": {
+        "x": 416,
+        "y": 240,
+        "midX": 348,
+        "midY": 160,
+        "cellW": 136,
+        "row": 160,
+        "cols": 6
+      }
+    },
+    {
+      "id": 6.1,
+      "name": "odd-column warning documented",
+      "pass": true,
+      "note": "cols=7 shifts dots off intersections (spec §4-3-a)"
+    },
+    {
+      "id": 8,
+      "name": "content-inner max-height + scrollable",
+      "pass": true,
+      "maxHeight": "844px",
+      "expectedMaxPx": 844,
+      "scrollH": 1488,
+      "clientH": 844
+    },
+    {
+      "id": 9,
+      "name": "wheel scrolls content-inner only",
+      "pass": true,
+      "beforeWheel": {
+        "doc": 0,
+        "inner": 0
+      },
+      "afterWheel": {
+        "doc": 0,
+        "inner": 598
+      }
+    },
+    {
+      "id": 5,
+      "name": "alignment holds after scroll",
+      "pass": true,
+      "titleBottom": -358,
+      "row": 160,
+      "tops": [
+        -358,
+        -198,
+        -38,
+        122,
+        282,
+        442,
+        602
+      ],
+      "heights": [
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160
+      ]
+    },
+    {
+      "id": 10,
+      "name": "widgets wheel scrolls widgets only",
+      "pass": true,
+      "beforeW": {
+        "doc": 0,
+        "widgets": 0,
+        "inner": 599
+      },
+      "afterW": {
+        "doc": 0,
+        "widgets": 394,
+        "inner": 600
+      }
+    },
+    {
+      "id": 12,
+      "name": "scroll-fade-t tracks 0/48/96",
+      "pass": true,
+      "f0": {
+        "scrollTop": 0,
+        "fadeT": "calc(0% + (0 * min(12%, 40px)))",
+        "coeff": 0
+      },
+      "f48": {
+        "scrollTop": 48,
+        "fadeT": "calc(0% + (0.5 * min(12%, 40px)))",
+        "coeff": 0.5
+      },
+      "f96": {
+        "scrollTop": 96,
+        "fadeT": "calc(0% + min(12%, 40px))",
+        "coeff": 1
+      }
+    },
+    {
+      "id": 11,
+      "name": "scrollbar auto-hide on content-inner",
+      "pass": true,
+      "sbBefore": {
+        "scrolling": null,
+        "opacity": "0%"
+      },
+      "during": "true",
+      "afterIdle": {
+        "scrolling": null,
+        "opacity": "0%"
+      }
+    },
+    {
+      "id": 13,
+      "name": "scroll-fade vs thumb at low ratio (recorded)",
+      "pass": true,
+      "note": "ratio=0.107; luma@thumb≈255.0",
+      "skipped": false,
+      "ratio": 0.10699797160243407,
+      "sampleX": 1116,
+      "sampleY": 76,
+      "clientH": 844,
+      "scrollH": 7888
+    },
+    {
+      "id": 14,
+      "name": "§2-3 sticky decision",
+      "pass": true,
+      "needsSticky": false,
+      "docScrollH": 900,
+      "docClientH": 900,
+      "actualPosition": "static",
+      "note": "doc does NOT scroll → sticky correctly omitted"
+    },
+    {
+      "id": 15,
+      "name": "header remains sticky on doc scroll",
+      "pass": true,
+      "position": "sticky",
+      "top": 0
+    },
+    {
+      "id": 16,
+      "name": "widgets sticky top:56",
+      "pass": true,
+      "position": "sticky",
+      "top": "56px"
+    },
+    {
+      "id": 17,
+      "name": "Ctrl+B collapse keeps grid alignment",
+      "pass": true,
+      "state": "collapsed",
+      "heights": [
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160
+      ],
+      "topsOk": true
+    },
+    {
+      "id": 18,
+      "name": "no horizontal overflow",
+      "pass": true,
+      "scrollW": 1440,
+      "innerW": 1440
+    },
+    {
+      "id": 19,
+      "name": "FAB visible bottom-right",
+      "pass": true,
+      "bottom": 24,
+      "right": 24,
+      "display": "flex"
+    },
+    {
+      "id": 21,
+      "name": "card hover title color + ::before",
+      "pass": true,
+      "beforeHover": {
+        "titleColor": "oklab(0.277762 0.0000126958 0.00000554323)",
+        "beforeOpacity": "1"
+      },
+      "afterHover": {
+        "titleColor": "rgb(0, 0, 0)",
+        "beforeOpacity": "1",
+        "beforeWidth": "830px"
+      }
+    },
+    {
+      "id": 22,
+      "name": "category link present + stretch after",
+      "pass": true,
+      "catHref": "/category/Design",
+      "titleHref": "/301",
+      "catPosition": "relative",
+      "catZ": "2",
+      "stretchPosition": "absolute"
+    },
+    {
+      "id": 23,
+      "name": "focus-within ring on post-item",
+      "pass": true,
+      "outline": "rgb(161, 161, 161) solid 2px",
+      "boxShadow": "oklab(0 0 0 / 0.16) 0px -1px 0px 0px inset"
+    },
+    {
+      "id": 20,
+      "name": "light/dark color tokens compute",
+      "pass": true,
+      "light": {
+        "line": "rgb(229, 229, 229)",
+        "divider": "oklab(0 0 0 / 0.16)",
+        "titleColor": "rgb(0, 0, 0)",
+        "itemTitleColor": "oklab(0.277762 0.0000126958 0.00000554323)"
+      },
+      "dark": {
+        "isDark": true,
+        "line": "rgba(255, 255, 255, 0.1)",
+        "divider": "oklab(0.985098 0.0000447631 0.0000197291 / 0.16)",
+        "title": "rgb(250, 250, 250)"
+      }
+    },
+    {
+      "id": 7,
+      "name": "empty mockup fills canvas (min-height)",
+      "pass": true,
+      "items": 0,
+      "single": 0,
+      "emptyHeight": 320,
+      "gridHeight": 796,
+      "minHeight": "796px",
+      "fills": true
+    },
+    {
+      "id": 9.1,
+      "name": "permalink mode hides grid / shows single",
+      "pass": true,
+      "hasSingle": true,
+      "hasItems": 0,
+      "bgNoneOrEmpty": true
+    },
+    {
+      "id": 24,
+      "name": "console errors 0",
+      "pass": true,
+      "errors": [],
+      "all": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    }
+  ],
+  "indexGeomSummary": {
+    "row": 160,
+    "cols": 6,
+    "itemCount": 7,
+    "position": "static",
+    "needsSticky": false,
+    "colors": {
+      "line": "rgb(229, 229, 229)",
+      "divider": "oklab(0 0 0 / 0.16)",
+      "titleColor": "rgb(0, 0, 0)",
+      "itemTitleColor": "oklab(0.277762 0.0000126958 0.00000554323)"
+    }
+  }
+}

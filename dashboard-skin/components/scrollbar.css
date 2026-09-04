@@ -1,0 +1,52 @@
+[data-custom-scrollbar] {
+  --scrollbar-thumb: #d4d4d4;
+  --scrollbar-track: transparent;
+
+  --scrollbar-thumb-opacity: 0%;
+
+  --scrollbar-thumb-color: color-mix(
+    in srgb,
+    var(--scrollbar-thumb) var(--scrollbar-thumb-opacity),
+    transparent
+  );
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track);
+
+  transition-property: scrollbar-color;
+  transition-duration: .5s;
+  transition-timing-function: var(--default-transition-timing-function);
+}
+.dark [data-custom-scrollbar] {
+  --scrollbar-thumb: #3f3f46;
+}
+
+[data-custom-scrollbar][data-scrolling="true"] {
+  --scrollbar-thumb-opacity: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-custom-scrollbar],
+  [data-custom-scrollbar][data-scrolling="true"] {
+    --scrollbar-thumb-opacity: 100%;
+    transition: none;
+  }
+}
+
+[data-custom-scrollbar]::-webkit-scrollbar {
+  width: 6px;
+}
+[data-custom-scrollbar]::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+[data-custom-scrollbar]::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 9999px;
+}
+[data-custom-scrollbar]::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(
+    in srgb,
+    color-mix(in oklab, var(--scrollbar-thumb) 80%, #000) var(--scrollbar-thumb-opacity),
+    transparent
+  );
+}

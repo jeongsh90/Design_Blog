@@ -1,22 +1,10 @@
-/* ════════════════════════════════════════════════════════════════
-   Sidebar — shadcn/ui 바닐라 포트
-   ────────────────────────────────────────────────────────────────
-   기반(baseline): D:\MyCloud\2026포트폴리오\Design-system\css\components.css
-                   368–789행 (`[data-slot="sidebar-*"]` 포트)
-                   → 새로 짜지 않고 그대로 가져와 스펙대로 수정/확장했다.
-   스펙:           _workspace/sidebar_designer-spec.md
-   변경분은 전부 `[SPEC …]` 주석으로 표시했다.
-   ════════════════════════════════════════════════════════════════ */
-
-/* ── Wrapper ── */
 [data-slot="sidebar-wrapper"] {
-  --sidebar-width: calc(var(--spacing) * 64);        /* 16rem / 256px */
-  --sidebar-width-icon: calc(var(--spacing) * 12);   /* 3rem  / 48px  */
-  /* [SPEC §7-4] 모바일 Sheet용. 이번 구역에서는 선언만 하고 쓰지 않는다. */
-  --sidebar-width-mobile: calc(var(--spacing) * 72); /* 18rem / 288px */
+  --sidebar-width: calc(var(--spacing) * 64);
+  --sidebar-width-icon: calc(var(--spacing) * 12);
 
-  /* [SPEC §4-4 / 요구사항 "100vw"] 데모의 .app-shell이 하던 레이아웃 역할을
-     wrapper 자신이 맡는다. */
+  --sidebar-width-mobile: calc(var(--spacing) * 72);
+
+
   position: relative;
   display: flex;
   width: 100%;
@@ -56,17 +44,13 @@
     width: var(--sidebar-width-icon);
   }
 
-  /* [SPEC §7-2 보강] wrapper 레벨 상태만으로도 폭이 확정되게 한다.
-     skin.html은 wrapper 여는 태그 직후의 동기 스크립트로 wrapper에만
-     data-state를 심는다(그 시점에 자식 <aside>는 아직 파싱 전이다).
-     이 규칙이 없으면 첫 페인트에서 폭이 튄다. 위의 원본 규칙은 그대로 둔다. */
+
   [data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-gap"],
   [data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-container"] {
     width: var(--sidebar-width-icon);
   }
 
-  /* [SPEC §7-2] <head> 인라인 스크립트가 심는 초기 힌트.
-     JS가 실제 data-state를 세팅하는 순간 :not([data-state])가 풀려 정상 규칙이 이긴다. */
+
   html[data-sidebar-init="collapsed"] [data-slot="sidebar-wrapper"]:not([data-state]) [data-slot="sidebar-gap"],
   html[data-sidebar-init="collapsed"] [data-slot="sidebar-wrapper"]:not([data-state]) [data-slot="sidebar-container"] {
     width: var(--sidebar-width-icon);
@@ -81,8 +65,7 @@
     background-color: var(--color-sidebar);
   }
 
-  /* [SPEC §4-3(1)] 전환 애니메이션 — 포트에 transition이 하나도 없어 접힘이 튄다.
-     shadcn 원본: transition-[width,left,right] duration-200 ease-linear */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-gap"],
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-container"] {
     transition-property: width, left, right;
@@ -106,7 +89,7 @@
     }
   }
 
-  /* ── Header / Footer ── */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-header"],
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-footer"] {
     display: flex;
@@ -117,44 +100,15 @@
   }
 
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-header"] {
-    height: calc(var(--spacing) * 14);   /* 56px — [SPEC §8-Q3] 다음 구역 header와 동일 */
+    height: calc(var(--spacing) * 14);
     padding-block: 0;
     justify-content: center;
-    /* [2026-09-03 요청] "로고 우측에 시스템아이콘 추가" — header만 footer와
-       달리 가로 배치로 바꾼다(footer는 위 공용 규칙의 column 그대로 유지).
-       브랜드 링크(<ul>)가 남는 폭을 전부 쓰고, 시스템 버튼은 오른쪽 끝에
-       고정폭으로 붙는다 — header-actions(header.css)와 같은 원리. */
-    flex-direction: row;
-    align-items: center;
+
   }
 
-  /* <ul data-slot="sidebar-menu">가 이미 width:100%/min-width:0이라
-     row 안에서도 flex-shrink:1(기본값)로 시스템 버튼 자리만큼 자연스럽게
-     줄어든다 — 별도 flex:1 지정 불필요(실측 확인). */
 
-  /* [2026-09-03 요청] 로고 우측 "시스템 아이콘" — 티스토리 관리 페이지로
-     바로 연결. 사용자 확인 결과: 실제 계정/블로그 목록 콤보박스는 스킨에
-     직접 만들지 않기로 함(스킨엔 "로그인한 소유자에게만" 조건부 표시할
-     방법이 없어 — Tistory 공식 문서 실측 확인 — 만들면 방문자 전원에게
-     개인정보가 노출된다. 그 UI는 티스토리가 로그인 시 자동으로 얹는
-     관리 메뉴바가 이미 담당한다). 대신 `/manage`(루트 상대경로 — 이
-     스킨이 다른 티스토리 블로그에 재사용돼도 항상 그 블로그 자신의
-     관리 페이지를 가리킨다)로 바로 연결해, 실제 소유자가 로그인한
-     상태로 클릭하면 그 이후 계정 전환 등은 티스토리 자체 UI가 이어받는다. */
-  [data-sidebar-header-action] {
-    flex-shrink: 0;
-  }
 
-  [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-sidebar-header-action] {
-    display: none; /* 접힘(48px 아이콘 레일)에는 자리가 없다 — 브랜드 아이콘만 남긴다 */
-  }
 
-  /* ── Footer 방문자 수 — 접힘/펼침 두 표현 전환 (2026-09-03 요청) ──
-     "카드형태로 1행으로 나열, 접힌상태에서는 현재상태 유지" — skin.html에 두 개의
-     <li>를 나란히 두고(하나는 기존 아이콘+tooltip, 하나는 아래 카드 2장) 이 두
-     규칙으로 정확히 하나만 보이게 한다(shadcn 원본에 없는 이 프로젝트 전용 패턴 —
-     sidebar-menu-button의 `tooltip` prop이 라벨만 접었다 폈다 하는 것과 달리,
-     여기는 표현 자체가 아예 다른 마크업이라 서로 완전히 다른 두 요소를 토글해야 함). */
   [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-footer"] [data-footer-stat="expanded"] {
     display: none;
   }
@@ -163,11 +117,7 @@
     display: none;
   }
 
-  /* ── Footer 방문자 수 카드 (펼침 전용) ──
-     Design-system Card(`components.css` 6278행, bg-card/radius-xl/링 섀도)를
-     그대로 쓰기엔 이 자리가 좁아(사이드바 16rem − 패딩) 과하다 — 배경·보더·radius
-     "언어"만 가져오되 sidebar 전용 토큰(--color-sidebar-accent/-border)으로
-     축소 재구성한 미니 통계 카드다. */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-stat-row"] {
     display: flex;
     gap: calc(var(--spacing) * 2);
@@ -205,7 +155,7 @@
     text-overflow: ellipsis;
   }
 
-  /* ── Content ── */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-content"] {
     display: flex;
     flex: 1;
@@ -220,7 +170,7 @@
     overflow: hidden;
   }
 
-  /* ── Group ── */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-group"] {
     position: relative;
     display: flex;
@@ -261,7 +211,7 @@
     display: none;
   }
 
-  /* ── Menu ── */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu"] {
     display: flex;
     flex-direction: column;
@@ -364,12 +314,15 @@
     height: calc(var(--spacing) * 3.5);
   }
 
-  /* [SPEC §3-3(c)] hover는 배경만 바꾼다 — 원본에 있던
-     `color: var(--color-sidebar-accent-foreground)` 선언을 의도적으로 제거했다.
-     accent-foreground가 파랑이 된 이상 이 선언을 두면 hover와 active가 동일해진다. */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"]:hover,
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-state="open"] {
     background-color: var(--color-sidebar-accent);
+  }
+
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-header"] [data-slot="sidebar-menu-button"]:not([data-active="true"]):hover {
+    background-color: transparent;
   }
 
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"]:focus-visible {
@@ -387,8 +340,7 @@
     opacity: 0.7;
   }
 
-  /* 상호작용하지 않는 표시용 행(예: 방문자 수)은 포인터 커서를 주지 않는다.
-     hover 배경도 뜨지 않게 한다 — 누를 수 있는 것처럼 보이면 안 된다. */
+
   [data-slot="sidebar-wrapper"] div[data-slot="sidebar-menu-button"] {
     cursor: default;
   }
@@ -397,7 +349,7 @@
     background-color: transparent;
   }
 
-  /* ── 접힘(icon) 상태 ── */
+
   [data-slot="sidebar-wrapper"][data-state="collapsed"] {
     --sidebar-icon-size: calc(var(--spacing) * 8);
   }
@@ -461,7 +413,7 @@
     border-radius: var(--radius-lg);
   }
 
-  /* 헤더 로고 버튼의 좌우 패딩을 제거해 접힘/펼침 모두 icon-box 위치를 header padding(8px) 기준으로 고정 */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-header"] [data-slot="sidebar-menu-button"][data-size="lg"] {
     padding-inline: 0;
   }
@@ -476,7 +428,7 @@
     display: none;
   }
 
-  /* ── Team / Avatar icon box ── */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-icon-box"] {
     display: flex;
     flex-shrink: 0;
@@ -508,7 +460,7 @@
     color: var(--color-sidebar-accent-foreground);
   }
 
-  /* ── Sub menu ── */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub"] {
     display: flex;
     flex-direction: column;
@@ -538,7 +490,7 @@
     text-decoration: none;
   }
 
-  /* [SPEC §3-3(c)] menu-button과 같은 이유로 hover에서는 색을 바꾸지 않는다. */
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-sub-button"]:hover {
     background-color: var(--color-sidebar-accent);
   }
@@ -560,10 +512,8 @@
     text-overflow: ellipsis;
   }
 
-  /* ── Menu action ── */
-  /* 접힘에서는 action 자체가 display:none이므로 예약 패딩도 주지 않는다.
-     (:has 선택자는 특이성이 높아 접힘의 `padding: 0`을 이기므로 여기서 제외해야 한다 —
-      badge 쪽에서 실제로 아이콘이 왼쪽으로 밀리는 버그가 났던 것과 같은 구조다.) */
+
+
   [data-slot="sidebar-wrapper"]:not([data-state="collapsed"]) [data-slot="sidebar-menu-item"]:has([data-slot="sidebar-menu-action"]) [data-slot="sidebar-menu-button"] {
     padding-right: calc(var(--spacing) * 8);
   }
@@ -586,9 +536,27 @@
     opacity: 0;
   }
 
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-size="sm"] ~ [data-slot="sidebar-menu-action"] {
+    top: calc(var(--spacing) * 1);
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-button"][data-size="lg"] ~ [data-slot="sidebar-menu-action"] {
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+
+
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-item"]:hover [data-slot="sidebar-menu-action"],
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-item"]:focus-within [data-slot="sidebar-menu-action"],
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-action"][data-state="open"] {
     opacity: 1;
+  }
+
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-action"]:focus-visible {
+    outline: calc(var(--spacing) * 0.5) solid var(--color-sidebar-ring);
+    outline-offset: calc(var(--spacing) * 0.5);
   }
 
   [data-slot="sidebar-wrapper"] [data-slot="sidebar-menu-action"]:hover {
@@ -605,17 +573,12 @@
     display: none;
   }
 
-/* ════════════════════════════════════════════════════════════════
-   여기서부터는 Design-system 포트에 없던 슬롯 — 스펙 §4-3 신규 작성분
-   ════════════════════════════════════════════════════════════════ */
 
-/* ── [SPEC §4-3(6)] sidebar-menu-badge ── */
-/* 펼침에서만 배지 자리를 예약한다.
-   접힘에서는 배지가 display:none인데도 이 규칙이 살아 있으면(`:has` + 자식 결합자라
-   접힘의 `padding: 0`보다 특이성이 높다) 오른쪽 패딩 28px가 남아 아이콘이 왼쪽으로
-   밀리고 잘렸다 — 배지가 있는 Design/Ai만 헤더·푸터 아이콘과 중심이 어긋났던 원인. */
+
+
+
 [data-slot="sidebar-wrapper"]:not([data-state="collapsed"]) [data-slot="sidebar-menu-item"]:has(> [data-slot="sidebar-menu-badge"]) > [data-slot="sidebar-menu-button"] {
-  /* 배지 폭(20) + 여백 — 스펙 §4-1의 라벨 가용폭 계산과 동일한 예약 */
+
   padding-right: calc(var(--spacing) * 7);
 }
 
@@ -633,8 +596,7 @@
   font: var(--font-weight-medium) var(--text-xs)/1 var(--font-sans);
   letter-spacing: var(--tracking-xs);
   font-variant-numeric: tabular-nums;
-  /* [SPEC §5-2] 별도 회색 토큰 대신 전경색 + opacity로 구성해
-     라이트/다크 양쪽에서 한 줄로 동작하고, 활성 시 자연스럽게 살아난다. */
+
   color: var(--color-sidebar-foreground);
   opacity: 0.6;
   pointer-events: none;
@@ -650,10 +612,7 @@
   display: none;
 }
 
-/* ── sidebar-group-action ──
-   스펙 §0 누락표에는 없지만 shadcn 원본에는 있는 슬롯이다(그룹 우상단 액션).
-   다음 구역에서 바로 쓸 수 있도록 menu-action과 같은 규격으로 스타일만 만들어 둔다.
-   이번 구역의 마크업에서는 사용하지 않는다. */
+
 [data-slot="sidebar-wrapper"] [data-slot="sidebar-group-action"] {
   position: absolute;
   top: calc(var(--spacing) * 3.5);
@@ -685,7 +644,7 @@
   display: none;
 }
 
-/* ── [SPEC §4-3(7)] sidebar-separator ── */
+
 [data-slot="sidebar-wrapper"] [data-slot="sidebar-separator"] {
   display: block;
   flex-shrink: 0;
@@ -695,7 +654,7 @@
   background-color: var(--color-sidebar-border);
 }
 
-/* ── [SPEC §4-3(5)] sidebar-input (검색) ── */
+
 [data-slot="sidebar-wrapper"] [data-slot="sidebar-search-form"] {
   position: relative;
   display: block;
@@ -717,7 +676,7 @@
   display: flex;
   width: 100%;
   min-width: 0;
-  /* [SPEC §4-3(5)] 기본 input은 36px이지만 메뉴 버튼(32px)과 리듬을 맞춘다. */
+
   height: calc(var(--spacing) * 8);
   padding-block: calc(var(--spacing) * 1);
   padding-left: calc(var(--spacing) * 8);
@@ -754,13 +713,13 @@
   display: none;
 }
 
-/* ── [SPEC §4-3(2)] sidebar-trigger — ghost 버튼 기반 ── */
+
 [data-slot="sidebar-trigger"] {
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: calc(var(--spacing) * 7);   /* 28px */
+  width: calc(var(--spacing) * 7);
   height: calc(var(--spacing) * 7);
   padding: 0;
   border: 1px solid transparent;
@@ -787,14 +746,9 @@
   outline-offset: calc(var(--spacing) * 0.5);
 }
 
-/* ── [SPEC §4-3(3)] sidebar-rail — 삭제 ──
-   사용자 요청("사이드메뉴 오른쪽 모서리 클릭 시 접히는 기능 제거")으로
-   마크업에서 rail 버튼을 뺐다. 16px 히트영역 / cursor:w-resize·e-resize /
-   hover 시 세로선 강조(::after) 규칙 전부 죽은 코드라 함께 제거한다.
-   사이드바 우측 경계선 자체는 sidebar-container의 border-right가 계속 그린다
-   (장식용이며 클릭해도 아무 일도 일어나지 않는다). */
 
-/* ── [SPEC §4-3(4)] sidebar-inset — 본문 영역(다음 구역에서 확장) ── */
+
+
 [data-slot="sidebar-inset"] {
   position: relative;
   display: flex;
@@ -804,26 +758,16 @@
   background-color: var(--color-background);
 }
 
-/* ── [SPEC §7-6, 2026-09-03 Tooltip 프리미티브로 교체] 접힘 상태 전용 툴팁 ──
-   Radix Portal이 없어 툴팁이 sidebar-container의 overflow:hidden에 잘린다.
-   → 접힘 상태에서만 해당 조상들의 overflow를 열어준다(펼침 상태는 그대로).
-   (기존엔 sidebar-menu-button 자신도 overflow:visible로 열었었다 — 그때는
-   툴팁이 버튼의 ::after 가상요소였기 때문. 지금은 tooltip-content가 버튼이
-   아니라 sidebar-menu-item의 형제 자식이라(skin.html, 아래 [data-tooltip]
-   주석·tooltip.js 참고) 버튼 자신의 overflow는 더 이상 관련 없다.) */
+
 [data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-container"],
 [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-inner"],
 [data-slot="sidebar-wrapper"][data-state="collapsed"] [data-slot="sidebar-content"] {
   overflow: visible;
 }
 
-/* [data-tooltip] 자체는 CSS에서 더 이상 쓰이지 않는다 — tooltip.js가 트리거를
-   찾는 마커 속성일 뿐이다(실제 텍스트/포지셔닝은 tooltip.css의 Tooltip
-   프리미티브 + skin.html에 형제로 둔 [data-slot="tooltip-content"]가 담당).
-   접힘 여부 판정도 CSS가 아니라 tooltip.js의 bindTooltip({onlyWhenCollapsed:
-   true})가 sidebar-wrapper의 data-state를 읽어 처리한다. */
 
-/* ── 테마 토글: 아이콘·라벨 전환을 JS 없이 CSS로만 (FOUC 없음) ── */
+
+
 html:not(.dark) [data-theme-when="dark"] {
   display: none;
 }
@@ -832,7 +776,7 @@ html.dark [data-theme-when="light"] {
   display: none;
 }
 
-/* ── 스크린리더 전용 텍스트 (shadcn sr-only 대응) ── */
+
 [data-slot="sidebar-wrapper"] .sr-only,
 [data-slot="sidebar-trigger"] .sr-only {
   position: absolute;
