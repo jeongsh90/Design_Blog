@@ -403,13 +403,268 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
   letter-spacing: var(--tracking-xs);
   color: var(--color-muted-foreground);
 }
+/* ══════════════════════════════════════════════════════════════
+   §10. 단일 글 본문 프로즈 (permalink)
+   ──────────────────────────────────────────────────────────────
+   [##_article_rep_desc_##]는 티스토리 에디터가 만든 임의 HTML이
+   통째로 들어오는 자리다. 우리가 그 안쪽 태그에 data-slot을 붙일
+   방법이 없으므로 **자손 태그 셀렉터**로만 스타일링한다.
+   자식 결합자(>)는 쓰지 않는다 — 티스토리가 본문을 한 겹 더 감싸
+   내려줄 수 있어(확인 필요 Q8) 직계 자식 가정은 위험하다.
+
+   ★ Tailwind Preflight가 margin/padding/list-style/헤딩 크기·굵기를
+     전부 리셋해 둔 상태다. 아래 규칙은 "장식"이 아니라 "복원"이다.
+   ══════════════════════════════════════════════════════════════ */
+
 [data-slot="post-single-body"] {
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
   font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
   line-height: var(--leading-relaxed);
   letter-spacing: var(--tracking-base);
   word-break: keep-all;
+  /* keep-all은 어절을 끊지 않으므로, 공백 없는 긴 URL 한 줄이 본문 폭을
+     밀어낼 수 있다. 넘칠 때만 발동하는 안전장치. */
+  overflow-wrap: break-word;
 }
-[data-slot="post-single-body"] img {
+
+/* ── §10-1. 수직 리듬 ──────────────────────────────────────────
+   모든 블록의 아래 여백은 0으로 두고 위 여백만 준다 —
+   인접 형제 마진 상쇄를 계산에서 아예 제거하기 위해서다. */
+[data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6,p,ul,ol,dl,blockquote,pre,figure,table,hr,img,iframe,video) {
+  margin-bottom: 0;
+}
+
+[data-slot="post-single-body"] :is(p,ul,ol,dl)                        { margin-top: calc(var(--spacing) * 4);  } /* 16px */
+[data-slot="post-single-body"] :is(blockquote,pre,figure,img,iframe,video),
+[data-slot="post-single-body"] [data-slot="prose-table-wrap"],
+[data-slot="post-single-body"] table                                   { margin-top: calc(var(--spacing) * 6);  } /* 24px */
+[data-slot="post-single-body"] :is(h5,h6)                              { margin-top: calc(var(--spacing) * 6);  } /* 24px */
+[data-slot="post-single-body"] h4                                      { margin-top: calc(var(--spacing) * 8);  } /* 32px */
+[data-slot="post-single-body"] h3                                      { margin-top: calc(var(--spacing) * 10); } /* 40px */
+[data-slot="post-single-body"] :is(h1,h2)                              { margin-top: calc(var(--spacing) * 12); } /* 48px */
+[data-slot="post-single-body"] hr,
+[data-slot="post-single-body"] hr + *                                  { margin-top: calc(var(--spacing) * 10); } /* 40px, 위아래 대칭 */
+
+/* 제목 바로 다음 요소는 제목에 붙어야 한 덩어리로 읽힌다 */
+[data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6) + * { margin-top: calc(var(--spacing) * 3); } /* 12px */
+
+/* 첫 요소는 위 여백 없음. 두 번째 줄은 티스토리가 본문을 한 겹 감쌌을
+   경우(Q8)를 대비한 방어 — 감싸지 않았다면 아무 것도 매치하지 않는다. */
+[data-slot="post-single-body"] > :first-child,
+[data-slot="post-single-body"] > :first-child > :first-child,
+[data-slot="post-single-body"] :is(li,blockquote,figure,td,th) > :first-child { margin-top: 0; }
+
+/* ── §10-2. 헤딩 ─────────────────────────────────────────────── */
+[data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6) {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);   /* 전 단계 600 통일 — 700 토큰은 이 프로젝트에 없다 */
+  color: var(--color-foreground);
+  word-break: keep-all;
+  /* 앵커 이동(#id) 시 제목이 상단 페이드에 가려지지 않게.
+     content-inner의 scroll-fade-y 마스크가 상단 최대 40px이므로 48px. */
+  scroll-margin-top: calc(var(--spacing) * 12);
+}
+
+[data-slot="post-single-body"] :is(h1,h2) { font-size: var(--text-xl);   line-height: var(--leading-snug);   letter-spacing: var(--tracking-xl);   }
+[data-slot="post-single-body"] h3         { font-size: var(--text-lg);   line-height: var(--leading-snug);   letter-spacing: var(--tracking-lg);   }
+[data-slot="post-single-body"] h4         { font-size: var(--text-base); line-height: var(--leading-snug);   letter-spacing: var(--tracking-base); }
+[data-slot="post-single-body"] :is(h5,h6) { font-size: var(--text-sm);   line-height: var(--leading-normal); letter-spacing: var(--tracking-sm);   }
+[data-slot="post-single-body"] h6         { color: var(--color-muted-foreground); }
+
+/* ── §10-3. 문단 / 강조 ──────────────────────────────────────── */
+[data-slot="post-single-body"] p { font-size: inherit; line-height: inherit; letter-spacing: inherit; }
+
+[data-slot="post-single-body"] :is(strong,b) {
+  font-weight: var(--font-weight-semibold);   /* 600 — 700 토큰 없음 */
+  color: var(--color-foreground);
+}
+
+/* em은 이탤릭을 유지한다. 필자가 명시한 인라인 강조는 이것 말고 표현
+   채널이 없기 때문. 반면 blockquote는 좌측선·들여쓰기라는 별도 채널이
+   있으므로 이탤릭을 쓰지 않는다(§10-6). Pretendard에는 이탤릭 자족이
+   없어 브라우저 합성 기울임이 적용된다는 점은 양쪽 모두 동일하다. */
+[data-slot="post-single-body"] :is(em,i) { font-style: italic; }
+
+/* ── §10-4. 링크 ─────────────────────────────────────────────── */
+[data-slot="post-single-body"] a {
+  color: var(--color-link);
+  font-weight: var(--font-weight-medium);                    /* DS typography-link(387행) 그대로 */
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklab, var(--color-link) 40%, transparent);
+  text-underline-offset: calc(var(--spacing) * 1);           /* 4px — DS 390행 그대로 */
+  transition-property: color, text-decoration-color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="post-single-body"] a:hover { text-decoration-color: currentColor; }
+[data-slot="post-single-body"] a:focus-visible {
+  outline: calc(var(--spacing) * 0.5) solid var(--color-ring);
+  outline-offset: calc(var(--spacing) * 0.5);
+  border-radius: var(--radius-sm);
+}
+/* 제목 안의 링크는 제목 크기·굵기를 유지한다 */
+[data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6) a { font-weight: inherit; }
+
+/* ── §10-5. 코드 — 인라인 / 블록 ─────────────────────────────── */
+[data-slot="post-single-body"] :not(pre) > code {
+  display: inline;
+  padding: calc(var(--spacing) * 0.8) calc(var(--spacing) * 1.2);   /* DS 456행 그대로 */
+  border-radius: var(--radius-md);
+  background-color: var(--color-muted);
+  color: var(--color-foreground);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);                          /* DS 462행 = shadcn 원문 */
+  line-height: var(--leading-normal);
+  /* ★ 한글 자간(-0.01em)이 상속되면 모노스페이스의 등폭이 깨진다.
+     0 자간은 토큰이 아니라 CSS 키워드로 쓴다 — --tracking-normal 같은
+     새 토큰을 추가할 이유가 없다. */
+  letter-spacing: normal;
+  word-break: normal;          /* keep-all 해제 */
+  overflow-wrap: anywhere;     /* 긴 식별자가 본문 폭을 밀지 않게 */
+}
+
+[data-slot="post-single-body"] pre {
   max-width: 100%;
-  height: auto;
+  padding: calc(var(--spacing) * 4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-muted);
+  color: var(--color-foreground);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  letter-spacing: normal;      /* ★ 인라인과 같은 이유 */
+  /* ★ 코드에는 한글 줄바꿈 규칙을 적용하지 않는다.
+     white-space:pre로 아예 줄바꿈하지 않고 가로 스크롤한다. */
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+  tab-size: 2;                 /* DS extra.css 796행 그대로 */
+  overflow-x: auto;            /* 긴 줄이 본문 폭을 밀지 않게 — 필수 */
+  overflow-y: hidden;          /* 가로 스크롤바 때문에 세로가 딸려 나오는 것 방지 */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* pre 안의 code는 인라인 코드 장식을 전부 벗는다 */
+[data-slot="post-single-body"] pre code {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  white-space: inherit;
+  word-break: inherit;
+}
+
+/* ── §10-6. 인용 ─────────────────────────────────────────────── */
+[data-slot="post-single-body"] blockquote {
+  padding-left: calc(var(--spacing) * 6);                                  /* 24px — DS 395행 */
+  border-left: calc(var(--spacing) * 0.5) solid var(--content-divider);    /* 2px */
+  color: var(--color-foreground);
+  /* ★ DS(401행)의 font-style: italic을 의도적으로 제거한다 —
+     Pretendard에는 이탤릭 자족이 없어 브라우저가 기울임을 합성하는데,
+     한글 자소는 합성 기울임에서 획이 뭉개져 문단 단위로는 가독성이
+     크게 떨어진다. 인용은 좌측선+들여쓰기라는 별도 채널이 이미 있다.
+     반면 인라인 <em>은 다른 채널이 없어 이탤릭을 유지한다(§10-3). */
+}
+
+/* ── §10-7. 목록 ─────────────────────────────────────────────── */
+[data-slot="post-single-body"] :is(ul,ol) {
+  padding-left: calc(var(--spacing) * 6);   /* 24px — DS 408행 그대로 */
+  list-style-position: outside;
+}
+[data-slot="post-single-body"] ul       { list-style-type: disc; }         /* preflight의 list-style:none 복원 */
+[data-slot="post-single-body"] ol       { list-style-type: decimal; }
+[data-slot="post-single-body"] ul ul    { list-style-type: circle; }       /* 명시 지정 때문에 브라우저 기본 중첩 규칙이 안 먹으므로 직접 준다 */
+[data-slot="post-single-body"] ul ul ul { list-style-type: square; }
+[data-slot="post-single-body"] ol ol    { list-style-type: lower-alpha; }
+[data-slot="post-single-body"] ol ol ol { list-style-type: lower-roman; }
+
+[data-slot="post-single-body"] li            { margin-top: 0; }
+[data-slot="post-single-body"] li + li       { margin-top: calc(var(--spacing) * 2); }   /* 8px — DS 413행 */
+[data-slot="post-single-body"] li > :is(ul,ol) { margin-top: calc(var(--spacing) * 2); } /* 중첩 목록은 부모 항목에 붙는다(16px→8px) */
+[data-slot="post-single-body"] li::marker    { color: var(--color-muted-foreground); }
+
+/* ── §10-8. 표 — 가로 스크롤 처리 (이 구역 유일한 JS) ───────────
+   CSS만으로는 요소를 감쌀 수 없다. Design-system 정본이 래퍼 div
+   (typography-table-wrap, 423~427행)를 전제로 만들어져 있으므로
+   같은 구조를 content.js가 주입한다(sidebar.js initActiveState와 같은 성격). */
+[data-slot="prose-table-wrap"] {
+  max-width: 100%;
+  overflow-x: auto;
+  /* DS(426행)는 overflow-y:auto로 적혀 있으나 가로로 넘치는 표를 담는
+     래퍼이므로 x가 맞다 — 의도적 정정. */
+}
+[data-slot="prose-table-wrap"]:focus-visible {
+  outline: calc(var(--spacing) * 0.5) solid var(--color-ring);
+  outline-offset: calc(var(--spacing) * 0.5);
+}
+
+/* JS가 못 돌았을 때의 폴백. JS가 감싸면 data-prose-table="wrapped"가
+   붙어 이 규칙이 자동으로 비켜난다. */
+[data-slot="post-single-body"] table:not([data-prose-table="wrapped"]) {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+[data-slot="post-single-body"] table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--color-foreground);
+  /* DS(434행)는 --text-base(16px)지만 본문 폭이 720px로 좁아 4~5열 표가
+     곧바로 넘친다. 대시보드 톤에도 14px가 맞다 — 의도적 편차. */
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-sm);
+}
+[data-slot="post-single-body"] :is(th,td) {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);   /* 8px 16px — DS 440행 */
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+  word-break: keep-all;
+}
+[data-slot="post-single-body"] th { font-weight: var(--font-weight-semibold); }  /* DS는 700, 이 프로젝트는 600 */
+[data-slot="post-single-body"] tbody tr:nth-child(even) { background-color: var(--color-muted); }  /* zebra — DS 449행 그대로 */
+
+/* ── §10-9. 이미지 / figure ──────────────────────────────────── */
+[data-slot="post-single-body"] img {
+  /* max-width:100%; height:auto; display:block 은 preflight가 이미 처리했다.
+     이전의 img 규칙 2줄은 그래서 중복이었고 이 블록으로 대체하며 정리했다. */
+  border-radius: var(--radius-md);   /* DS extra.css 762행이 에디터 이미지에 쓰는 값과 동일 */
+  margin-inline: auto;               /* 본문 폭보다 좁은 이미지는 가운데 정렬 */
+}
+[data-slot="post-single-body"] figure img { margin-top: 0; }  /* 티스토리가 img를 span으로 한 겹 감싸도 안전하게 */
+
+[data-slot="post-single-body"] figcaption {
+  margin-top: calc(var(--spacing) * 2);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-sm);
+  color: var(--color-muted-foreground);
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* ── §10-10. hr / 임베드 ─────────────────────────────────────── */
+[data-slot="post-single-body"] hr {
+  height: 0;
+  border: 0;                                        /* preflight가 border:0 solid로 둔 것을 명시 */
+  border-top: 1px solid var(--content-divider);
+}
+
+/* 유튜브 등 임베드 — 목록 요청 범위 밖이지만 본문에 실제로 자주 들어오고,
+   놔두면 가로 오버플로를 만든다. 최소 방어만 한다. */
+[data-slot="post-single-body"] :is(iframe,video,embed,object) {
+  max-width: 100%;
+  border-radius: var(--radius-md);
 }

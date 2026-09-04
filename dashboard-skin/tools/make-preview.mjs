@@ -13,7 +13,8 @@
  *  - _workspace/sidebar_mockup-nojs.html         FOUC 검증용 (sidebar.js 제거 사본)
  *  - _workspace/right-widgets_mockup-empty.html  위젯 0건 폴백 검증용 (RIGHT-WIDGETS SPEC §7-3)
  *  - _workspace/content_mockup-empty.html        글 0개 → <s_list_empty> 검증용 (CONTENT SPEC §7)
- *  - _workspace/content_mockup-permalink.html    단일 글 모드 검증용 (CONTENT SPEC §9)
+ *  - _workspace/content_mockup-permalink.html    단일 글 모드 검증용 (CONTENT SPEC §9 / PROSE SPEC §8)
+ *  - _workspace/content_mockup-permalink-nojs.html  표 래퍼 CSS 폴백 검증용 (PROSE SPEC §7-2 15번)
  *
  * [2026-09-04 CONTENT SPEC §14-1] ★ index / permalink를 **반드시 따로** 출력해야 한다.
  *   이 생성기는 원래 `<s_*>` 마커만 벗기는 방식이라, 그대로 두면
@@ -76,6 +77,90 @@ const THUMB =
     '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96">' +
       '<rect width="96" height="96" fill="#d4d4d4"/></svg>'
   );
+
+/* ── [PROSE SPEC §8] 단일 글 본문 목업 ─────────────────────────────
+   실사이트에서 [##_article_rep_desc_##]는 티스토리 에디터가 만든 임의
+   리치 HTML을 통째로 내려준다. 로컬에서 프로즈 타이포그래피를 눈으로
+   확인할 방법이 없었으므로(이전엔 문자열 한 줄), 스타일링 대상 요소가
+   전부 최소 한 번씩 등장하는 샘플을 여기서 만든다.
+   외부 URL 금지 — 오프라인에서도 그대로 렌더돼야 한다. */
+const PROSE_IMAGE =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675">' +
+      '<rect width="1200" height="675" fill="#d4d4d4"/>' +
+      '<rect x="72" y="72" width="1056" height="531" fill="#a3a3a3"/></svg>'
+  );
+
+const PROSE_SAMPLE = [
+  `<p>이 글은 본문 프로즈 타이포그래피를 실제로 확인하기 위한 목업이다. 한 문장 안에 <strong>굵게</strong>와 <em>기울임</em>, 그리고 <a href="/301">본문 링크</a>를 함께 섞어 각 요소가 서로를 밀어내지 않는지 본다.</p>`,
+  `<p>두 번째 문단은 문단 사이 여백(16px)이 실제로 적용되는지 확인한다. 한글 본문은 <code>word-break: keep-all</code>로 어절 단위 줄바꿈이 유지되어야 하고, 문장 중간의 인라인 코드가 행간을 밀어 올리지 않아야 한다. 아주 긴 주소(https://daitnu.tistory.com/manage/design/skin/edit#/source/file)도 본문 폭을 넘기지 않고 끊겨야 한다.</p>`,
+
+  `<h2>h2 — 섹션 제목</h2>`,
+  `<p>h2 바로 아래 문단은 제목에 붙어(12px) 한 덩어리로 읽혀야 한다. 제목 위 여백은 48px이다.</p>`,
+
+  `<h3>h3 — 하위 절 제목</h3>`,
+  `<p>제목 계층은 크기와 자간으로만 구분되고 굵기는 h2~h6 전부 600으로 통일돼 있다.</p>`,
+
+  `<h4>h4 — 문단 제목</h4>`,
+  `<p>h4는 본문과 같은 16px이지만 굵기로 구분된다.</p>`,
+
+  `<h5>h5 — 더 낮은 단계</h5>`,
+  `<h6>h6 — 가장 낮은 단계(흐린 색으로만 구분된다)</h6>`,
+  `<p>h5와 h6는 크기가 같고 색이 다르다.</p>`,
+
+  `<blockquote><p>인용문은 좌측 세로선과 들여쓰기로 구분한다. Pretendard에는 이탤릭 자족이 없어 문단 단위 합성 기울임을 쓰지 않는다 — 인라인 강조에만 이탤릭을 남겼다.</p></blockquote>`,
+
+  `<h3>목록</h3>`,
+  `<ul>`,
+  `<li>순서 없는 목록의 첫 항목</li>`,
+  `<li>두 번째 항목 — 아래에 중첩 목록이 붙는다`,
+  `<ul><li>중첩되면 마커가 circle로 바뀐다</li><li>중첩 항목 사이 간격은 8px</li></ul>`,
+  `</li>`,
+  `<li>세 번째 항목</li>`,
+  `</ul>`,
+  `<ol>`,
+  `<li>순서 있는 목록</li>`,
+  `<li>두 번째<ol><li>중첩은 lower-alpha</li><li>두 번째 중첩</li></ol></li>`,
+  `<li>세 번째</li>`,
+  `</ol>`,
+
+  `<h3>코드 블록</h3>`,
+  `<p>아래 블록에는 본문 폭(720px)보다 훨씬 긴 줄이 하나 들어 있다 — 그 줄이 본문을 밀지 않고 <code>pre</code> 안에서만 가로로 스크롤되어야 한다.</p>`,
+  `<pre><code>/* 코드에는 한글 줄바꿈 규칙(keep-all)과 한글 자간(-0.01em)을 적용하지 않는다 */
+const spec = { area: "post-single-body", tokens: ["--text-base", "--leading-relaxed", "--tracking-base"] };
+document.querySelector('[data-slot="post-single-body"]').querySelectorAll("table").forEach((table) =&gt; wrapWith(table, "prose-table-wrap")); // 이 줄은 가로 스크롤을 발생시키려고 의도적으로 아주 길게 작성한 것이다
+</code></pre>`,
+
+  `<h3>이미지</h3>`,
+  `<figure>`,
+  `<img src="${PROSE_IMAGE}" alt="샘플 이미지" />`,
+  `<figcaption>figcaption — 캡션은 가운데 정렬 + 흐린 색이며 이미지에 8px 붙는다</figcaption>`,
+  `</figure>`,
+  `<p>아래는 캡션 없는 단독 이미지(원본 96px)다. 본문 폭에 맞춰 <em>늘어나면 안 되고</em>, 가운데 정렬되어야 한다.</p>`,
+  `<img src="${THUMB}" alt="작은 이미지" />`,
+
+  `<h3>표</h3>`,
+  `<table>`,
+  `<thead><tr><th>토큰</th><th>값</th><th>적용 요소</th><th>실측 출처</th><th>비고</th></tr></thead>`,
+  `<tbody>`,
+  `<tr><td>--text-xl</td><td>1.25rem</td><td>h1 · h2</td><td>Design-system globals.css 379행</td><td>본문 헤딩 스케일 최상단</td></tr>`,
+  `<tr><td>--tracking-xl</td><td>-0.012em</td><td>h1 · h2</td><td>Design-system globals.css 417행</td><td>한글 전용 자간 스케일</td></tr>`,
+  `<tr><td>--font-mono</td><td>ui-monospace, …</td><td>code · pre</td><td>Design-system extra.css 787행</td><td>reset.css의 Pretendard 별칭은 쓰지 않는다</td></tr>`,
+  `<tr><td>--color-link</td><td>#1447e6 / #8ec5ff</td><td>a</td><td>dashboard-skin src/input.css 32 · 63행</td><td>라이트 / 다크</td></tr>`,
+  `<tr><td>--content-divider</td><td>foreground 16% 혼합</td><td>blockquote · hr</td><td>dashboard-skin content.css 16행</td><td>content-inner에서 상속</td></tr>`,
+  `</tbody>`,
+  `</table>`,
+
+  `<hr />`,
+  `<p>hr 위아래 여백은 40px로 대칭이다. 이 문단이 본문의 마지막이며, 아래로는 다음 구역(TOC · 댓글)이 들어올 자리가 남는다.</p>`,
+].join("\n");
+
+/* SUBSTITUTIONS(34행)는 THUMB보다 위에 있어 객체 리터럴 안에서 위 상수들을
+   참조할 수 없다. 파일 순서를 재배치하지 않는 최소 변경으로 여기서 덮어쓴다.
+   (54행의 문자열 더미는 그대로 두되 이 대입이 이긴다. 53행
+   article_rep_summary는 목록 화면 더미이므로 건드리지 않는다.) */
+SUBSTITUTIONS.article_rep_desc = PROSE_SAMPLE;
 
 const REPEATS = [
   {
@@ -387,24 +472,29 @@ writeFileSync(
   "utf8"
 );
 
-// [CONTENT SPEC §9] 단일 글 모드 — 격자 배경과 타이틀영역이 :has()로 꺼지는지.
+// [CONTENT SPEC §9 / PROSE SPEC §8] 단일 글 모드 — 격자 배경과 타이틀영역이
+// :has()로 꺼지는지 + 본문 프로즈 타이포그래피 전체.
+// 본문 더미는 이제 SUBSTITUTIONS.article_rep_desc(= PROSE_SAMPLE) 자체가
+// 리치 HTML이므로 예전의 문자열 후처리(.replace)는 제거했다.
+const permalinkHtml = render(raw, { mode: "permalink" });
 writeFileSync(
   resolve(root, "_workspace", "content_mockup-permalink.html"),
-  render(raw, {
-    mode: "permalink",
-    // 긴 본문이 content-inner 안에서 스크롤되는지 보려면 길이가 필요하다.
-  }).replace(
-    "본문 영역은 다음 구역에서 구현합니다.",
-    Array.from(
-      { length: 14 },
-      (_, i) =>
-        `<p>${i + 1}. 단일 글 본문 스타일 전체(인용/코드/표/댓글)는 다음 구역의 몫이다. 이 목업은 격자 배경과 타이틀영역이 :has() 분기로 꺼지는지, 그리고 긴 본문이 문서가 아니라 content-inner 안에서 스크롤되는지만 확인하기 위한 것이다.</p>`
-    ).join("\n")
-  ),
+  permalinkHtml,
+  "utf8"
+);
+
+// [PROSE SPEC §7-2 15번] content.js를 뺀 permalink 사본 — 표 가로 스크롤의
+// CSS 폴백(`table:not([data-prose-table="wrapped"]) { display:block; overflow-x:auto }`)이
+// JS 없이도 발동하는지 확인하는 유일한 방법이다.
+// (sidebar_mockup-nojs.html이 FOUC 검증을 위해 sidebar.js를 빼는 것과 같은 성격.)
+writeFileSync(
+  resolve(root, "_workspace", "content_mockup-permalink-nojs.html"),
+  permalinkHtml.replace(/<script src="[^"]*content\.js"><\/script>/, ""),
   "utf8"
 );
 
 console.log(
   "wrote _workspace/sidebar_mockup-preview.html, sidebar_mockup-nojs.html, " +
-    "right-widgets_mockup-empty.html, content_mockup-empty.html, content_mockup-permalink.html"
+    "right-widgets_mockup-empty.html, content_mockup-empty.html, content_mockup-permalink.html, " +
+    "content_mockup-permalink-nojs.html"
 );

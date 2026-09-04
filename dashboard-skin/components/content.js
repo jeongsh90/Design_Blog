@@ -118,10 +118,33 @@
     setView(initial);
   }
 
+  /* [PROSE SPEC §4-9] 단일 글 본문의 <table>을 가로 스크롤 래퍼로 감싼다.
+     본문은 티스토리 서버가 내려주는 임의 HTML이라 마크업에 래퍼를 쓸 수
+     없다 — Design-system이 실제로 쓰는 구조(typography-table-wrap)를
+     JS로 동일하게 만든다. CSS 폴백도 함께 있다(JS 미실행 대비). */
+  function initProseTables() {
+    var body = document.querySelector('[data-slot="post-single-body"]');
+    if (!body) return;
+
+    Array.prototype.forEach.call(body.querySelectorAll("table"), function (table) {
+      if (table.getAttribute("data-prose-table") === "wrapped") return;
+
+      var wrap = document.createElement("div");
+      wrap.setAttribute("data-slot", "prose-table-wrap");
+      /* 스크롤 가능한 영역은 키보드로도 스크롤할 수 있어야 한다(WCAG 2.1.1) */
+      wrap.setAttribute("tabindex", "0");
+
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+      table.setAttribute("data-prose-table", "wrapped");
+    });
+  }
+
   function init() {
     initPaginationActiveState();
     initSquareGrid();
     initViewToggle();
+    initProseTables();
   }
 
   if (document.readyState === "loading") {
