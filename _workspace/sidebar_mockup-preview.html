@@ -36,7 +36,12 @@
 (function () {
   try {
     var m = document.cookie.match(/(?:^|; )sidebar_state=([^;]*)/);
-    if (m && m[1] === 'false') {
+    /* [RESPONSIVE SPEC §4-6] 쿠키가 "없을 때만" 태블릿(≤1023px) 기본값을 접힘으로.
+       쿠키가 있으면 지금처럼 쿠키가 이긴다(기능이 아니라 기본값만 바꾼 것). */
+    var collapsed = m
+      ? m[1] === 'false'
+      : window.matchMedia('(max-width: 1023px)').matches;
+    if (collapsed) {
       document.documentElement.setAttribute('data-sidebar-init', 'collapsed');
     }
   } catch (e) {}
@@ -61,7 +66,18 @@
     var w = document.currentScript && document.currentScript.parentElement;
     if (!w) return;
     var m = document.cookie.match(/(?:^|; )sidebar_state=([^;]*)/);
-    w.setAttribute('data-state', m && m[1] === 'false' ? 'collapsed' : 'expanded');
+    /* [RESPONSIVE SPEC §4-6] 위 head 스크립트와 동일한 판정.
+       [§4-1] 모바일(≤767px)에서는 드로어가 언제나 "펼침" 레이아웃이어야 하므로
+       (shadcn Sheet 안의 사이드바에는 data-state="collapsed"가 없다)
+       접힘 판정 자체를 하지 않는다 — sidebar.js enterMobile()과 같은 결론을
+       첫 파싱 시점에 미리 확정해 FOUC를 막는다. */
+    var mobile = window.matchMedia('(max-width: 767px)').matches;
+    var collapsed = mobile
+      ? false
+      : m
+        ? m[1] === 'false'
+        : window.matchMedia('(max-width: 1023px)').matches;
+    w.setAttribute('data-state', collapsed ? 'collapsed' : 'expanded');
   } catch (e) {}
 })();
 </script>
@@ -181,6 +197,13 @@
 
       </div>
     </div>
+
+      <!-- [RESPONSIVE SPEC §4-5] 모바일 오프캔버스 백드롭.
+           shadcn <SheetOverlay>에 대응. Radix는 Portal로 body 끝에 그리지만
+           Tistory 스킨엔 Portal이 없으므로 사이드바 자신의 마지막 자식으로 둔다
+           (position:fixed라 flex 레이아웃에는 참여하지 않는다).
+           PC/태블릿에서는 display:none이라 존재 자체가 무해하다. -->
+      <div data-slot="sidebar-backdrop" data-sidebar-close aria-hidden="true"></div>
   </aside>
 
 

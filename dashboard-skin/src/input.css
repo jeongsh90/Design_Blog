@@ -155,6 +155,16 @@
 
   --shadow-md: 0 4px 8px 0 #00000014, 0 1px 3px 0 #0000001a;
 
+  /* [RESPONSIVE SPEC §4-3] 모바일 오프캔버스 드로어(sidebar.css §4-2)가 쓰는
+     그림자. shadcn <SheetContent>의 `shadow-lg`와 같은 값이며, 출처는
+     Design-system css/globals.css 21162행("Tailwind v4 기본값으로 전역 보완").
+     ※ 스펙은 ":root와 @theme static 두 곳"에 넣으라고 했으나, 실측 결과
+        --shadow-xs/--shadow-md도 :root에는 없고 @theme static에만 있다
+        (@theme static이 출력 CSS의 :root로 그대로 방출된다 — tailwind.css에
+        --shadow-md가 1회만 등장하는 것으로 확인). 기존 형제 토큰과 같은 자리
+        한 곳에만 둔다. */
+  --shadow-lg: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 

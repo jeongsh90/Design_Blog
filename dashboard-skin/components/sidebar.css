@@ -789,3 +789,88 @@ html.dark [data-theme-when="light"] {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }
+
+
+/* ─────────────────────────────────────────────────────────────
+   [RESPONSIVE SPEC §4-2] 모바일(≤767px) 오프캔버스 드로어
+   shadcn 원본의 <Sheet side="left"> 재현. Tistory엔 Radix Dialog가
+   없으므로 동일한 슬라이드인 + 백드롭을 순수 CSS transition으로 구현.
+   ───────────────────────────────────────────────────────────── */
+
+/* 백드롭은 모바일에서만 존재한다(기본 display:none). */
+[data-slot="sidebar-backdrop"] {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  [data-slot="sidebar-wrapper"] {
+    /* shadcn SheetOverlay의 bg-black/50 리터럴을 토큰으로 승격.
+       (원본이 이 한 곳만 토큰 없이 하드코딩하므로 값은 그대로 두고
+        이 프로젝트의 "색은 변수로" 규칙만 지킨다) */
+    --sidebar-backdrop: color-mix(in oklab, #000 50%, transparent);
+  }
+
+  /* (1) 레이아웃 자리 제거 — 사이드바가 문서 흐름에서 완전히 빠진다.
+         접힘 쿠키가 남아 있어도 0이 되도록 세 형태 모두 덮는다. */
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"] > [data-slot="sidebar-gap"],
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-gap"],
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"][data-state="collapsed"][data-collapsible="icon"] > [data-slot="sidebar-gap"] {
+    width: 0;
+  }
+
+  /* (1-b) [구현 추가] JS가 뜨기 전(FOUC 힌트) 규칙까지 덮는다.
+     sidebar.css:54-57의 html[data-sidebar-init="collapsed"] 규칙은
+     위 세 선택자에 걸리지 않는 별개 계열(자손 결합자 + html 속성)이라
+     명시적으로 무력화하지 않으면 첫 페인트에서 gap이 48px로 남는다. */
+  html[data-sidebar-init="collapsed"] [data-slot="sidebar-wrapper"]:not([data-state]) [data-slot="sidebar-gap"] {
+    width: 0;
+  }
+
+  /* (2) 드로어 본체 — 폭은 항상 18rem(접힘 쿠키와 무관), 기본은 화면 밖. */
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"] > [data-slot="sidebar-container"],
+  [data-slot="sidebar-wrapper"][data-state="collapsed"] > [data-slot="sidebar"] > [data-slot="sidebar-container"],
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"][data-state="collapsed"][data-collapsible="icon"] > [data-slot="sidebar-container"],
+  html[data-sidebar-init="collapsed"] [data-slot="sidebar-wrapper"]:not([data-state]) [data-slot="sidebar-container"] {
+    width: var(--sidebar-width-mobile);
+    z-index: 50;                      /* shadcn SheetContent = z-50 */
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);     /* shadcn SheetContent = shadow-lg */
+    transition-property: transform;
+    transition-duration: 300ms;       /* 닫힘: data-[state=closed]:duration-300 */
+    transition-timing-function: var(--default-transition-timing-function);
+  }
+
+  /* (3) 열림 */
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"][data-mobile-state="open"] > [data-slot="sidebar-container"] {
+    transform: translateX(0);
+    transition-duration: 500ms;       /* 열림: data-[state=open]:duration-500 */
+  }
+
+  /* (4) 백드롭 */
+  [data-slot="sidebar-backdrop"] {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 40;                      /* header(9) 위, 드로어(50) 아래 */
+    background-color: var(--sidebar-backdrop);
+    opacity: 0;
+    pointer-events: none;
+    overscroll-behavior: contain;
+    touch-action: none;
+    transition-property: opacity;
+    transition-duration: 150ms;       /* Radix fade-in-0/fade-out-0 기본 */
+    transition-timing-function: var(--default-transition-timing-function);
+  }
+
+  [data-slot="sidebar-wrapper"]:has(> [data-slot="sidebar"][data-mobile-state="open"]) [data-slot="sidebar-backdrop"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  [data-slot="sidebar-wrapper"] > [data-slot="sidebar"] > [data-slot="sidebar-container"],
+  [data-slot="sidebar-backdrop"] {
+    transition: none;
+  }
+}

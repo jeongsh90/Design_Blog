@@ -886,7 +886,7 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 [data-slot="post-related"] {
 
   --widget-title-color: var(--content-item-title-color);
-  margin-top: calc(var(--spacing) * 8);
+  margin-bottom: calc(var(--spacing) * 8);
   padding: calc(var(--spacing) * 6);
   border-top: none;
   border-radius: var(--radius-xl);
