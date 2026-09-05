@@ -1,0 +1,150 @@
+[data-slot="tooltip"] {
+  position: relative;
+  display: inline-flex;
+}
+
+[data-slot="tooltip-trigger"] {
+  display: inline-flex;
+  width: fit-content;
+}
+
+[data-slot="tooltip-content"] {
+  position: absolute;
+  z-index: 50;
+  display: none;
+  width: fit-content;
+  align-items: center;
+  gap: calc(var(--spacing) * 1.5);
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
+  border-radius: var(--radius-md);
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+  font: var(--font-weight-normal) var(--text-xs)/var(--leading-normal) var(--font-sans);
+  letter-spacing: var(--tracking-xs);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+[data-slot="tooltip-content"][data-state="open"] {
+  display: inline-flex;
+  animation: tooltip-in 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes tooltip-in {
+  from {
+    opacity: 0;
+    scale: 0.95;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+[data-slot="tooltip-content"][data-side="top"] {
+  bottom: calc(100% + (var(--spacing) * 3));
+  left: 50%;
+  translate: -50% calc(var(--tooltip-side-offset, 0px) * -1);
+  transform-origin: center bottom;
+}
+
+[data-slot="tooltip-content"][data-side="bottom"] {
+  top: calc(100% + (var(--spacing) * 3));
+  left: 50%;
+  translate: -50% var(--tooltip-side-offset, 0px);
+  transform-origin: center top;
+}
+
+
+[data-slot="tooltip-content"][data-side="top"][data-align="end"],
+[data-slot="tooltip-content"][data-side="bottom"][data-align="end"] {
+  left: auto;
+  right: 0;
+  translate: 0 0;
+}
+
+[data-slot="tooltip-content"][data-side="top"][data-align="end"] {
+  translate: 0 calc(var(--tooltip-side-offset, 0px) * -1);
+  transform-origin: right bottom;
+}
+
+[data-slot="tooltip-content"][data-side="bottom"][data-align="end"] {
+  translate: 0 var(--tooltip-side-offset, 0px);
+  transform-origin: right top;
+}
+
+[data-slot="tooltip-content"][data-align="end"] [data-slot="tooltip-arrow"] {
+  left: auto;
+  right: calc(var(--spacing) * 4);
+  translate: 0 0;
+}
+
+[data-slot="tooltip-content"][data-side="top"][data-align="start"],
+[data-slot="tooltip-content"][data-side="bottom"][data-align="start"] {
+  left: 0;
+  translate: 0 0;
+}
+
+[data-slot="tooltip-content"][data-side="top"][data-align="start"] {
+  translate: 0 calc(var(--tooltip-side-offset, 0px) * -1);
+  transform-origin: left bottom;
+}
+
+[data-slot="tooltip-content"][data-side="bottom"][data-align="start"] {
+  translate: 0 var(--tooltip-side-offset, 0px);
+  transform-origin: left top;
+}
+
+[data-slot="tooltip-content"][data-align="start"] [data-slot="tooltip-arrow"] {
+  left: calc(var(--spacing) * 4);
+  translate: 0 0;
+}
+
+[data-slot="tooltip-content"][data-side="left"] {
+  right: calc(100% + (var(--spacing) * 3));
+  top: 50%;
+  translate: calc(var(--tooltip-side-offset, 0px) * -1) -50%;
+  transform-origin: right center;
+}
+
+[data-slot="tooltip-content"][data-side="right"] {
+  left: calc(100% + (var(--spacing) * 3));
+  top: 50%;
+  translate: var(--tooltip-side-offset, 0px) -50%;
+  transform-origin: left center;
+}
+
+[data-slot="tooltip-arrow"] {
+  position: absolute;
+  width: calc(var(--spacing) * 2.5);
+  height: calc(var(--spacing) * 2.5);
+  rotate: 45deg;
+  border-radius: 2px;
+  background-color: var(--color-foreground);
+  pointer-events: none;
+  display: none;
+}
+
+[data-slot="tooltip-content"][data-side="top"] [data-slot="tooltip-arrow"] {
+  bottom: calc(var(--spacing) * -1.25);
+  left: 50%;
+  translate: -50% 0;
+}
+
+[data-slot="tooltip-content"][data-side="bottom"] [data-slot="tooltip-arrow"] {
+  top: calc(var(--spacing) * -1.25);
+  left: 50%;
+  translate: -50% 0;
+}
+
+[data-slot="tooltip-content"][data-side="left"] [data-slot="tooltip-arrow"] {
+  right: calc(var(--spacing) * -1.25);
+  top: 50%;
+  translate: 0 -50%;
+}
+
+[data-slot="tooltip-content"][data-side="right"] [data-slot="tooltip-arrow"] {
+  left: calc(var(--spacing) * -1.25);
+  top: 50%;
+  translate: 0 -50%;
+}

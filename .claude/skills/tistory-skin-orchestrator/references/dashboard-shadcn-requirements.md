@@ -32,7 +32,7 @@
 - **Sidebar** — ✅ **완료(2026-09-05).** ≤767px 오프캔버스 드로어(shadcn `<Sheet side="left">` 재현 — 18rem/z-50, 백드롭 z-40, 열림 500ms·닫힘 300ms·페이드 150ms, `data-mobile="true"` + 신설 `data-mobile-state="open|closed"`, 모바일 조작은 쿠키에 쓰지 않음). 768~1023 태블릿은 고정 사이드바 유지하되 **쿠키가 없을 때의 기본값만 접힘**(Q1 A+ 확정). 포커스 트랩은 부분 구현(이동·복귀 + `role="dialog" aria-modal="true"`, **Tab 순환 가둠 미구현**). 스펙 `_workspace/responsive-sidebar-header_designer-spec.md` §4, 검증 `_workspace/responsive-sidebar-header_developer-verification.md`.
 - **Header** — ✅ **완료(2026-09-05).** ≤767px에서 `[data-crumb="blog"]`와 `breadcrumb-separator`를 숨겨 현재 글 제목만 남긴다(shadcn `blocks/sidebar-07`의 `hidden md:block`과 동일 처리). 스펙 §5-1의 겹침 임계값 예측(386px)은 실측 결과 **362px**로 정정됐고 `구독하기` 버튼 실폭은 74px(예측 80)이었으나, "글 제목이 375~390px에서 0~10px로 소멸"하는 문제는 예측대로 실재해 처방은 그대로 유효했다(검증 문서 §3).
 - **Content(목록/본문)** — Cursor 진행 중, 오케스트레이터는 관여하지 않음.
-- **Right-widgets(우측 패널)** — 대기 중(좁은 뷰포트에서 320px 고정 패널을 어떻게 할지 — 숨김/드로어/본문 아래 재배치 — 정책 결정 필요).
+- **Right-widgets(우측 패널)** — ✅ **판정 완료(2026-09-05) — 현행 유지.** 기존 `widgets.css:219`의 `@media (max-width:1279px){display:none}`이 이번 768/1024 정책과 정합적임을 확인(1280px는 "320px 패널 최소 폭"이라는 별개 기준이라 태블릿·모바일에선 이미 사라져 있어 겹침·z-index 경합 대상 자체가 아님). 별도 구현 불필요, 코드 변경 없음.
 
 ## 작업 진행 방식 — 구역(컴포넌트)별 순차 진행
 
@@ -165,3 +165,34 @@
    - **✅ 2026-09-03 후속 수정 — 네이티브 스크롤바 숨김.** "스크롤은 기본스크롤 제거하고 lenis제공 스크롤 처리" — `D:\MyCloud\frontend\src\index.css`의 `.scrollbar-hidden`(`scrollbar-width:none; -ms-overflow-style:none;` + `::-webkit-scrollbar{display:none}`)을 신규 `dashboard-skin/components/smooth-scroll.css`로 그대로 옮겨, Lenis가 붙은 3개 컨테이너(`html`/`[data-slot="sidebar-content"]`/`[data-slot="widgets"]`)에 적용했다 — smooth-scroll.js가 Lenis를 붙이는 대상과 정확히 짝을 맞춤. 스크롤 "기능"은 그대로 네이티브(scrollTop이 실제로 바뀜, Lenis가 애니메이션만 담당)라 이 변경은 순수 시각적 트랙/썸 제거일 뿐 — 접근성(키보드/스크린리더)엔 영향 없음. `skin.html`에 `<link>` 추가(로드 순서: `tailwind → tooltip → smooth-scroll → card → sidebar → header → widgets`). Playwright로 `getComputedStyle().scrollbarWidth === "none"`(html·widgets 둘 다), 스크롤바 숨김 후에도 휠 스크롤이 여전히 감속 곡선을 그리며 정상 동작, 위젯 패널 독립 스크롤 유지, 가로 오버플로 0 전부 재확인.
    - **✅ 2026-09-04 후속 수정 — 위젯 패널은 완전 숨김 대신 커스텀 스크롤바로.** "위젯영역 커스텀 스크롤바 표시(기본 스크롤x)" — 문서·좌측 사이드바는 그대로 완전히 숨긴 채(`smooth-scroll.css`에서 `[data-slot="widgets"]` 제외), 위젯 패널만 Design-system `globals.css`(21120~21150행)와 동일한 얇은 pill형 스크롤바로 교체했다(`widgets.css` §8 신규 — `scrollbar-width:thin`/`scrollbar-color`(Firefox) + `::-webkit-scrollbar*`(Chrome/Edge/Safari), thumb 라이트 `#d4d4d4`/다크 `#3f3f46`, hover 시 `color-mix`로 어둡게, 트랙은 `transparent`). Lenis가 네이티브 `scrollTop`을 직접 움직이는 방식이라(ScrollSmoother의 transform 방식과 달리) 커스텀 스크롤바의 thumb 위치가 항상 실제 스크롤 위치와 정확히 일치함을 확인. Playwright로 `scrollbarColor`가 다크 모드 값(`#3f3f46`)으로 정확히 계산됨, 휠 스크롤·가로 오버플로 0 회귀 없음 확인.
 6. (이후 구역은 사용자 요청에 따라 여기에 추가)
+
+---
+
+## 부수 작업 — 주석 정리 + 배포용 폴더 (2026-09-05)
+
+"주석들 md파일에 정리하고 티스토리 스킨에 적용(업로드)할 수 있도록 배포용 폴더 생성 후 그
+폴더 안에 정리해" 요청.
+
+**주석 추출:** Cursor가 도입해 둔 3단계 도구(`tools/extract-comments.mjs` → `tidy-after-extract.mjs`
+→ `fix-comment-md-titles.mjs`)를 처음으로 실제 실행 — CSS/JS 14개 파일에서 블록·라인 주석 46건을
+짝 `.md`로 옮기고(`components/*.css.md`/`*.js.md`, `src/input.css.md`), `skin.html`의 HTML 주석은
+`skin.html.md`로 이동. 소스 자체는 주석 없이 `data-slot`/로직만 남는다.
+
+**실측으로 발견·수정한 버그 1건 (도구 자체의 결함):** `extract-comments.mjs`의 JS 라인 주석
+추출기는 정규식 리터럴을 전혀 인식하지 못해, `content.js`의 `/^(https?:)?\/\/|^data:image\//`
+(댓글 아바타 URL 판별 정규식) 안에서 이스케이프된 `\/`와 정규식을 닫는 실제 `/`가 인접해
+"raw `//`"로 보이는 지점을 진짜 라인 주석 시작으로 오인 — 그 지점부터 줄 끝까지(정규식 닫는
+delimiter + `.test(text))` 전부)를 통째로 삭제해 `initCommentAvatars`가 파싱 자체가 안 되는
+문법 오류를 냈다(`node --check` 및 브라우저 콘솔 `Invalid regular expression: missing /`로
+확인). 수동으로 원문 복구. **재발 방지:** 앞으로 이 도구를 다시 돌릴 때는 반드시 `node --check
+dashboard-skin/components/*.js` + 브라우저 콘솔 확인을 거칠 것(도구 자체를 고치지는 않음 —
+스코프 밖으로 판단, 정규식 리터럴을 포함한 JS를 다루는 한 이 종류의 파서 없이는 항상 이 위험이
+있다는 점만 기록). 다른 13개 파일은 회귀 없이 정상 확인(Playwright로 사이드바 토글/더보기
+드롭다운 동작·가로 오버플로 0·라이트다크 렌더까지 재검증).
+
+**배포용 폴더:** `dashboard-skin/deploy/`(신규) — 개발 파일(`tools/`, `*.md` 주석, `src/input.css`
+등) 없이 실제 업로드 대상 14개 + `skin.html`만 평면으로 복사한 스냅샷. 폴더 자체에
+`deploy/README.md`(업로드 2단계 + 관리자 설정 + CDN 의존성 + 갱신 방법)를 둬 이 폴더 하나만
+보고도 배포할 수 있게 했다. 메인 `README.md`에도 "바로 올릴 거면 deploy/로 가라" 안내와 파일
+트리에 `deploy/`·`*.md` 항목을 추가. **주의(README에 명시):** 이 폴더는 자동 동기화가 아니라
+매 배포 전 손으로 다시 채워야 하는 스냅샷이다.

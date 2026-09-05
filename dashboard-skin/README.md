@@ -54,14 +54,22 @@ dashboard-skin/
 │   ├── widgets.css           ← 우측 위젯 구역 (본문/패널 2단 레이아웃 + 위젯 5종)
 │   ├── content.css           ← Content 구역 (격자 배경 / 글 목록 / 페이징 / 본문 프로즈 / §11 글 상세 하단 4종 / 코드블록)
 │   ├── content.js            ← 페이징 현재 페이지 표시 + 프로즈 표 래핑 + 태그 정규화 / 공감 / 공유 / 댓글 아바타 / 코드블록
-│   └── smooth-scroll.js/.css ← Lenis+GSAP 스무스 스크롤 + 스크롤바 자동 숨김
+│   ├── smooth-scroll.js/.css ← Lenis+GSAP 스무스 스크롤 + 스크롤바 자동 숨김
+│   └── *.css.md / *.js.md    ← 각 소스 파일의 설계 주석을 옮겨 둔 짝 문서(구현 의도·함정·스펙 참조 —
+│                                소스 자체는 주석 없이 깔끔하게 유지). `skin.html.md`도 같은 역할(루트에 위치)
 ├── tools/
 │   ├── make-preview.mjs      ← 티스토리 치환자 더미 목업 (index/empty/permalink/widgets)
 │   ├── serve.mjs             ← 로컬 검증용 정적 서버 (쿠키 검증에 필요)
+│   ├── extract-comments.mjs  ← CSS/JS 블록·라인 주석을 짝 `.md`로 이동 + 소스 정리(신규 주석 추가 후 재실행)
+│   ├── tidy-after-extract.mjs← 잔여 공백 정리 + `skin.html`의 HTML 주석 → `skin.html.md`
+│   ├── fix-comment-md-titles.mjs ← 위 두 스크립트가 만든 `.md`의 섹션 제목을 본문 첫 줄로 다듬기
 │   ├── verify-content.mjs    ← Content 구역 §14-2 체크리스트 자동 검증
 │   ├── verify-prose.mjs      ← 본문 프로즈 체크리스트 자동 검증(라이트/다크)
 │   ├── verify-footer.mjs     ← 글 상세 하단 4종 §9-4 체크리스트 30항 자동 검증(라이트/다크)
 │   └── verify-codeblock.mjs  ← 코드블록 §9 체크리스트 14항 자동 검증(라이트/다크 · CDN 차단 · no-JS · 클립보드)
+├── deploy/                   ← **업로드용 스냅샷** — 개발 파일 없이 실제 올릴 14개 + `skin.html`만
+│                                평면으로 모아 둔 폴더. 사용법은 `deploy/README.md` 참고(이 문서의
+│                                "티스토리 업로드 방법"과 같은 내용을 폴더 하나로 완결시킨 것).
 └── README.md
 ```
 
@@ -95,6 +103,11 @@ bun run skin:verify:codeblock # 코드블록 §9 체크리스트 14항
 ---
 
 ## 티스토리 업로드 방법
+
+> **바로 올릴 거면 `dashboard-skin/deploy/`로 가라.** 이 폴더는 개발 파일(`tools/`·`*.md`
+> 주석 문서·`src/input.css` 등) 없이 실제로 업로드할 파일만 평면으로 모아 둔 스냅샷이고,
+> 그 안의 `README.md`에 이 절과 같은 순서가 폴더 하나로 완결돼 있다. 아래 설명은 각 파일이
+> 왜 그 자리에 있는지 원리를 알고 싶을 때 참고.
 
 관리자 → 꾸미기 → **스킨 편집 → html 편집** → 우측 **파일 업로드** 탭
 (`https://daitnu.tistory.com/manage/design/skin/edit#/source/file`)
