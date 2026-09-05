@@ -267,6 +267,7 @@ Pretendard 변수 폰트 — 기존 확정대로 orioncactus 공식 CDN 유지
          위치는 DOM 순서와 무관(position:fixed). 향후 "맨 위로" 버튼이 추가되면
          이 버튼 위(예: bottom: calc(var(--spacing)*20))에 세로로 쌓을 자리를 남겨둔다.
          바인딩은 sidebar.js의 [data-theme-toggle] 속성 셀렉터가 그대로 처리한다.
+         [2026-09-05] 구독하기 옆 헤더 테마 토글을 ghost → outline (`icon-sm` 유지).
 
 ---
 

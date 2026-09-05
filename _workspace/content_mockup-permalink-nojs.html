@@ -217,18 +217,9 @@
 
 
         <div data-slot="header-actions">
-          <button type="button"
-                  data-slot="button"
-                  data-variant="default"
-                  data-size="sm"
-                  class="#subscribe"
-                  data-url="/"
-                  data-device="web_pc"
-                  aria-label="구독하기">
-            구독하기
-          </button>
+          <button type="button" data-slot="button" data-variant="default" data-size="sm" class="#subscribe" data-url="/" data-device="web_pc" aria-label="구독하기"> 구독하기 </button>
 
-          <button type="button" data-theme-toggle data-slot="button" data-variant="ghost"
+          <button type="button" data-theme-toggle data-slot="button" data-variant="outline"
                   data-size="icon-sm" aria-label="테마 전환" aria-pressed="false">
             <svg data-theme-when="light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
             <svg data-theme-when="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
@@ -367,37 +358,33 @@ function initCodeBlocks() {
                             </svg>
                             <span data-slot="post-action-count" data-post-like-count>0</span>
                           </button>
-
-
-                          
-                            <span data-slot="post-action-stat">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                              </svg>
-                              <span data-slot="post-action-count">3</span>
-                              <span class="sr-only">개의 댓글</span>
-                            </span>
-                          
+                          <!-- [SPEC 2026-09-05] 첨부 레퍼런스 스크린샷 구조와 맞춤: 좌측은 공감(♡+카운트) 하나만.
+                               댓글 수는 이 행에서 빼고(레퍼런스에 없음), 아래 댓글 섹션 타이틀에서만 보여준다. -->
                         </div>
 
                         <div data-slot="post-actions-end">
 
+                          <!-- [SPEC 2026-09-05] 공유 아이콘을 레퍼런스와 동일한 "박스+위쪽 화살표"(lucide Share)로 교체.
+                               기존 Share2(원 3개 네트워크 아이콘)는 레퍼런스와 모양이 달랐음. -->
                           <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm"
                                   data-post-share hidden aria-label="공유하기">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                              <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
-                              <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>
+                              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                              <polyline points="16 6 12 2 8 6"/>
+                              <line x1="12" x2="12" y1="2" y2="15"/>
                             </svg>
                           </button>
 
 
+                          <!-- [SPEC 2026-09-05] 링크 복사 아이콘을 레퍼런스와 동일한 "겹친 사각형"(lucide Copy)으로 교체.
+                               기존 Link(사슬) 아이콘은 레퍼런스와 모양이 달랐음 — 동작(클립보드 복사)은 그대로. -->
                           <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm"
                                   data-post-copy aria-label="링크 복사">
                             <svg data-copy-when="idle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                              <path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/>
+                              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
                             </svg>
                             <svg data-copy-when="done" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -406,20 +393,41 @@ function initCodeBlocks() {
                           </button>
 
 
+                          <!-- [SPEC 2026-09-05] 관리자 전용 3개 버튼(수정/공개상태/삭제)을 레퍼런스의 "더보기(⋯)" 아이콘
+                               하나로 묶었다. Design-system dropdown-menu(css/components.css 4719행~, js/components.js
+                               initDropdownMenus)를 이 post-actions 안에서만 쓰는 공용 프리미티브로 이식(추후 분리 예정,
+                               header.css의 Button/Breadcrumb과 같은 선례). 방문자에게는 <s_ad_div> 자체가 렌더되지 않으므로
+                               "더보기" 아이콘도 자동으로 함께 숨는다(레퍼런스가 로그인 상태 캡처였을 가능성과 일치하는 동작). -->
                           
-                            <span data-slot="post-admin">
-                              <a href="/manage/post/301" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="글 수정">
+                            <span data-slot="dropdown-menu">
+                              <button type="button" data-slot="button" data-variant="ghost" data-size="icon-sm"
+                                      aria-haspopup="menu" aria-expanded="false" aria-label="더보기">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                  <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
-                                </svg>
-                              </a>
-                              <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="sm"
-                                      aria-label="공개 상태 변경 (현재 공개)">비공개로</button>
-                              <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="글 삭제">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                  <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                                  <circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/>
                                 </svg>
                               </button>
+                              <div data-slot="dropdown-menu-content" data-state="closed" role="menu" aria-label="게시글 관리">
+                                <a href="/manage/post/301" data-slot="dropdown-menu-item" role="menuitem">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+                                  </svg>
+                                  글 수정
+                                </a>
+                                <button type="button" onclick="return false;" data-slot="dropdown-menu-item" role="menuitem"
+                                        aria-label="공개 상태 변경 (현재 공개)">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/>
+                                  </svg>
+                                  비공개로
+                                </button>
+                                <div data-slot="dropdown-menu-separator" role="separator"></div>
+                                <button type="button" onclick="return false;" data-slot="dropdown-menu-item" data-variant="destructive" role="menuitem">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+                                  </svg>
+                                  글 삭제
+                                </button>
+                              </div>
                             </span>
                           
 

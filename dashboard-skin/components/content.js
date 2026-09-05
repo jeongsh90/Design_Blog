@@ -581,6 +581,104 @@
     });
   }
 
+  /* [SPEC 2026-09-05] Dropdown Menu 동작 — Design-system js/components.js의
+     initDropdownMenus/closeAllDropdownMenus를 이식(다른 메뉴 타입(select/popover 등)은
+     이 스킨에 아직 없어 그 부분은 생략). post-actions의 "더보기(⋯)" 메뉴 하나에 쓰인다. */
+  function closeAllDropdownMenus() {
+    var menus = document.querySelectorAll('[data-slot="dropdown-menu"]');
+    Array.prototype.forEach.call(menus, function (menu) {
+      var trigger = menu.querySelector('[data-slot="button"]');
+      var content = menu.querySelector('[data-slot="dropdown-menu-content"]');
+      if (content) content.setAttribute("data-state", "closed");
+      if (trigger) trigger.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  function initDropdownMenus() {
+    var menus = document.querySelectorAll('[data-slot="dropdown-menu"]');
+    if (!menus.length) return;
+
+    Array.prototype.forEach.call(menus, function (menu) {
+      var trigger = menu.querySelector('[data-slot="button"]');
+      var content = menu.querySelector('[data-slot="dropdown-menu-content"]');
+      if (!trigger || !content) return;
+
+      function getItems() {
+        return Array.prototype.slice.call(
+          content.querySelectorAll('[data-slot="dropdown-menu-item"]')
+        );
+      }
+
+      function openMenu() {
+        closeAllDropdownMenus();
+        content.setAttribute("data-state", "open");
+        trigger.setAttribute("aria-expanded", "true");
+      }
+
+      function closeMenu() {
+        content.setAttribute("data-state", "closed");
+        trigger.setAttribute("aria-expanded", "false");
+      }
+
+      trigger.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (content.getAttribute("data-state") === "open") {
+          closeMenu();
+        } else {
+          openMenu();
+          var first = getItems()[0];
+          if (first) setTimeout(function () { first.focus(); }, 0);
+        }
+      });
+
+      trigger.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+          event.preventDefault();
+          openMenu();
+          var items = getItems();
+          var target = event.key === "ArrowDown" ? items[0] : items[items.length - 1];
+          if (target) setTimeout(function () { target.focus(); }, 0);
+        }
+      });
+
+      content.addEventListener("keydown", function (event) {
+        var items = getItems();
+        var idx = items.indexOf(document.activeElement);
+
+        if (event.key === "ArrowDown") {
+          event.preventDefault();
+          var next = items[(idx + 1) % items.length];
+          if (next) next.focus();
+        } else if (event.key === "ArrowUp") {
+          event.preventDefault();
+          var prev = items[(idx - 1 + items.length) % items.length];
+          if (prev) prev.focus();
+        } else if (event.key === "Escape") {
+          event.stopPropagation();
+          closeMenu();
+          trigger.focus();
+        } else if (event.key === "Tab") {
+          closeMenu();
+        }
+      });
+
+      content.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (event.target.closest('[data-slot="dropdown-menu-item"]')) {
+          closeMenu();
+        }
+      });
+    });
+
+    document.addEventListener("click", function () {
+      closeAllDropdownMenus();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeAllDropdownMenus();
+    });
+  }
+
   function init() {
     initPaginationActiveState();
     initSquareGrid();
@@ -591,6 +689,7 @@
     initPostLike();
     initPostShare();
     initCommentAvatars();
+    initDropdownMenus();
   }
 
   if (document.readyState === "loading") {

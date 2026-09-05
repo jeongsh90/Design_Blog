@@ -26,6 +26,14 @@
   --input: #e5e5e5;
   --ring: #a1a1a1;
 
+  /* [SPEC 2026-09-05] post-actions "더보기" dropdown-menu 전용 신규 토큰.
+     Design-system globals.css의 --card/--card-foreground(#ffffff/#000000)와
+     정확히 짝을 이루는 프리셋 블록(20383행~)에서 그대로 옮김. */
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --destructive: #e40014;
+  --destructive-foreground: #fcf3f3;
+
   --sidebar: #fafafa;
   --sidebar-foreground: #000000;
 
@@ -64,6 +72,13 @@
   --border: #ffffff1a;
   --input: #ffffff26;
   --ring: #737373;
+
+  /* [SPEC 2026-09-05] 같은 프리셋의 다크 짝(20419행~) — --card/--card-foreground
+     (#171717/#fafafa)와 정확히 일치하는 블록이라 여기서 옮겨왔다. */
+  --popover: #171717;
+  --popover-foreground: #fafafa;
+  --destructive: #ff6568;
+  --destructive-foreground: #df2225;
 
   --sidebar: #171717;
   --sidebar-foreground: #fafafa;
@@ -154,6 +169,11 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* [SPEC 2026-09-05] dropdown-menu(더보기) 전용 */
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   /* [PROSE SPEC §3-1] 본문 링크 (댓글 구역도 곧 쓸 수 있게 구역 스코프가 아닌 전역 토큰) */
   --color-link: var(--link);
 
