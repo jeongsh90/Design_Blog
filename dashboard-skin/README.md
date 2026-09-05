@@ -15,7 +15,10 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 | **Header** | ✅ 완료 (PC / 56px / 홈·태그·방명록·즐겨찾기 `icon-sm` 아이콘 버튼 + hover 툴팁) |
 | **우측 위젯 사이드바** | ✅ 완료 (PC / 320px sticky 패널 / 공지·최근 글·인기 글·태그·최근 댓글 5장 / shadcn `scroll-fade-y` 상하 스크롤 페이드 / 스크롤 중에만 보이는 커스텀 스크롤바) |
 | **Content (목록/본문)** | ✅ 완료 (PC / 격자 배경 6열×160px 행 / 독립 스크롤 + scroll-fade + 커스텀 스크롤바 / 페이징 Button + content.js 현재페이지 / index·empty·permalink 목업 분리) |
-| 댓글 / 방명록 / 검색결과 / 커버 | ⬜ 미착수 |
+| **글 상세(permalink) 하단 4종** | ✅ 완료 (PC / 공감·공유 액션 바 + 관련글 5건 + 태그 badge + 댓글 목록·대댓글·작성폼. `content.css` §11 / `content.js` 4함수 — **새 파일 0개**) |
+| **글 상세(permalink) 코드블록** | ✅ 완료 (PC / shadcn 문서사이트 정본 `data-rehype-pretty-code-figure` 구조를 `content.js`가 런타임에 조립 — 헤더(언어 아이콘 + 파일명 + 복사 버튼) · 줄번호 gutter · 하이라이트 행 · highlight.js 11.12.0 CDN 강조(다크 전환 시 재강조 없음, 토큰 색은 스펙 §8-1 CSS). `content.css` §5 / `content.js` `initCodeBlocks` / `input.css` `--code*` 4 토큰 — **새 파일 0개**. CDN 차단·no-JS에서도 헤더/줄번호/복사는 그대로 동작) |
+| **글 상세(permalink) 이전/다음** | ✅ 완료 (`post-prevnext`, CSS `:has()` 3상태) |
+| 방명록 / 검색결과 / 커버 | ⬜ 미착수 |
 | 반응형(태블릿·모바일) | ⬜ 미착수 — sidebar 스펙 §7-4/§7-5 · header 스펙 §6-4 · content 스펙 §15-Q9에 방향만 기록됨 |
 
 **셸 전체 동작(특정 구역 소유 아님):**
@@ -24,8 +27,8 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 | **스무스 스크롤(Lenis + GSAP)** | ✅ 완료 — 문서/좌측 사이드바/우측 위젯 패널 3곳 전부 독립 스무스 스크롤(`components/smooth-scroll.js`). `D:\MyCloud\frontend`가 실사용 중인 조합(Lenis + GSAP ticker 연동)을 그대로 재현(사용자가 "같은 스크롤 들어가있으니 참고해서" 요청). `position:sticky`를 깨뜨리는 GSAP ScrollSmoother는 채택하지 않음(사유는 파일 머리말 참고). 좌측 사이드바·우측 위젯 패널은 `data-lenis-prevent`로 문서 Lenis에게서 분리(D:\MyCloud FilePreview.tsx 선례 — 없으면 중첩 스크롤 시 안쪽 대신 바깥 문서가 움직인다). 문서·좌측 사이드바의 네이티브 스크롤바는 `components/smooth-scroll.css`로 숨김(D:\MyCloud의 `.scrollbar-hidden`과 동일 규칙 — 스크롤 기능 자체가 아니라 시각적 트랙/썸만 제거, 접근성엔 영향 없음). 우측 위젯 패널만 완전 숨김 대신 Design-system `globals.css`와 동일한 얇은 pill형 커스텀 스크롤바(`widgets.css` §8, 라이트/다크 색 분기)로 표시하고, 그 스크롤바는 **스크롤 중에만 보인다**(기본 투명 → 스크롤 시 1초 페이드인 → 활동 정지 3초 후 1초 페이드아웃, `smooth-scroll.js`의 `initScrollbarAutoHide`가 기존 위젯 Lenis 인스턴스와 네이티브 `scroll` 이벤트 양쪽에서 활동을 감지해 `data-scrolling` 토글). `prefers-reduced-motion: reduce`에서 스무딩 자동 비활성(이때 위젯 스크롤바는 상시 노출로 고정). |
 
 `skin.html`의 `[data-slot="content-inner"]`는 Content 구역에서 **격자 배경 글 목록**으로
-채워졌다. 단일 글(`post-single`)은 격자·타이틀을 끄는 최소 대응만 있고, 본문 타이포·댓글·
-TOC는 아직 다음 구역이다. 반응형도 미착수라 **좁은 뷰포트 실사용 배포는 아직 이르다.**
+채워졌다. 단일 글(`post-single`)은 격자·타이틀을 끄는 최소 대응 + 본문 타이포·댓글·
+코드블록·이전/다음 글까지 있다. 반응형은 미착수라 **좁은 뷰포트 실사용 배포는 아직 이르다.**
 
 > 임시 슬롯 `skin-scaffold-header` / `-title` / `-body`는 Header 구역에서 **전부 걷어냈다.**
 
@@ -49,13 +52,16 @@ dashboard-skin/
 │   ├── header.js             ← Header 구역 동작 (브레드크럼 중복 크럼 접기 / 즐겨찾기 토글)
 │   ├── scrollbar.css         ← 공용 커스텀 스크롤바 프리미티브 (`[data-custom-scrollbar]`)
 │   ├── widgets.css           ← 우측 위젯 구역 (본문/패널 2단 레이아웃 + 위젯 5종)
-│   ├── content.css           ← Content 구역 (격자 배경 / 글 목록 / 페이징 / permalink 최소)
-│   ├── content.js            ← 페이징 현재 페이지 표시 (`aria-current` + outline)
+│   ├── content.css           ← Content 구역 (격자 배경 / 글 목록 / 페이징 / 본문 프로즈 / §11 글 상세 하단 4종 / 코드블록)
+│   ├── content.js            ← 페이징 현재 페이지 표시 + 프로즈 표 래핑 + 태그 정규화 / 공감 / 공유 / 댓글 아바타 / 코드블록
 │   └── smooth-scroll.js/.css ← Lenis+GSAP 스무스 스크롤 + 스크롤바 자동 숨김
 ├── tools/
 │   ├── make-preview.mjs      ← 티스토리 치환자 더미 목업 (index/empty/permalink/widgets)
 │   ├── serve.mjs             ← 로컬 검증용 정적 서버 (쿠키 검증에 필요)
-│   └── verify-content.mjs    ← Content 구역 §14-2 체크리스트 자동 검증
+│   ├── verify-content.mjs    ← Content 구역 §14-2 체크리스트 자동 검증
+│   ├── verify-prose.mjs      ← 본문 프로즈 체크리스트 자동 검증(라이트/다크)
+│   ├── verify-footer.mjs     ← 글 상세 하단 4종 §9-4 체크리스트 30항 자동 검증(라이트/다크)
+│   └── verify-codeblock.mjs  ← 코드블록 §9 체크리스트 14항 자동 검증(라이트/다크 · CDN 차단 · no-JS · 클립보드)
 └── README.md
 ```
 
@@ -76,7 +82,9 @@ bun run skin:build          # → dashboard-skin/tailwind.css (minified)
 ```bash
 bun run skin:preview        # _workspace/*_mockup-*.html 생성
 bun run skin:serve          # http://localhost:4321/
-bun run skin:verify:content # Content §14-2 체크리스트 (서버가 떠 있어야 함)
+bun run skin:verify:content   # Content §14-2 체크리스트 (서버가 떠 있어야 함)
+bun run skin:verify:prose     # 본문 프로즈 체크리스트
+bun run skin:verify:codeblock # 코드블록 §9 체크리스트 14항
 ```
 
 - `file://`에서는 Chromium이 `document.cookie`를 막아 **쿠키 복원 검증이 불가능**하다.
@@ -132,6 +140,12 @@ bun run skin:verify:content # Content §14-2 체크리스트 (서버가 떠 있�
 > frontend의 package.json과 동일 버전). 스크립트 순서: `GSAP → ScrollTrigger
 > → Lenis → tooltip.js → sidebar.js → header.js → smooth-scroll.js → content.js`(세
 > 전역이 다른 구역 JS보다 먼저 와야 함).
+>
+> **highlight.js도 업로드 파일이 아니다.** 코드블록 구문 강조는 `content.js`가 필요할 때만
+> `https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.12.0/build/highlight.min.js`를 불러온다
+> (본문에 코드블록이 없는 글에서는 아예 요청하지 않는다). 티스토리가 이 CDN을
+> 막으면 **색만 빠지고** 헤더·줄번호·하이라이트 행·복사 버튼은 그대로 동작한다 —
+> 배포 후 실제로 강조가 적용되는지 한 번 확인할 것.
 
 ### ⚠ 업로드 후 반드시 해야 하는 관리자 설정 — "글은 5개까지만"
 

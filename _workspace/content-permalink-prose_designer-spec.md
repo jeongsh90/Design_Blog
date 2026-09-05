@@ -422,7 +422,7 @@
 [data-slot="post-single-body"] ol ol ol { list-style-type: lower-roman; }
 
 [data-slot="post-single-body"] li            { margin-top: 0; }
-[data-slot="post-single-body"] li + li       { margin-top: calc(var(--spacing) * 2); }   /* 8px — DS 413행 */
+[data-slot="post-single-body"] li + li       { margin-top: calc(var(--spacing) * 1); }   /* 8px — DS 413행 */
 [data-slot="post-single-body"] li > :is(ul,ol) { margin-top: calc(var(--spacing) * 2); } /* 중첩 목록은 부모 항목에 붙는다(16px→8px) */
 [data-slot="post-single-body"] li::marker    { color: var(--color-muted-foreground); }
 ```

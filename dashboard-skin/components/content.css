@@ -20,7 +20,7 @@
   --content-item-title-color: color-mix(in oklab, var(--color-muted-foreground) 50%, var(--color-foreground) 50%);
 
   --content-corner-dot: var(--color-foreground);
-  --content-corner-dot-size: calc(var(--spacing) * 1); /* 4px */
+  --content-corner-dot-size: calc(var(--spacing) * 1);
 
   width: 100%;
 
@@ -107,6 +107,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+
 }
 
 [data-slot="post-item"] {
@@ -320,7 +321,7 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
   display: none;
 }
 
-/* ── 썸네일형 (가로 3열) ── */
+
 [data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"] {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -387,8 +388,19 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 }
 
 [data-slot="post-single"] {
-  max-width: calc(var(--spacing) * 180);
+  max-width: calc(var(--spacing) * 240);
+  width:100%;
+  margin:0 auto;
   padding-block: calc(var(--spacing) * 10);
+
+}
+
+
+[data-slot="post-single"] [data-slot="post-thumb"] {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 calc(var(--spacing) * 8);
 }
 [data-slot="post-single-title"] {
   margin: 0 0 calc(var(--spacing) * 2);
@@ -403,18 +415,7 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
   letter-spacing: var(--tracking-xs);
   color: var(--color-muted-foreground);
 }
-/* ══════════════════════════════════════════════════════════════
-   §10. 단일 글 본문 프로즈 (permalink)
-   ──────────────────────────────────────────────────────────────
-   [##_article_rep_desc_##]는 티스토리 에디터가 만든 임의 HTML이
-   통째로 들어오는 자리다. 우리가 그 안쪽 태그에 data-slot을 붙일
-   방법이 없으므로 **자손 태그 셀렉터**로만 스타일링한다.
-   자식 결합자(>)는 쓰지 않는다 — 티스토리가 본문을 한 겹 더 감싸
-   내려줄 수 있어(확인 필요 Q8) 직계 자식 가정은 위험하다.
 
-   ★ Tailwind Preflight가 margin/padding/list-style/헤딩 크기·굵기를
-     전부 리셋해 둔 상태다. 아래 규칙은 "장식"이 아니라 "복원"이다.
-   ══════════════════════════════════════════════════════════════ */
 
 [data-slot="post-single-body"] {
   color: var(--color-foreground);
@@ -424,46 +425,40 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
   line-height: var(--leading-relaxed);
   letter-spacing: var(--tracking-base);
   word-break: keep-all;
-  /* keep-all은 어절을 끊지 않으므로, 공백 없는 긴 URL 한 줄이 본문 폭을
-     밀어낼 수 있다. 넘칠 때만 발동하는 안전장치. */
+
   overflow-wrap: break-word;
 }
 
-/* ── §10-1. 수직 리듬 ──────────────────────────────────────────
-   모든 블록의 아래 여백은 0으로 두고 위 여백만 준다 —
-   인접 형제 마진 상쇄를 계산에서 아예 제거하기 위해서다. */
+
 [data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6,p,ul,ol,dl,blockquote,pre,figure,table,hr,img,iframe,video) {
   margin-bottom: 0;
 }
 
-[data-slot="post-single-body"] :is(p,ul,ol,dl)                        { margin-top: calc(var(--spacing) * 4);  } /* 16px */
+[data-slot="post-single-body"] :is(p,ul,ol,dl)                        { margin-top: calc(var(--spacing) * 4);  }
 [data-slot="post-single-body"] :is(blockquote,pre,figure,img,iframe,video),
 [data-slot="post-single-body"] [data-slot="prose-table-wrap"],
-[data-slot="post-single-body"] table                                   { margin-top: calc(var(--spacing) * 6);  } /* 24px */
-[data-slot="post-single-body"] :is(h5,h6)                              { margin-top: calc(var(--spacing) * 6);  } /* 24px */
-[data-slot="post-single-body"] h4                                      { margin-top: calc(var(--spacing) * 8);  } /* 32px */
-[data-slot="post-single-body"] h3                                      { margin-top: calc(var(--spacing) * 10); } /* 40px */
-[data-slot="post-single-body"] :is(h1,h2)                              { margin-top: calc(var(--spacing) * 12); } /* 48px */
+[data-slot="post-single-body"] :is(h5,h6)                              { margin-top: calc(var(--spacing) * 6);  }
+[data-slot="post-single-body"] h4                                      { margin-top: calc(var(--spacing) * 8);  }
+[data-slot="post-single-body"] h3                                      { margin-top: calc(var(--spacing) * 10); }
+[data-slot="post-single-body"] :is(h1,h2)                              { margin-top: calc(var(--spacing) * 12); }
 [data-slot="post-single-body"] hr,
-[data-slot="post-single-body"] hr + *                                  { margin-top: calc(var(--spacing) * 10); } /* 40px, 위아래 대칭 */
+[data-slot="post-single-body"] hr + *                                  { margin-top: calc(var(--spacing) * 10); }
 
-/* 제목 바로 다음 요소는 제목에 붙어야 한 덩어리로 읽힌다 */
-[data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6) + * { margin-top: calc(var(--spacing) * 3); } /* 12px */
 
-/* 첫 요소는 위 여백 없음. 두 번째 줄은 티스토리가 본문을 한 겹 감쌌을
-   경우(Q8)를 대비한 방어 — 감싸지 않았다면 아무 것도 매치하지 않는다. */
+[data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6) + * { margin-top: calc(var(--spacing) * 3); }
+
+
 [data-slot="post-single-body"] > :first-child,
 [data-slot="post-single-body"] > :first-child > :first-child,
 [data-slot="post-single-body"] :is(li,blockquote,figure,td,th) > :first-child { margin-top: 0; }
 
-/* ── §10-2. 헤딩 ─────────────────────────────────────────────── */
+
 [data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6) {
   font-family: var(--font-sans);
-  font-weight: var(--font-weight-semibold);   /* 전 단계 600 통일 — 700 토큰은 이 프로젝트에 없다 */
+  font-weight: var(--font-weight-semibold);
   color: var(--color-foreground);
   word-break: keep-all;
-  /* 앵커 이동(#id) 시 제목이 상단 페이드에 가려지지 않게.
-     content-inner의 scroll-fade-y 마스크가 상단 최대 40px이므로 48px. */
+
   scroll-margin-top: calc(var(--spacing) * 12);
 }
 
@@ -473,28 +468,25 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 [data-slot="post-single-body"] :is(h5,h6) { font-size: var(--text-sm);   line-height: var(--leading-normal); letter-spacing: var(--tracking-sm);   }
 [data-slot="post-single-body"] h6         { color: var(--color-muted-foreground); }
 
-/* ── §10-3. 문단 / 강조 ──────────────────────────────────────── */
+
 [data-slot="post-single-body"] p { font-size: inherit; line-height: inherit; letter-spacing: inherit; }
 
 [data-slot="post-single-body"] :is(strong,b) {
-  font-weight: var(--font-weight-semibold);   /* 600 — 700 토큰 없음 */
+  font-weight: var(--font-weight-semibold);
   color: var(--color-foreground);
 }
 
-/* em은 이탤릭을 유지한다. 필자가 명시한 인라인 강조는 이것 말고 표현
-   채널이 없기 때문. 반면 blockquote는 좌측선·들여쓰기라는 별도 채널이
-   있으므로 이탤릭을 쓰지 않는다(§10-6). Pretendard에는 이탤릭 자족이
-   없어 브라우저 합성 기울임이 적용된다는 점은 양쪽 모두 동일하다. */
+
 [data-slot="post-single-body"] :is(em,i) { font-style: italic; }
 
-/* ── §10-4. 링크 ─────────────────────────────────────────────── */
+
 [data-slot="post-single-body"] a {
   color: var(--color-link);
-  font-weight: var(--font-weight-medium);                    /* DS typography-link(387행) 그대로 */
+  font-weight: var(--font-weight-medium);
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: color-mix(in oklab, var(--color-link) 40%, transparent);
-  text-underline-offset: calc(var(--spacing) * 1);           /* 4px — DS 390행 그대로 */
+  text-underline-offset: calc(var(--spacing) * 1);
   transition-property: color, text-decoration-color;
   transition-duration: var(--default-transition-duration);
   transition-timing-function: var(--default-transition-timing-function);
@@ -505,52 +497,57 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
   outline-offset: calc(var(--spacing) * 0.5);
   border-radius: var(--radius-sm);
 }
-/* 제목 안의 링크는 제목 크기·굵기를 유지한다 */
+
 [data-slot="post-single-body"] :is(h1,h2,h3,h4,h5,h6) a { font-weight: inherit; }
 
-/* ── §10-5. 코드 — 인라인 / 블록 ─────────────────────────────── */
+
 [data-slot="post-single-body"] :not(pre) > code {
   display: inline;
-  padding: calc(var(--spacing) * 0.8) calc(var(--spacing) * 1.2);   /* DS 456행 그대로 */
+  padding: calc(var(--spacing) * 0.8) calc(var(--spacing) * 1.2);
   border-radius: var(--radius-md);
   background-color: var(--color-muted);
   color: var(--color-foreground);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  font-weight: var(--font-weight-semibold);                          /* DS 462행 = shadcn 원문 */
+  font-weight: var(--font-weight-semibold);
   line-height: var(--leading-normal);
-  /* ★ 한글 자간(-0.01em)이 상속되면 모노스페이스의 등폭이 깨진다.
-     0 자간은 토큰이 아니라 CSS 키워드로 쓴다 — --tracking-normal 같은
-     새 토큰을 추가할 이유가 없다. */
+
   letter-spacing: normal;
-  word-break: normal;          /* keep-all 해제 */
-  overflow-wrap: anywhere;     /* 긴 식별자가 본문 폭을 밀지 않게 */
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 [data-slot="post-single-body"] pre {
   max-width: 100%;
-  padding: calc(var(--spacing) * 4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background-color: var(--color-muted);
-  color: var(--color-foreground);
+  min-width: 0;
+  padding: calc(var(--spacing) * 3.5) calc(var(--spacing) * 4);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-code);
+  color: var(--color-code-foreground);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-normal);
   line-height: var(--leading-relaxed);
-  letter-spacing: normal;      /* ★ 인라인과 같은 이유 */
-  /* ★ 코드에는 한글 줄바꿈 규칙을 적용하지 않는다.
-     white-space:pre로 아예 줄바꿈하지 않고 가로 스크롤한다. */
+  letter-spacing: normal;
+
   white-space: pre;
   word-break: normal;
   overflow-wrap: normal;
-  tab-size: 2;                 /* DS extra.css 796행 그대로 */
-  overflow-x: auto;            /* 긴 줄이 본문 폭을 밀지 않게 — 필수 */
-  overflow-y: hidden;          /* 가로 스크롤바 때문에 세로가 딸려 나오는 것 방지 */
+  tab-size: 2;
+  overflow-x: auto;
+  overflow-y: hidden;
+  outline: none;
+  overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
 }
 
-/* pre 안의 code는 인라인 코드 장식을 전부 벗는다 */
+[data-slot="post-single-body"] pre:focus-visible {
+  outline: calc(var(--spacing) * 0.5) solid var(--color-ring);
+  outline-offset: calc(var(--spacing) * 0.5);
+}
+
+
 [data-slot="post-single-body"] pre code {
   display: block;
   padding: 0;
@@ -564,52 +561,43 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
   word-break: inherit;
 }
 
-/* ── §10-6. 인용 ─────────────────────────────────────────────── */
+
 [data-slot="post-single-body"] blockquote {
-  padding-left: calc(var(--spacing) * 6);                                  /* 24px — DS 395행 */
-  border-left: calc(var(--spacing) * 0.5) solid var(--content-divider);    /* 2px */
+  padding-left: calc(var(--spacing) * 6);
+  border-left: calc(var(--spacing) * 0.5) solid var(--content-divider);
   color: var(--color-foreground);
-  /* ★ DS(401행)의 font-style: italic을 의도적으로 제거한다 —
-     Pretendard에는 이탤릭 자족이 없어 브라우저가 기울임을 합성하는데,
-     한글 자소는 합성 기울임에서 획이 뭉개져 문단 단위로는 가독성이
-     크게 떨어진다. 인용은 좌측선+들여쓰기라는 별도 채널이 이미 있다.
-     반면 인라인 <em>은 다른 채널이 없어 이탤릭을 유지한다(§10-3). */
+
 }
 
-/* ── §10-7. 목록 ─────────────────────────────────────────────── */
+
 [data-slot="post-single-body"] :is(ul,ol) {
-  padding-left: calc(var(--spacing) * 6);   /* 24px — DS 408행 그대로 */
+  padding-left: calc(var(--spacing) * 6);
   list-style-position: outside;
 }
-[data-slot="post-single-body"] ul       { list-style-type: disc; }         /* preflight의 list-style:none 복원 */
+[data-slot="post-single-body"] ul       { list-style-type: disc; }
 [data-slot="post-single-body"] ol       { list-style-type: decimal; }
-[data-slot="post-single-body"] ul ul    { list-style-type: circle; }       /* 명시 지정 때문에 브라우저 기본 중첩 규칙이 안 먹으므로 직접 준다 */
+[data-slot="post-single-body"] ul ul    { list-style-type: circle; }
 [data-slot="post-single-body"] ul ul ul { list-style-type: square; }
 [data-slot="post-single-body"] ol ol    { list-style-type: lower-alpha; }
 [data-slot="post-single-body"] ol ol ol { list-style-type: lower-roman; }
 
 [data-slot="post-single-body"] li            { margin-top: 0; }
-[data-slot="post-single-body"] li + li       { margin-top: calc(var(--spacing) * 2); }   /* 8px — DS 413행 */
-[data-slot="post-single-body"] li > :is(ul,ol) { margin-top: calc(var(--spacing) * 2); } /* 중첩 목록은 부모 항목에 붙는다(16px→8px) */
+[data-slot="post-single-body"] li + li       { margin-top: calc(var(--spacing) * 2); }
+[data-slot="post-single-body"] li > :is(ul,ol) { margin-top: calc(var(--spacing) * 1); }
 [data-slot="post-single-body"] li::marker    { color: var(--color-muted-foreground); }
 
-/* ── §10-8. 표 — 가로 스크롤 처리 (이 구역 유일한 JS) ───────────
-   CSS만으로는 요소를 감쌀 수 없다. Design-system 정본이 래퍼 div
-   (typography-table-wrap, 423~427행)를 전제로 만들어져 있으므로
-   같은 구조를 content.js가 주입한다(sidebar.js initActiveState와 같은 성격). */
+
 [data-slot="prose-table-wrap"] {
   max-width: 100%;
   overflow-x: auto;
-  /* DS(426행)는 overflow-y:auto로 적혀 있으나 가로로 넘치는 표를 담는
-     래퍼이므로 x가 맞다 — 의도적 정정. */
+
 }
 [data-slot="prose-table-wrap"]:focus-visible {
   outline: calc(var(--spacing) * 0.5) solid var(--color-ring);
   outline-offset: calc(var(--spacing) * 0.5);
 }
 
-/* JS가 못 돌았을 때의 폴백. JS가 감싸면 data-prose-table="wrapped"가
-   붙어 이 규칙이 자동으로 비켜난다. */
+
 [data-slot="post-single-body"] table:not([data-prose-table="wrapped"]) {
   display: block;
   max-width: 100%;
@@ -620,30 +608,32 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
   width: 100%;
   border-collapse: collapse;
   color: var(--color-foreground);
-  /* DS(434행)는 --text-base(16px)지만 본문 폭이 720px로 좁아 4~5열 표가
-     곧바로 넘친다. 대시보드 톤에도 14px가 맞다 — 의도적 편차. */
+
   font-size: var(--text-sm);
   line-height: var(--leading-normal);
   letter-spacing: var(--tracking-sm);
 }
 [data-slot="post-single-body"] :is(th,td) {
-  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);   /* 8px 16px — DS 440행 */
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
   border: 1px solid var(--color-border);
   text-align: left;
   vertical-align: top;
   word-break: keep-all;
 }
-[data-slot="post-single-body"] th { font-weight: var(--font-weight-semibold); }  /* DS는 700, 이 프로젝트는 600 */
-[data-slot="post-single-body"] tbody tr:nth-child(even) { background-color: var(--color-muted); }  /* zebra — DS 449행 그대로 */
+[data-slot="post-single-body"] th {
+  font-weight: var(--font-weight-semibold);
 
-/* ── §10-9. 이미지 / figure ──────────────────────────────────── */
-[data-slot="post-single-body"] img {
-  /* max-width:100%; height:auto; display:block 은 preflight가 이미 처리했다.
-     이전의 img 규칙 2줄은 그래서 중복이었고 이 블록으로 대체하며 정리했다. */
-  border-radius: var(--radius-md);   /* DS extra.css 762행이 에디터 이미지에 쓰는 값과 동일 */
-  margin-inline: auto;               /* 본문 폭보다 좁은 이미지는 가운데 정렬 */
+  background-color: var(--color-muted);
 }
-[data-slot="post-single-body"] figure img { margin-top: 0; }  /* 티스토리가 img를 span으로 한 겹 감싸도 안전하게 */
+
+
+
+[data-slot="post-single-body"] img {
+
+  border-radius: var(--radius-md);
+  margin-inline: auto;
+}
+[data-slot="post-single-body"] figure img { margin-top: 0; }
 
 [data-slot="post-single-body"] figcaption {
   margin-top: calc(var(--spacing) * 2);
@@ -655,16 +645,589 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
   word-break: keep-all;
 }
 
-/* ── §10-10. hr / 임베드 ─────────────────────────────────────── */
+
 [data-slot="post-single-body"] hr {
   height: 0;
-  border: 0;                                        /* preflight가 border:0 solid로 둔 것을 명시 */
+  border: 0;
   border-top: 1px solid var(--content-divider);
 }
 
-/* 유튜브 등 임베드 — 목록 요청 범위 밖이지만 본문에 실제로 자주 들어오고,
-   놔두면 가로 오버플로를 만든다. 최소 방어만 한다. */
+
 [data-slot="post-single-body"] :is(iframe,video,embed,object) {
   max-width: 100%;
   border-radius: var(--radius-md);
 }
+
+
+
+
+
+[data-slot="textarea"],
+[data-slot="input"] {
+  width: 100%;
+  border: 1px solid var(--color-input);
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  box-shadow: var(--shadow-xs);
+  font: var(--font-weight-normal) var(--text-sm)/var(--leading-normal) var(--font-sans);
+  letter-spacing: var(--tracking-sm);
+  color: var(--color-foreground);
+  outline: none;
+  transition-property: color, box-shadow, border-color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="textarea"] {
+  display: flex;
+
+  field-sizing: content;
+  min-height: calc(var(--spacing) * 32);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  resize: vertical;
+}
+[data-slot="input"] {
+  height: calc(var(--spacing) * 9);
+  min-width: 0;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 3);
+}
+[data-slot="textarea"]::placeholder,
+[data-slot="input"]::placeholder {
+  color: var(--color-muted-foreground);
+}
+[data-slot="textarea"]:focus-visible,
+[data-slot="input"]:focus-visible {
+  border-color: var(--color-ring);
+
+  box-shadow: 0 0 0 calc(var(--spacing) * 0.75) color-mix(in oklab, var(--color-ring) 50%, transparent);
+}
+[data-slot="textarea"]:disabled,
+[data-slot="input"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.dark [data-slot="textarea"],
+.dark [data-slot="input"] {
+
+  background-color: color-mix(in oklab, var(--color-input) 30%, transparent);
+}
+
+[data-slot="avatar"] {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  width: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 8);
+  overflow: hidden;
+  border-radius: calc(var(--spacing) * 999);
+  user-select: none;
+}
+[data-slot="avatar"][data-size="sm"] {
+  width: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 6);
+}
+[data-slot="avatar"][data-size="lg"] {
+  width: calc(var(--spacing) * 10);
+  height: calc(var(--spacing) * 10);
+}
+
+
+[data-slot="avatar-fallback"] {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  background-color: var(--color-muted);
+  color: var(--color-muted-foreground);
+  font-size: var(--text-sm);
+}
+[data-slot="avatar-fallback"] > svg {
+  width: 55%;
+  height: 55%;
+}
+[data-slot="avatar-image"],
+[data-slot="avatar"] img {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+[data-slot="post-footer"] {
+  margin-top: calc(var(--spacing) * 12);
+}
+[data-slot="post-footer"] > * {
+  padding-block: calc(var(--spacing) * 8);
+  border-top: 1px solid var(--content-divider);
+}
+[data-slot="post-footer-title"] {
+  margin: 0 0 calc(var(--spacing) * 4);
+  font: var(--font-weight-semibold) var(--text-base)/var(--leading-snug) var(--font-sans);
+  letter-spacing: var(--tracking-base);
+  color: var(--color-foreground);
+  word-break: keep-all;
+}
+
+
+[data-slot="post-actions"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 4);
+}
+[data-slot="post-actions-start"],
+[data-slot="post-actions-end"] {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1);
+}
+[data-slot="post-action-count"] {
+  font-variant-numeric: tabular-nums;
+}
+
+[data-post-like] > svg {
+  color: var(--color-muted-foreground);
+}
+[data-post-like][data-liked="true"] > svg {
+  color: var(--color-foreground);
+  fill: currentColor;
+}
+
+[data-slot="post-action-stat"] {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1.5);
+  padding-inline: calc(var(--spacing) * 2);
+  font: var(--font-weight-medium) var(--text-sm)/1 var(--font-sans);
+  letter-spacing: var(--tracking-sm);
+  color: var(--color-muted-foreground);
+}
+[data-slot="post-action-stat"] > svg {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+}
+
+[data-post-copy] > [data-copy-when="done"] { display: none; }
+[data-post-copy][data-copied="true"] > [data-copy-when="idle"] { display: none; }
+[data-post-copy][data-copied="true"] > [data-copy-when="done"] { display: inline-flex; }
+
+[data-slot="post-admin"] {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1);
+}
+
+
+[data-slot="post-related"] {
+
+  --widget-title-color: var(--content-item-title-color);
+}
+[data-slot="post-related-title-link"] {
+  color: inherit;
+  text-decoration: none;
+}
+[data-slot="post-related-title-link"]:hover {
+  text-decoration: underline;
+  text-underline-offset: calc(var(--spacing) * 1);
+}
+
+[data-slot="post-related-date"] {
+  flex-shrink: 0;
+  margin-left: calc(var(--spacing) * 4);
+  font: var(--font-weight-normal) var(--text-xs)/var(--leading-normal) var(--font-sans);
+  letter-spacing: var(--tracking-xs);
+  color: var(--color-muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ── [PREVNEXT 요청] "이전/다음글 기능 넣어" ──────────────────────────
+   <s_article_prev>/<s_article_next>는 서로 독립된 조건 그룹이다(글이
+   맨 처음/맨 끝이면 그 쪽이 통째로 빠진다) — 카드 2장짜리 grid에서
+   한쪽만 있거나 둘 다 없는 경우까지 :has()로 방어한다. */
+[data-slot="post-prevnext"] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--spacing) * 4);
+}
+/* 실사이트에서 글이 맨 처음이면서 동시에 맨 끝(포스트 1개짜리 블로그)이면
+   양쪽 조건 그룹이 전부 빠져 이 nav가 완전히 비게 된다 — 그때만 숨긴다. */
+[data-slot="post-prevnext"]:not(:has(> [data-slot="post-prevnext-item"])) {
+  display: none;
+}
+/* 한쪽만 있으면(가장 최신 글=다음글 없음 / 가장 오래된 글=이전글 없음)
+   그 카드 하나가 전체 폭을 쓴다. */
+[data-slot="post-prevnext"]:has(> [data-slot="post-prevnext-item"]:only-child) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+[data-slot="post-prevnext-item"] {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+  min-width: 0;
+  padding: calc(var(--spacing) * 4);
+  border: 1px solid var(--content-divider);
+  border-radius: var(--radius-lg);
+  color: inherit;
+  text-decoration: none;
+  transition-property: background-color, border-color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="post-prevnext-item"]:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-border);
+}
+[data-slot="post-prevnext-item"]:focus-visible {
+  outline: calc(var(--spacing) * 0.5) solid var(--color-ring);
+  outline-offset: calc(var(--spacing) * 0.5);
+}
+
+/* "다음 글" 카드는 화살표·정렬을 오른쪽으로 미러링한다 —
+   책장을 넘기듯 이전은 왼쪽 바깥, 다음은 오른쪽 바깥을 향한다. */
+[data-slot="post-prevnext-item"][data-direction="next"] {
+  align-items: flex-end;
+  text-align: right;
+}
+
+[data-slot="post-prevnext-label"] {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1.5);
+  font: var(--font-weight-medium) var(--text-xs)/1 var(--font-sans);
+  letter-spacing: var(--tracking-xs);
+  color: var(--color-muted-foreground);
+}
+[data-slot="post-prevnext-item"][data-direction="next"] [data-slot="post-prevnext-label"] {
+  flex-direction: row-reverse;
+}
+[data-slot="post-prevnext-label"] > svg {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+  flex-shrink: 0;
+}
+
+[data-slot="post-prevnext-thumb"] {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-muted);
+}
+[data-slot="post-prevnext-thumb"] > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-slot="post-prevnext-title"] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font: var(--font-weight-medium) var(--text-sm)/var(--leading-snug) var(--font-sans);
+  letter-spacing: var(--tracking-sm);
+  word-break: keep-all;
+}
+
+
+[data-slot="post-tags-list"][data-tags="normalized"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+}
+
+[data-slot="post-tags-list"] [data-slot="badge"]::before {
+  content: "#";
+  opacity: 0.5;
+}
+
+[data-slot="post-tags-list"]:not([data-tags="normalized"]) {
+  font: var(--font-weight-normal) var(--text-sm)/var(--leading-normal) var(--font-sans);
+  letter-spacing: var(--tracking-sm);
+  color: var(--color-muted-foreground);
+}
+[data-slot="post-tags-list"]:not([data-tags="normalized"]) a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+
+[data-slot="post-comments-count"] {
+  color: var(--color-muted-foreground);
+  font-variant-numeric: tabular-nums;
+}
+[data-slot="comment-list"],
+[data-slot="comment-replies"] {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+[data-slot="comment-item"] {
+  padding-block: calc(var(--spacing) * 5);
+}
+[data-slot="comment-item"] + [data-slot="comment-item"] {
+  border-top: 1px solid var(--color-border);
+}
+[data-slot="comment-main"] {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--spacing) * 3);
+}
+[data-slot="comment-body"] {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+[data-slot="comment-head"] {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+}
+[data-slot="comment-author"] {
+  font: var(--font-weight-semibold) var(--text-sm)/var(--leading-snug) var(--font-sans);
+  letter-spacing: var(--tracking-sm);
+  color: var(--color-foreground);
+}
+[data-slot="comment-date"] {
+  font: var(--font-weight-normal) var(--text-xs)/var(--leading-normal) var(--font-sans);
+  letter-spacing: var(--tracking-xs);
+  color: var(--color-muted-foreground);
+  text-decoration: none;
+}
+
+[data-slot="comment-actions"] {
+  margin-left: auto;
+  display: inline-flex;
+  gap: calc(var(--spacing) * 1);
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="comment-item"]:hover [data-slot="comment-actions"],
+[data-slot="comment-actions"]:focus-within {
+  opacity: 1;
+}
+
+[data-slot="comment-desc"] {
+  margin: calc(var(--spacing) * 1.5) 0;
+  font: var(--font-weight-normal) var(--text-sm)/var(--leading-relaxed) var(--font-sans);
+  letter-spacing: var(--tracking-sm);
+  color: var(--color-foreground);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+[data-slot="comment-desc"] a {
+  color: var(--color-link);
+  text-underline-offset: calc(var(--spacing) * 1);
+}
+[data-slot="comment-desc"] :is(img, iframe, video) {
+  max-width: 100%;
+  border-radius: var(--radius-md);
+}
+
+[data-slot="comment-replies"] {
+  margin-left: calc(var(--spacing) * 11);
+}
+[data-slot="comment-replies"] > [data-slot="comment-item"]:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+[data-slot="comment-replies"] > [data-slot="comment-item"]:last-child {
+  padding-bottom:0;
+}
+
+[data-slot="comment-form"] {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 6);
+}
+[data-slot="comment-form-body"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+[data-slot="comment-form-guest"] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--spacing) * 2);
+}
+[data-slot="comment-form-actions"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: calc(var(--spacing) * 2);
+}
+
+
+[data-slot="comment-secret"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 8);
+  border-radius: var(--radius-md);
+  color: var(--color-muted-foreground);
+  cursor: pointer;
+  transition-property: color, background-color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="comment-secret"] > svg {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+}
+[data-slot="comment-secret"] > [data-secret-when="on"] { display: none; }
+[data-slot="comment-secret"]:has(:checked) {
+  background-color: var(--color-accent);
+  color: var(--color-foreground);
+}
+[data-slot="comment-secret"]:has(:checked) > [data-secret-when="off"] { display: none; }
+[data-slot="comment-secret"]:has(:checked) > [data-secret-when="on"] { display: inline-flex; }
+[data-slot="comment-secret"]:has(:focus-visible) {
+  box-shadow: 0 0 0 calc(var(--spacing) * 0.75) color-mix(in oklab, var(--color-ring) 50%, transparent);
+}
+
+
+
+
+[data-slot="content"] {
+  --code-border: color-mix(in oklab, var(--color-border) 30%, transparent);
+  --code-header: color-mix(in oklab, var(--color-foreground) 4%, var(--color-code));
+  --code-bar: color-mix(in oklab, var(--color-muted-foreground) 50%, transparent);
+}
+
+.dark [data-slot="content"] {
+  --code-border: var(--color-border);
+}
+
+[data-slot="post-single-body"] [data-rehype-pretty-code-figure] {
+  background-color: var(--color-code);
+  color: var(--color-code-foreground);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  font-size: var(--text-sm);
+}
+
+[data-slot="post-single-body"] [data-rehype-pretty-code-figure] > [data-rehype-pretty-code-title] {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  margin-top: 0;
+  padding-block: calc(var(--spacing) * 1.25);
+  padding-inline: calc(var(--spacing) * 4);
+  min-height: calc(var(--spacing) * 10.5);
+  border-bottom: 1px solid var(--code-border);
+  background-color: var(--code-header);
+  color: var(--color-code-foreground);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  letter-spacing: normal;
+  text-align: left;
+  word-break: normal;
+}
+
+[data-slot="code-block-name"] {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-slot="code-block-icon"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+  border-radius: calc(var(--spacing) * 999);
+  background-color: color-mix(in oklab, var(--color-code-foreground) 12%, transparent);
+  color: var(--color-code-foreground);
+}
+
+[data-slot="code-block-icon"] > svg {
+  width: calc(var(--spacing) * 2.5);
+  height: calc(var(--spacing) * 2.5);
+}
+
+[data-code-copy] { margin-left: auto; flex: none; }
+[data-code-copy] > [data-copy-when="done"] { display: none; }
+[data-code-copy][data-copied="true"] > [data-copy-when="idle"] { display: none; }
+[data-code-copy][data-copied="true"] > [data-copy-when="done"] { display: inline-flex; }
+
+[data-slot="post-single-body"] [data-rehype-pretty-code-figure] > pre {
+  margin-top: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  overflow-y: auto;
+}
+
+[data-slot="post-single-body"] [data-rehype-pretty-code-figure] > pre:has([data-line-numbers]),
+[data-slot="post-single-body"] [data-rehype-pretty-code-figure] > pre:has([data-highlighted-line]) {
+  padding-inline: 0;
+}
+
+[data-slot="post-single-body"] [data-rehype-pretty-code-figure] > pre > code[data-line-numbers] {
+  display: grid;
+}
+
+[data-line-numbers] { display: grid; min-width: 100%; white-space: pre; counter-reset: line; }
+[data-line-numbers] [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: calc(var(--spacing) * 16);
+  padding-right: calc(var(--spacing) * 6);
+  text-align: right;
+  color: var(--color-code-number);
+  background-color: var(--color-code);
+  position: sticky; left: 0;
+}
+[data-line] { padding-block: calc(var(--spacing) * 0.25); width: 100%; display: inline-block; }
+[data-slot="post-single-body"] [data-line] .hljs-attr,
+[data-slot="post-single-body"] [data-line] .hljs-attribute { color: #0550ae; }
+[data-slot="post-single-body"] [data-line] .hljs-string { color: #0a3069; }
+[data-slot="post-single-body"] [data-line] .hljs-number,
+[data-slot="post-single-body"] [data-line] .hljs-literal { color: #0550ae; }
+[data-slot="post-single-body"] [data-line] .hljs-keyword { color: #cf222e; }
+[data-slot="post-single-body"] [data-line] .hljs-comment { color: #6e7781; }
+[data-slot="post-single-body"] [data-line] .hljs-title,
+[data-slot="post-single-body"] [data-line] .hljs-title.function_ { color: #8250df; }
+[data-slot="post-single-body"] [data-line] .hljs-variable,
+[data-slot="post-single-body"] [data-line] .hljs-params { color: #953800; }
+.dark [data-slot="post-single-body"] [data-line] .hljs-attr,
+.dark [data-slot="post-single-body"] [data-line] .hljs-attribute { color: #79c0ff; }
+.dark [data-slot="post-single-body"] [data-line] .hljs-string { color: #a5d6ff; }
+.dark [data-slot="post-single-body"] [data-line] .hljs-number,
+.dark [data-slot="post-single-body"] [data-line] .hljs-literal { color: #79c0ff; }
+.dark [data-slot="post-single-body"] [data-line] .hljs-keyword { color: #ff7b72; }
+.dark [data-slot="post-single-body"] [data-line] .hljs-comment { color: #8b949e; }
+.dark [data-slot="post-single-body"] [data-line] .hljs-title,
+.dark [data-slot="post-single-body"] [data-line] .hljs-title.function_ { color: #d2a8ff; }
+.dark [data-slot="post-single-body"] [data-line] .hljs-variable,
+.dark [data-slot="post-single-body"] [data-line] .hljs-params { color: #ffa657; }
+[data-highlighted-line] { background-color: var(--color-code-highlight); }
+[data-highlighted-line]:after {
+  position: absolute; top: 0; left: 0; width: 2px; height: 100%; content: "";
+  background-color: var(--code-bar);
+}
+
+[data-highlighted-line] { position: relative; }
+[data-rehype-pretty-code-title] { border-bottom-width: 1px; border-bottom-style: solid; }
+[data-line] { min-height: calc(var(--leading-relaxed) * 1em); }

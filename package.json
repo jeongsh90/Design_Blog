@@ -7,7 +7,8 @@
     "skin:preview": "bun dashboard-skin/tools/make-preview.mjs",
     "skin:serve": "bun dashboard-skin/tools/serve.mjs",
     "skin:verify:content": "bun dashboard-skin/tools/verify-content.mjs",
-    "skin:verify:prose": "bun dashboard-skin/tools/verify-prose.mjs"
+    "skin:verify:prose": "bun dashboard-skin/tools/verify-prose.mjs",
+    "skin:verify:codeblock": "bun dashboard-skin/tools/verify-codeblock.mjs"
   },
   "dependencies": {},
   "devDependencies": {

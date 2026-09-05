@@ -64,6 +64,44 @@ const SUBSTITUTIONS = {
   no_more_next: "",
   paging_rep_link: 'href="/"',
   paging_rep_link_num: "1",
+
+  /* ── [FOOTER SPEC §10] 글 상세 하단 4종 ──────────────────────────── */
+  article_rep_rp_cnt: "3",
+  article_rep_rp_link: "return false;",
+
+  /* 관리 기능 — 실사이트에서는 <s_ad_div>가 관리자에게만 렌더된다.
+     목업에서는 마커가 벗겨져 항상 보인다(레이아웃 확인용). */
+  s_ad_m_link: "/manage/post/301",
+  s_ad_m_onclick: "return false;",
+  s_ad_s1_label: "공개",
+  s_ad_s2_label: "비공개로",
+  s_ad_s2_onclick: "return false;",
+  s_ad_t_onclick: "return false;",
+  s_ad_d_onclick: "return false;",
+
+  /* ★ [##_rp_input_*_##]는 href가 아니라 name 속성의 "값"이다(§0-3).
+     실사이트에서 서버가 내려주는 실제 필드명 대신 그럴듯한 값을 둔다. */
+  rp_input_name: "name",
+  rp_input_password: "password",
+  rp_input_homepage: "homepage",
+  rp_input_is_secret: "secret",
+  rp_input_comment: "comment",
+  rp_onclick_submit: "return false;",
+  guest_name: "",
+  guest_homepage: "",
+  rp_admin_check: "",
+
+  /* ★ [##_tag_label_rep_##]는 반복 블록이 아니라 태그 링크 묶음 전체를
+     통째로 내려주는 단일 치환자다(§0-2). 서버 출력 형태가 문서에 없어
+     "쉼표로 구분된 앵커 나열"로 추정하고 그대로 재현한다 —
+     initPostTags()가 이 쉼표 텍스트 노드를 실제로 걷어내는지 보는 것이
+     이 목업의 핵심 검증 포인트다. */
+  tag_label_rep:
+    '<a href="/tag/Pretendard">Pretendard</a>, ' +
+    '<a href="/tag/shadcn">shadcn</a>, ' +
+    '<a href="/tag/%ED%83%80%EC%9D%B4%ED%8F%AC%EA%B7%B8%EB%9E%98%ED%94%BC">타이포그래피</a>, ' +
+    '<a href="/tag/Tailwind">Tailwind</a>, ' +
+    '<a href="/tag/%EC%8A%A4%ED%82%A8">스킨</a>',
 };
 
 /* ── [RIGHT-WIDGETS SPEC §7] 우측 위젯 반복 블록 확장 ────────────────
@@ -91,6 +129,35 @@ const PROSE_IMAGE =
       '<rect width="1200" height="675" fill="#d4d4d4"/>' +
       '<rect x="72" y="72" width="1056" height="531" fill="#a3a3a3"/></svg>'
   );
+
+const HLJS_CLASS = {
+  punct: "hljs-punctuation",
+  key: "hljs-attr",
+  str: "hljs-string",
+  bool: "hljs-literal",
+};
+const tk = (kind, text) => `<span class="${HLJS_CLASS[kind]}">${text}</span>`;
+const codeLine = (inner, highlighted = false) =>
+  `<span data-line${highlighted ? " data-highlighted-line" : ""}>${inner}</span>`;
+
+const CODE_JSON_SAMPLE = [
+  `<pre data-filename="components.json" data-highlight="7"><code data-line-numbers>`,
+  codeLine(tk("punct", "{")),
+  codeLine(
+    `  ${tk("key", '"$schema"')}${tk("punct", ":")} ${tk("str", '"https://ui.shadcn.com/schema.json"')}${tk("punct", ",")}`
+  ),
+  codeLine(`  ${tk("key", '"style"')}${tk("punct", ":")} ${tk("str", '"new-york"')}${tk("punct", ",")}`),
+  codeLine(`  ${tk("key", '"tailwind"')}${tk("punct", ": {")}`),
+  codeLine(`    ${tk("key", '"css"')}${tk("punct", ":")} ${tk("str", '"src/app/globals.css"')}${tk("punct", ",")}`),
+  codeLine(`    ${tk("key", '"baseColor"')}${tk("punct", ":")} ${tk("str", '"neutral"')}${tk("punct", ",")}`),
+  codeLine(`    ${tk("key", '"cssVariables"')}${tk("punct", ":")} ${tk("bool", "true")}`, true),
+  codeLine(`  ${tk("punct", "},")}`),
+  codeLine(
+    `  ${tk("key", '"aliases"')}${tk("punct", ": {")} ${tk("key", '"components"')}${tk("punct", ":")} ${tk("str", '"@/components"')}${tk("punct", ",")} ${tk("key", '"utils"')}${tk("punct", ":")} ${tk("str", '"@/lib/utils"')} ${tk("punct", "}")}`
+  ),
+  codeLine(tk("punct", "}")),
+  `</code></pre>`,
+].join("");
 
 const PROSE_SAMPLE = [
   `<p>이 글은 본문 프로즈 타이포그래피를 실제로 확인하기 위한 목업이다. 한 문장 안에 <strong>굵게</strong>와 <em>기울임</em>, 그리고 <a href="/301">본문 링크</a>를 함께 섞어 각 요소가 서로를 밀어내지 않는지 본다.</p>`,
@@ -132,6 +199,19 @@ const spec = { area: "post-single-body", tokens: ["--text-base", "--leading-rela
 document.querySelector('[data-slot="post-single-body"]').querySelectorAll("table").forEach((table) =&gt; wrapWith(table, "prose-table-wrap")); // 이 줄은 가로 스크롤을 발생시키려고 의도적으로 아주 길게 작성한 것이다
 </code></pre>`,
 
+  `<p>아래는 파일명·언어·하이라이트 행 메타를 모두 갖춘 사전 강조 샘플이다 — CDN이 없는 로컬에서도 색과 7번 줄 하이라이트를 그대로 확인할 수 있다.</p>`,
+  CODE_JSON_SAMPLE,
+
+  `<p>아래는 언어만 지정된 평범한 블록이다. 첫 줄의 <code>// filename:</code> 지시자가 헤더 파일명이 되고, highlight.js CDN에 닿으면 색이 뒤늦게 얹힌다.</p>`,
+  `<pre class="language-js" data-highlight="3"><code>// filename: content.js
+function initCodeBlocks() {
+  var body = document.querySelector('[data-slot="post-single-body"]');
+  if (!body) return;
+
+  Array.prototype.forEach.call(body.querySelectorAll("pre"), toCodeBlock);
+}
+</code></pre>`,
+
   `<h3>이미지</h3>`,
   `<figure>`,
   `<img src="${PROSE_IMAGE}" alt="샘플 이미지" />`,
@@ -161,6 +241,112 @@ document.querySelector('[data-slot="post-single-body"]').querySelectorAll("table
    (54행의 문자열 더미는 그대로 두되 이 대입이 이긴다. 53행
    article_rep_summary는 목록 화면 더미이므로 건드리지 않는다.) */
 SUBSTITUTIONS.article_rep_desc = PROSE_SAMPLE;
+SUBSTITUTIONS.article_rep_thumbnail_url = PROSE_IMAGE;
+
+/* ── [PREVNEXT] 이전 글 / 다음 글 ──────────────────────────────────────
+   <s_article_prev>/<s_article_next>는 각각 독립된 0/1 조건 그룹이라
+   (반복 블록이 아님) REPEATS 배열이 아니라 여기 단순 대입으로 채운다 —
+   s_ad_div/s_tag_label과 같은 부류. 목업은 둘 다 존재하는(가장 흔한)
+   상태를 재현한다 — 한쪽만 있는/둘 다 없는 경우는 Playwright로
+   DOM에서 직접 지워보고 검증한다(§Q 참고). */
+SUBSTITUTIONS.article_prev_type = "article";
+SUBSTITUTIONS.article_prev_link = "/300";
+SUBSTITUTIONS.article_prev_title = "shadcn/ui를 처음 쓸 때 헷갈리는 것들";
+SUBSTITUTIONS.article_prev_date = "2026.09.01";
+SUBSTITUTIONS.article_prev_thumbnail_link = THUMB;
+
+SUBSTITUTIONS.article_next_type = "article";
+SUBSTITUTIONS.article_next_link = "/302";
+SUBSTITUTIONS.article_next_title = "shadcn/ui 사이드바를 바닐라 CSS로 1:1 포팅하기";
+SUBSTITUTIONS.article_next_date = "2026.09.02";
+SUBSTITUTIONS.article_next_thumbnail_link = THUMB;
+
+/* ── [FOOTER SPEC §10] 글 상세 하단 목업 ──────────────────────────────
+   외부 URL 금지 — 오프라인에서도 그대로 렌더돼야 한다. */
+const AVATAR =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">' +
+      '<rect width="64" height="64" fill="#a3a3a3"/>' +
+      '<circle cx="32" cy="25" r="11" fill="#f5f5f5"/>' +
+      '<path d="M10 64c0-13 10-21 22-21s22 8 22 21z" fill="#f5f5f5"/></svg>'
+  );
+
+/* ★ 배열 순서가 결정적이다 — s_rp2_rep가 반드시 s_rp_rep보다 먼저.
+   대댓글은 부모와 치환자 이름이 완전히 같아서(rp_rep_*), 부모를 먼저
+   확장하면 부모 값이 대댓글 템플릿까지 채워버린다(§10-1). */
+const PERMALINK_REPEATS = [
+  {
+    tag: "s_rp2_rep",
+    count: 1,
+    item: () => ({
+      rp_rep_id: "comment_reply_1",
+      rp_rep_class: "reply",
+      rp_rep_logo: `<img data-slot="avatar-image" src="${AVATAR}" alt="" loading="lazy" />`,
+      rp_rep_name: "다잇누",
+      rp_rep_date: "2026.09.04 11:20",
+      rp_rep_link: "#comment_reply_1",
+      rp_rep_desc: "감사합니다! 자간 값은 Design-system globals.css 416~417행 기준으로 맞췄어요.",
+      rp_rep_onclick_delete: "return false;",
+      rp_rep_onclick_reply: "return false;",
+    }),
+  },
+  {
+    tag: "s_rp_rep",
+    count: 3,
+    /* 두 번째 댓글에만 대댓글이 달린 상태 — 나머지 복사본에서는
+       <s_rp2_container> 블록이 통째로 제거된다. */
+    conditional: { tag: "s_rp2_container", when: (i) => i === 1 },
+    item: (i) => ({
+      rp_rep_id: `comment_${i + 1}`,
+      rp_rep_class: ["guest", "guest", "guest"][i],
+      /* [FOOTER SPEC §9-2 / Q10] 세 번째 댓글은 일부러 <img>가 아니라
+         URL 문자열을 내려준다 — initCommentAvatars()의 승격 방어가
+         실제로 동작하는지 보는 유일한 케이스다.
+         두 번째는 아예 비워 fallback 아이콘을 확인한다. */
+      rp_rep_logo: [
+        `<img data-slot="avatar-image" src="${AVATAR}" alt="" loading="lazy" />`,
+        "",
+        AVATAR,
+      ][i],
+      rp_rep_name: ["김디자", "지나가던 개발자", "publisher"][i],
+      rp_rep_date: [
+        "2026.09.04 10:41",
+        "2026.09.04 11:02",
+        "2026.09.04 13:57",
+      ][i],
+      rp_rep_link: `#comment_${i + 1}`,
+      rp_rep_desc: [
+        "자간 값 참고해서 저도 적용해봤습니다. 한글 본문에서 −0.01em이 확실히 낫네요.",
+        "shadcn 사이드바를 바닐라로 옮기는 부분이 특히 좋았습니다. 혹시 <a href=\"/1\">이 글</a>에서 쓰신 토큰 목록도 공개하실 계획이 있으신가요? 링크가 댓글 안에서도 제대로 파랗게 보이는지 확인하려고 일부러 길게 씁니다.",
+        "비밀댓글입니다.",
+      ][i],
+      rp_rep_onclick_delete: "return false;",
+      rp_rep_onclick_reply: "return false;",
+    }),
+  },
+  {
+    tag: "s_article_related_rep",
+    count: 5,
+    /* 썸네일 블록은 마크업에 아예 넣지 않기로 했으므로(§5-1) 조건부 없음.
+       만약 developer가 썸네일을 살리기로 바꾼다면 여기에
+       conditional: { tag: "s_article_related_rep_thumbnail", when: (i) => i % 2 === 0 }
+       를 추가해야 한다. */
+    item: (i) => ({
+      article_related_rep_link: `/${401 + i}`,
+      article_related_rep_type: i % 2 === 0 ? "thumbnail" : "text",
+      article_related_rep_title: [
+        "shadcn/ui 사이드바를 바닐라 CSS로 1:1 포팅하기",
+        "티스토리 스킨에서 Tailwind v4를 쓰는 법 — 빌드 서버가 없는 환경에서 정적 CSS 파이프라인을 세운 아주 긴 제목의 기록",
+        "Figma 변수(Variables)로 다크모드 만들기",
+        "무료 상업용 한글 폰트 30종 총정리",
+        "로고 파일 형식(AI·SVG·PNG) 언제 뭘 쓰나",
+      ][i],
+      article_related_rep_date: `2026.08.${String(21 + i)}`,
+      article_related_rep_thumbnail_link: THUMB,
+    }),
+  },
+];
 
 const REPEATS = [
   {
@@ -394,6 +580,12 @@ function render(
     // 단일 글 페이지에는 목록 빈 상태도, 목록 페이징도 없다.
     html = html.replace(/<s_list>[\s\S]*?<\/s_list>/g, "");
     html = html.replace(/<s_paging>[\s\S]*?<\/s_paging>/g, "");
+    /* [FOOTER SPEC §10-4] 하단 4종 반복 블록 — 이 분기 안에서만 확장한다.
+       (index 모드에서는 위 <s_permalink_article_rep> 제거로 이미 사라졌다)
+       전역 REPEATS에 넣으면 index 모드에서도 확장한 뒤 곧바로 통째로 지워지는
+       낭비가 생기고, 무엇보다 s_rp2_rep → s_rp_rep 순서 의존이 다른 위젯
+       확장과 뒤섞인다. */
+    html = expandRepeats(html, PERMALINK_REPEATS);
   } else {
     html = html.replace(/<s_permalink_article_rep>[\s\S]*?<\/s_permalink_article_rep>/g, "");
     if (posts > 0) {

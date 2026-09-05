@@ -191,3 +191,32 @@ pretendard-typography 스케일과 값이 일치 (globals.css 413–415행 실�
 
 ── 문서 바탕 ───────────────────────────────────────────────────
 
+---
+
+## 20. [CODEBLOCK SPEC §2-2] 코드블록 토큰 4개 + `--radius-2xl`
+
+`:root` / `.dark`에 `--code` · `--code-foreground` · `--code-highlight` ·
+`--code-number`를, `@theme static`에 그 4개를 그대로 매핑하는 `--color-code*`를
+추가했다. 이름은 shadcn 문서사이트 `apps/v4/app/globals.css` 정본 그대로다
+(정본은 `@theme inline`을 쓰지만 이 프로젝트는 `@theme static`을 쓴다 — 순수 CSS인
+`components/*.css`가 `var(--color-*)`를 직접 참조하므로 tree-shaking되면 안 된다).
+
+값은 정본 oklch를 sRGB로 변환한 뒤 Design-system neutral 스케일의 같은 색으로
+치환했다(sidebar 구역에서 확정한 "hex 유지" 방침 그대로).
+
+| 토큰 | 라이트 | 다크 | 출처 |
+|---|---|---|---|
+| `--code` | `#fafafa` | `#171717` | neutral-50 / neutral-900 (= 이 스킨 `--sidebar` 라이트 · `--card` 다크와 같은 값) |
+| `--code-foreground` | `#000000` | `#a1a1a1` | 라이트는 정본이 `--foreground` 참조(이 프로젝트는 순검정) / 다크는 neutral-400 |
+| `--code-highlight` | `#f5f5f5` | `#262626` | neutral-100 / neutral-800. 라이트 변환값 `#f2f2f2`는 팔레트에 없어 한 단계 가까운 `#f5f5f5` 채택 |
+| `--code-number` | `#737373` | `#a1a1a1` | neutral-500 / neutral-400 (= `--muted-foreground`와 같은 값) |
+
+`--radius-2xl: calc(var(--radius) * 1.6)`는 신설이다. 프로젝트 전체에 존재하지
+않았고(기존 스케일은 sm 0.6 / md 0.8 / lg 1 / xl 1.4), `0.625rem * 1.6 = 1rem`으로
+Tailwind 기본 `--radius-2xl`·정본 figure 라운드와 정확히 일치한다. 정본
+`[data-rehype-pretty-code-figure]`가 이 값을 쓰기 때문에 필요했다.
+
+⚠ 이 토큰들을 추가한 뒤에는 반드시 `bun run skin:build`를 다시 돌려야 한다 —
+그러지 않으면 `tailwind.css`에 `--color-code*`가 없어 `content.css`의 참조가
+전부 무효 선언이 된다(빌드 후 5개 토큰이 실제로 출력됐는지 grep으로 확인함).
+
