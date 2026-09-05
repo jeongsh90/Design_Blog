@@ -878,9 +878,21 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 }
 
 
+/* [SPEC 2026-09-05] 레퍼런스 스크린샷("다른 글" 목록이 배경색 있는 카드로 페이지와 구분됨)
+   대응 — Design-system Card 컴포넌트(card.css)와 동일한 배경/모서리/외곽선 처리를 이식하고,
+   `[data-slot="post-footer"] > *`가 물려주는 위쪽 구분선(border-top)·수직 전용 패딩은
+   이 섹션에서만 취소했다(카드 자신의 배경·모서리가 이미 경계 역할을 하므로 그 위에
+   직선 divider가 겹치면 둥근 모서리 위로 선이 튀어나와 보임). 위쪽 간격은 margin-top으로 대체. */
 [data-slot="post-related"] {
 
   --widget-title-color: var(--content-item-title-color);
+  margin-top: calc(var(--spacing) * 8);
+  padding: calc(var(--spacing) * 6);
+  border-top: none;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-card);
+  color: var(--color-card-foreground);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-foreground) 10%, transparent);
 }
 [data-slot="post-related-title-link"] {
   color: inherit;
