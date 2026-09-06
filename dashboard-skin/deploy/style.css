@@ -2526,6 +2526,20 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 [data-slot="post-single-body"] li > :is(ul,ol) { margin-top: calc(var(--spacing) * 1); }
 [data-slot="post-single-body"] li::marker    { color: var(--color-muted-foreground); }
 
+[data-slot="post-single-body"] .font-preview-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: calc(var(--spacing) * 8) calc(var(--spacing) * 6);
+  margin-block: calc(var(--spacing) * 5);
+  text-align: center;
+}
+[data-slot="post-single-body"] .font-preview-card .font-preview-text {
+  font-size: calc(var(--text-base) * 2.75);
+  line-height: 1.5;
+  color: var(--color-card-foreground);
+}
+
 
 [data-slot="prose-table-wrap"] {
   max-width: 100%;
