@@ -398,6 +398,17 @@ a[data-slot="button"] {
   filter: invert(1);
 }
 
+.dark .tt_box_namecard {
+  background-color: var(--color-card) !important;
+  border: 1px solid var(--color-border);
+}
+.dark .tt_box_namecard .tt_tit_cont {
+  color: var(--color-foreground) !important;
+}
+.dark .tt_box_namecard .tt_desc {
+  color: var(--color-muted-foreground) !important;
+}
+
 [data-slot="header-actions"] > .btn_subscription {
   display: inline-flex !important;
   width: auto !important;
