@@ -1,0 +1,63 @@
+{
+  "status": "batch_2_complete",
+  "note": "배치 2 완료 — 2~5번 폰트 발행 + 1번 폰트 보완 수정까지 전부 완료. 다음 배치는 catalog.json 인덱스 5(6번째 폰트)부터 이어간다.",
+  "published": [
+    {
+      "index": 0,
+      "id": 1,
+      "name": "고도체",
+      "url": "https://daitnu.tistory.com/3",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-1-godo.png (배치2에서 보완 — 실제 폰트 렌더링 + 우리만의 문구 '묵직하고 각진 고딕체')",
+      "tags": ["고도체", "고딕폰트", "무료폰트", "한글폰트", "웹폰트"],
+      "note": "배치2에서 대표이미지 신규 추가 + 본문 '눈누' 언급 전부 제거 + 라이브 폰트 샘플(.font-preview-card) 추가"
+    },
+    {
+      "index": 1,
+      "id": 2,
+      "name": "고도마음체",
+      "url": "https://daitnu.tistory.com/4",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-2-godomaum.png (부제 문구를 눈누 기본 문구에서 '다정하고 부드러운 손글씨체'로 교체)",
+      "tags": ["고도마음체", "무료폰트", "한글폰트", "손글씨체", "웹폰트"]
+    },
+    {
+      "index": 2,
+      "id": 3,
+      "name": "산돌국대떡볶이체",
+      "url": "https://daitnu.tistory.com/5",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-3-sdkukdetopokki.png",
+      "tags": ["산돌국대떡볶이체", "무료폰트", "한글폰트", "귀여운폰트", "웹폰트"]
+    },
+    {
+      "index": 3,
+      "id": 4,
+      "name": "이롭게바탕체",
+      "url": "https://daitnu.tistory.com/6",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-4-iropke-batang.png",
+      "tags": ["이롭게바탕체", "무료폰트", "한글폰트", "바탕체", "웹폰트"]
+    },
+    {
+      "index": 4,
+      "id": 5,
+      "name": "빙그레체",
+      "url": "https://daitnu.tistory.com/7",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-5-binggrae.png",
+      "tags": ["빙그레체", "무료폰트", "한글폰트", "손글씨체", "웹폰트"]
+    }
+  ],
+  "nextBatchStartsAt": {
+    "catalogIndex": 5,
+    "note": "6번째 폰트부터. 이 5개 draft/thumb 파일 구조와 발행 플로우(categoryFlow/modeFlow/publishFlow)를 그대로 재사용하면 된다."
+  },
+  "rulesEstablishedThisBatch": [
+    "본문 텍스트 어디에도 '눈누' 사이트명을 언급하지 않는다 (예: '웹폰트로 사용할 때 필요한 코드는 다음과 같다', '※ 위 표는 참고용으로 정리한 요약이다' 처럼 출처 사이트명 없이 자연스럽게 표현). 태그에도 '눈누'를 넣지 않는다.",
+    "썸네일 부제 문구는 눈누 사이트의 기본 미리보기 문구를 그대로 베끼지 않고, 그 폰트의 성격을 담은 짧고 서로 다른 한국어 문구로 직접 작성한다.",
+    "본문 인트로 문단 바로 아래에 실제 웹폰트가 라이브로 렌더링되는 샘플을 넣는다 — 카드 스타일(배경/테두리/패딩/폰트크기)은 인라인으로 반복하지 말고 스킨 전역 CSS 클래스 `.font-preview-card`/`.font-preview-text`(dashboard-skin/components/content.css, 배포는 dashboard-skin/deploy/style.css)를 사용한다. 인라인 <style>에는 그 폰트 고유의 @font-face 선언만 남기고, <p class=\"font-preview-text\">에는 style=\"font-family: '{name}-live', sans-serif;\" 외에 색상(color)이나 배경(background) 관련 선언을 절대 넣지 않는다 — `.font-preview-card`/`.font-preview-text`가 항상 고정 다크 배경(#0a0a0a)+흰 글자(#fff)로 처리하므로 라이트/다크 모드와 무관하게 항상 잘 보인다. 구조 예시:\n```html\n<style>\n@font-face {\n  font-family: '{font-family}-live';\n  src: url('{실제 웹폰트 CDN URL}') format('{format}');\n  font-display: swap;\n}\n</style>\n<div class=\"font-preview-card\">\n<p class=\"font-preview-text\" style=\"font-family: '{font-family}-live', sans-serif;\">{샘플 문장}</p>\n</div>\n```",
+    "티스토리 플러그인 '카테고리 글 더 보기'(스킨 자체 관련글 위젯과 중복 노출되던 원인)는 이번 배치에서 비활성화(해제) 완료 — 이후 배치에서 다시 신경 쓸 필요 없음.",
+    "글 목록은 스킨 자체에서 썸네일형(그리드)으로 고정돼 있다(목록형 토글 제거됨) — 대표이미지(썸네일)를 반드시 챙겨야 카드가 정상적으로 보인다."
+  ],
+  "localThumbServer": "bun _workspace/noonnu-thumbs/serve-thumbs.mjs (port 8811) - 재기동 필요할 수 있음",
+  "categoryFlow": "카테고리 선택 콤보박스 클릭 -> option '- Font' 클릭 (Design 하위)",
+  "modeFlow": "본문 우측 상단 '기본모드' 토글 버튼 클릭 -> 드롭다운(기본모드/마크다운/HTML)에서 HTML 클릭 -> confirm 다이얼로그 accept -> CodeMirror 영역 클릭 -> Ctrl+A -> Ctrl+V (PowerShell Get-Content -Raw -Encoding UTF8 | Set-Clipboard 로 클립보드 준비 필수, 인코딩 안 주면 한글 깨짐 — 붙여넣기 직전에 Get-Clipboard -Raw로 길이 재확인하는 습관을 들일 것, 중간에 다른 PowerShell/Bash 호출이 끼면 클립보드가 예상과 다른 내용으로 바뀌어 있을 수 있음)",
+  "publishFlow": "완료 버튼 클릭 -> 다이얼로그에서 '공개' 라디오 선택 -> '대표이미지 추가'(Choose File)에 로컬 png 업로드 -> '공개 발행' 버튼 클릭",
+  "skinDeployFlow": "스킨(대시보드 스킨) CSS/HTML/JS를 바꿀 일이 생기면: https://daitnu.tistory.com/manage/design/skin/edit#/source/css (또는 /source/html) 이동 -> Monaco 에디터 영역 클릭 -> Ctrl+A -> (클립보드를 파일 내용으로 재설정 직후) Ctrl+V -> window.monaco.editor.getModels()[0].getValue()로 붙여넣기 결과 검증 -> '적용' 버튼 클릭 -> alert accept. 파일 업로드가 필요한 JS/CSS 에셋(예: images/content.js)은 '파일업로드' 탭에서 'Choose File'로 같은 파일명의 로컬 파일을 선택하면 서버의 기존 경로(images/폴더 포함)를 그대로 덮어쓴다."
+}
