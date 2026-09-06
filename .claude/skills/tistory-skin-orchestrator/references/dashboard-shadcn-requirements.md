@@ -260,3 +260,13 @@ Cursor가 미리 준비해 둔 `dashboard-skin/index.xml`(name=DAITNU, author=je
 이미지를 명시하지 않지만, 스킨 보관함 목록 UI 자체가 그 파일들로 썸네일을 그리므로 실제로는
 필수 — 다음에 이 스킨을 다시 등록할 땐 `deploy/README.md`의 파일 목록에 preview 3종을 반드시
 포함할 것(이 문서 갱신 완료).
+
+**✅ 2026-09-06 후속 수정 — 이전/다음 글 카드의 썸네일 제거.** "이전글, 다음글 부분 썸네일
+제거" 요청 — `skin.html`에서 `<s_article_prev_thumbnail>`/`<s_article_next_thumbnail>`
+조건부 블록(과 그 안의 `post-prevnext-thumb`/`<img>`)을 통째로 제거해 라벨+제목 2줄짜리
+카드로 단순화했다. `content.css`의 `post-prevnext-thumb`/`> img` 규칙(16:9 비율 박스)도
+이제 쓰이는 곳이 없어 함께 삭제, `make-preview.mjs`의 더미 썸네일 대입(`article_prev/
+next_thumbnail_link = THUMB`) 2줄도 죽은 코드라 정리. **CSS `:has()` 기반 빈 상태/단일
+항목 처리(§이전 항목)는 그대로 유지** — 썸네일 유무와 무관한 로직이라 영향 없음. 로컬
+목업 Playwright 재검증: 라벨+제목만 있는 카드로 정상 렌더링, 가로 오버플로 0, 콘솔 에러
+0(favicon 제외).

@@ -253,13 +253,11 @@ SUBSTITUTIONS.article_prev_type = "article";
 SUBSTITUTIONS.article_prev_link = "/300";
 SUBSTITUTIONS.article_prev_title = "shadcn/ui를 처음 쓸 때 헷갈리는 것들";
 SUBSTITUTIONS.article_prev_date = "2026.09.01";
-SUBSTITUTIONS.article_prev_thumbnail_link = THUMB;
 
 SUBSTITUTIONS.article_next_type = "article";
 SUBSTITUTIONS.article_next_link = "/302";
 SUBSTITUTIONS.article_next_title = "shadcn/ui 사이드바를 바닐라 CSS로 1:1 포팅하기";
 SUBSTITUTIONS.article_next_date = "2026.09.02";
-SUBSTITUTIONS.article_next_thumbnail_link = THUMB;
 
 /* ── [FOOTER SPEC §10] 글 상세 하단 목업 ──────────────────────────────
    외부 URL 금지 — 오프라인에서도 그대로 렌더돼야 한다. */
