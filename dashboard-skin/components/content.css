@@ -1273,5 +1273,16 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 [data-line] { min-height: calc(var(--leading-relaxed) * 1em); }
 
 .dark .fileblock {
+  background-color: var(--color-card);
+  border-color: var(--color-border) !important;
+}
+.dark .fileblock .name {
+  color: var(--color-foreground) !important;
+}
+.dark .fileblock .size {
+  color: var(--color-muted-foreground) !important;
+}
+.dark .fileblock .image,
+.dark .fileblock a::after {
   filter: invert(1);
 }
