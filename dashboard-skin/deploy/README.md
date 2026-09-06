@@ -2,29 +2,36 @@
 
 이 폴더는 `dashboard-skin/`(작업 소스)에서 **최종 업로드 대상 파일만 뽑아 평면으로 복사**해 둔
 스냅샷이다. 개발용 파일(`tools/`, `*.css.md`/`*.js.md` 주석 문서, `_workspace/` 검증 자료,
-`src/input.css` 등)은 여기 없다 — 그런 건 소스에만 있으면 되고 업로드 대상이 아니다.
+`src/input.css`, `components/*.css` 등)은 여기 없다 — 그런 건 소스에만 있으면 되고 업로드
+대상이 아니다.
 
 **주의:** 이 폴더는 스킨을 고칠 때마다 손으로 다시 채워야 하는 스냅샷이다(자동 동기화 아님).
 다음 배포 전에는 아래 "갱신 방법"대로 다시 복사해서 최신 상태로 맞출 것.
+
+**2026-09-06 갱신 — CSS를 한 파일로 통합.** `tailwind.css`를 제외한 컴포넌트 CSS
+8개(`tooltip`/`scrollbar`/`smooth-scroll`/`card`/`sidebar`/`header`/`widgets`/`content`)를
+전부 `bun run skin:build`가 루트 `style.css` 하나로 이어붙이도록 바꿨다. 업로드 대상
+CSS 파일이 9개(tailwind + 8개)에서 **2개(tailwind, style)** 로 줄었다 — `style.css`는
+더 이상 빈 스텁이 아니라 진짜 빌드 산출물이라, 고칠 땐 반드시 `components/*.css`를
+고친 뒤 `bun run skin:build`(또는 `skin:build:style`)로 다시 만들어야 한다(자세한 내용은
+`dashboard-skin/style.css.md`). JS는 그대로 5개 파일 개별 유지.
 
 ---
 
 ## 스킨을 새로 등록할 때
 
-지금 적용된 스킨이 JQ.Minimal이면, HTML만 고쳐도 스킨 편집 화면의 이름·제작자·저작권은
-바뀌지 않는다. **DAITNU로 새로 등록**한다.
-
 **검증된 방법 — 관리자 → 꾸미기 → 스킨 → "스킨 등록"**(`/manage/design/skin/add`, zip
-직접 업로드가 아니라 개별 파일 다중 선택 방식): 아래 **20개 전부**를 이 화면의 "추가"로
-올린다(`DAITNU-v1.0.0.zip`은 참고용 아카이브일 뿐, 이 등록 화면이 zip을 직접 받아
-풀어주는지는 확인되지 않았다 — 검증된 건 개별 파일 다중 선택뿐).
+직접 업로드가 아니라 개별 파일 다중 선택 방식): 아래 **12개 전부**를 이 화면의 "추가"로
+올린다.
 
 ```
 index.xml, skin.html, style.css,
 preview256.jpg, preview560.jpg, preview1600.jpg,
-images/{tailwind.css, tooltip.{css,js}, scrollbar.css, smooth-scroll.{css,js},
-        card.css, sidebar.{css,js}, header.{css,js}, widgets.css, content.{css,js}}
+images/{tailwind.css, tooltip.js, sidebar.js, header.js, content.js, smooth-scroll.js}
 ```
+
+(정확히는 `images/`에 `tailwind.css` + JS 5개 = 6개, 루트에 `index.xml`/`skin.html`/`style.css` = 3개,
+프리뷰 3장 — 합계 12개.)
 
 **preview 3장을 절대 빠뜨리지 말 것** — 등록 화면 안내문은 "index.xml, skin.html,
 style.css 등"만 언급하지만, 정작 **스킨 보관함 목록의 썸네일은 이 3장으로 그려진다**
@@ -34,9 +41,8 @@ style.css 등"만 언급하지만, 정작 **스킨 보관함 목록의 썸네일
 아니라 기존 걸 덮어쓴다**(중복 안 생김 — 안전하게 재등록해도 됨).
 
 **다중 파일 업로드 시 알아둘 것(2026-09-05/06 실측):** 여러 파일을 한 번에 선택하면
-그중 `skin.html`(가장 큰 파일)만 조용히 누락되는 현상을 두 차례 재현했다(원인 미상) —
-업로드 직후 "파일목록"에 20개가 다 보이는지 반드시 눈으로 확인하고, 빠졌으면 `skin.html`
-하나만 다시 올릴 것.
+그중 가장 큰 파일이 조용히 누락되는 현상을 두 차례 재현했다(원인 미상) — 업로드 직후
+"파일목록"에 개수가 다 맞는지 반드시 눈으로 확인하고, 빠졌으면 그 파일만 다시 올릴 것.
 
 저장 → 스킨 보관함에서 방금 저장한 항목을 열어 "적용"("스킨을 변경하면 홈 커버, 사이드바
 설정이 초기화 될 수 있습니다" 확인창 수락) → 스킨 편집 화면에 이름 **DAITNU**, 제작자
@@ -48,38 +54,35 @@ style.css 등"만 언급하지만, 정작 **스킨 보관함 목록의 썸네일
 
 ---
 
-## 업로드 순서 (딱 2단계)
+## 평소 수정 후 재배포 (3단계, 탭 3개)
 
-관리자 → 꾸미기 → **스킨 편집 → html 편집**
-(`https://daitnu.tistory.com/manage/design/skin/edit#/source/file`)
+관리자 → 꾸미기 → **스킨 편집** (`https://daitnu.tistory.com/manage/design/skin/edit`)
 
-### 1) 우측 **파일 업로드** 탭 — `skin.html`을 뺀 나머지 14개를 전부 올린다
+### 1) **CSS** 탭(`#/source/css`) — `style.css` 내용을 통째로 붙여넣는다
+
+컴포넌트 CSS(`components/*.css`) 중 하나라도 고쳤으면 반드시 `bun run skin:build:style`로
+루트 `style.css`를 다시 만든 뒤, 그 파일을 열어 전체 선택 → 복사 → 이 탭에 붙여넣기 → 적용.
+
+### 2) **파일업로드** 탭(`#/source/file`) — 바뀐 JS/tailwind.css만 올린다
 
 ```
-tailwind.css
-tooltip.css
+tailwind.css   (Tailwind 클래스가 바뀌었을 때만)
 tooltip.js
-scrollbar.css
-smooth-scroll.css
-smooth-scroll.js
-card.css
-sidebar.css
 sidebar.js
-header.css
 header.js
-widgets.css
-content.css
 content.js
+smooth-scroll.js
 ```
 
 파일명 그대로 올리면 된다(경로 없음 — 티스토리가 전부 `./images/` 아래 평면으로 서빙한다).
-이미 같은 이름의 파일이 있으면 **덮어쓰기**로 올린다.
+이미 같은 이름의 파일이 있으면 **덮어쓰기**로 올린다. 여러 개를 한 번에 올릴 땐 위 "다중
+파일 업로드" 경고대로 업로드 직후 목록을 눈으로 재확인할 것.
 
-### 2) **HTML** 탭 — `skin.html` 내용을 통째로 복사해 붙여넣는다
+### 3) **HTML** 탭(`#/source/html`) — `skin.html` 내용을 통째로 붙여넣는다
 
-이 폴더의 `skin.html`을 열어 전체 선택 → 복사 → 티스토리 HTML 탭에 붙여넣기 → 저장.
+`skin.html`이 바뀌었을 때만. 전체 선택 → 복사 → 붙여넣기 → 적용.
 
-### 3) 저장 → 미리보기로 확인 → 적용
+### 마지막 — 미리보기로 확인 → 적용
 
 ---
 
@@ -94,8 +97,8 @@ content.js
 
 ## CDN 의존성 (업로드 파일 아님 — `skin.html` 안에 이미 포함됨)
 
-`skin.html`의 HTML 탭 내용에 아래 CDN `<script>`가 이미 들어 있다. 파일 업로드 목록에는
-없지만 2)번에서 HTML을 통째로 붙여넣으면 자동으로 함께 로드된다.
+`skin.html`의 HTML 탭 내용에 아래 CDN `<script>`가 이미 들어 있다. HTML을 통째로
+붙여넣으면 자동으로 함께 로드된다.
 
 - `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js`
 - `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js`
@@ -105,7 +108,7 @@ content.js
 ## 로드 순서 (참고용 — `skin.html`에 이미 이 순서로 박혀 있다)
 
 ```
-CSS:  tailwind → tooltip → scrollbar → smooth-scroll → card → sidebar → header → widgets → content
+CSS:  tailwind → style(=tooltip→scrollbar→smooth-scroll→card→sidebar→header→widgets→content→tistory-overrides)
 JS:   GSAP → ScrollTrigger → Lenis → tooltip → sidebar → header → content → smooth-scroll
 ```
 
@@ -116,19 +119,17 @@ JS:   GSAP → ScrollTrigger → Lenis → tooltip → sidebar → header → co
 `dashboard-skin/` 루트에서:
 
 ```bash
-bun run skin:build   # tailwind.css 재빌드 먼저
+bun run skin:build   # tailwind.css 재빌드 + style.css 재생성(컴포넌트 CSS 통합) 둘 다 함
 ```
 
-그다음 아래 14개 파일 + `skin.html` + `index.xml` + `style.css`를 이 `deploy/` 폴더로
-**덮어쓰기 복사**한다(경로만 `components/`·루트에서 여기로, 파일명은 그대로).
-미리보기 jpg는 직접 교체한 뒤에만 건드린다. zip을 다시 만들 때는 루트 3개 + 미리보기 3장 +
-`images/`에 14개 CSS/JS를 넣어 `DAITNU-v1.0.0.zip`으로 묶는다.
+그다음 아래 파일을 이 `deploy/` 폴더로 **덮어쓰기 복사**한다(경로만 `components/`·루트에서
+여기로, 파일명은 그대로). 미리보기 jpg는 직접 교체한 뒤에만 건드린다. zip을 다시 만들 때는
+루트 3개(`index.xml`/`skin.html`/`style.css`) + 미리보기 3장 + `images/`에 tailwind.css와
+JS 5개를 넣어 `DAITNU-v{n}.zip`으로 묶는다.
 
 ```
-tailwind.css, components/tooltip.{css,js}, components/scrollbar.css,
-components/smooth-scroll.{css,js}, components/card.css,
-components/sidebar.{css,js}, components/header.{css,js},
-components/widgets.css, components/content.{css,js},
+tailwind.css, components/tooltip.js, components/sidebar.js,
+components/header.js, components/content.js, components/smooth-scroll.js,
 skin.html, index.xml, style.css
 ```
 

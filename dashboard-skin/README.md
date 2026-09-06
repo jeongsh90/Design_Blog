@@ -40,6 +40,8 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 dashboard-skin/
 ├── skin.html                 ← 티스토리 스킨 본체 (템플릿 태그 + 구역별 마크업 누적)
 ├── tailwind.css              ← 로컬 빌드 산출물 (구역 추가할 때마다 재빌드)
+├── style.css                 ← 빌드 산출물(2026-09-06~, `build-style.mjs`가 아래 components/*.css를
+│                                통합해서 생성) — 직접 고치지 않는다, 편집은 항상 components/*.css에서
 ├── src/
 │   └── input.css             ← Tailwind v4 엔트리 (색상 토큰 / @theme / 다크 변형)
 ├── components/
@@ -55,9 +57,15 @@ dashboard-skin/
 │   ├── content.css           ← Content 구역 (격자 배경 / 글 목록 / 페이징 / 본문 프로즈 / §11 글 상세 하단 4종 / 코드블록)
 │   ├── content.js            ← 페이징 현재 페이지 표시 + 프로즈 표 래핑 + 태그 정규화 / 공감 / 공유 / 댓글 아바타 / 코드블록
 │   ├── smooth-scroll.js/.css ← Lenis+GSAP 스무스 스크롤 + 스크롤바 자동 숨김
+│   ├── tistory-overrides.css ← 티스토리 자체 주입 마크업(.menu_toolbar/.tt_box_namecard/.fileblock)의
+│   │                            다크모드 대응 — 어느 구역도 소유하지 않는 범용 오버라이드라 별도 분리,
+│   │                            style.css 빌드 시 항상 맨 마지막에 이어붙는다
 │   └── *.css.md / *.js.md    ← 각 소스 파일의 설계 주석을 옮겨 둔 짝 문서(구현 의도·함정·스펙 참조 —
-│                                소스 자체는 주석 없이 깔끔하게 유지). `skin.html.md`도 같은 역할(루트에 위치)
+│                                소스 자체는 주석 없이 깔끔하게 유지). `skin.html.md`/`style.css.md`도
+│                                같은 역할(루트에 위치)
 ├── tools/
+│   ├── build-style.mjs       ← components/*.css(테일윈드 제외 전부)를 정해진 순서로 이어붙여
+│   │                            루트 style.css를 생성(`bun run skin:build`가 tailwind 빌드 뒤 자동 실행)
 │   ├── make-preview.mjs      ← 티스토리 치환자 더미 목업 (index/empty/permalink/widgets)
 │   ├── serve.mjs             ← 로컬 검증용 정적 서버 (쿠키 검증에 필요)
 │   ├── extract-comments.mjs  ← CSS/JS 블록·라인 주석을 짝 `.md`로 이동 + 소스 정리(신규 주석 추가 후 재실행)
@@ -68,7 +76,6 @@ dashboard-skin/
 │   ├── verify-footer.mjs     ← 글 상세 하단 4종 §9-4 체크리스트 30항 자동 검증(라이트/다크)
 │   └── verify-codeblock.mjs  ← 코드블록 §9 체크리스트 14항 자동 검증(라이트/다크 · CDN 차단 · no-JS · 클립보드)
 ├── index.xml                 ← 스킨 이름·설명·제작자·저작권 (스킨 편집 화면에 표시)
-├── style.css                 ← 티스토리 패키지 필수 슬롯(내용은 스텁, 실제 스타일은 images/*.css)
 ├── deploy/                   ← **업로드용 스냅샷** — 개발 파일 없이 실제 올릴 CSS/JS + `skin.html`
 │                                + `index.xml` + 미리보기 jpg + 신규 등록용 zip.
 │                                사용법은 `deploy/README.md` 참고.
@@ -109,7 +116,7 @@ bun run skin:verify:codeblock # 코드블록 §9 체크리스트 14항
 스킨 편집 화면의 이름·제작자·저작권은 `skin.html`이 아니라 **`index.xml`**에서 온다.
 이전에 적용해 둔 JQ.Minimal 패키지를 HTML만 덮어쓰면 그 잔재가 그대로 남는다.
 
-새로 등록할 때는 `dashboard-skin/deploy/DAITNU-v1.0.0.zip`을 쓴다
+새로 등록할 때는 `dashboard-skin/deploy/DAITNU-v1.0.2.zip`을 쓴다
 (이름 DAITNU, 제작자 `jeongsanghoon@naver.com`, 저작권은 제작자).
 미리보기 이미지는 `deploy/preview256.jpg` · `preview560.jpg` · `preview1600.jpg`.
 
@@ -124,39 +131,38 @@ bun run skin:verify:codeblock # 코드블록 §9 체크리스트 14항
 > 그 안의 `README.md`에 이 절과 같은 순서가 폴더 하나로 완결돼 있다. 아래 설명은 각 파일이
 > 왜 그 자리에 있는지 원리를 알고 싶을 때 참고.
 
-관리자 → 꾸미기 → **스킨 편집 → html 편집** → 우측 **파일 업로드** 탭
-(`https://daitnu.tistory.com/manage/design/skin/edit#/source/file`)
+관리자 → 꾸미기 → **스킨 편집**
+(`https://daitnu.tistory.com/manage/design/skin/edit`)
 
-1. **파일 업로드** 탭에서 다음 14개를 올린다.
+**2026-09-06부터: CSS는 `tailwind.css`를 뺀 나머지 전부를 루트 `style.css` 하나로
+통합해서 올린다** — `bun run skin:build`가 `components/*.css`(tooltip/scrollbar/
+smooth-scroll/card/sidebar/header/widgets/content) + `components/tistory-overrides.css`를
+이 순서 그대로 이어붙여 `dashboard-skin/style.css`를 만든다(자세한 내용은
+`dashboard-skin/style.css.md`). **`style.css`는 생성 파일이라 직접 고치지 않는다** —
+편집은 항상 `components/*.css` 쪽에서.
+
+1. **CSS** 탭(`#/source/css`)에 `dashboard-skin/style.css`(빌드 후) 내용을 통째로 붙여넣는다.
+2. **파일 업로드** 탭에서 다음 6개를 올린다.
    - `dashboard-skin/tailwind.css`
-   - `dashboard-skin/components/tooltip.css`
    - `dashboard-skin/components/tooltip.js`
-   - `dashboard-skin/components/scrollbar.css`
-   - `dashboard-skin/components/smooth-scroll.css`
-   - `dashboard-skin/components/card.css`
-   - `dashboard-skin/components/sidebar.css`
    - `dashboard-skin/components/sidebar.js`
-   - `dashboard-skin/components/header.css`
    - `dashboard-skin/components/header.js`
-   - `dashboard-skin/components/widgets.css`
-   - `dashboard-skin/components/content.css`
    - `dashboard-skin/components/content.js`
    - `dashboard-skin/components/smooth-scroll.js`
-2. **HTML** 탭에 `dashboard-skin/skin.html`의 내용을 통째로 붙여넣는다.
-3. 저장 → 미리보기로 확인 후 적용.
+3. **HTML** 탭에 `dashboard-skin/skin.html`의 내용을 통째로 붙여넣는다.
+4. 저장 → 미리보기로 확인 후 적용.
 
-> **경로 규칙:** 티스토리는 업로드한 파일을 전부 `./images/` 아래에 평면으로 서빙한다.
-> 그래서 `skin.html`은 `./images/tailwind.css`, `./images/tooltip.css`, `./images/tooltip.js`,
-> `./images/scrollbar.css`, `./images/smooth-scroll.css`, `./images/card.css`,
-> `./images/sidebar.css`, `./images/sidebar.js`, `./images/header.css`, `./images/header.js`,
-> `./images/widgets.css`, `./images/content.css`, `./images/content.js`,
-> `./images/smooth-scroll.js`를 참조한다(로컬 저장소에서는 `components/` 하위에 있지만
-> 업로드하면 같은 폴더가 된다).
+> **경로 규칙:** 티스토리는 업로드한 파일을 전부 `./images/` 아래에 평면으로 서빙하고,
+> `style.css`는 스킨 루트에 그대로 남는다. `skin.html`은 `./images/tailwind.css`와
+> `./style.css` 두 개의 `<link>`만 갖는다(로컬 저장소에서는 JS가 `components/` 하위에
+> 있지만 업로드하면 `./images/` 아래 같은 폴더가 된다).
 > `make-preview.mjs`가 이 경로 차이를 목업 생성 시 자동으로 보정한다.
 >
-> **CSS 로드 순서를 지킬 것:**
-> `tailwind → tooltip → scrollbar → smooth-scroll → card → sidebar → header → widgets → content`.
-> 프리미티브(tooltip/scrollbar/smooth-scroll/card)가 먼저, 그것을 쓰는 구역 스타일이 나중이다.
+> **`style.css`는 티스토리가 자동으로 로드해주지 않는다(실측) — `skin.html`에 `<link>`로
+> 직접 걸어야 한다.** `components/*.css`를 이어붙이는 순서(=CSS 우선순위)는
+> `tooltip → scrollbar → smooth-scroll → card → sidebar → header → widgets → content →
+> tistory-overrides`. 프리미티브(tooltip/scrollbar/smooth-scroll/card)가 먼저, 그것을
+> 쓰는 구역 스타일이 나중, 티스토리 자체 마크업 오버라이드가 맨 마지막이다.
 >
 > **GSAP·Lenis는 업로드 파일이 아니다.** `smooth-scroll.js`가 의존하는
 > GSAP core·ScrollTrigger·Lenis는 `skin.html`의 HTML 탭 안에 CDN

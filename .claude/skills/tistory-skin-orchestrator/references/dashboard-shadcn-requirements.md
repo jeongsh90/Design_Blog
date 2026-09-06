@@ -270,3 +270,32 @@ next_thumbnail_link = THUMB`) 2줄도 죽은 코드라 정리. **CSS `:has()` �
 항목 처리(§이전 항목)는 그대로 유지** — 썸네일 유무와 무관한 로직이라 영향 없음. 로컬
 목업 Playwright 재검증: 라벨+제목만 있는 카드로 정상 렌더링, 가로 오버플로 0, 콘솔 에러
 0(favicon 제외).
+
+**✅ 2026-09-06 후속 수정 — 공지사항(/notice/N) 본문 미노출·댓글·다크모드 3건 + CSS 통합.**
+같은 세션에서 실사이트 실측으로 연쇄 발견·수정: (1) 공지사항은 `s_article_rep`이 아니라
+별도 `s_notice_rep`/`notice_rep_*` 치환자를 쓴다는 걸 몰라 본문이 항상 비어 있던 버그 —
+article 쪽과 동일 data-slot을 재사용한 병렬 블록 추가. (2) 댓글 헤딩에 쓰던
+`[##_article_rep_rp_cnt_##]`가 article 전용이라 공지사항에서 리터럴 텍스트로 그대로
+출력되던 버그 — 숫자 없이 "댓글"만 표시. (3) 댓글 섹션이 늘어난 만큼 페이지가 길어졌는데
+Lenis가 최초 측정한 스크롤 한계값이 갱신 안 돼 끝까지 스크롤이 안 되던 버그 —
+`smooth-scroll.js`에 MutationObserver+`resize()` 추가. (4) 다크모드에서 티스토리 자체
+주입 마크업(`.menu_toolbar` 더보기 아이콘 / `.tt_box_namecard` 이름카드 / `.fileblock`
+첨부파일 카드) 3종이 전부 밝은 배경/어두운 텍스트 고정이라 안 어울리던 문제 — 처음엔
+`filter: invert(1)` 통짜 반전으로 땜질했다가 사용자 요청으로 실제 디자인 토큰
+(`--color-card`/`--color-border`/`--color-foreground`/`--color-muted-foreground`)
+재정의로 교체(래스터 아이콘만 예외적으로 invert 유지). 이 과정에서 실사이트 "스킨 편집 >
+CSS" 탭(`style.css`)에 같은 선택자로 충돌하는 낙서가 남아있는 걸 발견했는데, 알고 보니
+**`style.css`는 `skin.html`이 `<link>`로 걸지 않으면 티스토리가 자동으로 로드해주지 않는
+파일이라 애초에 죽은 코드**였다(실측: `<head>` 전체를 fetch해 확인) — `skin.html`에
+`<link rel="stylesheet" href="./style.css" />`를 추가해 처음으로 실제 로드되게 만들었다.
+
+이어서 "테일윈드를 제외한 나머지 CSS를 style.css에 통합해" 요청 — `tooltip.css`/
+`scrollbar.css`/`smooth-scroll.css`/`card.css`/`sidebar.css`/`header.css`/`widgets.css`/
+`content.css` 8개 + 신설 `tistory-overrides.css`(위 3종 다크모드 오버라이드 전용 분리)를
+`tools/build-style.mjs`(신규, `bun run skin:build`가 tailwind 빌드 뒤 자동 실행)가 고정
+순서로 이어붙여 루트 `style.css`(생성 파일, 직접 편집 금지)를 만들도록 구조 변경.
+`skin.html`은 이제 `tailwind.css` + `style.css` 두 `<link>`만 가지며, 편집은 여전히
+`components/*.css` 각 파일에서 한다. 업로드 대상 CSS가 9개→2개로 줄어 파일 관리 부담
+경감. `deploy/README.md`·`dashboard-skin/README.md`·`style.css.md`·신규
+`tistory-overrides.css.md`에 전부 반영, 실사이트 재배포 후 세 요소 모두 평범한 새로고침
+기준(강제 재로드 없이) 정상 스타일 적용 확인.

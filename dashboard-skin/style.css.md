@@ -1,39 +1,39 @@
 # `style.css` — 설계 주석
 
-소스: `dashboard-skin/style.css`
+소스: `dashboard-skin/style.css` (2026-09-06부터 **생성 파일** — 직접 손으로 고치지 않는다)
 
-티스토리 스킨 zip/등록에 필요한 루트 CSS 슬롯이다.
+## 2026-09-06 갱신 — 컴포넌트 CSS 전부를 여기로 통합(빌드 산출물화)
 
-이 스킨 자체의 컴포넌트 스타일(사이드바/헤더/콘텐츠 등)은 계속 HTML 편집 파일
-업로드로 `./images/`에 올라가는 `tailwind.css`와 `components/*.css`가 담당한다 —
-그쪽에는 규칙을 쌓지 않는다는 원칙은 유지.
+기존엔 `tailwind.css` 외에 `tooltip.css`/`scrollbar.css`/`smooth-scroll.css`/
+`card.css`/`sidebar.css`/`header.css`/`widgets.css`/`content.css` 8개를 각각
+`<link>`으로 걸고 티스토리 파일 업로드로 하나씩 올렸다. 업로드할 CSS 파일 수를
+줄이기 위해(테일윈드 제외 전부) 이 파일 하나로 합치기로 함 — `skin.html`도
+이제 `tailwind.css` + `style.css` 두 개의 `<link>`만 가진다.
 
-## 2026-09-06 갱신 — 티스토리 자체 주입 마크업 다크모드 오버라이드는 여기로 모은다
+**편집은 여전히 `dashboard-skin/components/*.css` 각 파일에서 한다** — 사이드바를
+고칠 땐 `sidebar.css`를, 헤더를 고칠 땐 `header.css`를 그대로 연다. 이 루트
+`style.css`는 그 파일들을 이어붙인 **빌드 산출물**이라 직접 고치면 다음
+`bun run skin:build`(또는 `skin:build:style`)에서 덮어써진다 — `tailwind.css`가
+`src/input.css`의 산출물인 것과 똑같은 관계.
 
-`.menu_toolbar`(관리메뉴 아이콘)/`.tt_box_namecard`(이름카드 위젯)/`.fileblock`
-(첨부파일 카드)처럼 우리가 만든 게 아니라 **티스토리가 페이지에 직접 주입하는
-마크업**의 다크모드 대응 규칙은 header.css/content.css 등 컴포넌트 파일에 흩어
-두지 않고 이 파일에 모은다 — 어느 컴포넌트가 "소유"한 게 아니라 페이지 어디에나
-나타날 수 있는 범용 오버라이드이기 때문. 실제로 header.css와 티스토리 관리자
-"스킨 편집 > CSS" 탭(이 파일의 실제 편집 화면)에 같은 선택자로 서로 다른 값
-(`filter: invert(1)` vs `filter: inherit`)이 동시에 존재해 서로 상쇄되는 충돌이
-있었다 — 한 곳에만 두기로 하면서 해결.
+`tools/build-style.mjs`가 아래 순서(기존 `<link>` 순서 그대로, 나중 것이 우선
+적용)로 이어붙인다:
 
-- `.dark [data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb)`:
-  래스터 스프라이트 아이콘이라 색 토큰으로 재색칠 불가 → `filter: invert(1)`.
-- `.dark .tt_box_namecard`: 배경/이름/설명 텍스트를 각각 `--color-card`/
-  `--color-foreground`/`--color-muted-foreground`로 명시 재정의(티스토리 자체
-  CSS가 이 값들을 인라인 수준 특이도로 걸어둬 `!important` 필요).
-- `.dark .fileblock`: 배경/테두리/파일명/용량 텍스트도 같은 방식으로 토큰
-  재정의. 폴더 아이콘·다운로드 화살표만 래스터 그래픽이라 `filter: invert(1)`
-  예외 유지.
+```
+tooltip.css → scrollbar.css → smooth-scroll.css → card.css → sidebar.css →
+header.css → widgets.css → content.css → tistory-overrides.css
+```
 
-**중요(실측 정정):** `style.css`는 티스토리가 자동으로 페이지에 삽입해주지
-않는다 — skin.html에 `<link>`로 직접 걸어야 실제로 로드된다(스킨 편집 "CSS"
-탭에서 파일을 고쳐도, skin.html이 그 파일을 링크하지 않으면 어떤 페이지에도
-적용되지 않는 죽은 파일이 된다 — 실측: 예전에 남아있던 `filter: inherit`
-낙서도 이 상태라 실제로는 아무 페이지에도 영향을 준 적이 없었다). 그래서
-`skin.html`의 `./images/content.css` 바로 다음 줄에 `<link rel="stylesheet"
-href="./style.css" />`를 추가해 실제로 로드되게 만들었다 — 컴포넌트 CSS
-전부(tailwind→...→content.css)보다 뒤에 와서, 이 파일의 규칙이 항상
-마지막에 적용되는 오버라이드 레이어가 되도록 배치.
+`tistory-overrides.css`(티스토리 자체 주입 마크업 다크모드 대응, 자세한 내용은
+그 파일의 짝 `.md` 참고)는 항상 맨 마지막에 와서 최종 오버라이드 역할을 한다.
+
+JS는 그대로 5개 파일(`tooltip.js`/`sidebar.js`/`header.js`/`content.js`/
+`smooth-scroll.js`) 개별 업로드 유지 — 이번 통합은 CSS에만 해당.
+
+## 2026-09-06 이전 갱신 — style.css는 자동으로 로드되지 않는다(실측)
+
+`style.css`는 티스토리가 자동으로 페이지에 삽입해주지 않는다 — `skin.html`에
+`<link>`로 직접 걸어야 실제로 로드된다(실측: skin.html이 참조하지 않던 시절엔
+"CSS" 탭에서 파일을 고쳐도 어떤 페이지에도 반영되지 않는 죽은 파일이었다).
+그래서 `skin.html`의 `tailwind.css` 바로 다음 줄에 `<link rel="stylesheet"
+href="./style.css" />`를 두고 있다.
