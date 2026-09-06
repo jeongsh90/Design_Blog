@@ -21,6 +21,9 @@ _(주석 없음)_
 ## 2026-09-06 신규 — 위젯 영역 하단 "소개" 메뉴 (`[data-slot="widgets-footer"]`)
 
 `skin.html.md` §9 참고. 기존 위젯 카드(`data-slot="card"`)와 시각적으로 구분되는
-가벼운 하단 내비게이션 한 줄 — 위젯 카드들과 얇은 구분선(`border-top`)으로만
-나뉘고, 배경/헤더 없이 아이콘+텍스트 링크 하나만 가운데 정렬. 호버 시
-`--color-accent` 배경 + `--color-foreground` 텍스트로 전환.
+가벼운 하단 내비게이션 한 줄 — 위젯 카드들과 얇은 구분선(`border-top`)으로만 나뉜다.
+링크 자체는 전용 클래스를 새로 만들지 않고 `header.css`의 공용 Button 프리미티브
+(`[data-slot="button"][data-variant="link"]`)를 그대로 재사용 — "링크버튼 형태로"
+요청에 따라 shadcn 정본의 link variant(밑줄 없는 기본, 호버 시 밑줄, 색은
+`--color-primary`)를 그대로 쓴다. 래퍼(`[data-slot="widgets-footer"]`)는
+`justify-content: flex-start`로 왼쪽 정렬(최초엔 가운데 정렬이었다가 수정).
