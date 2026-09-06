@@ -1,6 +1,6 @@
 {
-  "status": "batch_2_complete",
-  "note": "배치 2 완료 — 2~5번 폰트 발행 + 1번 폰트 보완 수정까지 전부 완료. 다음 배치는 catalog.json 인덱스 5(6번째 폰트)부터 이어간다.",
+  "status": "batch_3_complete",
+  "note": "배치 3 완료 — 6~10번 폰트(카탈로그 인덱스 5~9) 발행 완료. 다음 배치는 catalog.json 인덱스 10(11번째 폰트)부터 이어간다.",
   "published": [
     {
       "index": 0,
@@ -42,22 +42,68 @@
       "url": "https://daitnu.tistory.com/7",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-5-binggrae.png",
       "tags": ["빙그레체", "무료폰트", "한글폰트", "손글씨체", "웹폰트"]
+    },
+    {
+      "index": 5,
+      "id": 6,
+      "name": "빙그레체II",
+      "url": "https://daitnu.tistory.com/8",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-6-binggraeii.png (부제 '더 두툼해진 빙그레의 손맛, 볼드 버전')",
+      "tags": [],
+      "note": "빙그레체(index4)의 볼드 웨이트. 다운로드 링크는 빙그레체와 동일(빙그레 미디어 폰트 페이지)"
+    },
+    {
+      "index": 6,
+      "id": 9,
+      "name": "한수원 한돋움체",
+      "url": "https://daitnu.tistory.com/9",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-7-khnp-handot.png (부제 '안정감 있게 딱 떨어지는 공공 고딕체')",
+      "tags": [],
+      "note": "한국수력원자력(한수원) 제작. 다운로드는 한수원 홈페이지"
+    },
+    {
+      "index": 7,
+      "id": 10,
+      "name": "한수원 한울림체",
+      "url": "https://daitnu.tistory.com/10",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-8-khnp-hanullim.png (부제 '또렷하고 힘 있게 울리는 굵은 고딕체')",
+      "tags": [],
+      "note": "한국수력원자력(한수원) 제작, 한돋움체보다 꽉찬 굵은 고딕. 다운로드 링크 동일"
+    },
+    {
+      "index": 8,
+      "id": 11,
+      "name": "KBIZ한마음고딕체",
+      "url": "https://daitnu.tistory.com/11",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-9-kbiz-hanmaum-gothic.png (부제 '군더더기 없이 반듯한 기본 고딕체')",
+      "tags": [],
+      "note": "중소기업중앙회 X 헤움디자인 제작. 라이선스에 사용권 제한(변형·재판매 금지) 조항 추가로 명시"
+    },
+    {
+      "index": 9,
+      "id": 12,
+      "name": "KBIZ한마음명조체",
+      "url": "https://daitnu.tistory.com/12",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-10-kbiz-hanmaum-myungjo.png (부제 '차분하고 단정한 문서용 명조체')",
+      "tags": [],
+      "note": "중소기업중앙회 X 헤움디자인 제작(한마음고딕체와 자매 폰트, 다운로드 링크 동일)"
     }
   ],
   "nextBatchStartsAt": {
-    "catalogIndex": 5,
-    "note": "6번째 폰트부터. 이 5개 draft/thumb 파일 구조와 발행 플로우(categoryFlow/modeFlow/publishFlow)를 그대로 재사용하면 된다."
+    "catalogIndex": 10,
+    "note": "11번째 폰트부터. 이 draft/thumb 파일 구조와 발행 플로우(categoryFlow/modeFlow/publishFlow)를 그대로 재사용하면 된다."
   },
   "rulesEstablishedThisBatch": [
     "본문 텍스트 어디에도 '눈누' 사이트명을 언급하지 않는다 (예: '웹폰트로 사용할 때 필요한 코드는 다음과 같다', '※ 위 표는 참고용으로 정리한 요약이다' 처럼 출처 사이트명 없이 자연스럽게 표현). 태그에도 '눈누'를 넣지 않는다.",
     "썸네일 부제 문구는 눈누 사이트의 기본 미리보기 문구를 그대로 베끼지 않고, 그 폰트의 성격을 담은 짧고 서로 다른 한국어 문구로 직접 작성한다.",
     "본문 인트로 문단 바로 아래에 실제 웹폰트가 라이브로 렌더링되는 샘플을 넣는다 — 카드 스타일(배경/테두리/패딩/폰트크기)은 인라인으로 반복하지 말고 스킨 전역 CSS 클래스 `.font-preview-card`/`.font-preview-text`(dashboard-skin/components/content.css, 배포는 dashboard-skin/deploy/style.css)를 사용한다. 인라인 <style>에는 그 폰트 고유의 @font-face 선언만 남기고, <p class=\"font-preview-text\">에는 style=\"font-family: '{name}-live', sans-serif;\" 외에 색상(color)이나 배경(background) 관련 선언을 절대 넣지 않는다 — `.font-preview-card`/`.font-preview-text`가 항상 고정 다크 배경(#0a0a0a)+흰 글자(#fff)로 처리하므로 라이트/다크 모드와 무관하게 항상 잘 보인다. 구조 예시:\n```html\n<style>\n@font-face {\n  font-family: '{font-family}-live';\n  src: url('{실제 웹폰트 CDN URL}') format('{format}');\n  font-display: swap;\n}\n</style>\n<div class=\"font-preview-card\">\n<p class=\"font-preview-text\" style=\"font-family: '{font-family}-live', sans-serif;\">{샘플 문장}</p>\n</div>\n```",
-    "티스토리 플러그인 '카테고리 글 더 보기'(스킨 자체 관련글 위젯과 중복 노출되던 원인)는 이번 배치에서 비활성화(해제) 완료 — 이후 배치에서 다시 신경 쓸 필요 없음.",
-    "글 목록은 스킨 자체에서 썸네일형(그리드)으로 고정돼 있다(목록형 토글 제거됨) — 대표이미지(썸네일)를 반드시 챙겨야 카드가 정상적으로 보인다."
+    "티스토리 플러그인 '카테고리 글 더 보기'(스킨 자체 관련글 위젯과 중복 노출되던 원인)는 배치2에서 비활성화(해제) 완료 — 이후 배치에서 다시 신경 쓸 필요 없음.",
+    "글 목록은 스킨 자체에서 썸네일형(그리드)으로 고정돼 있다(목록형 토글 제거됨) — 대표이미지(썸네일)를 반드시 챙겨야 카드가 정상적으로 보인다.",
+    "글 상세 페이지의 대표이미지/.font-preview-card 폭이 1/3만 차지하던 스킨 버그는 배치3 이전에 스킨 레벨에서 수정·배포 완료 — 배치3 5개 글 모두 실제로 전체 폭(886px, 콘텐츠 컬럼 기준)으로 정상 렌더링됨을 발행 직후 실측 확인함. 같은 제작사(한수원/KBIZ)에서 나온 자매 폰트끼리는 다운로드 링크가 동일하다 — 새로 찾지 말고 재사용해도 된다."
   ],
   "localThumbServer": "bun _workspace/noonnu-thumbs/serve-thumbs.mjs (port 8811) - 재기동 필요할 수 있음",
   "categoryFlow": "카테고리 선택 콤보박스 클릭 -> option '- Font' 클릭 (Design 하위)",
-  "modeFlow": "본문 우측 상단 '기본모드' 토글 버튼 클릭 -> 드롭다운(기본모드/마크다운/HTML)에서 HTML 클릭 -> confirm 다이얼로그 accept -> CodeMirror 영역 클릭 -> Ctrl+A -> Ctrl+V (PowerShell Get-Content -Raw -Encoding UTF8 | Set-Clipboard 로 클립보드 준비 필수, 인코딩 안 주면 한글 깨짐 — 붙여넣기 직전에 Get-Clipboard -Raw로 길이 재확인하는 습관을 들일 것, 중간에 다른 PowerShell/Bash 호출이 끼면 클립보드가 예상과 다른 내용으로 바뀌어 있을 수 있음)",
+  "modeFlow": "본문 우측 상단 '기본모드' 토글 버튼 클릭 -> 드롭다운(기본모드/마크다운/HTML)에서 HTML 클릭 -> confirm 다이얼로그 accept -> CodeMirror 영역 클릭이 안 먹으면 page.evaluate로 `.html-editor .CodeMirror` 엘리먼트의 `.CodeMirror.focus()`를 직접 호출해 포커스 -> Ctrl+A -> Ctrl+V (PowerShell Get-Content -Raw -Encoding UTF8 | Set-Clipboard 로 클립보드 준비 필수, 인코딩 안 주면 한글 깨짐 — 붙여넣기 직전에 Get-Clipboard -Raw로 길이 재확인하는 습관을 들일 것, 중간에 다른 PowerShell/Bash 호출이 끼면 클립보드가 예상과 다른 내용으로 바뀌어 있을 수 있음, 붙여넣기 후에도 `.CodeMirror.getValue().length`로 클립보드 길이와 일치하는지 재확인)",
   "publishFlow": "완료 버튼 클릭 -> 다이얼로그에서 '공개' 라디오 선택 -> '대표이미지 추가'(Choose File)에 로컬 png 업로드 -> '공개 발행' 버튼 클릭",
   "skinDeployFlow": "스킨(대시보드 스킨) CSS/HTML/JS를 바꿀 일이 생기면: https://daitnu.tistory.com/manage/design/skin/edit#/source/css (또는 /source/html) 이동 -> Monaco 에디터 영역 클릭 -> Ctrl+A -> (클립보드를 파일 내용으로 재설정 직후) Ctrl+V -> window.monaco.editor.getModels()[0].getValue()로 붙여넣기 결과 검증 -> '적용' 버튼 클릭 -> alert accept. 파일 업로드가 필요한 JS/CSS 에셋(예: images/content.js)은 '파일업로드' 탭에서 'Choose File'로 같은 파일명의 로컬 파일을 선택하면 서버의 기존 경로(images/폴더 포함)를 그대로 덮어쓴다."
 }
