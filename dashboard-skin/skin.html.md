@@ -81,11 +81,18 @@ article 쪽 댓글 헤딩은 `[##_article_rep_rp_cnt_##]`로 개수를 보여주
 
 ## 9. [SPEC 2026-09-06] 위젯 영역 하단 "소개" 메뉴
 
-"위젯영역 하단에 about 페이지 메뉴 추가" 요청 — 공지사항/최근 글처럼 반복되는
-Tistory 위젯이 아니라 정적 링크 하나라 `<s_sidebar_element>` "card" 패턴 대신
-가벼운 `<nav data-slot="widgets-footer">` + `data-slot="widgets-footer-link"`
-하나로 구현(위젯 카드 5개 뒤, `</aside>` 바로 앞). 링크 대상은 Tistory
-"페이지 관리"로 등록한 정적 Page(`/pages/about`) — Page는 알고 보니 Notice와
-달리 일반 글과 동일한 `<s_article_rep>`/`<s_permalink_article_rep>` 템플릿을
-그대로 타서(실측 확인) 별도 `s_notice_rep` 같은 전용 블록이 필요 없었다.
+"위젯영역 하단에 about 페이지 메뉴 추가" 요청 — 링크 대상은 Tistory "페이지
+관리"로 등록한 정적 Page(`/pages/about`) — Page는 알고 보니 Notice와 달리
+일반 글과 동일한 `<s_article_rep>`/`<s_permalink_article_rep>` 템플릿을 그대로
+타서(실측 확인) 별도 `s_notice_rep` 같은 전용 블록이 필요 없었다.
+
+**2026-09-07 갱신 — 다른 위젯과 동일한 카드로 통일.** 처음엔 공지사항/최근 글처럼
+반복되는 Tistory 위젯이 아니라 정적 링크 하나라는 이유로 `<s_sidebar_element>`
+"card" 패턴 대신 가벼운 `<nav data-slot="widgets-footer">` + 전용 링크 클래스로
+구현했었는데, 사용자가 "다른 섹션과 마찬가지로 데이터슬롯 카드로 구분"을 요청해
+다른 위젯 5개와 완전히 같은 `<s_sidebar_element><section data-slot="card"
+data-size="sm" data-widget="about"><div data-slot="card-content">...` 구조로
+교체(제목 개념이 없는 단일 링크라 `card-header` 없이 `card-content`만). 앞에
+붙였던 정보(ⓘ) 아이콘도 "앞에 아이콘 제거" 요청으로 함께 제거 — 이제 "소개"
+텍스트 링크(공용 `data-variant="link"` Button)만 남는다.
 

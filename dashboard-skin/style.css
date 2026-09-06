@@ -1919,13 +1919,6 @@ html[data-theme="dark"] [data-slot="theme-switch"] > [data-theme="dark"] {
 }
 
 
-[data-slot="widgets-footer"] {
-  display: flex;
-  justify-content: flex-start;
-  padding-top: calc(var(--spacing) * 2);
-  border-top: 1px solid var(--color-border);
-}
-
 
 
 

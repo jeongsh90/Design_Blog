@@ -18,12 +18,15 @@ _(주석 없음)_
 콘솔에 에러가 안 뜨는 종류의 실패라 `document.styleSheets`로도 못 잡고, 전체 파일의
 `{`/`}` 개수를 세어보고서야 발견). `}` 하나 추가로 해결.
 
-## 2026-09-06 신규 — 위젯 영역 하단 "소개" 메뉴 (`[data-slot="widgets-footer"]`)
+## 2026-09-06 신규, 2026-09-07 대체 — 위젯 영역 하단 "소개" 메뉴
 
-`skin.html.md` §9 참고. 기존 위젯 카드(`data-slot="card"`)와 시각적으로 구분되는
-가벼운 하단 내비게이션 한 줄 — 위젯 카드들과 얇은 구분선(`border-top`)으로만 나뉜다.
-링크 자체는 전용 클래스를 새로 만들지 않고 `header.css`의 공용 Button 프리미티브
-(`[data-slot="button"][data-variant="link"]`)를 그대로 재사용 — "링크버튼 형태로"
-요청에 따라 shadcn 정본의 link variant(밑줄 없는 기본, 호버 시 밑줄, 색은
-`--color-primary`)를 그대로 쓴다. 래퍼(`[data-slot="widgets-footer"]`)는
-`justify-content: flex-start`로 왼쪽 정렬(최초엔 가운데 정렬이었다가 수정).
+`skin.html.md` §9 참고. 처음엔(2026-09-06) 기존 위젯 카드(`data-slot="card"`)와
+시각적으로 구분되는 가벼운 하단 내비게이션 한 줄로(`[data-slot="widgets-footer"]`,
+얇은 구분선(`border-top`)) 만들었으나, 사용자가 "다른 섹션과 마찬가지로 데이터슬롯
+카드로 구분"을 요청해 2026-09-07 다른 위젯 5개와 완전히 같은 `data-slot="card"`
+구조로 교체 — `[data-slot="widgets-footer"]` 전용 규칙은 삭제(더 이상 참조되는
+곳이 없어 죽은 코드), 카드 사이 간격은 `[data-slot="widgets"]`가 이미 자식마다
+주는 공통 `gap`으로 자동 해결(별도 `border-top` 불필요). 링크 자체는 전용
+클래스를 새로 만들지 않고 `header.css`의 공용 Button 프리미티브
+(`[data-slot="button"][data-variant="link"]`)를 계속 재사용 — shadcn 정본의
+link variant(밑줄 없는 기본, 호버 시 밑줄, 색은 `--color-primary`) 그대로.
