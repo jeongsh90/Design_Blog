@@ -78,3 +78,16 @@ CDN URL이라 이것만 글마다 인라인 `<style>`로 따로 넣는다)와 �
 `[data-view="thumb"]`로 스코프된 기존 규칙들은 그대로 두되, 이제 조건부가 아니라
 항상 적용되는 유일한 레이아웃이 됐다.
 
+**이 변경이 유발한 실제 회귀(같은 날 발견·수정)**: `[data-slot="post-list"]`는
+글 목록(list)일 때도, 단일 글 상세(permalink, `s_permalink_article_rep`)일 때도
+똑같이 쓰이는 컨테이너다(`s_article_rep` 반복 태그 하나가 상황에 따라 둘 중
+하나만 채운다). 예전엔 `initViewToggle`이 `post-single`이 있으면 아예 실행을
+건너뛰어(`if (inner.querySelector('[data-slot="post-single"]')) return;`) 단일
+글 페이지의 `data-view`가 사실상 항상 초기값 `"list"`로 남아 문제가 없었는데,
+토글을 없애고 `data-view="thumb"`를 무조건 고정하면서 **단일 글 페이지에서도
+`post-list`가 3열 그리드가 돼**, 글 본문(`post-single`)이 그리드의 첫 칸(전체
+폭의 1/3)에만 눌려 렌더링되는 실제 버그가 났다(실사이트 스크린샷으로 확인 —
+대표이미지와 `.font-preview-card` 카드가 폭의 1/3에만 꽉 차 있었음). 3열 그리드
+규칙에 `:not(:has([data-slot="post-single"]))`를 추가해 단일 글 페이지에서는
+`post-list`가 그리드가 되지 않도록(기본 block 레이아웃으로 돌아가도록) 수정.
+

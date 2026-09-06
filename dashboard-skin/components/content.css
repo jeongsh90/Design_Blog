@@ -315,7 +315,7 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 }
 
 
-[data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"] {
+[data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"]:not(:has([data-slot="post-single"])) {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: calc(var(--spacing) * 3);
@@ -636,7 +636,8 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 
 
 [data-slot="post-single-body"] img {
-
+  display: block;
+  width: 100%;
   border-radius: var(--radius-md);
   margin-inline: auto;
 }
