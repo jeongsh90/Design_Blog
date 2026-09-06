@@ -55,3 +55,25 @@
                            태그/댓글(참여 성격) 앞에 배치했다. 아래 nav 자체는 둘 다 없을
                            때만 CSS로 숨긴다(content.css [data-slot="post-prevnext"]).
 
+---
+
+## 7. [SPEC 2026-09-06] 공지사항(/notice/N) 단일 글 본문 — `<s_notice_rep>` 블록
+
+공지사항은 일반 글의 `<s_article_rep>` 루프를 타지 않고 별도의 `<s_notice_rep>`/
+`notice_rep_*` 치환자를 쓴다(티스토리 공식 스킨 문서로 확인 — `s_rct_notice`는
+사이드바 위젯용 반복일 뿐, 단일 공지 페이지 본문에는 대응하지 않아 처음엔
+제목만 나오고 본문이 비어 있는 버그가 있었다). article 쪽(`<s_permalink_article_rep>`
+내부)과 동일한 `data-slot`(`post-single`/`post-single-title`/`post-single-meta`/
+`post-thumb`/`post-single-body`)을 그대로 재사용해 같은 타이포그래피가 적용되게
+했다. 댓글(`<s_rp>`)은 콘텐츠 종류와 무관한 공통 태그라 article 쪽과 동일하게
+포함했지만, 좋아요/공유/이전-다음글/태그/관련글은 공지사항 개념상 의미가 없어
+계속 제외했다.
+
+## 8. [SPEC 2026-09-06] 공지사항 댓글 헤딩에 개수 치환자를 안 쓰는 이유
+
+article 쪽 댓글 헤딩은 `[##_article_rep_rp_cnt_##]`로 개수를 보여주는데, 이
+치환자는 article 전용이라 공지사항 컨텍스트에서는 치환되지 않고 리터럴 텍스트
+그대로("댓글 [##_article_rep_rp_cnt_##]") 출력되는 실제 버그가 있었다(대응하는
+`notice_rep_rp_cnt`류 치환자는 티스토리 문서에 없음). 그래서 공지사항 쪽
+헤딩은 숫자 없이 "댓글"만 표시 — 실제 개수는 아래 댓글 목록으로 확인 가능하다.
+

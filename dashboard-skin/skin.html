@@ -579,11 +579,6 @@
                 </s_permalink_article_rep>
               </s_article_rep>
 
-              <!-- [SPEC 2026-09-06] 공지사항(/notice/N) 단일 글 본문 — 공지사항은 s_article_rep(일반 글) 루프를
-                   타지 않고 별도의 s_notice_rep/notice_rep_* 치환자를 쓴다(티스토리 공식 문서 확인).
-                   article 쪽과 동일한 data-slot을 재사용해 같은 타이포그래피가 그대로 적용되게 함.
-                   댓글(<s_rp>)은 콘텐츠 종류와 무관한 공통 태그라 article 쪽과 동일하게 포함 —
-                   좋아요/공유/이전-다음글/태그/관련글은 공지사항에 의미가 없는 개념이라 계속 제외. -->
               <s_notice_rep>
                 <s_permalink_article_rep>
                   <article data-slot="post-single">
@@ -601,9 +596,6 @@
                     <footer data-slot="post-footer">
                       <s_rp>
                       <section data-slot="post-comments" id="comments" aria-label="댓글">
-                        <!-- [SPEC 2026-09-06] 공지사항 쪽엔 article_rep_rp_cnt에 대응하는 댓글개수
-                             치환자가 티스토리 문서에 없음(실측: 그대로 리터럴 텍스트로 출력됨) —
-                             숫자 없이 "댓글"만 표시, 실제 개수는 아래 댓글 목록으로 확인 가능 -->
                         <h2 data-slot="post-footer-title">댓글</h2>
 
                         <s_rp_container>
