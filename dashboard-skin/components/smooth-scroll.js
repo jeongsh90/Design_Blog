@@ -109,6 +109,35 @@
         initScrollbarAutoHide(el, lenis);
       });
     }
+
+
+    if (lenisPairs.length) {
+      var resizeAll = function () {
+        for (var i = 0; i < lenisPairs.length; i++) lenisPairs[i][1].resize();
+      };
+
+
+      if (typeof MutationObserver !== "undefined") {
+        var pendingResize = false;
+        var scheduleResize = function () {
+          if (pendingResize) return;
+          pendingResize = true;
+          requestAnimationFrame(function () {
+            pendingResize = false;
+            resizeAll();
+          });
+        };
+        var mo = new MutationObserver(scheduleResize);
+        for (var i = 0; i < lenisPairs.length; i++) {
+          mo.observe(lenisPairs[i][0], { childList: true, subtree: true });
+        }
+      }
+
+      window.addEventListener("load", resizeAll);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(resizeAll);
+      }
+    }
   }
 
   if (document.readyState === "loading") {

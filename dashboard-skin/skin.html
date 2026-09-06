@@ -601,7 +601,10 @@
                     <footer data-slot="post-footer">
                       <s_rp>
                       <section data-slot="post-comments" id="comments" aria-label="댓글">
-                        <h2 data-slot="post-footer-title">댓글 <s_rp_count><span data-slot="post-comments-count">[##_article_rep_rp_cnt_##]</span></s_rp_count></h2>
+                        <!-- [SPEC 2026-09-06] 공지사항 쪽엔 article_rep_rp_cnt에 대응하는 댓글개수
+                             치환자가 티스토리 문서에 없음(실측: 그대로 리터럴 텍스트로 출력됨) —
+                             숫자 없이 "댓글"만 표시, 실제 개수는 아래 댓글 목록으로 확인 가능 -->
+                        <h2 data-slot="post-footer-title">댓글</h2>
 
                         <s_rp_container>
                           <ol data-slot="comment-list">
