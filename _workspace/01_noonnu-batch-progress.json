@@ -1,6 +1,6 @@
 {
-  "status": "batch_3_complete",
-  "note": "배치 3 완료 — 6~10번 폰트(카탈로그 인덱스 5~9) 발행 완료. 다음 배치는 catalog.json 인덱스 10(11번째 폰트)부터 이어간다.",
+  "status": "batch_4_partial",
+  "note": "배치 4(카탈로그 인덱스 10~14, 11~15번째 폰트) 중 3개(11~13번, 경기천년바탕/경기천년제목/아리따돋움) 발행 완료. 나머지 2개(14번 아리따부리, 15번 한둥근제목)는 티스토리 '하루 최대 15개 공개 발행' 일일 한도에 걸려 발행하지 못함 — 발행 당일 이미 13개(고도체~KBIZ한마음명조체)가 공개 발행돼 있던 상태에서 14번째(아리따부리) 시도가 거부됨(브라우저에 '하루에 새롭게 공개 발행할 수 있는 글은 최대 15개까지입니다' alert). 아리따부리는 초안 본문을 Tistory HTML모드에 붙여넣고 '임시저장'까지 해 둠(관리자 글쓰기 화면에서 이어서 작성 가능) — 로컬 draft/thumbnail 파일도 그대로 존재. 한둥근제목은 로컬 draft/thumbnail만 준비된 상태(에디터에 붙여넣기 시도조차 안 함). 다음 세션은 새 날짜(일일 한도 리셋 후) categoryFlow/modeFlow/publishFlow 그대로 재사용해 이 2개부터 마저 발행하면 됨 — 눈누 상세 페이지 재조사 불필요(아래 draft 파일에 이미 실제 라이선스/웹폰트코드/다운로드링크 반영됨).",
   "published": [
     {
       "index": 0,
@@ -87,11 +87,56 @@
       "thumbnail": "_workspace/noonnu-thumbs/thumb-10-kbiz-hanmaum-myungjo.png (부제 '차분하고 단정한 문서용 명조체')",
       "tags": [],
       "note": "중소기업중앙회 X 헤움디자인 제작(한마음고딕체와 자매 폰트, 다운로드 링크 동일)"
+    },
+    {
+      "index": 10,
+      "id": 13,
+      "name": "경기천년바탕",
+      "url": "https://daitnu.tistory.com/13",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-11-gg-millennium-batang.png (부제 '천년의 결을 담은 단정한 바탕체')",
+      "tags": [],
+      "note": "경기도청 제작, 2가지 굵기(Regular/Bold). 다운로드는 경기도청 홈페이지"
+    },
+    {
+      "index": 11,
+      "id": 14,
+      "name": "경기천년제목",
+      "url": "https://daitnu.tistory.com/14",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-12-gg-millennium-title.png (부제 '가볍고 굵게, 자유자재로 쓰는 제목체')",
+      "tags": [],
+      "note": "경기천년바탕(index10)과 자매 폰트, 경기도청 제작. 4가지 굵기(Light 300/Medium 500/Bold 700/TitleV 800). 다운로드 링크 동일"
+    },
+    {
+      "index": 12,
+      "id": 15,
+      "name": "아리따돋움",
+      "url": "https://daitnu.tistory.com/15",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-13-arita-dotum.png (부제 '매끈하고 정갈한 브랜드 고딕체')",
+      "tags": [],
+      "note": "아모레퍼시픽 제작. 라이선스에 저작권 표기 문구(\"이 제작물은 아모레퍼시픽의 아리따글꼴을 사용하여 디자인 되었습니다.\", 6px 이상) 조건부 허용 조항 있음, 포장지/BI·CI 사용 금지"
+    }
+  ],
+  "blockedByDailyQuota": [
+    {
+      "index": 13,
+      "id": 16,
+      "name": "아리따부리",
+      "draft": "_workspace/noonnu-drafts/font-14-arita-buri.html",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-14-arita-buri.png (부제 '부드러운 붓끝이 살아있는 세리프체', 렌더링 확인 완료)",
+      "note": "아리따돋움(index12)과 자매 폰트, 아모레퍼시픽 제작, 다운로드 링크 동일, 라이선스도 동일 조항. HTML모드에 붙여넣기+임시저장까지 완료(관리자 글쓰기 화면에서 이어서 작성 가능) — 발행만 남음."
+    },
+    {
+      "index": 14,
+      "id": 18,
+      "name": "한둥근제목",
+      "draft": "_workspace/noonnu-drafts/font-15-han-round-title.html",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-15-han-round-title.png (부제 '둥글둥글 부드럽게 힘주는 제목체', 렌더링 확인 완료)",
+      "note": "윤디자인 제작. 다운로드 페이지에서 별도 폰트 관리 프로그램(폰코 자키) 설치가 필요함(눈누 안내사항). 에디터 붙여넣기 전 상태 — draft 파일 그대로 사용 가능."
     }
   ],
   "nextBatchStartsAt": {
-    "catalogIndex": 10,
-    "note": "11번째 폰트부터. 이 draft/thumb 파일 구조와 발행 플로우(categoryFlow/modeFlow/publishFlow)를 그대로 재사용하면 된다."
+    "catalogIndex": 13,
+    "note": "카탈로그 인덱스 13(아리따부리, id 16)부터. 하지만 실제로는 blockedByDailyQuota의 draft/thumbnail이 이미 준비돼 있으니 눈누 재조사 없이 바로 categoryFlow/modeFlow/publishFlow로 발행만 하면 됨. 그 다음 새 폰트는 catalogIndex 15부터."
   },
   "rulesEstablishedThisBatch": [
     "본문 텍스트 어디에도 '눈누' 사이트명을 언급하지 않는다 (예: '웹폰트로 사용할 때 필요한 코드는 다음과 같다', '※ 위 표는 참고용으로 정리한 요약이다' 처럼 출처 사이트명 없이 자연스럽게 표현). 태그에도 '눈누'를 넣지 않는다.",
@@ -99,7 +144,8 @@
     "본문 인트로 문단 바로 아래에 실제 웹폰트가 라이브로 렌더링되는 샘플을 넣는다 — 카드 스타일(배경/테두리/패딩/폰트크기)은 인라인으로 반복하지 말고 스킨 전역 CSS 클래스 `.font-preview-card`/`.font-preview-text`(dashboard-skin/components/content.css, 배포는 dashboard-skin/deploy/style.css)를 사용한다. 인라인 <style>에는 그 폰트 고유의 @font-face 선언만 남기고, <p class=\"font-preview-text\">에는 style=\"font-family: '{name}-live', sans-serif;\" 외에 색상(color)이나 배경(background) 관련 선언을 절대 넣지 않는다 — `.font-preview-card`/`.font-preview-text`가 항상 고정 다크 배경(#0a0a0a)+흰 글자(#fff)로 처리하므로 라이트/다크 모드와 무관하게 항상 잘 보인다. 구조 예시:\n```html\n<style>\n@font-face {\n  font-family: '{font-family}-live';\n  src: url('{실제 웹폰트 CDN URL}') format('{format}');\n  font-display: swap;\n}\n</style>\n<div class=\"font-preview-card\">\n<p class=\"font-preview-text\" style=\"font-family: '{font-family}-live', sans-serif;\">{샘플 문장}</p>\n</div>\n```",
     "티스토리 플러그인 '카테고리 글 더 보기'(스킨 자체 관련글 위젯과 중복 노출되던 원인)는 배치2에서 비활성화(해제) 완료 — 이후 배치에서 다시 신경 쓸 필요 없음.",
     "글 목록은 스킨 자체에서 썸네일형(그리드)으로 고정돼 있다(목록형 토글 제거됨) — 대표이미지(썸네일)를 반드시 챙겨야 카드가 정상적으로 보인다.",
-    "글 상세 페이지의 대표이미지/.font-preview-card 폭이 1/3만 차지하던 스킨 버그는 배치3 이전에 스킨 레벨에서 수정·배포 완료 — 배치3 5개 글 모두 실제로 전체 폭(886px, 콘텐츠 컬럼 기준)으로 정상 렌더링됨을 발행 직후 실측 확인함. 같은 제작사(한수원/KBIZ)에서 나온 자매 폰트끼리는 다운로드 링크가 동일하다 — 새로 찾지 말고 재사용해도 된다."
+    "글 상세 페이지의 대표이미지/.font-preview-card 폭이 1/3만 차지하던 스킨 버그는 배치3 이전에 스킨 레벨에서 수정·배포 완료 — 배치3 5개 글 모두 실제로 전체 폭(886px, 콘텐츠 컬럼 기준)으로 정상 렌더링됨을 발행 직후 실측 확인함. 같은 제작사(한수원/KBIZ/경기도청/아모레퍼시픽)에서 나온 자매 폰트끼리는 다운로드 링크가 동일하다 — 새로 찾지 말고 재사용해도 된다.",
+    "[배치4에서 발견] 티스토리는 '하루에 새롭게 공개 발행할 수 있는 글은 최대 15개까지'라는 계정 단위 일일 한도가 있다(alert 메시지 그대로). 배치 시작 전 오늘 이미 발행된 공개글 수를 감안해 계획을 짜야 한다 — /manage/posts/ 목록에서 오늘 날짜로 찍힌 글이 몇 개인지 먼저 확인하고, 그 개수 + 이번에 발행하려는 개수가 15를 넘으면 넘는 만큼은 오늘 발행이 거부된다(정확한 임계 개수는 실측으로만 확인 가능 — 이번 배치는 13개가 이미 있는 상태에서 14번째 공개 발행 시도가 거부됨). 한도에 걸리면: 이미 HTML 에디터에 붙여넣은 내용은 '완료' 다이얼로그를 취소하지 말고 그냥 라디오를 비공개로 두거나 상단 '임시저장' 버튼을 눌러 저장해 두면(관리자 글쓰기 화면 재진입 시 '이어서 작성하시겠습니까' 확인으로 복구 가능) 다음 날 새로 타이핑할 필요가 없다. draft(_workspace/noonnu-drafts)·thumbnail(_workspace/noonnu-thumbs) 파일 자체는 이미 완성돼 있으니 다음 세션은 눈누 재조사 없이 바로 발행 단계부터 재개하면 된다."
   ],
   "localThumbServer": "bun _workspace/noonnu-thumbs/serve-thumbs.mjs (port 8811) - 재기동 필요할 수 있음",
   "categoryFlow": "카테고리 선택 콤보박스 클릭 -> option '- Font' 클릭 (Design 하위)",
