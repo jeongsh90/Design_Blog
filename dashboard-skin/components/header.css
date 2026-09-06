@@ -394,21 +394,6 @@ a[data-slot="button"] {
 [data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .btn_menu_toolbar:hover {
   background-color: transparent !important;
 }
-.dark [data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) {
-  filter: invert(1);
-}
-
-.dark .tt_box_namecard {
-  background-color: var(--color-card) !important;
-  border: 1px solid var(--color-border);
-}
-.dark .tt_box_namecard .tt_tit_cont {
-  color: var(--color-foreground) !important;
-}
-.dark .tt_box_namecard .tt_desc {
-  color: var(--color-muted-foreground) !important;
-}
-
 [data-slot="header-actions"] > .btn_subscription {
   display: inline-flex !important;
   width: auto !important;
