@@ -1271,7 +1271,3 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 [data-highlighted-line] { position: relative; }
 [data-rehype-pretty-code-title] { border-bottom-width: 1px; border-bottom-style: solid; }
 [data-line] { min-height: calc(var(--leading-relaxed) * 1em); }
-
-.dark [data-slot="header-actions"] .btn_menu_toolbar {
-  filter: invert(1);
-}
