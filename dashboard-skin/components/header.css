@@ -394,8 +394,8 @@ a[data-slot="button"] {
 [data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .btn_menu_toolbar:hover {
   background-color: transparent !important;
 }
-.dark [data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .img_common_tistory {
-  filter: invert(1) !important;
+.dark [data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) {
+  filter: invert(1);
 }
 
 [data-slot="header-actions"] > .btn_subscription {
