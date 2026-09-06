@@ -67,9 +67,11 @@ dashboard-skin/
 │   ├── verify-prose.mjs      ← 본문 프로즈 체크리스트 자동 검증(라이트/다크)
 │   ├── verify-footer.mjs     ← 글 상세 하단 4종 §9-4 체크리스트 30항 자동 검증(라이트/다크)
 │   └── verify-codeblock.mjs  ← 코드블록 §9 체크리스트 14항 자동 검증(라이트/다크 · CDN 차단 · no-JS · 클립보드)
-├── deploy/                   ← **업로드용 스냅샷** — 개발 파일 없이 실제 올릴 14개 + `skin.html`만
-│                                평면으로 모아 둔 폴더. 사용법은 `deploy/README.md` 참고(이 문서의
-│                                "티스토리 업로드 방법"과 같은 내용을 폴더 하나로 완결시킨 것).
+├── index.xml                 ← 스킨 이름·설명·제작자·저작권 (스킨 편집 화면에 표시)
+├── style.css                 ← 티스토리 패키지 필수 슬롯(내용은 스텁, 실제 스타일은 images/*.css)
+├── deploy/                   ← **업로드용 스냅샷** — 개발 파일 없이 실제 올릴 CSS/JS + `skin.html`
+│                                + `index.xml` + 미리보기 jpg + 신규 등록용 zip.
+│                                사용법은 `deploy/README.md` 참고.
 └── README.md
 ```
 
@@ -99,6 +101,19 @@ bun run skin:verify:codeblock # 코드블록 §9 체크리스트 14항
   반드시 위 서버(http://localhost)로 열 것.
 - `serve.mjs`는 확장자 없는 경로(`/category/Design` 등)를 목업으로 폴백시킨다 —
   카테고리 URL에서 활성 표시가 붙는지 확인하기 위한 장치다.
+
+---
+
+## 스킨 정보 (index.xml)
+
+스킨 편집 화면의 이름·제작자·저작권은 `skin.html`이 아니라 **`index.xml`**에서 온다.
+이전에 적용해 둔 JQ.Minimal 패키지를 HTML만 덮어쓰면 그 잔재가 그대로 남는다.
+
+새로 등록할 때는 `dashboard-skin/deploy/DAITNU-v1.0.0.zip`을 쓴다
+(이름 DAITNU, 제작자 `jeongsanghoon@naver.com`, 저작권은 제작자).
+미리보기 이미지는 `deploy/preview256.jpg` · `preview560.jpg` · `preview1600.jpg`.
+
+원작 JQ.Minimal(`daitnu-skin-v1.01`)의 `index.xml`은 라이선스상 그대로 둔다.
 
 ---
 
@@ -201,14 +216,11 @@ bun run skin:verify:codeblock # 코드블록 §9 체크리스트 14항
 - 구조는 `D:\MyCloud\2026포트폴리오\Design-system`의 헤더를 그대로 이식했다 —
   `header` / `header-inner` / `header-start` / `header-actions`, 높이 `calc(var(--spacing)*14)`(**56px**,
   `sidebar-header`와 동일), `border-bottom: 1px solid var(--color-border)`.
-- **우측 끝:** 홈 / 태그 / 방명록 (`data-slot="button" data-variant="ghost" data-size="sm"`, 32px)
-  + 테마 전환(`data-header-theme-toggle`). 아이콘·링크는 사이드바 "둘러보기" 그룹과 같은 것을 쓴다.
+- **우측 끝:** 스킨 구독 버튼(`btn_subscription #subscribe`)과 소유자 점3개.
+  티스토리 플로팅 `toolbar_rb`는 숨긴다. 테마 전환은 헤더에 두지 않는다 —
+  뷰포트 우측 하단 `[data-slot="page-dock"]`(시스템/라이트/다크 필 + 맨 위로).
 - **좌측:** 사이드바 토글(`sidebar-trigger`, 28px — shadcn 원본 `size-7` 유지) + 브레드크럼
   `[##_title_##] / [##_page_title_##]`. 홈처럼 두 값이 같아지면 `header.js`가 앞 크럼과 구분자를 접는다.
-- 헤더 테마 토글은 **PC에서 `display:none`이다**(Design-system 원본 규칙 — 사이드바 푸터 토글과
-  둘이 동시에 보이지 않게 하려는 의도). 반응형 구역에서 ≤48rem 미디어쿼리 한 블록만 추가하면
-  헤더 토글이 켜지고 사이드바 토글이 꺼진다(양쪽에 `data-header-theme-toggle` /
-  `data-sidebar-theme-toggle` 훅을 이미 붙여 뒀다).
 - 헤더는 `position: sticky; top:0; z-index:9`다. Design-system 원본의 `height:100vh` + 본문 내부
   스크롤 모델은 티스토리(관리 메뉴바·광고 주입, 긴 글 앵커 이동)와 맞지 않아 채택하지 않았다 —
   **본문 스크롤 방식은 content 구역이 자유롭게 정하면 된다.**

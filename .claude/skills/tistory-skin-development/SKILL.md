@@ -47,10 +47,34 @@ dashboard-skin/
 
 ## 로컬 검증 (Tistory 계정 없이)
 
-1. `dashboard-skin/skin.html`의 티스토리 치환자를 더미 데이터로 바꾼 로컬 사본(`_workspace/mockup-preview.html`)을 만든다.
-2. Playwright로 열어 **PC 뷰포트 기준**(지금 단계는 반응형 이전)으로 실제 클릭/키보드(`Ctrl+B`)로 사이드바 토글, 쿠키 저장·새로고침 후 상태 복원, `data-state`/`data-collapsible` 속성이 스펙대로 바뀌는지 확인한다.
-3. 브라우저 개발자도구 없이도 확인 가능하도록 `page.evaluate`로 DOM의 `data-slot`/`data-state` 값을 직접 읽어 shadcn 원본 명세와 정확히 일치하는지 assert 방식으로 검증한다 — 스크린샷만으로는 속성 값까지 확인할 수 없다.
+검증은 에이전트가 끝낸다. "브라우저에서 확인해 주세요"로 넘기지 않는다. Claude Code가 Playwright MCP를 등록해 두고 클릭·스크린샷까지 하던 것과 같은 수준이다.
+
+1. `bun run skin:preview`로 목업을 갱신한다. `http://localhost:4321`이 응답하지 않으면 `bun run skin:serve`를 띄운다.
+2. Playwright MCP(`browser_navigate` / `browser_click` / `browser_take_screenshot` / `browser_evaluate` 등)가 세션에 있으면 그걸 쓴다. Cursor는 프로젝트 `.cursor/mcp.json`의 `@playwright/mcp`다. MCP가 안 보이면 사용자에게 설정 화면을 안내하기 전에, 아래 3~4로 검증을 먼저 끝낸다.
+3. 브라우저 바이너리가 없으면 `bunx playwright install chromium`을 실행한다. 샌드박스 캐시에만 있고 `%USERPROFILE%\AppData\Local\ms-playwright`에는 없으면 그 경로로 다시 설치한다. 그래도 없으면 시스템 Chrome을 `PLAYWRIGHT_CHROME_PATH`로 쓴다(Windows: `C:\Program Files\Google\Chrome\Application\chrome.exe`).
+4. MCP가 없거나 픽셀 assert가 필요하면 기존 러너를 돌린다: `bun run skin:verify:content` / `skin:verify:prose` / `skin:verify:codeblock`, 또는 `dashboard-skin/tools/verify-*.mjs`. 이 스크립트는 Playwright `launch`가 이 환경에서 멈추는 경우가 있어 Chromium을 spawn한 뒤 puppeteer-core로 CDP에 붙는다.
+5. **PC 뷰포트 기준**(반응형 단계는 별도 요청)으로 실제 클릭/키보드(`Ctrl+B`)와 `page.evaluate`로 `data-slot`/`data-state`를 읽는다. 스크린샷만으로 끝내지 않는다.
+6. 실패하면 고치고 다시 검증한 뒤에만 보고한다. 티스토리 서버 전용 항목만 "배포 후 재확인"으로 남긴다.
 
 ## 손대지 않는 것 (여전히 유효)
 
 Tistory 템플릿 태그(`[##_..._##]`, `<s_*>` 조건 블록)는 여전히 유지해야 하는 대상이다 — 대시보드로 방향이 바뀌어도 Tistory가 실제 글/카테고리 데이터를 넣어주는 자리이므로 임의로 손대지 않는다. 필요하면 `references/skin-requirements.md`(1차 문서)에서 태그 문법을 참고한다.
+
+## 주석은 짝 `.md`에 둔다
+
+업로드하는 스킨 소스에 주석이 있으면 HTML 편집 산출물이 지저분해지고, 주석 안에 `<s_*>` 태그 이름을 적으면 `make-preview.mjs` 정규식이 주석~닫는 태그를 한 블록으로 잡아 마크업을 복제해 버린다(실측). 그래서 주석은 소스가 아니라 짝 문서에 둔다.
+
+**어디에:** `dashboard-skin/skin.html` → `dashboard-skin/skin.html.md`. `components/header.css` → `components/header.css.md`. `src/input.css` → `src/input.css.md`. JS도 같다. 파일이 없으면 같은 디렉터리에 만든다.
+
+**무엇을:** `<!-- -->`, `/* */`, `//` 설명. 왜 이렇게 짰는지, Tistory 함정, 스펙 이탈 사유.
+
+**형식:** 기존 `header.css.md`처럼 제목 + 소스 경로 + 번호 절. 새 메모는 맨 아래에 절을 추가한다. 소스 한 줄을 "설명해 두려고" 주석을 달지 말고, 그 문장을 `.md`에 쓴다.
+
+**하지 않는 것:** `[SPEC …]` 표식을 CSS/JS 안에 남기지 않는다. 원본 대조는 `.md`나 `_workspace/*_developer-verification.md`로 한다.
+
+**예외 (지우지 말 것):**
+- 코드가 주석 문법을 *매칭*하는 경우 — 예: `content.js`의 `CODE_FILENAME_RE`가 `//`·`<!--`를 찾는 것
+- 빌드기가 넣은 `tailwind.css` 라이선스 한 줄
+- `_workspace/` 목업 상단의 "자동 생성 파일" 안내, 본문 샘플 안의 가짜 주석
+
+이미 소스에 주석이 생겼으면 `bun dashboard-skin/tools/extract-comments.mjs` 후 필요 시 `tidy-after-extract.mjs`로 옮긴다. 새 코드를 쓸 때는 추출 도구에 의존하지 말고 처음부터 `.md`에 적는다.

@@ -1,0 +1,14 @@
+---
+description: 스킨 UI를 고치면 Playwright로 끝까지 검증한다. 브라우저 설치·MCP 등록을 사용자에게 넘기지 않는다
+globs: dashboard-skin/**/*.{html,css,js}
+alwaysApply: false
+---
+
+# 스킨 검증은 Playwright까지
+
+스킨 HTML/CSS/JS를 바꿨으면 사용자에게 "직접 확인해봐"라고 하지 않는다.
+
+1. `bun run skin:preview`로 목업을 맞춘다. `http://localhost:4321`이 꺼져 있으면 `bun run skin:serve`를 띄운다.
+2. Playwright MCP(`browser_navigate` 등)가 있으면 그걸로 클릭·토글·스크린샷까지 한다.
+3. MCP가 없으면 `bunx playwright install chromium` 후 기존 `dashboard-skin/tools/verify-*.mjs`를 돌린다. 바이너리가 없으면 시스템 Chrome(`C:\Program Files\Google\Chrome\Application\chrome.exe`)을 `PLAYWRIGHT_CHROME_PATH`로 쓴다.
+4. 동작이 스펙과 다르면 고치고 다시 검증한 뒤에만 끝낸다.

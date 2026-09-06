@@ -17,13 +17,14 @@ model: opus
 - **Tailwind CSS는 로컬에서 빌드한다.** Tistory에 빌드 서버가 없으므로 `bunx --bun @tailwindcss/cli`로 `dashboard-skin/skin.html`(+ 컴포넌트 JS)을 스캔해 정적 `tailwind.css`를 만든다. 구역을 추가할 때마다 마크업이 늘어나므로 매번 재빌드한다.
 - **티스토리 템플릿 태그(`[##_..._##]`, `<s_*>` 등)는 여전히 건드리지 않는다.** 대시보드로 방향이 바뀌어도 실제 글/카테고리 데이터가 들어가는 자리라는 사실은 그대로다.
 - **PC 뷰포트만 우선 검증한다.** 반응형은 사용자가 별도로 요청하기 전까지 다루지 않는다 — 미리 반응형까지 손대서 범위를 넘기지 않는다.
-- **로컬에서 검증 가능한 것은 반드시 검증한다.** Playwright로 실제 클릭/키보드 입력(예: 사이드바 `Ctrl+B`)과 `page.evaluate`로 `data-slot`/`data-state` 속성값까지 확인한다. 스크린샷만으로는 속성이 스펙대로 바뀌는지 알 수 없다 — 확인 못 한 것은 "확인 못 함"이라고 명시한다.
+- **로컬에서 검증 가능한 것은 반드시 검증한다.** Playwright로 실제 클릭/키보드 입력(예: 사이드바 `Ctrl+B`)과 `page.evaluate`로 `data-slot`/`data-state` 속성값까지 확인한다. 스크린샷만으로는 속성이 스펙대로 바뀌는지 알 수 없다 — 확인 못 한 것은 "확인 못 함"이라고 명시한다. 브라우저가 없거나 MCP가 안 보이면 사용자에게 설치를 맡기지 말고, 스킬의 "Playwright는 에이전트가 등록·실행한다" 절차로 설치·폴백까지 한 뒤에 검증한다.
+- **소스에 주석을 달지 않는다.** `skin.html`·`components/*.{css,js}`·`src/input.css`에는 `<!-- -->` / `/* */` / `//`를 넣지 않는다. 구현 의도·함정·스펙 참조는 같은 디렉터리의 짝 `{파일명}.md`(예: `header.css` → `header.css.md`, `skin.html` → `skin.html.md`)에 적는다. 상세는 `tistory-skin-development` 스킬의 "주석은 짝 .md" 절.
 
 ## 입력/출력 프로토콜
 
 **입력:** `.claude/skills/tistory-skin-orchestrator/references/dashboard-shadcn-requirements.md`, `_workspace/{구역명}_designer-spec.md`
 
-**출력:** `dashboard-skin/`(skin.html, tailwind.css, components/{구역명}.css, components/{구역명}.js, README.md) — 1차 리스킨 산출물 `skin/`과는 별도 폴더, 서로 덮어쓰지 않는다. 상세 구성은 `tistory-skin-development` 스킬 참고. 마지막에 `_workspace/{구역명}_developer-verification.md`로 무엇을 검증했고 무엇을 못 했는지 보고한다.
+**출력:** `dashboard-skin/`(skin.html, tailwind.css, components/{구역명}.css, components/{구역명}.js, 짝 `{파일}.md`, README.md) — 1차 리스킨 산출물 `skin/`과는 별도 폴더, 서로 덮어쓰지 않는다. 상세 구성은 `tistory-skin-development` 스킬 참고. 마지막에 `_workspace/{구역명}_developer-verification.md`로 무엇을 검증했고 무엇을 못 했는지 보고한다.
 
 ## 에러 핸들링
 

@@ -1,0 +1,28 @@
+---
+description: 대시보드 스킨 소스(HTML/CSS/JS)에는 주석을 달지 않고 짝 .md에 적는다
+globs: dashboard-skin/**/*.{html,css,js}
+alwaysApply: false
+---
+
+# 스킨 소스 주석 금지
+
+`dashboard-skin/`의 HTML/CSS/JS에는 `<!-- -->`, `/* */`, `//` 설명을 넣지 않는다.
+
+구현 의도·함정·스펙 참조는 **같은 경로의 짝 파일**에 적는다.
+
+- `components/header.css` → `components/header.css.md`
+- `components/header.js` → `components/header.js.md`
+- `skin.html` → `skin.html.md`
+- `src/input.css` → `src/input.css.md`
+
+짝 `.md`가 없으면 만들고, 있으면 맨 아래에 절을 추가한다.
+
+```css
+/* ❌ BAD — 소스 */
+[data-slot="page-dock"] { position: fixed; } /* 위젯 위에 겹침은 의도 */
+
+/* ✅ GOOD — header.css.md */
+## N. page-dock는 위젯 패널(320px) 위에 겹치는 것이 의도
+```
+
+지우지 말 것: 주석 문법을 *매칭하는* 정규식(`content.js` filename 관례), `tailwind.css` 라이선스 한 줄.

@@ -255,31 +255,6 @@
   }
 
 
-  function initThemeToggle() {
-    var buttons = document.querySelectorAll("[data-theme-toggle]");
-    if (!buttons.length) return;
-
-    function apply(dark) {
-      document.documentElement.classList.toggle("dark", dark);
-      Array.prototype.forEach.call(buttons, function (b) {
-        b.setAttribute("aria-pressed", dark ? "true" : "false");
-      });
-      try {
-        localStorage.setItem("theme", dark ? "dark" : "light");
-      } catch (e) {}
-    }
-
-    apply(document.documentElement.classList.contains("dark"));
-
-    Array.prototype.forEach.call(buttons, function (btn) {
-      btn.addEventListener("click", function (event) {
-        event.preventDefault();
-        apply(!document.documentElement.classList.contains("dark"));
-      });
-    });
-  }
-
-
   function initActiveState() {
     var wrapper = document.querySelector('[data-slot="sidebar-wrapper"]');
     if (!wrapper) return;
@@ -318,7 +293,6 @@
 
   function init() {
     initSidebar();
-    initThemeToggle();
     initActiveState();
   }
 

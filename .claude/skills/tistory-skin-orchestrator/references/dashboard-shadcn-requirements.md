@@ -94,12 +94,12 @@
 2. **Header** — ✅ 완료(스펙 `_workspace/header_designer-spec.md`, 검증 `_workspace/header_developer-verification.md`). `Design-system/index.html`(292~319행) + `css/layout.css`(23~64행) 구조를 그대로 이식(`header`/`header-inner`/`header-start`/`header-actions`, 56px, `border-bottom`). `header-start`에 `sidebar-trigger`(28px, shadcn `size-7` 유지) + 2단 브레드크럼(`[##_title_##]`/`[##_page_title_##]`). Button·Breadcrumb 컴포넌트가 `components/header.css`에 함께 포팅됨(공용 프리미티브 — 다른 구역이 쓰기 시작하면 `button.css`로 추출). `skin-scaffold-*` 임시 슬롯 3개 전부 제거.
    - **2026-09-02 후속 수정 4건(소규모라 designer/developer 분리 없이 진행):**
      a) 사이드바 푸터의 다크/라이트 토글 버튼 제거(방문자 수 통계는 유지) + 헤더 우측 끝에 `data-variant="default"` 즐겨찾기 버튼 신규 추가(별 아이콘, 클릭 시 `localStorage`(`dashboard-skin:favorites`)에 현재 경로 저장/해제 — 즐겨찾기 "목록"을 모아보는 화면은 아직 없음, content 구역 이후 과제).
-     b) 테마 토글을 헤더 밖으로 빼서 **화면 우측 하단 고정(FAB)**으로 재배치 — `[data-floating-theme-toggle]`, `position:fixed; right/bottom: calc(var(--spacing)*6); border-radius:9999px; box-shadow:var(--shadow-md)`(신규 토큰, `src/input.css`). 사이드바 푸터·헤더 양쪽에 있던 테마 토글은 이제 이 FAB 하나로 통합됨.
+     b) 테마 토글을 헤더 밖으로 빼서 **화면 우측 하단 고정**으로 재배치. **✅ 2026-09-05:** 단일 FAB 대신 `[data-slot="page-dock"]` — 시스템/라이트/다크 세로 필(`[data-slot="theme-switch"]`) + 그 아래 맨 위로 원형 버튼(`[data-slot="scroll-top"]`). `position:fixed; right/bottom: calc(var(--spacing)*6); z-index:40`. `html[data-theme]` + `localStorage.theme`(`light`/`dark`, 시스템은 키 삭제). 스크롤 대상은 `[data-slot="content-inner"]`(`__skinLenis`).
      c) 사이드바 "둘러보기"(홈/태그/방명록) 그룹 전체 제거 — 헤더 우측 버튼 3개와 완전히 중복이라 정리. 검색 바로 아래 구분선만 남기고 아카이브로 이어짐. `initActiveState()`(sidebar.js)는 DOM을 매번 다시 훑는 방식이라 손댈 필요 없이 그대로 정상 동작.
      d) **사이드바 우측 레일 클릭 접힘 제거(2026-09-02)** — shadcn `SidebarRail`(`data-slot="sidebar-rail"`, 우측 경계의 16px 히트영역 + `cursor:w-resize`/hover 세로선)을 마크업·CSS·JS에서 전부 삭제. 사용자가 "사이드메뉴 오른쪽 모서리 클릭 시 접히는 기능 제거"를 요청 — shadcn 정본에서 의도적으로 이탈한 지점이다. 남은 토글 경로는 `sidebar-trigger` 클릭과 `Ctrl`/`Cmd`+`B` 두 가지뿐이며, 우측 경계선은 `sidebar-container`의 `border-right` 장식으로만 남는다. (`header.css` 300행 주석의 z-index 설명에 나오는 "sidebar-rail(20)"은 이제 존재하지 않는 요소를 가리키는 낡은 문구 — 헤더 `z-index:9`는 `sidebar-container`(10)보다 낮으면 되므로 동작에는 영향 없음.)
      e) **접힘 시 배지 예약 패딩으로 아이콘이 왼쪽으로 밀리던 버그 수정(2026-09-02)** — `:has(> [data-slot="sidebar-menu-badge"]) > [data-slot="sidebar-menu-button"] { padding-right: 28px }`가 접힘 상태의 `padding: 0`보다 특이성이 높아, 배지가 달린 Design/Ai만 접혔을 때 오른쪽 패딩이 남아 아이콘이 왼쪽으로 쏠리고 잘렸다(헤더 로고·푸터 통계는 배지가 없어 정상). 두 예약 패딩 규칙(badge / menu-action)을 `[data-slot="sidebar-wrapper"]:not([data-state="collapsed"])`로 한정 — 접힘에서 네 아이콘 모두 중심 X 23.5px로 일치, 펼침의 28px 예약은 그대로. **교훈: 접힘 전용 리셋(`padding:0` 등)을 무력화할 수 있는 `:has`/자식 결합자 규칙은 반드시 펼침으로 한정할 것.**
      f) **헤더 우측 4개(홈/태그/방명록/즐겨찾기) 아이콘 전용 버튼 + hover 툴팁(2026-09-03)** — 사용자 요청("텍스트제거 아이콘버튼으로", "hover시 툴팁", "툴팁은 디자인시스템 참고")으로 `<span>` 라벨을 떼고 `data-size="sm"`(텍스트)→`"icon-sm"`(32px, 이전과 동일 풋프린트)로 교체, `aria-label`로 접근성 보강. Tooltip 프리미티브(`components.css` 3380~3486행, `pages/tooltip.html` 마크업)를 처음엔 `header.css`/`header.js`에 포팅(공용 프리미티브로 Button·Breadcrumb 옆에 추가) — 이후 sidebar 구역이 같은 프리미티브를 쓰게 되면서 `components/tooltip.css`/`tooltip.js` 독립 파일로 옮겨졌다(아래 Sidebar 항목의 2026-09-03 후속 수정 참고). 원본과 다른 점 — 실측으로 발견한 버그(즐겨찾기 버튼이 화면 맨 오른쪽에 붙어 있어 원본의 항상-중심-정렬이 툴팁을 뷰포트 밖으로 밀어 body 가로 스크롤을 만듦)를 고치려고 원본에 없는 `data-align="start"/"end"` 뷰포트 경계 보정을 추가(`tooltip.js`의 `fitToViewport()`가 열릴 때마다 겹침을 측정해 필요할 때만 부여, 화살표도 함께 이동). Playwright로 4개 버튼 hover/focus 툴팁, 라이트·다크, `scrollWidth === innerWidth`(가로 오버플로 0) 전부 실측 확인.
-   - **content 구역에서 이어받을 것:** ~~`[data-slot="content"]`가 무스타일로 자리만 잡혀 있음~~ → **✅ Content 구역에서 목록 격자 구현 완료**(2026-09-04). 남은 이어받기: ~~단일 글 본문 타이포~~(✅)·~~댓글~~(✅ 2026-09-04 하단 4종)·~~이전/다음 글~~(✅ 2026-09-05)·~~TOC~~(구현 후 2026-09-05 사용자 요청으로 제거), `"맨 위로"` 버튼은 FAB 위(`bottom: calc(var(--spacing)*20)`), `--secondary`/`--destructive`/`--sys-*` 토큰은 아직 없음.
+   - **content 구역에서 이어받을 것:** ~~`[data-slot="content"]`가 무스타일로 자리만 잡혀 있음~~ → **✅ Content 구역에서 목록 격자 구현 완료**(2026-09-04). 남은 이어받기: ~~단일 글 본문 타이포~~(✅)·~~댓글~~(✅ 2026-09-04 하단 4종)·~~이전/다음 글~~(✅ 2026-09-05)·~~TOC~~(구현 후 2026-09-05 사용자 요청으로 제거), ~~`"맨 위로"`~~(✅ 2026-09-05, page-dock 필 아래), `--secondary`/`--destructive`/`--sys-*` 토큰은 아직 없음.
 3. **Content(목록/본문)** — ✅ 2026-09-04 구현·검증 완료. 스펙 `_workspace/content_designer-spec.md`, 검증 `_workspace/content_developer-verification.md`(§14-2 27/27 PASS). 산출물: `components/{content,scrollbar}.{css,js?}` · `skin.html` · `src/input.css`(`--header-height`/`--text-lg|xl|2xl`/`--leading-relaxed`) · `smooth-scroll.js`(content-inner Lenis + `[data-custom-scrollbar]` 일반화) · `make-preview.mjs`(index/empty/permalink 분리). **§2-3 sticky 판정:** doc scrollHeight===clientHeight → sticky 미추가. 실사이트 Q8 5건은 계정 없어 미검증. ~~단일 글 본문 타이포~~(✅)·~~댓글~~(✅ 하단 4종)·~~TOC~~(✅ 2026-09-05)·반응형은 미착수.
    - **✅ 2026-09-04 후속 수정 — 댓글 작성 폼에서 홈페이지 입력 제거.** "인풋'홈페이지' 제거" — 게스트 필드는 이름·비밀번호 2칸 1행. Tistory `rp_input_homepage` 치환자는 스킨에서 안 씀(서버가 없어도 댓글 등록은 됨).
    - **✅ 2026-09-04 후속 수정 — 글 상세에 대표이미지(`<s_article_rep_thumbnail>` / `post-thumb`) 복원.** "썸네일 영역 있던게 사라졌어" — 목록에는 있고 permalink 마크업에는 없어서 상세 진입 시 빠지던 것. 제목·메타 아래 · 본문 위에 본문 폭 전체 16:9. 대표이미지 없는 글은 서버가 블록을 통째로 생략.
@@ -140,7 +140,7 @@
    - **스펙과 실제로 달라진 점 2건(둘 다 실측으로 드러난 것, 시각/구조 설계는 스펙 그대로):**
      a) **`widgets.css`에 `[data-slot="widgets"] > * { flex-shrink: 0 }` 1줄 추가.** 스펙 §2-2의 CSS만으로는 패널이 flex column이라 카드가 기본 `flex-shrink:1`로 눌려서, 총 높이가 뷰포트를 넘어도 `max-height`+`overflow-y:auto`가 발동하지 않고 카드들이 찌그러졌다(카드의 `overflow:hidden` 때문에 태그 chip이 한 줄만 남고 잘리는 것을 Playwright로 확인). 이 한 줄이 있어야 스펙 §2-4가 의도한 "패널만 따로 스크롤"이 실제로 성립한다.
      b) **`make-preview.mjs`가 HTML 주석을 자리표시자로 격리한 뒤 반복 확장을 수행한다.** `skin.html` 주석이 문서화를 위해 `<s_rctps_popular_rep>` 같은 태그 이름을 문자열 그대로 적고 있어서, 스펙 §7-2의 정규식이 "주석 속 여는 태그 ~ 진짜 닫는 태그"를 한 블록으로 잡아 카드 `<section>` 전체를 5장/12장으로 복제해 버렸다(실측 확인 후 수정). 스펙 §7-1의 처리 순서(0→1→2→3)와 §7-2의 non-greedy·조건부 썸네일 처리 원칙은 그대로 지켰다.
-   - **content 구역에서 이어받을 것:** 본문 자리는 이제 `[data-slot="content-inner"]`(패딩·타이포 미정, `flex:1 1 auto`/`min-width:0`만 확정). `card.css`(Card + Badge outline)가 공용 프리미티브로 준비돼 있어 글 목록 카드에 그대로 재사용 가능. 아직 없는 토큰: `--secondary`/`--destructive`/`--popover`/`--sys-*`/색상군. "맨 위로" 버튼은 FAB 위(`bottom: calc(var(--spacing)*20)`)에 쌓되, 우측 패널 320px 위에 겹쳐 뜬다는 점을 함께 고려할 것. 반응형은 여전히 미착수 — 이 패널은 1280px 미만에서 본문을 심하게 압박한다(후보 정책은 스펙 §10).
+   - **content 구역에서 이어받을 것:** 본문 자리는 이제 `[data-slot="content-inner"]`(패딩·타이포 미정, `flex:1 1 auto`/`min-width:0`만 확정). `card.css`(Card + Badge outline)가 공용 프리미티브로 준비돼 있어 글 목록 카드에 그대로 재사용 가능. 아직 없는 토큰: `--secondary`/`--destructive`/`--popover`/`--sys-*`/색상군. ~~"맨 위로" 버튼은 FAB 위~~ → **✅ 2026-09-05** `[data-slot="page-dock"]` 필 아래, 우측 패널 320px 위에 겹침은 의도. 반응형은 여전히 미착수 — 이 패널은 1280px 미만에서 본문을 심하게 압박한다(후보 정책은 스펙 §10).
    - **실사이트 미검증(계정 없음, 스펙 §9 Q9 그대로):** ① 위젯 5종이 관리자 설정과 무관하게 `skin.html` 위치 그대로 렌더되는지, ② `<s_sidebar_element>`가 관리자 사이드바 설정과 어떤 방식으로 연동되는지, ③ 티스토리 서버 주입 요소(관리 메뉴바·광고)가 sticky 패널과 겹치는지.
    - **✅ 2026-09-03 후속 수정 5건 — 카드 스타일 정리.** 요청: "카드 타이틀 sidebar-group-label의 여백 제외한 속성 동일하게 / 글은 한줄처리 넘어가는건 점점점 처리 / 카드 배경색 제거, 보더라인제거 / 리스트의 제목의 색상을 한단계 낮추고 hover시 한단계 올라가게 / 리스트 호버시 배경색 제거"(전부 `widgets.css` 스코프, `card.css` 원본은 그대로 둠 — content 구역이 배경·보더 있는 카드를 다시 쓸 수 있게).
      a) 카드 제목을 `sidebar-group-label`(sidebar.css 213~227행)과 글꼴/자간/opacity 0.7/줄바꿈 규칙 동일하게(height/padding 등 여백류는 제외). 색상만 `--color-sidebar-foreground`가 아니라 `--color-card-foreground`(라이트/다크 값이 서로 완전히 동일함을 input.css로 확인) — 위젯 구역이 이미 지키고 있는 "`--color-sidebar-*`를 밖으로 유출하지 않는다" 원칙 유지.
@@ -196,3 +196,53 @@ dashboard-skin/components/*.js` + 브라우저 콘솔 확인을 거칠 것(도�
 보고도 배포할 수 있게 했다. 메인 `README.md`에도 "바로 올릴 거면 deploy/로 가라" 안내와 파일
 트리에 `deploy/`·`*.md` 항목을 추가. **주의(README에 명시):** 이 폴더는 자동 동기화가 아니라
 매 배포 전 손으로 다시 채워야 하는 스냅샷이다.
+
+---
+
+## 부수 작업 2 — 주석 도구 데이터 유실 버그 수정 + DAITNU 재등록 (2026-09-06)
+
+"주석은 앞으로 각 파일의 md파일에 등록하고 기존 파일의 주석들 다 제거 / 스킨 다시 등록" 요청.
+
+**주석 도구의 실제 데이터 유실 사고와 근본 수정.** 이 요청을 처리하려고 `extract-comments.mjs`를
+재실행했다가, 이미 문서화돼 있던 `.md` 여러 개(`content.css.md`/`header.css.md`/`sidebar.js.md`
+등)가 "_(주석 없음)_" 한 줄로 통째로 덮어써지는 걸 실측으로 발견 — **원인은 이 도구가 재실행을
+전제로 설계됐으면서("신규 주석 추가 후 재실행" README 문구) 매번 그 실행에서 찾은 comments만으로
+`.md`를 완전히 새로 쓰고 있었기 때문**이다(소스가 이미 정리돼 새 주석이 0건인 상태로 재실행하면
+그동안 쌓아 둔 문서가 전부 사라진다 — 이번에 정확히 그 시나리오가 실제로 벌어졌다). `git checkout
+cf6fd77`로 커밋돼 있던 것까지는 복구했지만, 그 이후(커밋 안 된 상태로) 이 세션의 header.css/js
+메뉴바 작업이나 Cursor의 병행 작업이 추가했을 수 있는 문서는 원문을 알 수 없어 복구하지 못했다 —
+소스 자체(로직)는 항상 정상이었으니 기능 손실은 없지만, 그 사이 문서 손실은 인지하고 넘어간다.
+
+**근본 수정:** 신규 공용 모듈 `dashboard-skin/tools/md-merge.mjs`(`parseExistingSections`/
+`mergeSections`/`renderMarkdown`) — 기존 `.md`의 섹션을 먼저 파싱해 보존하고, 새로 찾은 것 중
+본문이 이미 있는 것과 겹치지 않는 것만 뒤에 이어붙인 뒤 번호를 다시 매긴다. `extract-comments.mjs`
+와 `tidy-after-extract.mjs`(skin.html HTML 주석) 둘 다 이 모듈을 쓰도록 교체 — 이제 몇 번을 다시
+돌려도 누적만 되고 유실되지 않는다. **실측 검증:** 동일 소스에 새 주석이 없을 때 재실행 후
+`git diff --stat`이 전 파일에 대해 완전히 무변화임을 확인(진짜 멱등성 확보, 이전엔 이게 깨져 있었다).
+
+**DAITNU 스킨 재등록.** 기존에 daitnu.tistory.com에 적용돼 있던 건 "JQ.Minimal(사용자 수정)" —
+HTML/CSS만 덮어써 만든 것이라 스킨 편집 화면의 이름·제작자·저작권이 원작 그대로 남아 있었다.
+Cursor가 미리 준비해 둔 `dashboard-skin/index.xml`(name=DAITNU, author=jeongsanghoon, 위젯
+기본 노출 개수 5 등)·`style.css`(빈 스텁)·`DAITNU-v1.0.0.zip`을 실제로 검증(각 CSS/JS가 현재
+소스와 바이트 단위로 일치하는지 diff)한 뒤 티스토리 "꾸미기 > 스킨 > 스킨 등록"으로 진행했다.
+
+- **실측으로 발견한 문제 1 — 반쯤 채워진 미저장 초안이 이미 있었다.** 등록 페이지를 열어보니
+  이전에 개별 파일을 하나씩 추가하다 중단된 목록(`skin.html`은 있고 `index.xml`/`style.css`는
+  없음, 관련 없는 `images/README.md`까지 섞여 있음)이 서버에 그대로 남아 있었다 — 파일 삭제
+  확인창을 반복 처리하려고 무심코 짠 `while` 루프가 실제 항목 수(16개)보다 훨씬 많은 확인창을
+  만들어(정확한 원인 미상 — 삭제가 비동기라 같은 항목을 중복 클릭했을 가능성) 브라우저가
+  멈추고 로그인 세션이 끊기는 부작용을 겪었다. 재로그인 후 서버에 저장된 초안 상태를 다시 실측
+  확인해(다행히 세션 끊김과 무관하게 서버에 그대로 보존돼 있었다) 이번엔 항목 하나씩 hover→
+  개별 클릭→확인창 1개 처리로 안전하게 정리했다.
+- **실측으로 발견한 문제 2 — 다중 파일 업로드 시 `skin.html`만 조용히 누락됨.** `index.xml`·
+  `style.css`·`skin.html` 3개를 한 번에 `setFiles`로 올렸더니 앞 2개만 목록에 나타나고
+  `skin.html`(44KB, 셋 중 가장 큼)은 총 용량 카운터에는 반영된 듯했으나 실제 목록엔 없었다 —
+  `skin.html` 하나만 다시 올리자 정상 추가됨(원인 불명, 재현 조건 미확인 — 다중 업로드 후
+  반드시 목록을 실측 확인할 것으로 기록).
+- 최종 17개(index.xml/skin.html/style.css + images/14개) 확인 후 저장(스킨명 DAITNU 입력) →
+  스킨 보관함에서 DAITNU 항목 열어 "적용" → "스킨을 변경하면 홈 커버, 사이드바 설정이 초기화될
+  수 있습니다" 확인창 수락. 적용 후 실측: 사용중인 스킨이 "DAITNU (사용자 수정)"으로 정확히
+  바뀜, 실사이트(daitnu.tistory.com) 정상 렌더링(사이드바·헤더·콘텐츠 격자·우측 위젯 전부),
+  **사이드바 설정(최근 글/댓글/공지/태그 노출 개수)이 index.xml의 `<default>` 블록값(5)으로
+  자동 반영됨을 확인** — 이전 파일 업로드 전용 방식 때는 이 5개 값을 수동으로 맞춰야 했던 것과
+  달리, 이번엔 등록 시점에 자동으로 맞춰져 별도 조치가 필요 없었다.

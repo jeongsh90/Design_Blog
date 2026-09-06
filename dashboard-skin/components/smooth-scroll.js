@@ -86,10 +86,12 @@
 
 
       if (contentInner) {
-        lenisPairs.push([
-          contentInner,
-          initSmoothScroll({ wrapper: contentInner, content: contentInner }),
-        ]);
+        var contentLenis = initSmoothScroll({
+          wrapper: contentInner,
+          content: contentInner,
+        });
+        contentInner.__skinLenis = contentLenis;
+        lenisPairs.push([contentInner, contentLenis]);
       }
     }
 

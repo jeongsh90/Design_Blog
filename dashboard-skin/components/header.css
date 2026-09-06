@@ -339,3 +339,175 @@ a[data-slot="button"] {
     display: none;
   }
 }
+
+
+
+
+.menu_toolbar.toolbar_rb {
+  position: fixed !important;
+  left: -9999px !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+[data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) {
+  position: relative;
+  width: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 8);
+  top: auto;
+  right: auto;
+  z-index: auto;
+  display: inline-flex;
+}
+[data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .btn_tool {
+  display: inline-flex;
+  border-radius: var(--radius-md);
+}
+[data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .btn_tool:hover {
+  background-color: var(--color-accent);
+}
+.dark [data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .btn_tool:hover {
+  background-color: color-mix(in oklab, var(--color-accent) 50%, transparent);
+}
+
+[data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .btn_menu_toolbar {
+  width: calc(var(--spacing) * 8) !important;
+  height: calc(var(--spacing) * 8) !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: none !important;
+  transition-property: background-color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .btn_menu_toolbar:hover {
+  background-color: transparent !important;
+}
+.dark [data-slot="header-actions"] .menu_toolbar:not(.toolbar_rb) .img_common_tistory {
+  filter: invert(1) !important;
+}
+
+[data-slot="header-actions"] > .btn_subscription {
+  display: inline-flex !important;
+  width: auto !important;
+  height: calc(var(--spacing) * 8) !important;
+  padding-block: 0 !important;
+  padding-inline: calc(var(--spacing) * 3) !important;
+  border: 1px solid transparent !important;
+  border-radius: var(--radius-md) !important;
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-foreground) !important;
+  box-shadow: var(--shadow-xs) !important;
+  font: var(--font-weight-medium) var(--text-sm) / 1 var(--font-sans) !important;
+  letter-spacing: var(--tracking-sm) !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+}
+[data-slot="header-actions"] > .btn_subscription:hover {
+  background-color: color-mix(in oklab, var(--color-primary) 90%, transparent) !important;
+}
+
+[data-slot="page-dock"] {
+  position: fixed;
+  right: calc(var(--spacing) * 6);
+  bottom: calc(var(--spacing) * 6);
+  z-index: 2147483000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  pointer-events: auto;
+  isolation: isolate;
+}
+
+[data-slot="theme-switch"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--spacing) * 1);
+  padding: calc(var(--spacing) * 1.5);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--spacing) * 999);
+  background-color: var(--color-muted);
+  box-shadow: var(--shadow-md);
+}
+[data-slot="theme-switch"] > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 8);
+  padding: 0;
+  border: 0;
+  border-radius: calc(var(--spacing) * 999);
+  background-color: transparent;
+  color: var(--color-muted-foreground);
+  cursor: pointer;
+  outline: none;
+  transition-property: background-color, color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="theme-switch"] > button > svg {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+  pointer-events: none;
+}
+[data-slot="theme-switch"] > button:hover {
+  color: var(--color-foreground);
+}
+[data-slot="theme-switch"] > button:focus-visible {
+  box-shadow: 0 0 0 calc(var(--spacing) * 0.75) color-mix(in oklab, var(--color-ring) 50%, transparent);
+}
+html[data-theme="system"] [data-slot="theme-switch"] > [data-theme="system"],
+html[data-theme="light"] [data-slot="theme-switch"] > [data-theme="light"],
+html[data-theme="dark"] [data-slot="theme-switch"] > [data-theme="dark"] {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+[data-slot="scroll-top"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--spacing) * 11);
+  height: calc(var(--spacing) * 11);
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--spacing) * 999);
+  background-color: var(--color-muted);
+  color: var(--color-foreground);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  outline: none;
+  transition-property: background-color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="scroll-top"] > svg {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+  pointer-events: none;
+}
+[data-slot="scroll-top"]:hover {
+  background-color: var(--color-accent);
+}
+[data-slot="scroll-top"]:focus-visible {
+  box-shadow: 0 0 0 calc(var(--spacing) * 0.75) color-mix(in oklab, var(--color-ring) 50%, transparent);
+}

@@ -3,8 +3,9 @@
  * 실행: bun dashboard-skin/tools/tidy-after-extract.mjs
  */
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
-import { resolve, dirname, basename } from "node:path";
+import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { parseExistingSections, mergeSections, renderMarkdown } from "./md-merge.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const skinRoot = resolve(here, "..");
@@ -65,23 +66,21 @@ const htmlTidied = htmlClean
 
 writeFileSync(htmlPath, htmlTidied, "utf8");
 
-const mdLines = [
-  "# `skin.html` — 설계 주석",
-  "",
-  "소스: `dashboard-skin/skin.html`",
-  "",
-  "이 파일의 HTML 주석을 소스에서 분리해 보관한다.",
-  "",
-];
-
-htmlComments.forEach((body, idx) => {
+/* [2026-09-06 재발 방지] extract-comments.mjs와 같은 이유로 md-merge.mjs를 쓴다 —
+   HTML에 새 주석이 없는 상태(이미 한 번 정리됨)에서 재실행하면 기존에 쌓아 둔
+   skin.html.md 문서를 지워버리던 버그가 실제로 있었다. */
+const mdPath = htmlPath + ".md";
+const existingSections = parseExistingSections(mdPath);
+const newSections = htmlComments.map((body, idx) => {
   const first = body
     .split("\n")
     .map((l) => l.trim())
     .find((l) => l.length > 0);
   const title = first ? first.slice(0, 80) : String(idx + 1);
-  mdLines.push(`## ${idx + 1}. ${title}`, "", body.trim(), "", "---", "");
+  return { title, body: body.trim() };
 });
+const allSections = mergeSections(existingSections, newSections);
+const addedCount = allSections.length - existingSections.length;
 
-writeFileSync(htmlPath + ".md", mdLines.join("\n").replace(/\n---\n\s*$/, "\n"), "utf8");
-console.log(`skin.html: ${htmlComments.length} comments → skin.html.md`);
+writeFileSync(mdPath, renderMarkdown("skin.html", "skin.html", allSections), "utf8");
+console.log(`skin.html: ${addedCount} new comments (+${existingSections.length} kept) → skin.html.md`);

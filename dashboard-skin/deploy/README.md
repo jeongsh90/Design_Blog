@@ -9,6 +9,25 @@
 
 ---
 
+## 스킨을 새로 등록할 때
+
+지금 적용된 스킨이 JQ.Minimal이면, HTML만 고쳐도 스킨 편집 화면의 이름·제작자·저작권은
+바뀌지 않는다. **DAITNU로 새로 등록**한다.
+
+1. `DAITNU-v1.0.0.zip`을 관리자 → 꾸미기 → **스킨**에서 새 스킨으로 올린다.
+2. 적용한 뒤, 아래 "업로드 순서"대로 CSS/JS를 한 번 더 올려 최신과 맞춘다
+   (zip 안의 `images/`에도 같은 파일이 들어가 있다).
+3. 스킨 편집 화면에 이름 **DAITNU**, 제작자 **jeongsanghoon@naver.com**,
+   저작권 **제작자 소유**가 보이면 된 것이다.
+
+zip 루트: `index.xml` · `skin.html` · `style.css` · `preview256.jpg` · `preview560.jpg` · `preview1600.jpg`.
+실제 스타일/스크립트는 zip의 `images/` 또는 아래 파일 업로드 탭.
+
+`index.xml`을 바꾸면 티스토리가 **스킨 설정을 초기화**한다. 홈 커버·사이드바 위젯 개수는
+적용 후 다시 맞춘다(위젯 노출 개수는 5).
+
+---
+
 ## 업로드 순서 (딱 2단계)
 
 관리자 → 꾸미기 → **스킨 편집 → html 편집**
@@ -80,14 +99,17 @@ JS:   GSAP → ScrollTrigger → Lenis → tooltip → sidebar → header → co
 bun run skin:build   # tailwind.css 재빌드 먼저
 ```
 
-그다음 아래 14개 파일 + `skin.html`을 이 `deploy/` 폴더로 **덮어쓰기 복사**한다(경로만
-`components/`·루트에서 여기로, 파일명은 그대로):
+그다음 아래 14개 파일 + `skin.html` + `index.xml` + `style.css`를 이 `deploy/` 폴더로
+**덮어쓰기 복사**한다(경로만 `components/`·루트에서 여기로, 파일명은 그대로).
+미리보기 jpg는 직접 교체한 뒤에만 건드린다. zip을 다시 만들 때는 루트 3개 + 미리보기 3장 +
+`images/`에 14개 CSS/JS를 넣어 `DAITNU-v1.0.0.zip`으로 묶는다.
 
 ```
 tailwind.css, components/tooltip.{css,js}, components/scrollbar.css,
 components/smooth-scroll.{css,js}, components/card.css,
 components/sidebar.{css,js}, components/header.{css,js},
-components/widgets.css, components/content.{css,js}, skin.html
+components/widgets.css, components/content.{css,js},
+skin.html, index.xml, style.css
 ```
 
 ---

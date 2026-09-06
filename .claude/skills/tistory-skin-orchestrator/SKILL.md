@@ -13,6 +13,8 @@ description: 디자인 블로그(daitnu.tistory.com)를 대시보드 느낌으�
 
 **전제:** 이 하네스는 티스토리 계정에 접근하지 않는다. Node/빌드 파이프라인이 없는 Tistory 환경이므로 Tailwind CSS는 이 프로젝트 로컬에서 빌드해 정적 파일로 만든다. 최종 산출물은 사용자가 관리자 페이지(`https://daitnu.tistory.com/manage/design/skin/edit#/source/file`, 스킨 편집 > HTML 편집 > 파일 업로드)에서 직접 업로드하는 개별 파일(tailwind.css + 컴포넌트별 css/js)까지다.
 
+**소스 주석:** `dashboard-skin/`의 HTML/CSS/JS에는 주석을 넣지 않는다. 의도·함정은 짝 `{파일}.md`에 적는다. developer 호출 프롬프트와 전달 전 검수에 이 규칙을 포함한다(`tistory-skin-development` "주석은 짝 .md").
+
 ## Phase 0: 컨텍스트 확인
 
 1. `Design_Blog/dashboard-skin/`(2차 산출물 위치 — 1차 `skin/`과 구분) 존재 여부 확인
@@ -41,8 +43,11 @@ description: 디자인 블로그(daitnu.tistory.com)를 대시보드 느낌으�
 - `dashboard-skin/components/{구역명}.css` / `dashboard-skin/components/{구역명}.js` — 이 구역 전용 파일(shadcn의 data-slot/CSS 변수/상태 로직을 그대로 반영)
 - `dashboard-skin/skin.html`에 해당 구역 마크업 추가·통합
 - `dashboard-skin/README.md` — 파일 업로드 순서(경로: `/manage/design/skin/edit#/source/file`)와 skin.html에서의 참조 방법
+- `dashboard-skin/components/{구역명}.{css,js}.md` 및 필요 시 `skin.html.md` — 소스 주석 대신 두는 설계 메모
 
-developer는 shadcn 원본과 **DOM 구조·클래스·data-slot·CSS 변수명·상태 전환 로직이 1:1 대응**하는지 스스로 대조 확인한 뒤, 로컬 정적 목업으로 Playwright 검증(PC 뷰포트만, 반응형은 별도 단계)한다.
+developer는 shadcn 원본과 **DOM 구조·클래스·data-slot·CSS 변수명·상태 전환 로직이 1:1 대응**하는지 스스로 대조 확인한 뒤, 로컬 정적 목업으로 Playwright 검증(PC 뷰포트만, 반응형은 별도 단계)한다. 검증은 에이전트가 끝낸다 — MCP 등록·`playwright install`·`verify-*.mjs`까지 사용자에게 넘기지 않는다(`tistory-skin-development` "로컬 검증").
+
+구현 메모는 소스 주석이 아니라 짝 `.md`에 쓴다. 전달 전에 `dashboard-skin/skin.html`·`components/*.{css,js}`·`src/input.css`에서 `<!--` / `/*` / 줄 시작 `//`를 grep한다. 걸리면 소스를 고치지 말고 해당 문장을 짝 `.md`로 옮긴 뒤 소스에서 지운다. 정규식 리터럴이 `<!--`를 매칭하는 경우(`content.js`의 filename 관례)와 Tailwind가 붙인 `tailwind.css` 라이선스 한 줄은 예외다.
 
 ## Phase 4: 전달
 

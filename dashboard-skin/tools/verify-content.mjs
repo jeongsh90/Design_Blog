@@ -10,7 +10,7 @@
  */
 import puppeteer from "puppeteer-core";
 import { spawn } from "node:child_process";
-import { mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, writeFileSync, rmSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
@@ -51,7 +51,23 @@ async function waitForCdp(port, attempts = 40) {
 async function launch() {
   const chromePath =
     process.env.PLAYWRIGHT_CHROME_PATH ||
-    `${process.env.USERPROFILE}\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe`;
+    (() => {
+      const base = `${process.env.USERPROFILE}\\AppData\\Local\\ms-playwright`;
+      try {
+        const dir = readdirSync(base).find((d) => /^chromium-\d+$/.test(d));
+        if (dir) {
+          const exe = `${base}\\${dir}\\chrome-win64\\chrome.exe`;
+          if (existsSync(exe)) return exe;
+        }
+      } catch {
+        /* no ms-playwright cache */
+      }
+      const system = `${process.env.ProgramFiles}\\Google\\Chrome\\Application\\chrome.exe`;
+      if (existsSync(system)) return system;
+      throw new Error(
+        "Chrome/Chromium not found. Run: bunx playwright install chromium"
+      );
+    })();
   const userData = resolve(process.env.TEMP || ".", `pw-content-verify-${process.pid}`);
   try {
     rmSync(userData, { recursive: true, force: true });
@@ -173,8 +189,10 @@ async function main() {
     const header = document.querySelector('[data-slot="sidebar-inset"] > header') ||
       document.querySelector("header");
     const widgets = document.querySelector('[data-slot="widgets"]');
-    const themeBtn = document.querySelector('[data-slot="header-actions"] [data-theme-toggle]');
-    const themeR = themeBtn?.getBoundingClientRect();
+    const dock = document.querySelector('[data-slot="page-dock"]');
+    const themeSwitch = document.querySelector('[data-slot="theme-switch"]');
+    const scrollTop = document.querySelector('[data-slot="scroll-top"]');
+    const dockR = dock?.getBoundingClientRect();
     return {
       row,
       cols,
@@ -202,13 +220,18 @@ async function main() {
       stickyHeader: getComputedStyle(header).position,
       widgetsTop: widgets ? getComputedStyle(widgets).top : null,
       widgetsPosition: widgets ? getComputedStyle(widgets).position : null,
-      themeToggle: themeR
+      pageDock: dockR
         ? {
-            top: themeR.top,
-            right: window.innerWidth - themeR.right,
-            display: getComputedStyle(themeBtn).display,
-            w: themeR.width,
-            h: themeR.height,
+            bottom: window.innerHeight - dockR.bottom,
+            right: window.innerWidth - dockR.right,
+            display: getComputedStyle(dock).display,
+            position: getComputedStyle(dock).position,
+            w: dockR.width,
+            h: dockR.height,
+            themeCount: themeSwitch
+              ? themeSwitch.querySelectorAll("[data-theme]").length
+              : 0,
+            hasScrollTop: !!scrollTop,
           }
         : null,
       colors: {
@@ -605,11 +628,13 @@ async function main() {
 
   record(
     19,
-    "header theme toggle visible",
-    !!indexGeom.themeToggle &&
-      indexGeom.themeToggle.display !== "none" &&
-      indexGeom.themeToggle.w > 0,
-    indexGeom.themeToggle
+    "page dock fixed bottom-right",
+    !!indexGeom.pageDock &&
+      indexGeom.pageDock.display !== "none" &&
+      indexGeom.pageDock.position === "fixed" &&
+      indexGeom.pageDock.themeCount === 3 &&
+      indexGeom.pageDock.hasScrollTop,
+    indexGeom.pageDock
   );
 
   /* #21 hover — leave first, ensure light theme */
@@ -684,7 +709,7 @@ async function main() {
   );
 
   /* #20 dark */
-  await page.click('[data-slot="header-actions"] [data-theme-toggle]');
+  await page.click('[data-slot="theme-switch"] [data-theme="dark"]');
   await sleep(200);
   const darkColors = await page.evaluate(() => {
     const inner = document.querySelector('[data-slot="content-inner"]');
@@ -710,7 +735,7 @@ async function main() {
     light: indexGeom.colors,
     dark: darkColors,
   });
-  await page.click('[data-slot="header-actions"] [data-theme-toggle]');
+  await page.click('[data-slot="theme-switch"] [data-theme="light"]');
 
   /* #7 empty */
   await page.goto(`${BASE}/_workspace/content_mockup-empty.html`, {

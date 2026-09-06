@@ -36,8 +36,6 @@
 (function () {
   try {
     var m = document.cookie.match(/(?:^|; )sidebar_state=([^;]*)/);
-    /* [RESPONSIVE SPEC §4-6] 쿠키가 "없을 때만" 태블릿(≤1023px) 기본값을 접힘으로.
-       쿠키가 있으면 지금처럼 쿠키가 이긴다(기능이 아니라 기본값만 바꾼 것). */
     var collapsed = m
       ? m[1] === 'false'
       : window.matchMedia('(max-width: 1023px)').matches;
@@ -47,6 +45,8 @@
   } catch (e) {}
   try {
     var t = localStorage.getItem('theme');
+    if (t !== 'light' && t !== 'dark') t = 'system';
+    document.documentElement.setAttribute('data-theme', t);
     var dark = t === 'dark' ||
       (t !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
     document.documentElement.classList.toggle('dark', dark);
@@ -66,11 +66,6 @@
     var w = document.currentScript && document.currentScript.parentElement;
     if (!w) return;
     var m = document.cookie.match(/(?:^|; )sidebar_state=([^;]*)/);
-    /* [RESPONSIVE SPEC §4-6] 위 head 스크립트와 동일한 판정.
-       [§4-1] 모바일(≤767px)에서는 드로어가 언제나 "펼침" 레이아웃이어야 하므로
-       (shadcn Sheet 안의 사이드바에는 data-state="collapsed"가 없다)
-       접힘 판정 자체를 하지 않는다 — sidebar.js enterMobile()과 같은 결론을
-       첫 파싱 시점에 미리 확정해 FOUC를 막는다. */
     var mobile = window.matchMedia('(max-width: 767px)').matches;
     var collapsed = mobile
       ? false
@@ -236,13 +231,7 @@
 
 
         <div data-slot="header-actions">
-          <button type="button" data-slot="button" data-variant="default" data-size="sm" class="#subscribe" data-url="/" data-device="web_pc" aria-label="구독하기"> 구독하기 </button>
-
-          <button type="button" data-theme-toggle data-slot="button" data-variant="outline"
-                  data-size="icon-sm" aria-label="테마 전환" aria-pressed="false">
-            <svg data-theme-when="light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-            <svg data-theme-when="dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/></svg>
-          </button>
+          <button type="button" data-slot="button" data-variant="default" data-size="sm" class="btn_subscription #subscribe" data-blog-id="9002140" data-url="/" data-device="web_pc" aria-label="구독하기">구독하기</button>
         </div>
 
       </div>
@@ -1052,7 +1041,75 @@ function initCodeBlocks() {
 </div>
 
 
+<div data-slot="page-dock">
+  <div data-slot="theme-switch" role="radiogroup" aria-label="테마">
+    <button type="button" data-theme="system" role="radio" aria-label="시스템 테마" aria-checked="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+    </button>
+    <button type="button" data-theme="light" role="radio" aria-label="라이트 모드" aria-checked="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    </button>
+    <button type="button" data-theme="dark" role="radio" aria-label="다크 모드" aria-checked="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/><path d="M20 3v4"/><path d="M22 5h-4"/></svg>
+    </button>
+  </div>
+  <button type="button" data-slot="scroll-top" aria-label="맨 위로">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14"/><path d="m18 13-6-6-6 6"/><path d="M12 7v14"/></svg>
+  </button>
+</div>
 
+
+
+<script>
+(function () {
+  if (window.__skinThemeInit) return;
+  var dock = document.querySelector("[data-slot='page-dock']");
+  if (!dock) return;
+  window.__skinThemeInit = true;
+  var root = document.documentElement;
+  var media = window.matchMedia("(prefers-color-scheme: dark)");
+  function readTheme() {
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") return t;
+    } catch (e) {}
+    return "system";
+  }
+  function isDark(theme) {
+    if (theme === "dark") return true;
+    if (theme === "light") return false;
+    return media.matches;
+  }
+  function apply(theme) {
+    if (theme !== "light" && theme !== "dark" && theme !== "system") return;
+    root.setAttribute("data-theme", theme);
+    root.classList.toggle("dark", isDark(theme));
+    var buttons = dock.querySelectorAll("[data-slot='theme-switch'] button[data-theme]");
+    Array.prototype.forEach.call(buttons, function (b) {
+      var on = b.getAttribute("data-theme") === theme;
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    try {
+      if (theme === "system") localStorage.removeItem("theme");
+      else localStorage.setItem("theme", theme);
+    } catch (e) {}
+  }
+  apply(readTheme());
+  function onPick(event) {
+    var btn = event.target.closest("button[data-theme]");
+    if (!btn || !dock.contains(btn)) return;
+    var theme = btn.getAttribute("data-theme");
+    if (!theme) return;
+    event.preventDefault();
+    event.stopPropagation();
+    apply(theme);
+  }
+  dock.addEventListener("pointerdown", onPick);
+  dock.addEventListener("click", onPick);
+  document.addEventListener("pointerdown", onPick, true);
+})();
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
