@@ -69,3 +69,12 @@ CDN URL이라 이것만 글마다 인라인 `<style>`로 따로 넣는다)와 �
 
 사용법: `<div class="font-preview-card"><p class="font-preview-text" style="font-family:'{그 글의 실제 font-family}'">{샘플 문장}</p></div>`
 
+---
+
+## 8. [SPEC 2026-09-06] 목록형/썸네일형 토글 제거 — 항상 썸네일형 고정
+
+`[data-slot="content-view-toggle"]` 규칙 삭제 — `skin.html`에서 토글 버튼 마크업 자체를
+없애고 `data-view`를 `"thumb"`로 하드코딩했다(`content.js.md` §2026-09-06 참고).
+`[data-view="thumb"]`로 스코프된 기존 규칙들은 그대로 두되, 이제 조건부가 아니라
+항상 적용되는 유일한 레이아웃이 됐다.
+

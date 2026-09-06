@@ -96,13 +96,6 @@
   word-break: keep-all;
 }
 
-[data-slot="content-view-toggle"] {
-  display: inline-flex;
-  align-items: center;
-  gap: calc(var(--spacing) * 1);
-  flex: 0 0 auto;
-}
-
 [data-slot="post-list"] {
   display: flex;
   flex-direction: column;

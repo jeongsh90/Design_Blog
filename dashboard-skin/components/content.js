@@ -81,44 +81,6 @@
     });
   }
 
-  function initViewToggle() {
-    var inner = document.querySelector('[data-slot="content-inner"]');
-    if (!inner) return;
-    if (inner.querySelector('[data-slot="post-single"]')) return;
-
-    var buttons = inner.querySelectorAll("[data-view-mode]");
-    if (!buttons.length) return;
-
-    var KEY = "daitnu-content-view";
-    var saved = "";
-    try {
-      saved = localStorage.getItem(KEY) || "";
-    } catch (e) {}
-    var initial = saved === "thumb" || saved === "list" ? saved : "list";
-
-    function setView(mode) {
-      if (mode !== "list" && mode !== "thumb") mode = "list";
-      inner.setAttribute("data-view", mode);
-      try {
-        localStorage.setItem(KEY, mode);
-      } catch (e) {}
-      Array.prototype.forEach.call(buttons, function (btn) {
-        var on = btn.getAttribute("data-view-mode") === mode;
-        btn.setAttribute("aria-pressed", on ? "true" : "false");
-        btn.setAttribute("data-variant", on ? "outline" : "ghost");
-      });
-    }
-
-    Array.prototype.forEach.call(buttons, function (btn) {
-      btn.addEventListener("click", function () {
-        setView(btn.getAttribute("data-view-mode"));
-      });
-    });
-
-    setView(initial);
-  }
-
-
   function initProseTables() {
     var body = document.querySelector('[data-slot="post-single-body"]');
     if (!body) return;
@@ -680,7 +642,6 @@
   function init() {
     initPaginationActiveState();
     initSquareGrid();
-    initViewToggle();
     initProseTables();
     initCodeBlocks();
     initPostTags();
