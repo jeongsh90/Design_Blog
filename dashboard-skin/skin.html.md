@@ -77,3 +77,15 @@ article 쪽 댓글 헤딩은 `[##_article_rep_rp_cnt_##]`로 개수를 보여주
 `notice_rep_rp_cnt`류 치환자는 티스토리 문서에 없음). 그래서 공지사항 쪽
 헤딩은 숫자 없이 "댓글"만 표시 — 실제 개수는 아래 댓글 목록으로 확인 가능하다.
 
+---
+
+## 9. [SPEC 2026-09-06] 위젯 영역 하단 "소개" 메뉴
+
+"위젯영역 하단에 about 페이지 메뉴 추가" 요청 — 공지사항/최근 글처럼 반복되는
+Tistory 위젯이 아니라 정적 링크 하나라 `<s_sidebar_element>` "card" 패턴 대신
+가벼운 `<nav data-slot="widgets-footer">` + `data-slot="widgets-footer-link"`
+하나로 구현(위젯 카드 5개 뒤, `</aside>` 바로 앞). 링크 대상은 Tistory
+"페이지 관리"로 등록한 정적 Page(`/pages/about`) — Page는 알고 보니 Notice와
+달리 일반 글과 동일한 `<s_article_rep>`/`<s_permalink_article_rep>` 템플릿을
+그대로 타서(실측 확인) 별도 `s_notice_rep` 같은 전용 블록이 필요 없었다.
+

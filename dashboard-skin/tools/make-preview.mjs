@@ -615,7 +615,8 @@ function render(
       /\.\/images\/((?:sidebar|header|tooltip|card|widgets|content|scrollbar|smooth-scroll)\.(?:css|js))/g,
       "/dashboard-skin/components/$1"
     )
-    .replace(/\.\/images\//g, "/dashboard-skin/");
+    .replace(/\.\/images\//g, "/dashboard-skin/")
+    .replace(/\.\/style\.css/g, "/dashboard-skin/style.css");
 
   // 4) 격리해 뒀던 HTML 주석 복원 (전역 — 반복 확장으로 복제된 자리도 함께)
   html = html.replace(/@@SKIN_COMMENT_(\d+)@@/g, (_, i) => comments[Number(i)]);

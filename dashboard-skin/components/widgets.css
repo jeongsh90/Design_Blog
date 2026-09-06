@@ -211,6 +211,40 @@
 }
 
 
+[data-slot="widgets-footer"] {
+  display: flex;
+  justify-content: center;
+  padding-top: calc(var(--spacing) * 2);
+  border-top: 1px solid var(--color-border);
+}
+
+[data-slot="widgets-footer-link"] {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1.5);
+  padding-block: calc(var(--spacing) * 1.5);
+  padding-inline: calc(var(--spacing) * 3);
+  border-radius: var(--radius-md);
+  font: var(--font-weight-medium) var(--text-xs)/var(--leading-normal) var(--font-sans);
+  letter-spacing: var(--tracking-xs);
+  color: var(--color-muted-foreground);
+  text-decoration: none;
+  transition-property: color, background-color;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+}
+[data-slot="widgets-footer-link"] svg {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+}
+[data-slot="widgets-footer-link"]:hover {
+  color: var(--color-foreground);
+  background-color: var(--color-accent);
+}
+[data-slot="widgets-footer-link"]:focus-visible {
+  outline: calc(var(--spacing) * 0.5) solid var(--color-ring);
+  outline-offset: calc(var(--spacing) * 0.5);
+}
 
 
 

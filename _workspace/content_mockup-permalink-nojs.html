@@ -18,18 +18,7 @@
 
 <link rel="stylesheet" href="/dashboard-skin/tailwind.css" />
 
-<link rel="stylesheet" href="/dashboard-skin/components/tooltip.css" />
-
-<link rel="stylesheet" href="/dashboard-skin/components/scrollbar.css" />
-
-<link rel="stylesheet" href="/dashboard-skin/components/smooth-scroll.css" />
-
-<link rel="stylesheet" href="/dashboard-skin/components/card.css" />
-<link rel="stylesheet" href="/dashboard-skin/components/sidebar.css" />
-<link rel="stylesheet" href="/dashboard-skin/components/header.css" />
-<link rel="stylesheet" href="/dashboard-skin/components/widgets.css" />
-
-<link rel="stylesheet" href="/dashboard-skin/components/content.css" />
+<link rel="stylesheet" href="/dashboard-skin/style.css" />
 
 
 <script>
@@ -707,6 +696,202 @@ function initCodeBlocks() {
                   </article>
                 
               
+
+              
+                
+                  <article data-slot="post-single">
+                    <h1 data-slot="post-single-title"></h1>
+                    <p data-slot="post-single-meta"></p>
+
+                    
+                      <div data-slot="post-thumb">
+                        <img src="" alt="" />
+                      </div>
+                    
+
+                    <div data-slot="post-single-body"></div>
+
+                    <footer data-slot="post-footer">
+                      
+                      <section data-slot="post-comments" id="comments" aria-label="댓글">
+                        <h2 data-slot="post-footer-title">댓글</h2>
+
+                        
+                          <ol data-slot="comment-list">
+                            
+                              <li id="comment_1" data-slot="comment-item" class="guest">
+
+                                <div data-slot="comment-main">
+
+                                  <span data-slot="avatar" data-size="default" data-comment-logo>
+                                    <span data-slot="avatar-fallback" aria-hidden="true">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </span>
+                                    <img data-slot="avatar-image" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23a3a3a3%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2225%22%20r%3D%2211%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Cpath%20d%3D%22M10%2064c0-13%2010-21%2022-21s22%208%2022%2021z%22%20fill%3D%22%23f5f5f5%22%2F%3E%3C%2Fsvg%3E" alt="" loading="lazy" />
+                                  </span>
+
+                                  <div data-slot="comment-body">
+                                    <div data-slot="comment-head">
+                                      <span data-slot="comment-author">김디자</span>
+                                      <a href="#comment_1" data-slot="comment-date">2026.09.04 10:41</a>
+                                      <span data-slot="comment-actions">
+                                        <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="xs">답글</button>
+                                        <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="xs">수정·삭제</button>
+                                      </span>
+                                    </div>
+                                    <div data-slot="comment-desc">자간 값 참고해서 저도 적용해봤습니다. 한글 본문에서 −0.01em이 확실히 낫네요.</div>
+                                  </div>
+                                </div>
+
+                                
+
+                              </li>
+                            
+                              <li id="comment_2" data-slot="comment-item" class="guest">
+
+                                <div data-slot="comment-main">
+
+                                  <span data-slot="avatar" data-size="default" data-comment-logo>
+                                    <span data-slot="avatar-fallback" aria-hidden="true">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </span>
+                                    
+                                  </span>
+
+                                  <div data-slot="comment-body">
+                                    <div data-slot="comment-head">
+                                      <span data-slot="comment-author">지나가던 개발자</span>
+                                      <a href="#comment_2" data-slot="comment-date">2026.09.04 11:02</a>
+                                      <span data-slot="comment-actions">
+                                        <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="xs">답글</button>
+                                        <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="xs">수정·삭제</button>
+                                      </span>
+                                    </div>
+                                    <div data-slot="comment-desc">shadcn 사이드바를 바닐라로 옮기는 부분이 특히 좋았습니다. 혹시 <a href="/1">이 글</a>에서 쓰신 토큰 목록도 공개하실 계획이 있으신가요? 링크가 댓글 안에서도 제대로 파랗게 보이는지 확인하려고 일부러 길게 씁니다.</div>
+                                  </div>
+                                </div>
+
+                                
+                                  <ul data-slot="comment-replies">
+                                    
+                                      <li id="comment_reply_1" data-slot="comment-item" class="reply">
+                                        <div data-slot="comment-main">
+                                          <span data-slot="avatar" data-size="sm" data-comment-logo>
+                                            <span data-slot="avatar-fallback" aria-hidden="true">
+                                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                            </span>
+                                            <img data-slot="avatar-image" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23a3a3a3%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2225%22%20r%3D%2211%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Cpath%20d%3D%22M10%2064c0-13%2010-21%2022-21s22%208%2022%2021z%22%20fill%3D%22%23f5f5f5%22%2F%3E%3C%2Fsvg%3E" alt="" loading="lazy" />
+                                          </span>
+                                          <div data-slot="comment-body">
+                                            <div data-slot="comment-head">
+                                              <span data-slot="comment-author">다잇누</span>
+                                              <a href="#comment_reply_1" data-slot="comment-date">2026.09.04 11:20</a>
+                                              <span data-slot="comment-actions">
+
+                                                <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="xs">수정·삭제</button>
+                                              </span>
+                                            </div>
+                                            <div data-slot="comment-desc">감사합니다! 자간 값은 Design-system globals.css 416~417행 기준으로 맞췄어요.</div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    
+                                  </ul>
+                                
+
+                              </li>
+                            
+                              <li id="comment_3" data-slot="comment-item" class="guest">
+
+                                <div data-slot="comment-main">
+
+                                  <span data-slot="avatar" data-size="default" data-comment-logo>
+                                    <span data-slot="avatar-fallback" aria-hidden="true">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </span>
+                                    data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23a3a3a3%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2225%22%20r%3D%2211%22%20fill%3D%22%23f5f5f5%22%2F%3E%3Cpath%20d%3D%22M10%2064c0-13%2010-21%2022-21s22%208%2022%2021z%22%20fill%3D%22%23f5f5f5%22%2F%3E%3C%2Fsvg%3E
+                                  </span>
+
+                                  <div data-slot="comment-body">
+                                    <div data-slot="comment-head">
+                                      <span data-slot="comment-author">publisher</span>
+                                      <a href="#comment_3" data-slot="comment-date">2026.09.04 13:57</a>
+                                      <span data-slot="comment-actions">
+                                        <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="xs">답글</button>
+                                        <button type="button" onclick="return false;" data-slot="button" data-variant="ghost" data-size="xs">수정·삭제</button>
+                                      </span>
+                                    </div>
+                                    <div data-slot="comment-desc">비밀댓글입니다.</div>
+                                  </div>
+                                </div>
+
+                                
+
+                              </li>
+                            
+                          </ol>
+                        
+
+                        
+                          <div data-slot="comment-form">
+                            <span data-slot="avatar" data-size="default">
+                              <span data-slot="avatar-fallback" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </span>
+                            </span>
+
+                            <div data-slot="comment-form-body">
+
+                              
+                                
+                                  <div data-slot="comment-form-guest">
+                                    <label class="sr-only" for="rp-name-notice">이름</label>
+                                    <input id="rp-name-notice" type="text" data-slot="input" placeholder="이름"
+                                           name="name" value="" />
+
+                                    <label class="sr-only" for="rp-password-notice">비밀번호</label>
+
+                                    <input id="rp-password-notice" type="password" maxlength="8" data-slot="input" placeholder="비밀번호"
+                                           name="password" value="" />
+                                  </div>
+                                
+
+                                <label class="sr-only" for="rp-comment-notice">댓글 내용</label>
+                                <textarea id="rp-comment-notice" data-slot="textarea" rows="3" placeholder="내용을 입력하세요"
+                                          name="comment"></textarea>
+
+                                <div data-slot="comment-form-actions">
+
+                                  <label data-slot="comment-secret">
+                                    <input type="checkbox" class="sr-only" name="secret" />
+                                    <svg data-secret-when="off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+                                    </svg>
+                                    <svg data-secret-when="on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                    </svg>
+                                    <span class="sr-only">비밀글로 작성</span>
+                                  </label>
+
+
+                                  <button type="button" onclick="return false;"
+                                          data-slot="button" data-variant="default" data-size="sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                      <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+                                    </svg>
+                                    등록
+                                  </button>
+                                </div>
+                              
+                            </div>
+                          </div>
+                        
+                      </section>
+                      
+                    </footer>
+                  </article>
+                
+              
             </div>
 
 
@@ -1022,6 +1207,14 @@ function initCodeBlocks() {
               </div>
             </section>
           
+
+
+          <nav data-slot="widgets-footer" aria-label="추가 메뉴">
+            <a href="/pages/about" data-slot="widgets-footer-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              소개
+            </a>
+          </nav>
 
         </aside>
       </div>
