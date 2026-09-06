@@ -578,6 +578,28 @@
                   </article>
                 </s_permalink_article_rep>
               </s_article_rep>
+
+              <!-- [SPEC 2026-09-06] 공지사항(/notice/N) 단일 글 본문 — 공지사항은 s_article_rep(일반 글) 루프를
+                   타지 않고 별도의 s_notice_rep/notice_rep_* 치환자를 쓴다(티스토리 공식 문서 확인).
+                   article 쪽과 동일한 data-slot을 재사용해 같은 타이포그래피가 그대로 적용되게 함.
+                   좋아요/공유/이전-다음글/댓글 등 article 전용 footer는 notice_rep_* 대응 치환자가
+                   없어(문서에 명시 안 됨) 의도적으로 제외 — 제목/날짜/썸네일/본문만 표시. -->
+              <s_notice_rep>
+                <s_permalink_article_rep>
+                  <article data-slot="post-single">
+                    <h1 data-slot="post-single-title">[##_notice_rep_title_##]</h1>
+                    <p data-slot="post-single-meta">[##_notice_rep_date_##]</p>
+
+                    <s_notice_rep_thumbnail>
+                      <div data-slot="post-thumb">
+                        <img src="[##_notice_rep_thumbnail_url_##]" alt="" />
+                      </div>
+                    </s_notice_rep_thumbnail>
+
+                    <div data-slot="post-single-body">[##_notice_rep_desc_##]</div>
+                  </article>
+                </s_permalink_article_rep>
+              </s_notice_rep>
             </div>
 
 
