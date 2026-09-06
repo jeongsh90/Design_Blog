@@ -116,7 +116,7 @@ bun run skin:verify:codeblock # 코드블록 §9 체크리스트 14항
 스킨 편집 화면의 이름·제작자·저작권은 `skin.html`이 아니라 **`index.xml`**에서 온다.
 이전에 적용해 둔 JQ.Minimal 패키지를 HTML만 덮어쓰면 그 잔재가 그대로 남는다.
 
-새로 등록할 때는 `dashboard-skin/deploy/DAITNU-v1.0.4.zip`을 쓴다
+새로 등록할 때는 `dashboard-skin/deploy/DAITNU-v1.0.5.zip`을 쓴다
 (이름 DAITNU, 제작자 `jeongsanghoon@naver.com`, 저작권은 제작자).
 미리보기 이미지는 `deploy/preview256.jpg` · `preview560.jpg` · `preview1600.jpg`.
 
