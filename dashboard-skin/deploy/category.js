@@ -92,7 +92,6 @@
       '<div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">' + name + "</div>" +
       '<ul data-slot="sidebar-menu-sub" id="' + subId + '">' + subItemsHTML + "</ul>" +
       "</div>" +
-      badgeHTML(a) +
       "</li>"
     );
   }
