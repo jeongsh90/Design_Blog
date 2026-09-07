@@ -102,6 +102,24 @@ const SUBSTITUTIONS = {
     '<a href="/tag/%ED%83%80%EC%9D%B4%ED%8F%AC%EA%B7%B8%EB%9E%98%ED%94%BC">타이포그래피</a>, ' +
     '<a href="/tag/Tailwind">Tailwind</a>, ' +
     '<a href="/tag/%EC%8A%A4%ED%82%A8">스킨</a>',
+
+  /* [CATEGORY SPEC 2026-09-07] 실사이트(daitnu.tistory.com) 관리자 HTML 편집에
+     [##_category_list_##]만 임시로 넣어 실측한 원본 그대로(클래스명·중첩·
+     new_ico_5.gif·공백까지 동일) 고정한 픽스처 — category.js가 이 구조를
+     파싱하므로, 여기서 값을 바꾸면 category.js의 실제 파싱 로직이 검증된다. */
+  category_list:
+    '<ul class="tt_category"><li class=""><a href="/category" class="link_tit"> 분류 전체보기 <span class="c_cnt">(28)</span> ' +
+    '<img alt="N" src="https://tistory1.daumcdn.net/tistory_admin/blogs/image/category/new_ico_5.gif" style="vertical-align:middle;padding-left:2px;"></a>\n' +
+    '  <ul class="category_list"><li class=""><a href="/category/Design" class="link_item"> Design <span class="c_cnt">(28)</span> ' +
+    '<img alt="N" src="https://tistory1.daumcdn.net/tistory_admin/blogs/image/category/new_ico_5.gif" style="vertical-align:middle;padding-left:2px;"></a>\n' +
+    '  <ul class="sub_category_list"><li class=""><a href="/category/Design/Logo" class="link_sub_item"> Logo <span class="c_cnt">(0)</span> </a></li>\n' +
+    '<li class=""><a href="/category/Design/Font" class="link_sub_item"> Font <span class="c_cnt">(28)</span> ' +
+    '<img alt="N" src="https://tistory1.daumcdn.net/tistory_admin/blogs/image/category/new_ico_5.gif" style="vertical-align:middle;padding-left:2px;"></a></li>\n' +
+    '<li class=""><a href="/category/Design/Figma" class="link_sub_item"> Figma <span class="c_cnt">(0)</span> </a></li>\n' +
+    '</ul>\n</li>\n' +
+    '<li class=""><a href="/category/Code" class="link_item"> Code <span class="c_cnt">(0)</span> </a></li>\n' +
+    '<li class=""><a href="/category/Ai" class="link_item"> Ai <span class="c_cnt">(0)</span> </a></li>\n' +
+    '</ul>\n</li>\n</ul>\n',
 };
 
 /* ── [RIGHT-WIDGETS SPEC §7] 우측 위젯 반복 블록 확장 ────────────────
@@ -612,7 +630,7 @@ function render(
   //    같은 파일을 가리켜야 활성 표시 검증이 가능하다.
   html = html
     .replace(
-      /\.\/images\/((?:sidebar|header|tooltip|card|widgets|content|scrollbar|smooth-scroll)\.(?:css|js))/g,
+      /\.\/images\/((?:sidebar|header|tooltip|card|widgets|content|scrollbar|smooth-scroll|category)\.(?:css|js))/g,
       "/dashboard-skin/components/$1"
     )
     .replace(/\.\/images\//g, "/dashboard-skin/")

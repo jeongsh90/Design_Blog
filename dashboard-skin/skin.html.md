@@ -96,3 +96,43 @@ data-size="sm" data-widget="about"><div data-slot="card-content">...` 구조로
 붙였던 정보(ⓘ) 아이콘도 "앞에 아이콘 제거" 요청으로 함께 제거 — 이제 "소개"
 텍스트 링크(공용 `data-variant="link"` Button)만 남는다.
 
+## 10. [SPEC 2026-09-07] 사이드바 "아카이브" 카테고리 트리 — 정적 하드코딩 →
+실제 관리자 카테고리와 연동
+
+"사이드메뉴의 메뉴가 하드코딩되어있어 실제 관리자페이지의 카테고리관리가
+연결되야돼" 요청 — 2026-09-01 Q2에서 "A(정적 하드코딩)"로 확정했던 결정을
+뒤집는다. 실사이트 HTML 편집에 `[##_category_list_##]`/`[##_category_##]`를
+임시로 넣어(적용 후 즉시 원복) 실측한 결과: 후자(트리형)는 구식 `<table>` +
+`tab_*.gif` 스프라이트 기반이라 재이식이 사실상 불가능하지만, 전자(리스트형)는
+깨끗한 `<ul class="tt_category"><li><a class="link_tit">분류 전체보기…
+<ul class="category_list"><li><a class="link_item">Design…
+<ul class="sub_category_list"><li><a class="link_sub_item">Logo…`
+구조를 내려준다 — 게다가 각 `<a>` 안에 `<span class="c_cnt">(N)</span>`(글
+개수, 2026-07 결정에 따라 표시 안 함)과 조건부 `<img alt="N" src=".../
+new_ico_5.gif">`(Tistory 자체 "새 글" 판정 — 최상위/하위 카테고리 모두에
+독립적으로 붙는다)까지 포함한다.
+
+이 리스트형 태그를 그대로 스타일링하는 대신(원본 클래스가 이 스킨의
+`data-slot` 체계와 완전히 다름), `<div id="category-source" hidden>
+[##_category_list_##]</div>`로 실제 데이터를 숨겨서 심어두고, 빈
+`<ul id="sidebar-category-menu" data-slot="sidebar-menu"></ul>`에
+`category.js`(신규)가 페이지 로드 시 그 숨은 소스를 파싱해 **기존
+아코디언/배지/툴팁 마크업과 완전히 동일한 `data-slot` 구조**를 런타임에
+합성해 넣는다 — sidebar.css/sidebar.js/tooltip.js를 단 한 줄도 건드리지
+않고도 그대로 재사용된다(sidebar.js의 `initCollapsibleMenus`/
+`initActiveState`, tooltip.js의 `initTooltips`가 이미 data-slot 속성
+기반으로만 동작해서 가능). 상세 파싱 로직·아이콘 정책·실행 순서 이유는
+`category.js.md` 참고.
+
+**노스크립트 대응**: 카테고리 트리 자체가 client-side에서 조립되므로,
+JS가 꺼지면 `<ul id="sidebar-category-menu">`가 빈 채로 남는다(이전엔
+정적 하드코딩이라 JS 없이도 항상 보였음 — 이 아키텍처의 불가피한 트레이드
+오프). `<noscript>`로 "전체 카테고리 보기"(`/category`) 링크 하나만
+최소 대체 제공.
+
+**로컬 검증 픽스처**: `make-preview.mjs`의 `SUBSTITUTIONS.category_list`에
+위에서 실측한 원본 그대로(클래스명·개수·new 아이콘까지)를 고정해 뒀다 —
+Design(하위 3개, Font만 new)/Code(신규, 이전엔 하드코딩 목록에 없던 빈
+카테고리)/Ai로 구성, 실사이트의 "하드코딩된 사이드바가 실제로는 최신
+카테고리 상태와 어긋나 있었다"는 문제 상황을 그대로 재현한다.
+

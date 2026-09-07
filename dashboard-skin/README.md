@@ -11,7 +11,7 @@ React 없이 순수 HTML/CSS/바닐라 JS로 1:1 포팅하며, **구역(컴포�
 
 | 구역 | 상태 |
 |---|---|
-| **Sidebar** | ✅ 완료 (PC 100vw 레이아웃 / 접힘 시 4개 항목 hover 툴팁 / 펼침 시 방문자 수 카드 2장 / 로고 행 안 `sidebar-menu-action` 시스템 아이콘→`/manage`, 행 hover 시 노출) |
+| **Sidebar** | ✅ 완료 (PC 100vw 레이아웃 / 접힘 시 4개 항목 hover 툴팁 / 펼침 시 방문자 수 카드 2장 / 로고 행 안 `sidebar-menu-action` 시스템 아이콘→`/manage`, 행 hover 시 노출 / **카테고리 트리는 하드코딩이 아니라 `category.js`가 실제 관리자 카테고리 데이터로 런타임 조립** — `skin.html.md` §10) |
 | **Header** | ✅ 완료 (PC / 56px / 홈·태그·방명록·즐겨찾기 `icon-sm` 아이콘 버튼 + hover 툴팁) |
 | **우측 위젯 사이드바** | ✅ 완료 (PC / 320px sticky 패널 / 공지·최근 글·인기 글·태그·최근 댓글 5장 / shadcn `scroll-fade-y` 상하 스크롤 페이드 / 스크롤 중에만 보이는 커스텀 스크롤바) |
 | **Content (목록/본문)** | ✅ 완료 (PC / 격자 배경 6열×160px 행 / 독립 스크롤 + scroll-fade + 커스텀 스크롤바 / 페이징 Button + content.js 현재페이지 / index·empty·permalink 목업 분리) |
@@ -48,6 +48,8 @@ dashboard-skin/
 │   ├── tooltip.css           ← 공용 프리미티브 Tooltip (sidebar·header 둘 다 사용)
 │   ├── tooltip.js            ← Tooltip 동작 (hover/focus 열기, 뷰포트 경계 보정)
 │   ├── card.css              ← 공용 프리미티브 Card + Badge(outline) — 우측 위젯·향후 글 목록
+│   ├── category.js           ← 사이드바 카테고리 트리를 실제 관리자 데이터([##_category_list_##])로
+│   │                            런타임 조립(반드시 tooltip.js/sidebar.js보다 먼저 로드)
 │   ├── sidebar.css           ← Sidebar 구역 스타일 ([data-slot] 셀렉터 기반)
 │   ├── sidebar.js            ← Sidebar 구역 동작 (토글 / 쿠키 / Ctrl+B / 테마 / 활성표시)
 │   ├── header.css            ← Header 구역 + 공용 프리미티브(Button / Breadcrumb)

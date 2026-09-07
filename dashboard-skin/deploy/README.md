@@ -27,11 +27,11 @@ CSS 파일이 9개(tailwind + 8개)에서 **2개(tailwind, style)** 로 줄었�
 ```
 index.xml, skin.html, style.css,
 preview256.jpg, preview560.jpg, preview1600.jpg,
-images/{tailwind.css, tooltip.js, sidebar.js, header.js, content.js, smooth-scroll.js}
+images/{tailwind.css, category.js, tooltip.js, sidebar.js, header.js, content.js, smooth-scroll.js}
 ```
 
-(정확히는 `images/`에 `tailwind.css` + JS 5개 = 6개, 루트에 `index.xml`/`skin.html`/`style.css` = 3개,
-프리뷰 3장 — 합계 12개.)
+(정확히는 `images/`에 `tailwind.css` + JS 6개 = 7개, 루트에 `index.xml`/`skin.html`/`style.css` = 3개,
+프리뷰 3장 — 합계 13개.)
 
 **preview 3장을 절대 빠뜨리지 말 것** — 등록 화면 안내문은 "index.xml, skin.html,
 style.css 등"만 언급하지만, 정작 **스킨 보관함 목록의 썸네일은 이 3장으로 그려진다**
@@ -67,6 +67,7 @@ style.css 등"만 언급하지만, 정작 **스킨 보관함 목록의 썸네일
 
 ```
 tailwind.css   (Tailwind 클래스가 바뀌었을 때만)
+category.js    (반드시 tooltip.js/sidebar.js보다 먼저 로드되도록 skin.html에 배선돼 있음)
 tooltip.js
 sidebar.js
 header.js
@@ -109,7 +110,7 @@ smooth-scroll.js
 
 ```
 CSS:  tailwind → style(=tooltip→scrollbar→smooth-scroll→card→sidebar→header→widgets→content→tistory-overrides)
-JS:   GSAP → ScrollTrigger → Lenis → tooltip → sidebar → header → content → smooth-scroll
+JS:   GSAP → ScrollTrigger → Lenis → category → tooltip → sidebar → header → content → smooth-scroll
 ```
 
 ---
@@ -125,10 +126,10 @@ bun run skin:build   # tailwind.css 재빌드 + style.css 재생성(컴포넌트
 그다음 아래 파일을 이 `deploy/` 폴더로 **덮어쓰기 복사**한다(경로만 `components/`·루트에서
 여기로, 파일명은 그대로). 미리보기 jpg는 직접 교체한 뒤에만 건드린다. zip을 다시 만들 때는
 루트 3개(`index.xml`/`skin.html`/`style.css`) + 미리보기 3장 + `images/`에 tailwind.css와
-JS 5개를 넣어 `DAITNU-v{n}.zip`으로 묶는다.
+JS 6개를 넣어 `DAITNU-v{n}.zip`으로 묶는다.
 
 ```
-tailwind.css, components/tooltip.js, components/sidebar.js,
+tailwind.css, components/category.js, components/tooltip.js, components/sidebar.js,
 components/header.js, components/content.js, components/smooth-scroll.js,
 skin.html, index.xml, style.css
 ```
