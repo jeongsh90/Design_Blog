@@ -99,6 +99,15 @@
     );
   }
 
+  function normalizedPath(pathname) {
+    return decodeURIComponent(pathname).replace(/\/+$/, "");
+  }
+
+  function pathIsUnder(here, href) {
+    var path = normalizedPath(href);
+    return here === path || here.indexOf(path + "/") === 0;
+  }
+
   function initCategoryMenu() {
     var source = document.getElementById("category-source");
     var target = document.getElementById("sidebar-category-menu");
@@ -108,17 +117,26 @@
     if (!root) return;
 
     var topLis = Array.prototype.slice.call(root.querySelectorAll(":scope > li"));
+    var here = normalizedPath(window.location.pathname);
     var firstExpandableIndex = -1;
+    var activeExpandableIndex = -1;
+
     for (var i = 0; i < topLis.length; i++) {
       var subUl = topLis[i].querySelector(":scope > ul.sub_category_list");
-      if (subUl && subUl.querySelector(":scope > li")) {
-        firstExpandableIndex = i;
-        break;
+      if (!subUl || !subUl.querySelector(":scope > li")) continue;
+      if (firstExpandableIndex === -1) firstExpandableIndex = i;
+
+      var topAnchor = directAnchor(topLis[i]);
+      if (topAnchor && pathIsUnder(here, topAnchor.getAttribute("href") || "")) {
+        activeExpandableIndex = i;
       }
     }
+
+    var openIndex = activeExpandableIndex !== -1 ? activeExpandableIndex : firstExpandableIndex;
+
     target.innerHTML = topLis
       .map(function (li, index) {
-        return buildTopItem(li, index, index === firstExpandableIndex);
+        return buildTopItem(li, index, index === openIndex);
       })
       .join("");
   }

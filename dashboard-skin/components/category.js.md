@@ -158,3 +158,27 @@ CSS 변수(`--accordion-content-height`)를 이 wrap에 설정하고, 실제
 "첫 번째"가 어떤 카테고리가 될지는 관리자에서 그 카테고리를 몇 번째
 순서에 두느냐로 정해진다 — 별도 고정 설정 없음(예: 지금은 Design이
 1번이라 기본으로 열린다).
+
+## 12. [SPEC 2026-09-07 후속] 초기 열림 항목 = "첫 번째"가 아니라 "현재 보고
+있는 페이지가 속한 카테고리"
+
+"Code>depth2 페이지일때 아코디언이 해당하는것에 열려있어야되는데 지금
+첫번째 목록이 열려있어" 지적 — §11에서 만든 `firstExpandableIndex`
+고정 로직이 실제 방문 페이지와 무관하게 항상 같은 항목만 열어서
+틀렸다. `initCategoryMenu()`가 `window.location.pathname`을 `sidebar.js`의
+`initActiveState()`와 **동일한 정규화**(`decodeURIComponent` + 끝
+슬래시 제거)로 구한 `here`와, 각 최상위 카테고리 **자기 자신의**
+href(하위 항목 하나하나가 아니라)를 비교한다 — Tistory 카테고리 URL이
+계층적이라(`/category/Code`가 `/category/Code/depth2`의 접두어) 부모
+href 하나와의 접두어 비교만으로 그 밑의 모든 하위 카테고리 페이지를
+커버한다(`pathIsUnder`). 일치하는 카테고리가 있으면
+`activeExpandableIndex`로 그 카테고리를 연다.
+
+일치하는 게 없을 때(홈, 글 상세, 검색 결과 등 어떤 카테고리 URL과도
+안 겹치는 페이지)는 §11의 `firstExpandableIndex`로 폴백 — "아무것도
+안 열려 있는 사이드바"보다는 "뭔가는 열려 있는" 편이 원래 의도한
+UX였고, 이 폴백 자체는 그대로 유지한다. `initActiveState()`(어떤
+링크에 `data-active="true"`를 붙일지)와 이 로직은 서로 다른 함수·다른
+계산이지만 같은 `here` 정규화 방식을 쓰므로 결과가 항상 서로 들어맞는다
+— "Font 링크가 활성 표시됐는데 그 부모 Design은 접혀 있다" 같은 불일치가
+날 수 없다.
