@@ -3,8 +3,9 @@ Bun.serve({
   fetch(req) {
     const url = new URL(req.url);
     let path = url.pathname === '/' ? '/index.html' : url.pathname;
-    const file = Bun.file('.' + path);
-    return new Response(file);
+    let filePath = path.startsWith('/draft/') ? '../noonnu-drafts/' + path.slice('/draft/'.length) : '.' + path;
+    const file = Bun.file(filePath);
+    return new Response(file, { headers: { 'Access-Control-Allow-Origin': '*' } });
   },
 });
 console.log('serving on 8811');

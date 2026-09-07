@@ -2339,7 +2339,8 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 }
 
 
-[data-slot="post-single"] [data-slot="post-thumb"] {
+[data-slot="content-inner"] [data-slot="post-single"] [data-slot="post-thumb"] {
+  order: initial;
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;

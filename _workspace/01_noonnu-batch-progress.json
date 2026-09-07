@@ -1,6 +1,6 @@
 {
-  "status": "batch_4_partial",
-  "note": "배치 4(카탈로그 인덱스 10~14, 11~15번째 폰트) 중 3개(11~13번, 경기천년바탕/경기천년제목/아리따돋움) 발행 완료. 나머지 2개(14번 아리따부리, 15번 한둥근제목)는 티스토리 '하루 최대 15개 공개 발행' 일일 한도에 걸려 발행하지 못함 — 발행 당일 이미 13개(고도체~KBIZ한마음명조체)가 공개 발행돼 있던 상태에서 14번째(아리따부리) 시도가 거부됨(브라우저에 '하루에 새롭게 공개 발행할 수 있는 글은 최대 15개까지입니다' alert). 아리따부리는 초안 본문을 Tistory HTML모드에 붙여넣고 '임시저장'까지 해 둠(관리자 글쓰기 화면에서 이어서 작성 가능) — 로컬 draft/thumbnail 파일도 그대로 존재. 한둥근제목은 로컬 draft/thumbnail만 준비된 상태(에디터에 붙여넣기 시도조차 안 함). 다음 세션은 새 날짜(일일 한도 리셋 후) categoryFlow/modeFlow/publishFlow 그대로 재사용해 이 2개부터 마저 발행하면 됨 — 눈누 상세 페이지 재조사 불필요(아래 draft 파일에 이미 실제 라이선스/웹폰트코드/다운로드링크 반영됨).",
+  "status": "batch_5_complete",
+  "note": "배치 5 완료 — 오늘(2026-09-07) 총 15개 공개 발행(어제 밀린 2개 + 새 폰트 13개). 어제와 마찬가지로 '하루 최대 15개' 한도가 오늘도 동일하게 적용됨을 확인(정확히 15개째까지는 문제 없이 발행됨, 16개째를 시도하지 않아 정확한 임계는 여전히 15 이하 어딘가로만 확인 — 실제로 16개째를 시도해 거부 응답을 받아본 것은 아님). 이번 배치 중 실제 버그 1건 발견·수정: 21~28번(한겨레결체~부산체) 썸네일 PNG가 뷰포트 리사이즈 유실로 1200x630이 아닌 1600x900으로 캡처되어, 검정 카드가 전체 이미지의 왼쪽 상단에만 위치하고 나머지가 흰 여백으로 남는 문제가 있었음(사용자가 실제 발행된 페이지를 보고 '썸네일이 왼쪽 상단으로 밀려났다'고 정확히 지적) — 원인은 브라우저 뷰포트가 세션 중간에 리셋된 것으로 추정, 6개(이미 발행된 한겨레결체/스포카 한 산스/성동고딕/성동명조/청소년체/부산체) 전부 재캡처 후 각 글 수정 화면에서 기존 대표이미지 삭제 → 재업로드 → 재발행으로 실제 수정 완료 확인.",
   "published": [
     {
       "index": 0,
@@ -8,7 +8,13 @@
       "name": "고도체",
       "url": "https://daitnu.tistory.com/3",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-1-godo.png (배치2에서 보완 — 실제 폰트 렌더링 + 우리만의 문구 '묵직하고 각진 고딕체')",
-      "tags": ["고도체", "고딕폰트", "무료폰트", "한글폰트", "웹폰트"],
+      "tags": [
+        "고도체",
+        "고딕폰트",
+        "무료폰트",
+        "한글폰트",
+        "웹폰트"
+      ],
       "note": "배치2에서 대표이미지 신규 추가 + 본문 '눈누' 언급 전부 제거 + 라이브 폰트 샘플(.font-preview-card) 추가"
     },
     {
@@ -17,7 +23,13 @@
       "name": "고도마음체",
       "url": "https://daitnu.tistory.com/4",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-2-godomaum.png (부제 문구를 눈누 기본 문구에서 '다정하고 부드러운 손글씨체'로 교체)",
-      "tags": ["고도마음체", "무료폰트", "한글폰트", "손글씨체", "웹폰트"]
+      "tags": [
+        "고도마음체",
+        "무료폰트",
+        "한글폰트",
+        "손글씨체",
+        "웹폰트"
+      ]
     },
     {
       "index": 2,
@@ -25,7 +37,13 @@
       "name": "산돌국대떡볶이체",
       "url": "https://daitnu.tistory.com/5",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-3-sdkukdetopokki.png",
-      "tags": ["산돌국대떡볶이체", "무료폰트", "한글폰트", "귀여운폰트", "웹폰트"]
+      "tags": [
+        "산돌국대떡볶이체",
+        "무료폰트",
+        "한글폰트",
+        "귀여운폰트",
+        "웹폰트"
+      ]
     },
     {
       "index": 3,
@@ -33,7 +51,13 @@
       "name": "이롭게바탕체",
       "url": "https://daitnu.tistory.com/6",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-4-iropke-batang.png",
-      "tags": ["이롭게바탕체", "무료폰트", "한글폰트", "바탕체", "웹폰트"]
+      "tags": [
+        "이롭게바탕체",
+        "무료폰트",
+        "한글폰트",
+        "바탕체",
+        "웹폰트"
+      ]
     },
     {
       "index": 4,
@@ -41,7 +65,13 @@
       "name": "빙그레체",
       "url": "https://daitnu.tistory.com/7",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-5-binggrae.png",
-      "tags": ["빙그레체", "무료폰트", "한글폰트", "손글씨체", "웹폰트"]
+      "tags": [
+        "빙그레체",
+        "무료폰트",
+        "한글폰트",
+        "손글씨체",
+        "웹폰트"
+      ]
     },
     {
       "index": 5,
@@ -114,42 +144,279 @@
       "thumbnail": "_workspace/noonnu-thumbs/thumb-13-arita-dotum.png (부제 '매끈하고 정갈한 브랜드 고딕체')",
       "tags": [],
       "note": "아모레퍼시픽 제작. 라이선스에 저작권 표기 문구(\"이 제작물은 아모레퍼시픽의 아리따글꼴을 사용하여 디자인 되었습니다.\", 6px 이상) 조건부 허용 조항 있음, 포장지/BI·CI 사용 금지"
-    }
-  ],
-  "blockedByDailyQuota": [
+    },
     {
       "index": 13,
       "id": 16,
       "name": "아리따부리",
-      "draft": "_workspace/noonnu-drafts/font-14-arita-buri.html",
-      "thumbnail": "_workspace/noonnu-thumbs/thumb-14-arita-buri.png (부제 '부드러운 붓끝이 살아있는 세리프체', 렌더링 확인 완료)",
-      "note": "아리따돋움(index12)과 자매 폰트, 아모레퍼시픽 제작, 다운로드 링크 동일, 라이선스도 동일 조항. HTML모드에 붙여넣기+임시저장까지 완료(관리자 글쓰기 화면에서 이어서 작성 가능) — 발행만 남음."
+      "url": "https://daitnu.tistory.com/16",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-14-arita-buri.png (부제 '부드러운 붓끝이 살아있는 세리프체')",
+      "tags": [
+        "아리따부리",
+        "무료폰트",
+        "한글폰트",
+        "세리프체",
+        "웹폰트"
+      ],
+      "note": "배치4에서 일일 한도로 미발행 → 배치5(2026-09-07) 첫 건으로 발행 완료. 아리따돋움과 자매 폰트, 아모레퍼시픽 제작"
     },
     {
       "index": 14,
       "id": 18,
       "name": "한둥근제목",
-      "draft": "_workspace/noonnu-drafts/font-15-han-round-title.html",
-      "thumbnail": "_workspace/noonnu-thumbs/thumb-15-han-round-title.png (부제 '둥글둥글 부드럽게 힘주는 제목체', 렌더링 확인 완료)",
-      "note": "윤디자인 제작. 다운로드 페이지에서 별도 폰트 관리 프로그램(폰코 자키) 설치가 필요함(눈누 안내사항). 에디터 붙여넣기 전 상태 — draft 파일 그대로 사용 가능."
+      "url": "https://daitnu.tistory.com/17",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-15-han-round-title.png (부제 '둥글둥글 부드럽게 힘주는 제목체')",
+      "tags": [
+        "한둥근제목",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "배치4에서 일일 한도로 미발행 → 배치5(2026-09-07) 두번째 건으로 발행 완료. 윤디자인 제작, 다운로드시 폰코 자키 앱 설치 필요"
+    },
+    {
+      "index": 15,
+      "id": 19,
+      "name": "한둥근바탕",
+      "url": "https://daitnu.tistory.com/18",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-16-han-round-batang.png (부제 '부드럽게 마무리한 둥근 바탕체')",
+      "tags": [
+        "한둥근바탕",
+        "무료폰트",
+        "한글폰트",
+        "바탕체",
+        "웹폰트"
+      ],
+      "note": "한둥근제목과 자매 폰트(WONBatang.woff), 윤디자인 제작"
+    },
+    {
+      "index": 16,
+      "id": 20,
+      "name": "한둥근돋움",
+      "url": "https://daitnu.tistory.com/19",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-17-han-round-dotum.png (부제 '매끄럽게 다듬은 둥근 고딕체')",
+      "tags": [
+        "한둥근돋움",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "한둥근제목·한둥근바탕과 한 가족(WONDotum.woff), 윤디자인 제작"
+    },
+    {
+      "index": 17,
+      "id": 21,
+      "name": "윤고래체",
+      "url": "https://daitnu.tistory.com/20",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-18-yoon-gorae.png (부제 '굵은 마카로 눌러쓴 듯한 손글씨체')",
+      "tags": [
+        "윤고래체",
+        "무료폰트",
+        "한글폰트",
+        "손글씨체",
+        "웹폰트"
+      ],
+      "note": "윤디자인 제작(형태: 손글씨/귀여운/마카). 웹폰트 실제 font-family는 'YunTaemin'(noonfonts_two 패키지) — 표시명과 내부 파일명이 다름, 눈누 페이지에 실제 등록된 값 그대로 사용"
+    },
+    {
+      "index": 18,
+      "id": 22,
+      "name": "김남윤체",
+      "url": "https://daitnu.tistory.com/21",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-19-kim-namyun.png (부제 '또박또박 눌러쓴 어른스러운 손글씨체')",
+      "tags": [
+        "김남윤체",
+        "무료폰트",
+        "한글폰트",
+        "손글씨체",
+        "웹폰트"
+      ],
+      "note": "윤디자인 제작(형태: 손글씨/또박또박/어른 손글씨), KimNamyun.woff(noonfonts_one 패키지)"
+    },
+    {
+      "index": 19,
+      "id": 23,
+      "name": "이숲체",
+      "url": "https://daitnu.tistory.com/22",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-20-lee-hyunji.png (부제 '동글동글 귀엽게 눌러쓴 손글씨체')",
+      "tags": [
+        "이숲체",
+        "무료폰트",
+        "한글폰트",
+        "손글씨체",
+        "웹폰트"
+      ],
+      "note": "윤디자인 제작(형태: 손글씨/귀여운/또박또박), LeeHyunJi.woff(noonfonts_two 패키지)"
+    },
+    {
+      "index": 20,
+      "id": 24,
+      "name": "한겨레결체",
+      "url": "https://daitnu.tistory.com/23",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-21-hangyore.png (부제 '가지런히 각 잡은 신문체 바탕체') — 최초 1600x900 캡처 버그로 재업로드함(아래 참고)",
+      "tags": [
+        "한겨레결체",
+        "무료폰트",
+        "한글폰트",
+        "바탕체",
+        "웹폰트"
+      ],
+      "note": "한겨레신문사 제작. font-family 'Hangyore', jsdelivr korean-webfonts CDN(Hankc.woff2/woff). 다운로드는 한겨레 공지사항 페이지"
+    },
+    {
+      "index": 21,
+      "id": 25,
+      "name": "스포카 한 산스",
+      "url": "https://daitnu.tistory.com/24",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-22-spoqa.png (부제 '군더더기 없이 실용적인 UI 고딕체') — 최초 1600x900 캡처 버그로 재업로드함",
+      "tags": [
+        "스포카한산스",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "스포카 제작, SIL OFL 1.1, 4가지 굵기(Thin/Light/Regular/Bold). 원 눈누 페이지는 @import(spoqa.github.io css)만 제공 — 실제 font-family 'Spoqa Han Sans' + jsdelivr gh CDN URL은 그 css 파일을 직접 열람해 확인 후 사용"
+    },
+    {
+      "index": 22,
+      "id": 26,
+      "name": "성동고딕",
+      "url": "https://daitnu.tistory.com/25",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-23-seongdong-gothic.png (부제 '네모칸을 벗어난 자유로운 고딕체') — 최초 1600x900 캡처 버그로 재업로드함",
+      "tags": [
+        "성동고딕",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "성동구청 제작(성동명조와 자매 폰트, 다운로드 링크 동일), 탈네모꼴. font-family 'SeongdongGothic'"
+    },
+    {
+      "index": 23,
+      "id": 27,
+      "name": "성동명조",
+      "url": "https://daitnu.tistory.com/26",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-24-seongdong-myungjo.png (부제 '네모칸을 벗어난 유연한 명조체') — 최초 1600x900 캡처 버그로 재업로드함",
+      "tags": [
+        "성동명조",
+        "무료폰트",
+        "한글폰트",
+        "명조체",
+        "웹폰트"
+      ],
+      "note": "성동구청 제작(성동고딕과 자매 폰트), 탈네모꼴. font-family 'SeongdongMyoungjo'"
+    },
+    {
+      "index": 24,
+      "id": 28,
+      "name": "청소년체",
+      "url": "https://daitnu.tistory.com/27",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-25-youth.png (부제 '꾸밈없이 또렷한 청소년 활동 고딕체') — 최초 1600x900 캡처 버그로 재업로드함",
+      "tags": [
+        "청소년체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "한국청소년활동진흥원 제작. font-family 'YouthfulFont'"
+    },
+    {
+      "index": 25,
+      "id": 29,
+      "name": "부산체",
+      "url": "https://daitnu.tistory.com/28",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-26-busan.png (부제 '둥글게 굴린 꽉 찬 지역 브랜드 고딕체') — 최초 1600x900 캡처 버그로 재업로드함(발행 직후 사용자가 '썸네일이 왼쪽 상단으로 밀려났다'고 실제 발견·제보한 건)",
+      "tags": [
+        "부산체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "부산광역시청 제작. font-family 'Busan'"
+    },
+    {
+      "index": 30,
+      "id": 34,
+      "name": "본고딕 (Noto Sans KR)",
+      "url": "https://daitnu.tistory.com/29",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-27-noto-sans-kr.png (부제 '어디서나 통하는 국제 표준 고딕체')",
+      "tags": [
+        "본고딕",
+        "NotoSansKR",
+        "무료폰트",
+        "한글폰트",
+        "고딕체"
+      ],
+      "note": "Google X Adobe 제작, SIL OFL 1.1. 눈누 페이지는 @import(fonts.googleapis.com/earlyaccess) 제공 — 실제 CDN 확인을 위해 Google Fonts css2 API를 직접 조회, font-family 'Noto Sans KR' + fonts.gstatic.com 해시 URL(.ttf) 사용. catalogIndex 27(id32 KoPub바탕)~29(id33 KoPub돋움 미확인)는 건너뛰고 이 폰트부터 재개함(아래 skipped 참고)"
+    },
+    {
+      "index": 31,
+      "id": 35,
+      "name": "본명조 (Source Han Serif)",
+      "url": "https://daitnu.tistory.com/30",
+      "thumbnail": "_workspace/noonnu-thumbs/thumb-28-source-han-serif.png (부제 '긴 글도 편안하게 읽히는 국제 표준 명조체')",
+      "tags": [
+        "본명조",
+        "SourceHanSerif",
+        "무료폰트",
+        "한글폰트",
+        "명조체"
+      ],
+      "note": "Google X Adobe 제작(본고딕과 짝), SIL OFL 1.1. 눈누 페이지에 이미 jsdelivr @font-face 웹폰트 코드 있음(font-family 'BonmyeongjoSourceHanSerif', NotoSerifKR.woff)"
+    }
+  ],
+  "skippedNoWebfontCode": [
+    {
+      "catalogIndex": 26,
+      "id": 30,
+      "name": "바른바탕체",
+      "reason": "대한인쇄문화협회 제작. 눈누 페이지 자체에 @font-face 웹폰트 코드가 없음(다른 정부/기관 폰트들과 달리 jsdelivr korean-webfonts CDN 미등록). 라이선스도 '웹사이트: 온라인 쇼핑몰, 회사홈페이지 등 웹사이트에서 이미지로 사용가능'이라고 명시해 실제 텍스트 렌더링(웹폰트 임베딩)이 허용되는지 불명확 — 이 배치 규칙상 라이브 미리보기 카드(@font-face 실텍스트 렌더링)가 필수인데 안전하게 만들 CDN 소스가 없어 스킵. 자체 호스팅(폰트 파일을 직접 업로드)은 '폰트 파일 자체 재배포 금지' 조항과 충돌 위험이 있어 시도하지 않음"
+    },
+    {
+      "catalogIndex": 27,
+      "id": 31,
+      "name": "바른돋움체",
+      "reason": "바른바탕체와 동일 제작사(대한인쇄문화협회), 동일 사유로 스킵(웹폰트 코드 없음)"
+    },
+    {
+      "catalogIndex": 28,
+      "id": 32,
+      "name": "KoPub바탕",
+      "reason": "한국출판인회의 제작. 라이선스 자체는 웹사이트 사용을 명시적으로 허용하지만, 눈누 페이지에 @font-face/CDN 코드가 없어(자체 호스팅 CDN 미등록) 안전하게 라이브 미리보기를 만들 소스가 없음 — 스킵"
+    },
+    {
+      "catalogIndex": 29,
+      "id": 33,
+      "name": "KoPub돋움",
+      "reason": "KoPub바탕(같은 제작사·같은 페이지 구조)과 동일한 문제일 가능성이 높아 이번 배치에서는 실제 확인 없이 건너뜀 — 다음 배치에서 실제로 웹폰트 코드 유무를 먼저 확인할 것"
     }
   ],
   "nextBatchStartsAt": {
-    "catalogIndex": 13,
-    "note": "카탈로그 인덱스 13(아리따부리, id 16)부터. 하지만 실제로는 blockedByDailyQuota의 draft/thumbnail이 이미 준비돼 있으니 눈누 재조사 없이 바로 categoryFlow/modeFlow/publishFlow로 발행만 하면 됨. 그 다음 새 폰트는 catalogIndex 15부터."
+    "catalogIndex": 32,
+    "note": "카탈로그 인덱스 32(id36, 나눔바른고딕)부터 새로 조사 시작. 단, catalogIndex 29(id33 KoPub돋움)를 이번 배치에서 실제로는 확인하지 않고 추정만으로 건너뛰었으니, 다음 배치 시작 시 KoPub돋움부터 먼저 실제 눈누 페이지를 열어 웹폰트 코드 유무를 확인한 뒤(있으면 처리, 없으면 skippedNoWebfontCode에 정식 추가) 32번으로 넘어갈 것."
   },
   "rulesEstablishedThisBatch": [
-    "본문 텍스트 어디에도 '눈누' 사이트명을 언급하지 않는다 (예: '웹폰트로 사용할 때 필요한 코드는 다음과 같다', '※ 위 표는 참고용으로 정리한 요약이다' 처럼 출처 사이트명 없이 자연스럽게 표현). 태그에도 '눈누'를 넣지 않는다.",
-    "썸네일 부제 문구는 눈누 사이트의 기본 미리보기 문구를 그대로 베끼지 않고, 그 폰트의 성격을 담은 짧고 서로 다른 한국어 문구로 직접 작성한다.",
-    "본문 인트로 문단 바로 아래에 실제 웹폰트가 라이브로 렌더링되는 샘플을 넣는다 — 카드 스타일(배경/테두리/패딩/폰트크기)은 인라인으로 반복하지 말고 스킨 전역 CSS 클래스 `.font-preview-card`/`.font-preview-text`(dashboard-skin/components/content.css, 배포는 dashboard-skin/deploy/style.css)를 사용한다. 인라인 <style>에는 그 폰트 고유의 @font-face 선언만 남기고, <p class=\"font-preview-text\">에는 style=\"font-family: '{name}-live', sans-serif;\" 외에 색상(color)이나 배경(background) 관련 선언을 절대 넣지 않는다 — `.font-preview-card`/`.font-preview-text`가 항상 고정 다크 배경(#0a0a0a)+흰 글자(#fff)로 처리하므로 라이트/다크 모드와 무관하게 항상 잘 보인다. 구조 예시:\n```html\n<style>\n@font-face {\n  font-family: '{font-family}-live';\n  src: url('{실제 웹폰트 CDN URL}') format('{format}');\n  font-display: swap;\n}\n</style>\n<div class=\"font-preview-card\">\n<p class=\"font-preview-text\" style=\"font-family: '{font-family}-live', sans-serif;\">{샘플 문장}</p>\n</div>\n```",
-    "티스토리 플러그인 '카테고리 글 더 보기'(스킨 자체 관련글 위젯과 중복 노출되던 원인)는 배치2에서 비활성화(해제) 완료 — 이후 배치에서 다시 신경 쓸 필요 없음.",
-    "글 목록은 스킨 자체에서 썸네일형(그리드)으로 고정돼 있다(목록형 토글 제거됨) — 대표이미지(썸네일)를 반드시 챙겨야 카드가 정상적으로 보인다.",
-    "글 상세 페이지의 대표이미지/.font-preview-card 폭이 1/3만 차지하던 스킨 버그는 배치3 이전에 스킨 레벨에서 수정·배포 완료 — 배치3 5개 글 모두 실제로 전체 폭(886px, 콘텐츠 컬럼 기준)으로 정상 렌더링됨을 발행 직후 실측 확인함. 같은 제작사(한수원/KBIZ/경기도청/아모레퍼시픽)에서 나온 자매 폰트끼리는 다운로드 링크가 동일하다 — 새로 찾지 말고 재사용해도 된다.",
-    "[배치4에서 발견] 티스토리는 '하루에 새롭게 공개 발행할 수 있는 글은 최대 15개까지'라는 계정 단위 일일 한도가 있다(alert 메시지 그대로). 배치 시작 전 오늘 이미 발행된 공개글 수를 감안해 계획을 짜야 한다 — /manage/posts/ 목록에서 오늘 날짜로 찍힌 글이 몇 개인지 먼저 확인하고, 그 개수 + 이번에 발행하려는 개수가 15를 넘으면 넘는 만큼은 오늘 발행이 거부된다(정확한 임계 개수는 실측으로만 확인 가능 — 이번 배치는 13개가 이미 있는 상태에서 14번째 공개 발행 시도가 거부됨). 한도에 걸리면: 이미 HTML 에디터에 붙여넣은 내용은 '완료' 다이얼로그를 취소하지 말고 그냥 라디오를 비공개로 두거나 상단 '임시저장' 버튼을 눌러 저장해 두면(관리자 글쓰기 화면 재진입 시 '이어서 작성하시겠습니까' 확인으로 복구 가능) 다음 날 새로 타이핑할 필요가 없다. draft(_workspace/noonnu-drafts)·thumbnail(_workspace/noonnu-thumbs) 파일 자체는 이미 완성돼 있으니 다음 세션은 눈누 재조사 없이 바로 발행 단계부터 재개하면 된다."
+    "본문 텍스트 어디에도 '눈누' 사이트명을 언급하지 않는다. 태그에도 '눈누'를 넣지 않는다.",
+    "썸네일 부제 문구는 그 폰트의 성격을 담은 짧고 서로 다른 한국어 문구로 직접 작성한다(눈누 기본 문구·다른 배치에서 이미 쓴 문구와 겹치지 않게).",
+    "본문 인트로 문단 바로 아래에 실제 웹폰트가 라이브로 렌더링되는 샘플을 넣는다 — 스킨 전역 CSS 클래스 `.font-preview-card`/`.font-preview-text` 사용, 인라인 <style>에는 그 폰트 고유의 @font-face 선언만.",
+    "[배치5 신규] 눈누 페이지에서 실제 @font-face 웹폰트 코드를 확인하는 방법: WebFetch로는 markdown 변환 과정에서 <style> 태그 내용이 잘리거나 누락될 수 있어 신뢰하기 어렵다 — Playwright로 해당 페이지를 직접 열고 `document.documentElement.innerHTML.indexOf('font-face')` 또는 `document.body.innerText.indexOf('웹폰트로 사용')` 로 원문 그대로 잘라 확인하는 방법이 정확하다.",
+    "[배치5 신규] 일부 정부/공공기관 폰트(대한인쇄문화협회 바른바탕체·바른돋움체, 한국출판인회의 KoPub 계열 등)는 눈누 페이지 자체에 웹폰트 CDN 코드가 등록돼 있지 않다(@font-face 섹션이 아예 없음) — 이 경우 라이브 미리보기 카드를 안전하게 만들 방법이 없으므로(자체 폰트 파일 호스팅은 재배포 금지 조항과 충돌 위험) 스킵하고 skippedNoWebfontCode에 사유를 기록한다.",
+    "[배치5 신규] Google/Adobe 폰트(본고딕/본명조 등 Noto 계열)는 눈누 페이지가 종종 구식 @import(fonts.googleapis.com/earlyaccess)만 제공한다 — 이 경우 (a) 같은 폰트의 자매 폰트가 이미 jsdelivr noonfonts 패키지에 개별 @font-face로 등록돼 있는지 먼저 확인(본명조는 있었음)하고, (b) 없으면 Google Fonts 공식 css2 API(`https://fonts.googleapis.com/css2?family=...`)를 WebFetch로 직접 열어 실제 font-family 이름과 fonts.gstatic.com 해시 URL을 확인해 그대로 @font-face로 변환해 쓴다(본고딕에 적용, .ttf format으로 반환됨 — format('truetype')으로 명시).",
+    "[배치5 재확인] 자매 폰트(같은 제작사, 시리즈명이 이어지는 폰트)는 라이선스 전문과 다운로드 링크가 동일한 경우가 많다 — 다만 매번 실제 눈누 페이지를 열어 재확인하는 습관은 유지할 것(이번 배치에서도 성동고딕/성동명조, 한둥근 3형제 모두 실측 재확인 후 진행함).",
+    "[배치5 치명적 실수 — 재발 방지 필수] 로컬 썸네일 서버(bun, port 8811)로 1200x630 카드를 캡처할 때, `browser_resize`로 뷰포트를 1200x630으로 맞추는 것은 브라우저 세션 전체가 아니라 그 시점 한 번만 유효할 수 있다 — 중간에 다른 페이지 이동(예: 노트문/외부 사이트 확인 등)이 여러 번 끼면 뷰포트가 예고 없이 기본값(예: 1600x900)으로 되돌아갈 수 있다. 우리 썸네일 HTML의 body는 `width:1200px;height:630px` 고정이라, 뷰포트가 더 크면 카드가 캔버스 전체가 아니라 왼쪽 상단에만 위치하고 나머지가 흰 여백으로 남는 채로 스크린샷이 찍히는데, 카드 내부(중앙정렬된 텍스트)만 보면 정상처럼 보여 놓치기 쉽다. → 매 스크린샷 직후 반드시 PNG 파일의 실제 픽셀 크기(IHDR 청크: `buffer.readUInt32BE(16)`=width, `readUInt32BE(20)`=height)를 확인해 1200x630인지 검증하고, 다르면 그 자리에서 다시 resize→재캡처한다. 이번 배치는 이 검증을 21번(한겨레결체)부터 28번(부산체)까지 8개 파일에 대해 하지 않아 전부 1600x900으로 잘못 캡처됐고, 이미 발행된 6개 글의 대표이미지를 사용자 제보 후에야 뒤늦게 재캡처+재업로드(각 글을 /manage/post/{id}에서 열어 완료→대표이미지 삭제→새 파일 업로드→재발행)로 수정했다. 다음 배치부터는 스크린샷마다 크기 검증을 스킵하지 말 것.",
+    "[배치5 신규] 이미 공개 발행된 글의 대표이미지만 교체하는 절차: `https://daitnu.tistory.com/manage/post/{글번호}` 로 진입(수정 모드) → 완료 버튼 클릭 → 발행 다이얼로그 우측 상단 기존 썸네일 위에 마우스를 올리면 보이는 '삭제' 아이콘 버튼 클릭(대표이미지 제거, 태그 목록의 '○○ 태그 삭제'들과 이름이 겹치므로 accessibility tree에서 발행 다이얼로그 안에 있는 것만 골라야 함) → 다시 나타난 'Choose File'로 새 파일 업로드 → '공개 발행' 버튼(수정 발행).",
+    "[2026-09-07 재확인 — 근본원인 확정] \"썸네일이 중앙이 아니다\"(본고딕/본명조) 재확인 결과, 우리 썸네일 생성(1200x630 PNG) 자체는 문제가 없었다(직접 픽셀 분석으로 확인 — 텍스트 중심이 캔버스 중심에서 1px/10px 오차뿐). 진짜 원인은 Tistory/Daum이 대표이미지를 서빙할 때 쓰는 img1.daumcdn.net/thumb/R{width}x0/ CDN이 \"새 글 최초 발행 시 대표이미지 업로드\" 경로로 올린 파일만 16:9(예: 1200x630 원본 -> 1200x675) 캔버스로 강제 패딩하면서 원본을 좌상단(0,0) 기준으로 축소 배치(스케일 ~0.75, 이동 없음)해 우측/하단에 빈 여백을 만든다는 것 — R1200x0 요청으로 실측(본고딕/본명조 둘 다 1200x675, 텍스트 중심이 거의 동일한 (~449,~243)으로 나와 콘텐츠와 무관한 고정 변환임을 확인). 반면 \"기존 발행된 글의 대표이미지 교체\"(삭제 후 재업로드) 경로로 올라간 파일(예: 부산체 thumb-26)은 R1200x0 요청 시 정확히 1200x630(원본 그대로, 패딩 없음)이 나와 두 업로드 경로가 서로 다른 처리 파이프라인을 탄다는 것을 확정. **해결**: 우리 HTML 템플릿(1200x630)은 그대로 두고, 매 신규 글 발행 직후 대표이미지를 한 번 더 \"삭제 -> 같은 파일 재업로드 -> 재발행\"(기존 글 교체 절차와 동일 UI, /manage/post/{id} -> 완료 -> 썸네일 위 삭제 아이콘 -> Choose File로 같은 파일 재선택 -> 공개 발행)하면 이 패딩 버그가 사라진다. 본고딕(29)/본명조(30) 둘 다 이 절차로 재적용해 R1200x0이 1200x630으로 정상화됨을 확인, 그리드/상세 페이지 스크린샷으로도 중앙정렬 재확인 완료.",
+    "[2026-09-07 필수 절차로 승격] 위 발견에 따라 **앞으로 모든 신규 폰트 글 발행 직후, 발행 완료 후 바로 그 글의 R1200x0(img.src를 R숫자x0 패턴으로 바꿔 새 탭에서 열기) 페이지 타이틀을 확인해 세로 치수가 630(우리 템플릿 높이)과 정확히 일치하는지 검증한다** — 675처럼 다른 값이 나오면 그 즉시 같은 글에서 \"대표이미지 삭제 -> 같은 파일 재업로드 -> 재발행\"을 1회 수행하고 다시 R1200x0으로 재검증한다. 이 검증은 스크린샷 눈대중이 아니라 URL 타이틀(예: \"R1200x0 (1200×630)\")로 확정 판정한다 — 배치5에서 이 검증 없이 8개를 연달아 발행했다가 최소 2개(본고딕/본명조)가 이 버그에 걸린 채 방치됐었다."
   ],
-  "localThumbServer": "bun _workspace/noonnu-thumbs/serve-thumbs.mjs (port 8811) - 재기동 필요할 수 있음",
+  "localThumbServer": "bun _workspace/noonnu-thumbs/serve-thumbs.mjs (port 8811). 배치5에서 CORS 헤더(Access-Control-Allow-Origin: *)와 /draft/{파일명} 경로(→ ../noonnu-drafts/{파일명} 서빙) 두 가지를 추가했으나, 실제로는 클립보드(PowerShell Set-Clipboard/[System.Windows.Forms.Clipboard])가 재시도 루프로 결국 안정적으로 동작해 이 fetch 기반 우회는 쓰지 않았다(한 번은 fetch가 30분간 응답 없이 멈추는 사고도 있었음 — 원인 미상, 재시도하지 말고 클립보드 경로로 되돌아갈 것). 클립보드가 'Requested Clipboard operation did not succeed' 에러를 내면: PowerShell에서 Add-Type System.Windows.Forms 후 [System.Windows.Forms.Clipboard]::SetText()를 최대 8~10회 재시도 루프로 감싸면 대부분 성공한다(재시도 사이 Start-Sleep 400ms 권장) — 이 환경은 여러 세션/프로세스가 클립보드를 동시에 건드릴 수 있어 실패가 잦다.",
   "categoryFlow": "카테고리 선택 콤보박스 클릭 -> option '- Font' 클릭 (Design 하위)",
-  "modeFlow": "본문 우측 상단 '기본모드' 토글 버튼 클릭 -> 드롭다운(기본모드/마크다운/HTML)에서 HTML 클릭 -> confirm 다이얼로그 accept -> CodeMirror 영역 클릭이 안 먹으면 page.evaluate로 `.html-editor .CodeMirror` 엘리먼트의 `.CodeMirror.focus()`를 직접 호출해 포커스 -> Ctrl+A -> Ctrl+V (PowerShell Get-Content -Raw -Encoding UTF8 | Set-Clipboard 로 클립보드 준비 필수, 인코딩 안 주면 한글 깨짐 — 붙여넣기 직전에 Get-Clipboard -Raw로 길이 재확인하는 습관을 들일 것, 중간에 다른 PowerShell/Bash 호출이 끼면 클립보드가 예상과 다른 내용으로 바뀌어 있을 수 있음, 붙여넣기 후에도 `.CodeMirror.getValue().length`로 클립보드 길이와 일치하는지 재확인)",
-  "publishFlow": "완료 버튼 클릭 -> 다이얼로그에서 '공개' 라디오 선택 -> '대표이미지 추가'(Choose File)에 로컬 png 업로드 -> '공개 발행' 버튼 클릭",
+  "modeFlow": "본문 우측 상단 '기본모드' 토글 버튼 클릭 -> 드롭다운(기본모드/마크다운/HTML)에서 HTML 클릭 -> confirm 다이얼로그 accept -> CodeMirror 영역 클릭이 안 먹으면 page.evaluate로 `.html-editor .CodeMirror` 엘리먼트의 `.CodeMirror.focus()`를 직접 호출해 포커스 -> Ctrl+A -> Ctrl+V (PowerShell [System.Windows.Forms.Clipboard]::SetText(), 재시도 루프 권장, UTF8 인코딩 필수 — 붙여넣기 직전에 Get-Clipboard -Raw로 길이 재확인하는 습관을 들일 것, 붙여넣기 후에도 `.CodeMirror.getValue().length`로 클립보드 길이와 일치하는지 재확인). 클립보드가 중간에 비어있는 경우(0)가 종종 있으니 붙여넣기 직전 항상 재확인.",
+  "publishFlow": "완료 버튼 클릭 -> 다이얼로그에서 '공개' 라디오 선택 -> '대표이미지 추가'(Choose File)에 로컬 png 업로드 -> '공개 발행' 버튼 클릭. (기존에 이미 발행된 글의 대표이미지만 바꿀 때는 rulesEstablishedThisBatch의 '이미 공개 발행된 글의 대표이미지만 교체하는 절차' 참고)",
   "skinDeployFlow": "스킨(대시보드 스킨) CSS/HTML/JS를 바꿀 일이 생기면: https://daitnu.tistory.com/manage/design/skin/edit#/source/css (또는 /source/html) 이동 -> Monaco 에디터 영역 클릭 -> Ctrl+A -> (클립보드를 파일 내용으로 재설정 직후) Ctrl+V -> window.monaco.editor.getModels()[0].getValue()로 붙여넣기 결과 검증 -> '적용' 버튼 클릭 -> alert accept. 파일 업로드가 필요한 JS/CSS 에셋(예: images/content.js)은 '파일업로드' 탭에서 'Choose File'로 같은 파일명의 로컬 파일을 선택하면 서버의 기존 경로(images/폴더 포함)를 그대로 덮어쓴다."
 }
