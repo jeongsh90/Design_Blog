@@ -2,7 +2,7 @@
 <skin>
   <information>
     <name>DAITNU</name>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <description>
       <![CDATA[daitnu.tistory.com을 위한 대시보드형 티스토리 스킨입니다. shadcn/ui의 사이드바·헤더·패널 구조를 순수 HTML/CSS/JS로 옮겼고, 디자인·코드·AI 자료 아카이브 블로그에 맞춰 만들었습니다. 라이트/다크 테마를 지원합니다.]]>
     </description>

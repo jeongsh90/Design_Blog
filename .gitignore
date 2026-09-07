@@ -14,3 +14,12 @@ daitnu-skin-v1.01/
 skin/
 skin.zip
 .claude/worktrees/
+
+# Ruflo local secrets and runtime data
+.env
+.env.local
+.env.*.local
+.claude-flow/data/
+.claude-flow/logs/
+.claude-flow/sessions/
+.swarm/

@@ -1,0 +1,138 @@
+<h2>소개</h2>
+<p>Claude Code를 쓰다 보면 "에이전트 하나가 코드를 짜고, 다른 에이전트가 테스트하고, 또 다른 에이전트가 리뷰까지 알아서 나눠 맡아주면 좋겠다"는 생각이 들 때가 있습니다. <strong>Ruflo</strong>가 정확히 그 역할을 하는 도구입니다.</p>
+<p>Ruflo는 Claude Code(그리고 Codex)를 위한 <strong>에이전트 메타-하네스</strong>입니다. 공식 문서의 표현을 빌리면 "모델은 코드를 작성하고, 하네스는 도구·메모리·루프·샌드박스·제어를 제공한다(Agent = Model + Harness)"는 구조로, Claude Code 자체를 대체하는 게 아니라 그 위에 협업·기억·자동 라우팅 레이어를 얹어주는 실행 계층입니다.</p>
+<p>사실 이 프로젝트, 처음 들어보는 이름이 아닐 수도 있습니다. 원래 이름은 <strong>Claude Flow</strong>였고, 개발자 rUv가 최근 <strong>Ruflo</strong>로 리브랜딩했습니다(README에 "Claude Flow is now Ruflo"라고 명시돼 있습니다). 라이선스는 <strong>MIT</strong> — 완전 무료·오픈소스입니다.</p>
+
+<p style="margin-top:calc(var(--spacing) * 10);font-weight:var(--font-weight-semibold);font-size:var(--text-lg);color:var(--color-foreground);">핵심 기능</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:calc(var(--spacing) * 4);margin-top:calc(var(--spacing) * 4);">
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);color:var(--color-link);">100개 이상의 전문화된 에이전트</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">코딩, 테스트, 보안, 문서화, 아키텍처 설계 등 역할별로 나뉘어 있습니다.</div>
+</div>
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);color:var(--color-link);">퀸(Queen) 주도 계층 구조</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">Raft·Byzantine·Gossip 등 여러 토폴로지로 에이전트 팀을 조직화합니다. Claude Code 혼자서는 각 에이전트가 고립돼 있지만, Ruflo를 얹으면 하나의 스웜(swarm)으로 묶여 공유 메모리와 합의(consensus) 절차를 갖습니다.</div>
+</div>
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);color:var(--color-link);">공유 벡터 메모리</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">AgentDB, HNSW 인덱스 — 에이전트들이 세션이 끝나도 사라지지 않는 기억을 공유하고, 서브밀리초 단위로 과거 맥락을 검색합니다.</div>
+</div>
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);color:var(--color-link);">자기학습</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">SONA, ReasoningBank — 이전에 성공했던 작업 패턴을 학습해 다음 작업에 반영합니다.</div>
+</div>
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);color:var(--color-link);">지능형 작업 라우팅</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">작업 난이도를 분석해 어떤 에이전트·어떤 모델에 맡길지 자동으로 판단합니다(공식 문서 기준 약 89% 정확도).</div>
+</div>
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);color:var(--color-link);">백그라운드 워커 12종</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">감사(audit), 최적화(optimize), 테스트 갭 분석 등을 자동으로 트리거합니다.</div>
+</div>
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);color:var(--color-link);">멀티 프로바이더 지원</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">Claude, GPT, Gemini, Cohere, Ollama를 스마트 라우팅과 자동 페일오버로 함께 씁니다.</div>
+</div>
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);color:var(--color-link);">플러그인 마켓플레이스</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">Claude Code 플러그인 33종 + npm 플러그인 21종, 총 35개의 네이티브 플러그인 생태계를 갖고 있습니다.</div>
+</div>
+
+</div>
+
+<p style="margin-top:calc(var(--spacing) * 8);">정리하면, Claude Code를 "혼자 일하는 개발자"에서 "역할이 나뉜 팀"으로 바꿔주는 도구라고 보면 됩니다.</p>
+
+<h2>일반적인 에이전트 하네스 구성과 무엇이 다른가</h2>
+<p>Claude Code는 원래부터 서브에이전트(<code>.claude/agents/*.md</code>)와 스킬(<code>SKILL.md</code>)을 직접 정의해 협업 구조를 짤 수 있습니다. 이른바 "직접 구성하는 하네스"입니다. Ruflo는 이 구조 자체를 대체하지 않고, 그 위에 미리 만들어진 하네스 한 벌을 얹어준다는 점이 다릅니다.</p>
+<table>
+<thead>
+<tr><th>구성 요소</th><th>직접 구성하는 일반 하네스</th><th>Ruflo</th></tr>
+</thead>
+<tbody>
+<tr><td>에이전트 준비</td><td>필요한 역할마다 에이전트 정의 파일을 하나씩 직접 작성</td><td>100개 이상의 전문 에이전트가 이미 준비돼 있어 바로 호출</td></tr>
+<tr><td>작업 배분</td><td>어떤 요청에 어떤 에이전트를 쓸지 오케스트레이터 로직을 직접 설계</td><td>Queen 주도 계층 구조 + 자동 라우팅(공식 문서 기준 약 89% 정확도)으로 자동 배정</td></tr>
+<tr><td>세션 간 기억</td><td>맥락을 어디에 어떻게 남길지(문서, 메모 파일 등)를 직접 설계</td><td>AgentDB(HNSW 벡터 인덱스)에 자동 저장·검색</td></tr>
+<tr><td>학습</td><td>"이전에 이런 문제가 있었다" 같은 교훈을 사람이 직접 문서화해 반영</td><td>SONA·ReasoningBank가 성공 패턴을 자동 학습해 다음 작업에 반영</td></tr>
+<tr><td>여러 에이전트 협업</td><td>순차 호출·파일 핸드오프 등 조율 방식을 직접 설계</td><td>스웜(swarm) 조율 + 합의(consensus) 절차가 내장</td></tr>
+<tr><td>시작 비용</td><td>프로젝트마다 구조를 처음부터 설계·튜닝</td><td><code>npx ruflo init</code> 한 번으로 표준 구조 획득</td></tr>
+</tbody>
+</table>
+<p style="margin-top:calc(var(--spacing) * 4);color:var(--color-muted-foreground);font-size:var(--text-sm);">어느 쪽이 항상 낫다는 뜻은 아닙니다. 직접 구성하는 하네스는 그 프로젝트에만 맞춘 세밀한 역할 분담이 가능하고, Ruflo는 그 대신 표준화된 협업 구조를 즉시 얻을 수 있습니다 — 이미 손에 익은 수동 구성이 있다면 Ruflo 없이도 충분하고, 매 프로젝트마다 이 구조를 새로 짜는 게 부담이라면 Ruflo가 그 부분을 대신해주는 도구입니다.</p>
+
+<h2>설치 및 설정방법</h2>
+<p>설치 경로는 두 가지입니다. 무엇을 원하느냐에 따라 고르면 됩니다.</p>
+
+<div style="margin-top:calc(var(--spacing) * 6);background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);">
+<span style="display:inline-block;background:var(--color-link);color:var(--color-primary-foreground);font-size:var(--text-xs);font-weight:var(--font-weight-semibold);padding:calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);border-radius:999px;">방법 A</span>
+<div style="margin-top:calc(var(--spacing) * 3);font-weight:var(--font-weight-semibold);font-size:var(--text-base);">Claude Code 플러그인 — 가볍게, 슬래시 커맨드만</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);">워크스페이스에 파일을 하나도 남기지 않고, 필요한 플러그인만 골라 슬래시 커맨드로 써보고 싶을 때 적합합니다.</div>
+<pre><code class="language-bash"># 마켓플레이스 등록
+/plugin marketplace add ruvnet/ruflo
+
+# 코어 + 필요한 플러그인 설치
+/plugin install ruflo-core@ruflo
+/plugin install ruflo-swarm@ruflo
+/plugin install ruflo-rag-memory@ruflo</code></pre>
+<div style="margin-top:calc(var(--spacing) * 4);font-size:var(--text-sm);color:var(--color-muted-foreground);">이 경로로 설치하면 <code>ruflo-core</code> 플러그인이 자체 MCP 서버를 등록합니다(도구 이름은 <code>mcp__plugin_ruflo-core_ruflo__*</code> 형태). 다른 플러그인 대부분은 자체 MCP 서버를 갖지 않습니다.</div>
+</div>
+
+<div style="margin-top:calc(var(--spacing) * 6);background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);">
+<span style="display:inline-block;background:var(--color-link);color:var(--color-primary-foreground);font-size:var(--text-xs);font-weight:var(--font-weight-semibold);padding:calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);border-radius:999px;">방법 B</span>
+<div style="margin-top:calc(var(--spacing) * 3);font-weight:var(--font-weight-semibold);font-size:var(--text-base);">CLI 전체 설치 — 프로덕션용</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);">98개 에이전트 · 60개 이상 커맨드 · 30개 스킬 · MCP 서버 · 훅 · 데몬까지 전부 포함됩니다.</div>
+<pre><code class="language-bash"># macOS / Linux / WSL / Git-Bash (POSIX 셸 전용)
+curl -fsSL https://cdn.jsdelivr.net/gh/ruvnet/ruflo@main/scripts/install.sh | bash</code></pre>
+<pre><code class="language-bash"># 모든 플랫폼 (Windows PowerShell / cmd 포함) — 대화형 설치 마법사
+npx ruflo@latest init wizard
+
+# 비대화형으로 바로 초기화하고 싶다면
+npx ruflo@latest init
+
+# 전역 설치를 원한다면
+npm install -g ruflo@latest</code></pre>
+<div style="margin-top:calc(var(--spacing) * 4);font-size:var(--text-sm);color:var(--color-muted-foreground);">Windows에서 <code>curl ... | bash</code> 방식은 POSIX 셸(Git-Bash, WSL, MSYS)이 필요합니다. <code>'bash' is not recognized</code> 오류가 나면 <code>npx ruflo@latest init wizard</code> 쪽을 쓰면 됩니다 — 결과적으로 같은 초기화 과정을 거칩니다.</div>
+<div style="margin-top:calc(var(--spacing) * 2);font-size:var(--text-sm);color:var(--color-muted-foreground);">CLI로 설치하면 워크스페이스에 <code>.claude/</code>, <code>.claude-flow/</code>, <code>CLAUDE.md</code>, 각종 헬퍼·설정 파일이 생성되고, MCP 서버와 훅(hooks)까지 전부 자동으로 붙습니다.</div>
+</div>
+
+<p style="margin-top:calc(var(--spacing) * 8);font-weight:var(--font-weight-semibold);">MCP 서버로 등록하고 싶다면</p>
+<pre><code class="language-bash">claude mcp add claude-flow -- npx ruflo@latest mcp start</code></pre>
+
+<h2>사용방법</h2>
+<p>가장 인상적인 부분은 여기입니다 — 공식 문서는 이렇게 안내합니다.</p>
+<blockquote>
+<p>"314개 MCP 도구나 26개 CLI 커맨드를 다 외울 필요는 없습니다. <code>init</code> 이후에는 그냥 평소처럼 Claude Code를 쓰면, 훅 시스템이 자동으로 작업을 라우팅하고, 성공 패턴에서 학습하고, 백그라운드에서 에이전트를 조율합니다."</p>
+</blockquote>
+<p>즉 설치 후 명령어를 따로 외워서 실행하는 게 아니라, 평소처럼 Claude Code에 작업을 시키기만 하면 뒤에서 Ruflo가 알아서 에이전트를 나누고 조율합니다. 물론 <code>federation init</code>(다른 머신의 에이전트와 안전하게 협업), <code>eject</code>(프로젝트를 독립 툴킷으로 변환) 같은 고급 커맨드도 있지만, 처음 써볼 때는 몰라도 무방합니다.</p>
+
+<p style="margin-top:calc(var(--spacing) * 8);">설치 없이 먼저 감을 잡아보고 싶다면 두 가지 웹 UI를 제공합니다.</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:calc(var(--spacing) * 4);margin-top:calc(var(--spacing) * 4);">
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);"><a href="https://flo.ruv.io/" target="_blank" rel="noopener" style="color:var(--color-link);text-decoration:none;">flo.ruv.io ↗</a></div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">멀티모델 채팅 UI. 계정·API 키 없이 바로 열어서 Qwen, Claude, Gemini 등으로 MCP 도구 호출을 체험할 수 있습니다.</div>
+</div>
+
+<div style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 5);">
+<div style="font-weight:var(--font-weight-semibold);"><a href="https://goal.ruv.io/" target="_blank" rel="noopener" style="color:var(--color-link);text-decoration:none;">goal.ruv.io ↗</a></div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">목표를 평범한 문장으로 입력하면(예: "테스트와 PR까지 포함해서 인증 리팩터링을 완료해줘") A* 탐색으로 실행 계획을 자동으로 쪼개 보여주는 Goal Planner UI입니다. /agents에서 실시간으로 돌아가는 에이전트들도 볼 수 있습니다.</div>
+</div>
+
+</div>
+
+<h2>참고 · 검증 기록</h2>
+<div style="background:var(--color-muted);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);font-size:var(--text-sm);line-height:var(--leading-relaxed);">
+<div><span style="color:var(--color-link);font-weight:var(--font-weight-semibold);">1차 출처</span> — <a href="https://github.com/ruvnet/ruflo" target="_blank" rel="noopener">github.com/ruvnet/ruflo</a> 공식 README (MIT 라이선스, RuvNet)</div>
+<div style="margin-top:calc(var(--spacing) * 3);"><span style="color:var(--color-link);font-weight:var(--font-weight-semibold);">확인 시점</span> — 2026-09-07</div>
+<div style="margin-top:calc(var(--spacing) * 3);"><span style="color:var(--color-link);font-weight:var(--font-weight-semibold);">직접 검증한 항목</span> — README 원문 대조(설치 명령어, 기능 목록, 라이선스 문구를 원문 그대로 인용). <code>npm install -g ruflo@latest</code>로 실제 전역 설치를 완료했고, <code>ruflo --version</code>(<code>v3.38.21</code>)과 <code>ruflo --help</code> 실행까지 확인했습니다 — <code>agent</code>, <code>swarm</code>, <code>memory</code>, <code>hive-mind</code>(Queen 주도 합의 기반 조율), <code>hooks</code>(자기학습) 등 명령어 구조가 README가 설명하는 기능과 일치함을 실측했습니다.</div>
+<div style="margin-top:calc(var(--spacing) * 3);color:var(--color-muted-foreground);"><span style="color:var(--color-link);font-weight:var(--font-weight-semibold);">미검증 항목</span> — <code>ruflo init</code>으로 프로젝트를 초기화해 실제 에이전트를 실행해보는 것까지는 하지 않았습니다(이 글을 작성한 저장소는 Ruflo와 무관한 별도 프로젝트라, 여기에 <code>.claude/</code>·<code>CLAUDE.md</code> 등 관련 파일을 새로 생성하는 절차는 의도적으로 생략했습니다). 에이전트 자동 라우팅 정확도 89% 등 구체적 수치는 여전히 공식 문서가 주장하는 값이며 직접 재현하지 않았습니다.</div>
+</div>

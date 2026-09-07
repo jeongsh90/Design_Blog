@@ -126,3 +126,75 @@ ratio: 16/9`)보다 명시도가 높아 **소스 순서와 무관하게 항상 �
 모두가 걸리는지 눈으로 대조한 뒤, 걸린다면 `:has()`로 상세/목록을 구분해
 명시도를 맞추거나 `:not(:has(...))`로 배제한다.
 
+## 10. [SPEC 2026-09-07] `.contents_style` — 티스토리 자체 플랫폼 CSS가 본문
+`word-break: keep-all`을 덮어쓰던 문제
+
+"content.css에 .contents_style때문에 적용안됨" 제보로 실사이트 DOM을 직접
+열어 확인 — 티스토리는 저장된 글 본문을 그대로 `[##_article_rep_desc_##]`
+자리에 꽂는 게 아니라, 그 바깥을 `<div class="tt_article_useless_p_margin
+contents_style">`로 한 번 더 감싼다(이 프로젝트가 작성한 마크업이 아니라
+티스토리 렌더러가 저장 시점에 자동으로 씌우는 래퍼 — `skin.html`/`components/`
+어디에도 이 클래스가 없는 이유). 이 wrapper는 우리 스킨과 별개로 티스토리
+플랫폼 자체 스타일시트(`tistory_admin/userblog/.../static/style/content.css`,
+우리 프로젝트의 동명 파일과는 완전히 다른 파일 — 실제로 fetch해 원문 확인)를
+싣고 있고, 그 507번째 줄 근처에 `.contents_style { word-break: break-word; }`
+/ `.contents_style table td { word-break: break-word; }`가 박혀 있다.
+
+`word-break`는 상속 속성이라 `[data-slot="post-single-body"]`(§본문 컨테이너)
+에 건 `keep-all`이 원래는 자손까지 내려가야 하지만, 이 wrapper 자신에게
+**직접** `break-word`가 선언돼 있으면 상속값보다 그 직접 선언이 항상 이긴다
+— 그래서 컨테이너 규칙은 살아있는데도 실제 본문 텍스트는 계속 break-word로
+렌더되고 있었다. `.contents_style`은 로드 순서상 우리 `style.css`보다 먼저
+오지만(티스토리 자체 리소스가 head 상단에 먼저 걸림), 순서가 어느 쪽이든
+명시도로 이기면 그만이라 순서 자체는 손대지 않았다.
+
+**수정**: `[data-slot="post-single-body"] .contents_style`(속성선택자+클래스,
+명시도 0-2-0)로 티스토리의 `.contents_style`(클래스 단독, 명시도 0-1-0)보다
+한 단 높여 덮어썼다. 표 셀도 같은 이유로 `.contents_style table td`(명시도
+0-1-2)가 있어 `[data-slot="post-single-body"] .contents_style table td`
+(명시도 0-2-2)로 함께 덮었다. `pre`/`code`는 원래도 자기 자신에 직접
+`word-break: normal`을 선언해 두고 있어(상속이 아니라 직접 선언이라) 이번
+wrapper 규칙과 무관하게 그대로 유지된다.
+
+## 11. [SPEC 2026-09-07] `.tt_article_useless_p_margin p` — 티스토리 자체
+`!important`가 문단 세로 리듬을 전부 뭉개던 문제
+
+§10 wrapper(`.contents_style`)를 감싸는 바깥 div가 실제로는 두 클래스를
+같이 갖고 있다: `class="tt_article_useless_p_margin contents_style"`.
+"가독성이 안좋아보임" 제보로 실사이트 `<p>`의 `getComputedStyle`을 직접
+찍어보니 모든 문단이 `margin-top: 0px` / `margin-bottom: 0px` — 우리가
+`:is(p,ul,ol,dl) { margin-top: calc(var(--spacing) * 4) }`로 준 문단 사이
+여백이 전혀 적용되지 않고 있었다. 원인은 티스토리 자체 CSS(§10과 같은
+`tistory_admin/userblog/.../static/style/uselessPMargin.css`)의
+
+```css
+.tt_article_useless_p_margin p {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+```
+
+`!important`는 명시도·소스 순서와 무관하게 일반 선언(인라인 `style=""`
+속성 포함)을 전부 이긴다 — 그래서 이 규칙은 `p` 태그 하나에만 걸리는데도
+(`ul`/`ol`/`blockquote`/`pre`/`h1~h6`는 영향 없음) 본문 텍스트의 대부분을
+차지하는 문단 간격을 통째로 없애버렸다. `!important` 없는 일반 CSS로는
+절대 못 이기므로, 우리 쪽도 `!important`를 건 규칙만 이 값을 되돌릴 수
+있다(두 `!important`가 부딪히면 그다음엔 명시도 → 소스 순서로 승부).
+
+**수정**: `:is(p,ul,ol,dl)`의 `margin-top`, `:is(h1~h6) + *`의 이어지는
+`margin-top`, `> :first-child`류의 `margin-top: 0` 세 규칙에 `!important`를
+추가했다(margin-bottom은 이미 값이 0으로 같아 손대지 않음 — 다르게
+바꿀 계획이 생기면 그때 같이 `!important`를 붙인다). `.contents_style p`처럼
+클래스를 더 특정해 명시도를 올리는 방식도 가능했지만, 이 값들은 원래도
+`[data-slot="post-single-body"]` 스코프 밖에서 쓰일 일이 없어 굳이 선택자를
+늘리지 않고 `!important`만 추가하는 쪽을 택했다.
+
+**부작용— 인라인 스타일로 문단 여백을 준 곳은 이 수정으로도 못 이긴다**:
+`!important`는 인라인 `style=""`보다도 강해서, 개별 글 본문(예: Ruflo
+글의 카드 레이아웃)에서 `<p style="margin:...">`로 준 값은 스킨을 고쳐도
+여전히 티스토리 규칙에 밀린다 — 그런 글은 마진이 필요한 요소를 `<p>`
+대신 `<div>`로 쓰는 방법으로 개별 대응해야 한다(`.tt_article_useless_p_margin
+p` 선택자가 태그를 `p`로 못 박고 있어 `div`는 애초에 안 걸림).
+
