@@ -2350,13 +2350,13 @@ a[data-slot="post-item-inner"]:not(:has([data-slot="post-thumb"])) [data-slot="p
 }
 
 @media (max-width: 1023px) {
-  [data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"] {
+  [data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"]:not(:has([data-slot="post-single"])) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 639px) {
-  [data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"] {
+  [data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"]:not(:has([data-slot="post-single"])) {
     grid-template-columns: minmax(0, 1fr);
   }
 }

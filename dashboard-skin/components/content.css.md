@@ -198,3 +198,41 @@ wrapper 규칙과 무관하게 그대로 유지된다.
 대신 `<div>`로 쓰는 방법으로 개별 대응해야 한다(`.tt_article_useless_p_margin
 p` 선택자가 태그를 `p`로 못 박고 있어 `div`는 애초에 안 걸림).
 
+## 12. [SPEC 2026-09-07] `post-list` 그리드 열 수 반응형이 항상 3열로
+고정돼 있던 버그 — §9와 같은 명시도 계열 회귀의 세 번째 사례
+
+"반응형때 리스트 1열" 제보로 실측: 모바일(390px)에서도 글 목록 카드가
+3열(108px짜리)로 눌려 있었다. 태블릿 2열(≤1023px)·모바일 1열(≤639px)
+전환 규칙 자체는 이미 있었다(§371~381) — 문제는 이 override들이 기본
+3열 규칙보다 명시도가 낮았던 것.
+
+```css
+/* 기본(§318) — :not(:has(...))가 명시도를 하나 더 얹는다 */
+[data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"]:not(:has([data-slot="post-single"])) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* override(수정 전) — :not(:has(...))가 없어 명시도가 더 낮다 */
+@media (max-width: 639px) {
+  [data-slot="content-inner"][data-view="thumb"] [data-slot="post-list"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+```
+
+미디어 쿼리는 캐스케이드 순서에 아무 영향을 주지 않는다 — 매치되기만
+하면 그 안의 규칙은 명시도·소스 순서 경쟁에 그대로 들어간다. 여기선
+`:not(:has([data-slot="post-single"]))`(속성 선택자 1개 취급, §9와 동일한
+계산)만큼 기본 규칙이 더 높아서, 뷰포트가 아무리 좁아져도 override가
+한 번도 이긴 적이 없었다 — 태블릿·모바일 규칙 자체가 처음부터 죽어있던
+셈. `!important`나 소스 순서 재배치가 아니라, override 두 곳에 똑같이
+`:not(:has([data-slot="post-single"]))`를 붙여 명시도를 맞추는 쪽을
+택했다(§9의 교훈과 동일 — 명시도를 억지로 낮추기보다 회귀가 난 쪽을
+맞춰준다). 명시도가 같아지면 소스 순서(미디어 쿼리 블록이 기본 규칙보다
+뒤에 온다)가 정상적으로 개입해 좁은 뷰포트에서 override가 이긴다.
+
+**교훈**: 기본 규칙에 `:not(:has(...))` 같은 명시도를 더하는 선택자를
+쓸 때는, 그 선택자를 좁히는 모든 반응형/상태 override에도 동일한
+접미사를 붙여야 한다 — 안 그러면 미디어 쿼리 자체는 정확히 매치되는데
+규칙만 조용히 죽어있는, 콘솔에 아무 에러도 안 남는 버그가 생긴다.
+
