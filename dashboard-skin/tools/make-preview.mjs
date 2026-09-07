@@ -106,7 +106,11 @@ const SUBSTITUTIONS = {
   /* [CATEGORY SPEC 2026-09-07] 실사이트(daitnu.tistory.com) 관리자 HTML 편집에
      [##_category_list_##]만 임시로 넣어 실측한 원본 그대로(클래스명·중첩·
      new_ico_5.gif·공백까지 동일) 고정한 픽스처 — category.js가 이 구조를
-     파싱하므로, 여기서 값을 바꾸면 category.js의 실제 파싱 로직이 검증된다. */
+     파싱하므로, 여기서 값을 바꾸면 category.js의 실제 파싱 로직이 검증된다.
+     [2026-09-07 갱신] 사용자가 실사이트 관리자에서 직접 테스트로 추가해 둔
+     2번째 확장형 카테고리(Code > depth2)까지 반영 — 아코디언 단일-열림
+     로직이 확장형 카테고리 2개 이상일 때도 맞는지 로컬에서 검증하려면
+     Design 하나만으로는 부족하다. */
   category_list:
     '<ul class="tt_category"><li class=""><a href="/category" class="link_tit"> 분류 전체보기 <span class="c_cnt">(28)</span> ' +
     '<img alt="N" src="https://tistory1.daumcdn.net/tistory_admin/blogs/image/category/new_ico_5.gif" style="vertical-align:middle;padding-left:2px;"></a>\n' +
@@ -116,8 +120,11 @@ const SUBSTITUTIONS = {
     '<li class=""><a href="/category/Design/Font" class="link_sub_item"> Font <span class="c_cnt">(28)</span> ' +
     '<img alt="N" src="https://tistory1.daumcdn.net/tistory_admin/blogs/image/category/new_ico_5.gif" style="vertical-align:middle;padding-left:2px;"></a></li>\n' +
     '<li class=""><a href="/category/Design/Figma" class="link_sub_item"> Figma <span class="c_cnt">(0)</span> </a></li>\n' +
+    '<li class=""><a href="/category/Design/Mockup" class="link_sub_item"> Mockup <span class="c_cnt">(0)</span> </a></li>\n' +
     '</ul>\n</li>\n' +
-    '<li class=""><a href="/category/Code" class="link_item"> Code <span class="c_cnt">(0)</span> </a></li>\n' +
+    '<li class=""><a href="/category/Code" class="link_item"> Code <span class="c_cnt">(0)</span> </a>\n' +
+    '  <ul class="sub_category_list"><li class=""><a href="/category/Code/depth2" class="link_sub_item"> depth2 <span class="c_cnt">(0)</span> </a></li>\n' +
+    '</ul>\n</li>\n' +
     '<li class=""><a href="/category/Ai" class="link_item"> Ai <span class="c_cnt">(0)</span> </a></li>\n' +
     '</ul>\n</li>\n</ul>\n',
 };

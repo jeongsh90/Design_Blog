@@ -137,3 +137,24 @@ Tistory는 `skin.html`을 렌더할 때 `<script src="…/category.js?_version_=
 탭(또는 CSS 탭)에서 내용상 의미 없는 사소한 변경(예: 파일 맨 끝에 빈 줄
 하나 추가)을 만들어 "적용" 버튼을 활성화시킨 뒤 다시 적용 — 그 시점에
 새 `_version_` 번호가 발급되며 캐시가 함께 갱신된다.
+
+## 11. [SPEC 2026-09-07] 아코디언 트랜지션/단일 열림 대응 — `sidebar-menu-sub-wrap`
++ 최초 열림 항목 선정
+
+배경은 `sidebar.css.md` §19 참고. `buildTopItem`의 아코디언(자식 있는)
+분기에서 `<ul data-slot="sidebar-menu-sub">`를 그대로 두되, 그 바깥에
+패딩·보더가 전혀 없는 `<div data-slot="sidebar-menu-sub-wrap">`으로 한 겹
+더 감쌌다 — `sidebar.js`의 `setCollapsibleState`가 높이 애니메이션의
+CSS 변수(`--accordion-content-height`)를 이 wrap에 설정하고, 실제
+`scrollHeight` 측정 대상(`inner`)은 그 안의 `<ul>`이다.
+
+**단일 열림을 위한 초기 상태**: 예전엔 자식이 있는 카테고리 전부가
+`data-state="open"`으로 시작했지만(여러 개가 동시에 열려 있어도 문제
+없었던 시절), 지금은 한 번에 하나만 열려야 하므로 `initCategoryMenu()`가
+먼저 `topLis`를 훑어 **자식을 가진 첫 번째 항목의 인덱스**
+(`firstExpandableIndex`)만 찾고, `buildTopItem(li, index, isDefaultOpen)`에
+`index === firstExpandableIndex`를 넘겨 그 하나만 `data-state="open"` +
+`aria-expanded="true"`로, 나머지는 전부 `"closed"`/`"false"`로 렌더링한다.
+"첫 번째"가 어떤 카테고리가 될지는 관리자에서 그 카테고리를 몇 번째
+순서에 두느냐로 정해진다 — 별도 고정 설정 없음(예: 지금은 Design이
+1번이라 기본으로 열린다).

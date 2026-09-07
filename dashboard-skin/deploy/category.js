@@ -54,7 +54,7 @@
     );
   }
 
-  function buildTopItem(li, index) {
+  function buildTopItem(li, index, isDefaultOpen) {
     var a = directAnchor(li);
     if (!a) return "";
     var name = escapeHTML(categoryName(a));
@@ -79,18 +79,21 @@
 
     var subId = "sidebar-submenu-cat-" + index;
     var subItemsHTML = subLis.map(buildSubItem).join("");
+    var state = isDefaultOpen ? "open" : "closed";
 
     return (
       '<li data-slot="sidebar-menu-item">' +
-      '<div data-slot="collapsible" data-state="open">' +
-      '<button type="button" data-slot="sidebar-menu-button" data-tooltip="' + name + '" aria-expanded="true" aria-controls="' + subId + '">' +
+      '<div data-slot="collapsible" data-state="' + state + '">' +
+      '<button type="button" data-slot="sidebar-menu-button" data-tooltip="' + name + '" aria-expanded="' + isDefaultOpen + '" aria-controls="' + subId + '">' +
       FOLDER_CLOSED_SVG +
       FOLDER_OPEN_SVG +
       '<span data-slot="label">' + name + "</span>" +
       CHEVRON_SVG +
       "</button>" +
       '<div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">' + name + "</div>" +
+      '<div data-slot="sidebar-menu-sub-wrap">' +
       '<ul data-slot="sidebar-menu-sub" id="' + subId + '">' + subItemsHTML + "</ul>" +
+      "</div>" +
       "</div>" +
       "</li>"
     );
@@ -105,7 +108,19 @@
     if (!root) return;
 
     var topLis = Array.prototype.slice.call(root.querySelectorAll(":scope > li"));
-    target.innerHTML = topLis.map(buildTopItem).join("");
+    var firstExpandableIndex = -1;
+    for (var i = 0; i < topLis.length; i++) {
+      var subUl = topLis[i].querySelector(":scope > ul.sub_category_list");
+      if (subUl && subUl.querySelector(":scope > li")) {
+        firstExpandableIndex = i;
+        break;
+      }
+    }
+    target.innerHTML = topLis
+      .map(function (li, index) {
+        return buildTopItem(li, index, index === firstExpandableIndex);
+      })
+      .join("");
   }
 
   if (document.readyState === "loading") {

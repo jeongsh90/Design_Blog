@@ -255,18 +255,58 @@
   }
 
 
+  function setCollapsibleState(group, open, animate) {
+    var button = group.querySelector(':scope > [data-slot="sidebar-menu-button"]');
+    var wrap = group.querySelector(':scope > [data-slot="sidebar-menu-sub-wrap"]');
+    var inner = wrap ? wrap.querySelector(':scope > [data-slot="sidebar-menu-sub"]') : null;
+
+    if (wrap && inner && animate) {
+      wrap.style.setProperty("--accordion-content-height", inner.scrollHeight + "px");
+    }
+
+    group.setAttribute("data-state", open ? "open" : "closed");
+    if (button) button.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
   function initCollapsibleMenus() {
-    var groups = document.querySelectorAll('[data-slot="collapsible"]');
-    if (!groups.length) return;
+    var groupsByRoot = [];
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-slot="collapsible"]'),
+      function (group) {
+        var root = group.closest('[data-slot="sidebar-menu"]') || document;
+        var entry = groupsByRoot.filter(function (e) {
+          return e.root === root;
+        })[0];
+        if (!entry) {
+          entry = { root: root, groups: [] };
+          groupsByRoot.push(entry);
+        }
+        entry.groups.push(group);
+      }
+    );
 
-    Array.prototype.forEach.call(groups, function (group) {
-      var button = group.querySelector('[data-slot="sidebar-menu-button"]');
-      if (!button) return;
+    groupsByRoot.forEach(function (entry) {
+      var groups = entry.groups;
+      groups.forEach(function (group) {
+        var button = group.querySelector(':scope > [data-slot="sidebar-menu-button"]');
+        if (!button || button.dataset.collapsibleBound === "true") return;
+        button.dataset.collapsibleBound = "true";
 
-      button.addEventListener("click", function () {
-        var open = group.getAttribute("data-state") === "open";
-        group.setAttribute("data-state", open ? "closed" : "open");
-        button.setAttribute("aria-expanded", open ? "false" : "true");
+        button.addEventListener("click", function () {
+          var isOpen = group.getAttribute("data-state") === "open";
+
+          if (isOpen) {
+            setCollapsibleState(group, false, true);
+            return;
+          }
+
+          groups.forEach(function (other) {
+            if (other !== group && other.getAttribute("data-state") === "open") {
+              setCollapsibleState(other, false, true);
+            }
+          });
+          setCollapsibleState(group, true, true);
+        });
       });
     });
   }

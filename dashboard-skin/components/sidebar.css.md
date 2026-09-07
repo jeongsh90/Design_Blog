@@ -147,3 +147,60 @@ Radix fade-in-0/fade-out-0 기본
 같은 셀렉터 패턴(`[data-slot="collapsible"][data-state="..."] ...`)으로 한쪽만
 `display:none` 처리해 토글한다. 배경/구현 이유는 `category.js.md` §6 참고.
 
+## 19. [SPEC 2026-09-07] 카테고리 아코디언 — 접기/펼치기 트랜지션 + 단일 열림
+("디자인시스템 아코디언이랑 똑같이" 1:1 이식)
+
+"아코디언에 접기,펼치기 트랜지션 추가, 열린페이지 제외하고 다른 리스트
+접히게끔 / 디자인시스템 아코디언이랑 똑같이 만들으라고" 요청 — 사용자가
+직접 지정한 실제 Design-system 문서 사이트(`jeongsh90.github.io/
+portfolio-2026/Design-system`)의 진짜 Accordion 컴포넌트(`components.css`
+"── Accordion ──" 절, `components.js`의 `setAccordionItemState`/
+`initAccordions`)를 Playwright + 실제 CSS/JS 소스 fetch로 실측해 그
+**메커니즘을 그대로** 이식했다(추측 없이). 슬롯 이름은 이 프로젝트 사이드바가
+이미 쓰던 `collapsible`/`sidebar-menu-sub` 체계를 그대로 유지 — 원본은
+`accordion`/`accordion-item`/`accordion-content` 이름을 쓰지만, 그걸로
+갈아엎으면 이미 이 슬롯에 걸려 있는 패딩 예약·배지 위치·활성표시 선택자를
+전부 다시 손대야 해서(§17/§18/`category.js.md` §5 참고) 이름은 그대로 두고
+동작 방식만 1:1로 가져왔다 — 이 편차는 의도적이며 여기 명시한다.
+
+**핵심 기법(원본과 동일)**: `@keyframes accordion-down/up`이 `height: 0`과
+`height: var(--accordion-content-height)` 사이를 오간다 — 이 CSS 커스텀
+프로퍼티는 전역이 아니라 **JS가 토글 직전에 그 특정 엘리먼트에 인라인으로
+설정**한다(`sidebar.js.md` §16의 `setCollapsibleState` 참고, 원본의
+`content.style.setProperty('--accordion-content-height', inner.scrollHeight
++ 'px')`와 동일). CSS 자체는 실제 콘텐츠 높이를 알 방법이 없어서(고전적인
+`height: auto` 트랜지션 불가 문제) 매 토글마다 JS가 `scrollHeight`를 재서
+넣어주는 방식 — `grid-template-rows: 0fr/1fr` 트릭이 아니라 이 방식을 쓴
+것도 원본 그대로다.
+
+**2단 구조가 필요한 이유**: `[data-slot="sidebar-menu-sub"]`(기존 `<ul>`,
+`border-left`·`padding`·`gap`을 이미 갖고 있음)에 직접 `height:0;
+overflow:hidden`을 걸면, 이 프로젝트의 전역 리셋이 `box-sizing:border-box`라
+`padding-block`이 있는 채로 `height:0`을 줘도 padding만큼은 여전히 렌더링돼
+완전히 접히지 않는다(원본 Accordion도 정확히 같은 이유로 `accordion-content`
+자체엔 padding을 안 주고 `accordion-content-inner`라는 별도 자식에 padding을
+둔다). 그래서 새 래퍼 `<div data-slot="sidebar-menu-sub-wrap">`(패딩·보더
+전혀 없음, 애니메이션 대상)를 하나 더 두고, 기존 `<ul data-slot=
+"sidebar-menu-sub">`는 그 안에서 시각 스타일을 그대로 유지한다.
+
+**단일 열림(원본의 `data-type="single"` + `data-collapsible`)**: 원본은
+아코디언 루트(`[data-slot="accordion"]`) 하나에 속한 항목들끼리만 서로
+닫는다. 이 사이드바엔 별도 아코디언 루트 엘리먼트가 없어서(카테고리 각각이
+`<li>` 안에 독립된 `[data-slot="collapsible"]`), 대신 `sidebar.js`의
+`initCollapsibleMenus`가 **가장 가까운 공통 조상 `[data-slot="sidebar-menu"]`
+를 기준으로 묶어서** 그 안의 collapsible들끼리만 서로 닫는다(다른
+`<ul data-slot="sidebar-menu">`— 예: 사이드바 푸터 — 에 나중에 별도
+collapsible이 생겨도 서로 간섭하지 않도록 원본의 "루트 스코프" 개념을
+DOM 구조로 재현). `data-collapsible`(열린 항목을 다시 눌러 전부 닫을 수
+있음)도 항상 켜진 것으로 구현 — 기존에 있던 "Design을 접어서 다 감출 수
+있다"는 동작을 유지하기 위해서다.
+
+**초기 상태**: 원본의 `data-default-value`처럼, 하위 카테고리가 있는
+항목 중 **첫 번째**만 `data-state="open"`으로 시작하고 나머지는
+`data-state="closed"`로 시작한다(`category.js`의 `firstExpandableIndex`).
+페이지 로드 시점엔 `animate=false`로 상태만 세팅하고 `--accordion-content-
+height`는 건드리지 않는다 — 이 역시 원본과 동일(닫힌 항목은 애니메이션
+키프레임의 `var(--accordion-content-height)`가 미설정이라 무효 처리돼도
+기본 규칙의 `height:0`으로 이미 정지해 있어 시각적 문제가 없다는 것을
+실제 원본 사이트에서 눈으로 재확인).
+
