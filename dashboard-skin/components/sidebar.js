@@ -255,6 +255,22 @@
   }
 
 
+  function initCollapsibleMenus() {
+    var groups = document.querySelectorAll('[data-slot="collapsible"]');
+    if (!groups.length) return;
+
+    Array.prototype.forEach.call(groups, function (group) {
+      var button = group.querySelector('[data-slot="sidebar-menu-button"]');
+      if (!button) return;
+
+      button.addEventListener("click", function () {
+        var open = group.getAttribute("data-state") === "open";
+        group.setAttribute("data-state", open ? "closed" : "open");
+        button.setAttribute("aria-expanded", open ? "false" : "true");
+      });
+    });
+  }
+
   function initActiveState() {
     var wrapper = document.querySelector('[data-slot="sidebar-wrapper"]');
     if (!wrapper) return;
@@ -293,6 +309,7 @@
 
   function init() {
     initSidebar();
+    initCollapsibleMenus();
     initActiveState();
   }
 

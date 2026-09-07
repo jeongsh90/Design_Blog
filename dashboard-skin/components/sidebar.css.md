@@ -96,3 +96,29 @@ header(9) 위, 드로어(50) 아래
 
 Radix fade-in-0/fade-out-0 기본
 
+---
+
+## 15. [SPEC 2026-09-07] 하위 메뉴가 있는 1차 메뉴(Design) 아코디언화
+
+"사이드메뉴에서 하위 메뉴가 있을 시 1차메뉴 클릭안되게 및 아코디언(디자인시스템
+활용)" 요청 — shadcn Sidebar 원본에 이미 있던(포트 당시 그대로 가져왔지만 그때는
+안 쓰였던) `[data-slot="collapsible"][data-state="open"] [data-slot="chevron"]`
+회전 규칙을 실제로 배선했다. `[data-slot="collapsible"][data-state="closed"] >
+[data-slot="sidebar-menu-sub"] { display: none; }` 규칙 하나만 추가하면 나머지는
+전부 기존 CSS(버튼 리셋, 칩 여백)가 `<a>`든 `<button>`이든 태그 무관하게 이미
+호환되도록 짜여 있어서 그대로 재사용됐다. 하위 메뉴가 없는 Ai는 그대로 `<a>` 링크로
+남겨 클릭 시 바로 이동한다.
+
+## 16. [SPEC 2026-09-07] 'N' 신규글 배지(`[data-variant="new"]`)
+
+"신규 등록글이 있을 시 우측에 'N' 표시" 요청 — 기존 카운트 배지(`sidebar-menu-badge`,
+숫자 "0" 표시용, opacity 0.6 무채색)의 마크업/포지셔닝(절대 위치, 우측 정렬,
+칩 여백 예약 로직)을 그대로 재사용하되 `[data-variant="new"]`를 얹어 색만
+`--color-sidebar-primary`(강조색)로 바꿨다. **주의 — 이 배지는 실시간으로 자동
+갱신되지 않는다.** 이 스킨은 카테고리 트리 자체를 정적으로 하드코딩한다
+(`skin.html.md` 초기 결정 참고 — Tistory `[##_category_list_##]`가 고정 마크업이라
+동적 루프를 못 씀), 그래서 "이 카테고리에 진짜 새 글이 있는가"를 Tistory가 실시간
+알려주는 방법이 없다 — 신규 콘텐츠를 발행할 때 그 카테고리(지금은 Font)에 이 span을
+수동으로 넣고, 화제성이 식으면 사람이 다시 빼는 편집 작업이다. 하위 메뉴 항목에도
+배지를 달 수 있도록 `sidebar-menu-sub-item`용 여백 예약 규칙도 함께 추가.
+

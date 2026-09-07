@@ -98,3 +98,15 @@ Radix Dialog가 SheetContent에 주는 것과 같은 역할.
 
 display:none인 요소(접힘 전용 마크업 등)는 건너뛴다.
 
+---
+
+## 15. [SPEC 2026-09-07] `initCollapsibleMenus` — 하위 메뉴 아코디언 토글
+
+`sidebar.css.md` §15 참고. `[data-slot="collapsible"]`을 찾아 그 안의
+`sidebar-menu-button`에 클릭 리스너만 건다 — `data-state`를 open/closed로 뒤집고
+`aria-expanded`를 맞춰주는 게 전부다. `initActiveState`가 `a[data-slot=
+"sidebar-menu-button"]`만 찾도록 이미 짜여 있어서(버튼으로 바뀐 Design 트리거는
+그 셀렉터에 안 걸림), Design 자체는 더 이상 활성 표시 대상이 아니게 됐고 —
+하위 링크(Logo/Font/Figma)는 그대로 `<a>`라 기존 활성 표시 로직이 손댈 필요 없이
+그대로 동작한다.
+
