@@ -118,21 +118,18 @@
 
     var topLis = Array.prototype.slice.call(root.querySelectorAll(":scope > li"));
     var here = normalizedPath(window.location.pathname);
-    var firstExpandableIndex = -1;
-    var activeExpandableIndex = -1;
+    var openIndex = -1;
 
     for (var i = 0; i < topLis.length; i++) {
       var subUl = topLis[i].querySelector(":scope > ul.sub_category_list");
       if (!subUl || !subUl.querySelector(":scope > li")) continue;
-      if (firstExpandableIndex === -1) firstExpandableIndex = i;
 
       var topAnchor = directAnchor(topLis[i]);
       if (topAnchor && pathIsUnder(here, topAnchor.getAttribute("href") || "")) {
-        activeExpandableIndex = i;
+        openIndex = i;
+        break;
       }
     }
-
-    var openIndex = activeExpandableIndex !== -1 ? activeExpandableIndex : firstExpandableIndex;
 
     target.innerHTML = topLis
       .map(function (li, index) {
