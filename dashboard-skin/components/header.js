@@ -23,6 +23,56 @@
     }
   }
 
+  function initCategoryBreadcrumb() {
+    var header = document.querySelector('[data-slot="header"]');
+    if (!header) return false;
+
+    var pageItem = header.querySelector('[data-slot="breadcrumb-page"]');
+    var sepTemplate = header.querySelector('[data-slot="breadcrumb-separator"]');
+    if (!pageItem || !sepTemplate) return false;
+
+    var pageLi = pageItem.closest('[data-slot="breadcrumb-item"]');
+    if (!pageLi) return false;
+
+    var match = window.location.pathname.match(/^\/category\/(.+?)\/?$/);
+    if (!match) return false;
+
+    var segments = match[1].split("/").map(decodeURIComponent).filter(Boolean);
+    if (!segments.length) return false;
+
+    var frag = document.createDocumentFragment();
+    var pathSoFar = "";
+
+    segments.forEach(function (seg, i) {
+      pathSoFar += "/" + encodeURIComponent(seg);
+      if (i > 0) frag.appendChild(sepTemplate.cloneNode(true));
+
+      var li = document.createElement("li");
+      li.setAttribute("data-slot", "breadcrumb-item");
+
+      if (i === segments.length - 1) {
+        var span = document.createElement("span");
+        span.setAttribute("data-slot", "breadcrumb-page");
+        span.setAttribute("role", "link");
+        span.setAttribute("aria-disabled", "true");
+        span.setAttribute("aria-current", "page");
+        span.textContent = seg;
+        li.appendChild(span);
+      } else {
+        var a = document.createElement("a");
+        a.setAttribute("data-slot", "breadcrumb-link");
+        a.setAttribute("href", "/category" + pathSoFar);
+        a.textContent = seg;
+        li.appendChild(a);
+      }
+
+      frag.appendChild(li);
+    });
+
+    pageLi.replaceWith(frag);
+    return true;
+  }
+
   function initMenubarAdopt() {
     var actions = document.querySelector('[data-slot="header-actions"]');
     if (!actions) return;
@@ -126,7 +176,7 @@
   }
 
   function init() {
-    initHeaderBreadcrumb();
+    if (!initCategoryBreadcrumb()) initHeaderBreadcrumb();
     initMenubarAdopt();
     initThemeToggle();
     initScrollTop();

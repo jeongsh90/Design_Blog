@@ -142,16 +142,16 @@
               <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Today [##_count_today_##] · Total [##_count_total_##]</div>
             </li>
             <li data-slot="sidebar-menu-item" data-footer-stat="expanded">
-              <div data-slot="sidebar-stat-row">
-                <div data-slot="sidebar-stat-card">
-                  <span data-slot="sidebar-stat-label">Today</span>
+              <ul data-slot="sidebar-stat-list">
+                <li data-slot="sidebar-stat-row">
+                  <span data-slot="card-title">Today</span>
                   <span data-slot="sidebar-stat-value">[##_count_today_##]</span>
-                </div>
-                <div data-slot="sidebar-stat-card">
-                  <span data-slot="sidebar-stat-label">Total</span>
+                </li>
+                <li data-slot="sidebar-stat-row">
+                  <span data-slot="card-title">Total</span>
                   <span data-slot="sidebar-stat-value">[##_count_total_##]</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </li>
             </s_sidebar_element></s_sidebar>
           </ul>

@@ -1,6 +1,8 @@
 {
-  "status": "batch_5_complete",
-  "note": "배치 5 완료 — 오늘(2026-09-07) 총 15개 공개 발행(어제 밀린 2개 + 새 폰트 13개). 어제와 마찬가지로 '하루 최대 15개' 한도가 오늘도 동일하게 적용됨을 확인(정확히 15개째까지는 문제 없이 발행됨, 16개째를 시도하지 않아 정확한 임계는 여전히 15 이하 어딘가로만 확인 — 실제로 16개째를 시도해 거부 응답을 받아본 것은 아님). 이번 배치 중 실제 버그 1건 발견·수정: 21~28번(한겨레결체~부산체) 썸네일 PNG가 뷰포트 리사이즈 유실로 1200x630이 아닌 1600x900으로 캡처되어, 검정 카드가 전체 이미지의 왼쪽 상단에만 위치하고 나머지가 흰 여백으로 남는 문제가 있었음(사용자가 실제 발행된 페이지를 보고 '썸네일이 왼쪽 상단으로 밀려났다'고 정확히 지적) — 원인은 브라우저 뷰포트가 세션 중간에 리셋된 것으로 추정, 6개(이미 발행된 한겨레결체/스포카 한 산스/성동고딕/성동명조/청소년체/부산체) 전부 재캡처 후 각 글 수정 화면에서 기존 대표이미지 삭제 → 재업로드 → 재발행으로 실제 수정 완료 확인.",
+  "status": "batch11_2026-09-08_16_local_only_prepared_id240-326_catalogIndex131-146",
+  "note": "2026-09-08: 로컬 준비된 폰트 중 가장 오래된 15개(배치7, catalogIndex29~57) 등록 시도 — 13개 공개 발행 성공(published index32~44), 14번째(서울한강체, id60)에서 당일 15개 한도 초과로 실패(임시저장으로 보존, localOnlyPrepared에 남아있음), 15번째(푸른전남체, id61)는 미시도로 localOnlyPrepared에 그대로 남음. localOnlyPrepared 현재 75개.",
+  "previousNote_batch8": "배치8(2026-09-08) — catalogIndex 58(id62 미생체)부터 72(id76 EBS훈민정음체)까지 15개를 순회 채택, 스킵 없음. 가비아·포천시청 계열은 자매 폰트끼리 다운로드 링크·라이선스 본문이 완전히 동일. 잉크립퀴드체(더페이스샵)는 BI/CI 사용 금지 + 장평·기울기 변형 금지. EBS훈민정음체는 EBS 사전 서면승인 없는 변형·개명 재배포 금지. 동그라미재단체는 눈누 페이지 표기가 '체' 접미사 없이 '동그라미재단'뿐.",
+  "previousNote_batch7": "배치7(2026-09-07, 이 세션) — 당일 티스토리 공개 발행 한도(15개)를 이미 소진한 상태라 이번 배치는 처음부터 '티스토리에 등록/발행하지 않는다'는 전제로 진행했다(사용자 지시). KoPub돋움(배치6에서 완성된 초안을 posts/ 표준 형식으로 이동) + 신규 14개(catalogIndex 32~57 구간을 순회하며 실제 @font-face 코드가 있는 것만 선별) = 총 15개 폰트를 posts/2026-09-07-noonnu-font-{slug}/final.html+meta.md+attachments/thumbnail.png(1200x630, IHDR 검증 완료) 형태로 로컬에 전부 준비했다 — 티스토리 관리자 로그인/등록/발행 시도는 전혀 하지 않음. 상세 목록은 localOnlyPrepared 참고. 이번 배치에서 새로 확인된 스킵 패턴: (1) 나눔바른고딕(id36)처럼 @font-face 코드는 있으나 src가 .eot 포맷 하나뿐이라 모던 브라우저에서 렌더링되지 않는 경우 — '코드 존재'와 '실제 렌더링 가능'은 다른 기준임을 확인. (2) 네이버 나눔글꼴 시리즈 상당수(나눔스퀘어/나눔고딕/나눔고딕코딩/나눔명조/나눔손글씨붓·펜)와 우아한형제들 한나체는 인지도와 무관하게 눈누 페이지 자체에 웹폰트 CDN이 등록돼 있지 않았다(같은 제작사·시리즈라도 개별 확인 원칙이 다시 확인됨).",
   "published": [
     {
       "index": 0,
@@ -369,6 +371,201 @@
         "명조체"
       ],
       "note": "Google X Adobe 제작(본고딕과 짝), SIL OFL 1.1. 눈누 페이지에 이미 jsdelivr @font-face 웹폰트 코드 있음(font-family 'BonmyeongjoSourceHanSerif', NotoSerifKR.woff)"
+    },
+    {
+      "index": 32,
+      "id": 33,
+      "name": "KoPub돋움",
+      "url": "https://daitnu.tistory.com/34",
+      "thumbnail": "posts/2026-09-07-noonnu-font-kopub-dotum/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "KoPub돋움",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] 배치6 임시저장 글이 실제로 남아있어 그 글을 불러와 덮어쓰기 후 발행(중복 생성 없음). CDN 16:9 패딩 없음(R1200x0 실측 1200x630)."
+    },
+    {
+      "index": 33,
+      "id": 38,
+      "name": "나눔스퀘어라운드",
+      "url": "https://daitnu.tistory.com/35",
+      "thumbnail": "posts/2026-09-07-noonnu-font-nanum-square-round/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "나눔스퀘어라운드",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 34,
+      "id": 42,
+      "name": "나눔바른펜",
+      "url": "https://daitnu.tistory.com/36",
+      "thumbnail": "posts/2026-09-07-noonnu-font-nanum-barun-pen/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "나눔바른펜",
+        "무료폰트",
+        "한글폰트",
+        "손글씨체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 35,
+      "id": 45,
+      "name": "HS봄바람체 2.0",
+      "url": "https://daitnu.tistory.com/37",
+      "thumbnail": "posts/2026-09-07-noonnu-font-hs-bombaram-2/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "HS봄바람체",
+        "무료폰트",
+        "한글폰트",
+        "바탕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 36,
+      "id": 46,
+      "name": "HS여름물빛체",
+      "url": "https://daitnu.tistory.com/38",
+      "thumbnail": "posts/2026-09-07-noonnu-font-hs-summer-water/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "HS여름물빛체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 37,
+      "id": 47,
+      "name": "HS가을생각체",
+      "url": "https://daitnu.tistory.com/39",
+      "thumbnail": "posts/2026-09-07-noonnu-font-hs-autumn-thought/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "HS가을생각체",
+        "무료폰트",
+        "한글폰트",
+        "장식체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 38,
+      "id": 48,
+      "name": "HS겨울눈꽃체",
+      "url": "https://daitnu.tistory.com/40",
+      "thumbnail": "posts/2026-09-07-noonnu-font-hs-winter-snowflower/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "HS겨울눈꽃체",
+        "무료폰트",
+        "한글폰트",
+        "손글씨체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 39,
+      "id": 53,
+      "name": "주아체",
+      "url": "https://daitnu.tistory.com/41",
+      "thumbnail": "posts/2026-09-07-noonnu-font-juache/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "주아체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 40,
+      "id": 54,
+      "name": "연성체",
+      "url": "https://daitnu.tistory.com/42",
+      "thumbnail": "posts/2026-09-07-noonnu-font-yeonseong/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "연성체",
+        "무료폰트",
+        "한글폰트",
+        "바탕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 41,
+      "id": 55,
+      "name": "도현체",
+      "url": "https://daitnu.tistory.com/43",
+      "thumbnail": "posts/2026-09-07-noonnu-font-dohyun/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "도현체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 42,
+      "id": 56,
+      "name": "기랑해랑체",
+      "url": "https://daitnu.tistory.com/44",
+      "thumbnail": "posts/2026-09-07-noonnu-font-giranghaerang/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "기랑해랑체",
+        "무료폰트",
+        "한글폰트",
+        "장식체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
+    },
+    {
+      "index": 43,
+      "id": 57,
+      "name": "전라북도체",
+      "url": "https://daitnu.tistory.com/45",
+      "thumbnail": "posts/2026-09-07-noonnu-font-jeollabuk-do/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "전라북도체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] 라이선스 요약표(임베딩 가능)와 본문 조항(별도 협의 필요)이 어긋나는 폰트 — 두 내용 모두 본문에 명시한 상태로 발행. CDN 패딩 없음."
+    },
+    {
+      "index": 44,
+      "id": 59,
+      "name": "서울남산체",
+      "url": "https://daitnu.tistory.com/46",
+      "thumbnail": "posts/2026-09-07-noonnu-font-seoul-namsan/attachments/thumbnail.png (1200x630, R1200x0 실측 검증 완료)",
+      "tags": [
+        "서울남산체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
+      "note": "[2026-09-08 발행] CDN 패딩 없음."
     }
   ],
   "skippedNoWebfontCode": [
@@ -388,35 +585,821 @@
       "catalogIndex": 28,
       "id": 32,
       "name": "KoPub바탕",
-      "reason": "한국출판인회의 제작. 라이선스 자체는 웹사이트 사용을 명시적으로 허용하지만, 눈누 페이지에 @font-face/CDN 코드가 없어(자체 호스팅 CDN 미등록) 안전하게 라이브 미리보기를 만들 소스가 없음 — 스킵"
+      "reason": "한국출판인회의 제작. 라이선스 자체는 웹사이트 사용을 명시적으로 허용하지만, 눈누 페이지에 @font-face/CDN 코드가 없어(자체 호스팅 CDN 미등록) 안전하게 라이브 미리보기를 만들 소스가 없음 — 스킵. [주의] 자매 폰트인 KoPub돋움(id33, catalogIndex29)은 배치6에서 실제로 웹폰트 코드가 있는 것으로 확인됨(localOnlyPrepared 참고) — 같은 제작사·같은 시리즈라도 반드시 개별로 실측할 것, KoPub바탕 자체는 이번에 재확인하지 않았으므로 이 스킵 판정은 그대로 유지"
     },
     {
-      "catalogIndex": 29,
-      "id": 33,
-      "name": "KoPub돋움",
-      "reason": "KoPub바탕(같은 제작사·같은 페이지 구조)과 동일한 문제일 가능성이 높아 이번 배치에서는 실제 확인 없이 건너뜀 — 다음 배치에서 실제로 웹폰트 코드 유무를 먼저 확인할 것"
+      "catalogIndex": 32,
+      "id": 36,
+      "name": "나눔바른고딕",
+      "reason": "[배치7 신규 발견] 네이버 제작. 눈누 페이지에 @font-face 코드가 3개(Regular/Bold/Light) 있지만 전부 src가 .eot 포맷 하나뿐이다(`//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot` 등, woff/woff2/ttf 없음). .eot는 구버전 IE 전용 포맷이라 Chromium 등 모던 브라우저는 로드하지 못해 폴백 폰트로 렌더링된다 — '실제 @font-face 코드가 있다'는 기준은 만족하지만 라이브 렌더링 미리보기(.font-preview-card)를 실제로 만들 수 없어 스킵. 이 배치에서 처음 발견된 새로운 스킵 사유 패턴(코드는 있으나 모던 브라우저에서 렌더링 불가)."
+    },
+    {
+      "catalogIndex": 33,
+      "id": 37,
+      "name": "나눔스퀘어",
+      "reason": "네이버 제작. 눈누 페이지에 @font-face 코드 없음(자매 폰트 나눔스퀘어라운드 id38에는 있음 — 같은 시리즈도 개별 확인 필요 원칙 재확인)"
+    },
+    {
+      "catalogIndex": 35,
+      "id": 39,
+      "name": "나눔고딕",
+      "reason": "네이버 제작, Google Fonts에는 등록돼 있지만 눈누 페이지 자체에는 @font-face 코드 없음"
+    },
+    {
+      "catalogIndex": 36,
+      "id": 40,
+      "name": "나눔고딕코딩",
+      "reason": "네이버 제작. 눈누 페이지에 @font-face 코드 없음"
+    },
+    {
+      "catalogIndex": 37,
+      "id": 41,
+      "name": "나눔명조",
+      "reason": "네이버 제작. 눈누 페이지에 @font-face 코드 없음"
+    },
+    {
+      "catalogIndex": 39,
+      "id": 43,
+      "name": "나눔손글씨붓",
+      "reason": "네이버 제작. 눈누 페이지에 @font-face 코드 없음"
+    },
+    {
+      "catalogIndex": 40,
+      "id": 44,
+      "name": "나눔손글씨펜",
+      "reason": "네이버 제작. 눈누 페이지에 @font-face 코드 없음"
+    },
+    {
+      "catalogIndex": 45,
+      "id": 49,
+      "name": "제주고딕",
+      "reason": "제주도청 제작. 눈누 페이지에 @font-face 코드 없음"
+    },
+    {
+      "catalogIndex": 46,
+      "id": 50,
+      "name": "제주명조",
+      "reason": "제주도청 제작. 눈누 페이지에 @font-face 코드 없음"
+    },
+    {
+      "catalogIndex": 47,
+      "id": 51,
+      "name": "제주한라산",
+      "reason": "제주도청 제작. 눈누 페이지에 @font-face 코드 없음"
+    },
+    {
+      "catalogIndex": 48,
+      "id": 52,
+      "name": "한나체",
+      "reason": "우아한형제들(배달의민족) 제작. 눈누 페이지에 @font-face 코드 없음 — 같은 제작사의 주아체(id53)/연성체(id54)/도현체(id55)/기랑해랑체(id56)에는 코드가 있어 대비됨"
+    }
+  ],
+  "pendingScheduledDrafts": [],
+  "localOnlyPrepared": [
+    {
+      "catalogIndex": 56,
+      "id": 60,
+      "name": "서울한강체",
+      "postFolder": "posts/2026-09-07-noonnu-font-seoul-hangang/",
+      "registeredInTistory": false,
+      "note": "[2026-09-08] 공개 발행 시도 중 당일 15개 한도 초과로 실패 — 티스토리에 \"임시저장\" 상태로 본문·카테고리(Design/Font)·태그 5개·썸네일 설정이 전부 보존돼 있음. 다음 등록 시 새 글로 중복 생성하지 말고 이 임시저장 글을 불러와 이어서 발행할 것."
+    },
+    {
+      "catalogIndex": 57,
+      "id": 61,
+      "name": "푸른전남체",
+      "postFolder": "posts/2026-09-07-noonnu-font-pureun-jeonnam/",
+      "registeredInTistory": false
+    },
+    {
+      "catalogIndex": 58,
+      "id": 62,
+      "name": "미생체",
+      "postFolder": "posts/2026-09-08-noonnu-font-misaeng/",
+      "registeredInTistory": false,
+      "note": "산돌X윤태호 제작. 페이지 상단 인라인 style의 family명(SDMiSaeng)과 하단 '웹폰트로 사용' 코드블록의 family명(Microorganism)이 서로 다름 — 배치 규칙대로 하단 코드블록 값을 채택."
+    },
+    {
+      "catalogIndex": 59,
+      "id": 63,
+      "name": "조선일보명조체",
+      "postFolder": "posts/2026-09-08-noonnu-font-chosunilbo-myungjo/",
+      "registeredInTistory": false
+    },
+    {
+      "catalogIndex": 60,
+      "id": 64,
+      "name": "야놀자야체",
+      "postFolder": "posts/2026-09-08-noonnu-font-yanolja-yache/",
+      "registeredInTistory": false,
+      "note": "CDN 호스트가 gcore.jsdelivr.net(일반 jsdelivr.net 아님) — 실제 페이지 표기 그대로 사용."
+    },
+    {
+      "catalogIndex": 61,
+      "id": 65,
+      "name": "이순신체",
+      "postFolder": "posts/2026-09-08-noonnu-font-lee-sunshin/",
+      "registeredInTistory": false,
+      "note": "아산시청 제작, 자매 폰트 이순신돋움체(id66)와 라이선스·다운로드 링크 동일."
+    },
+    {
+      "catalogIndex": 62,
+      "id": 66,
+      "name": "이순신돋움체",
+      "postFolder": "posts/2026-09-08-noonnu-font-lee-sunshin-dotum/",
+      "registeredInTistory": false
+    },
+    {
+      "catalogIndex": 63,
+      "id": 67,
+      "name": "부산바다체",
+      "postFolder": "posts/2026-09-08-noonnu-font-busan-bada/",
+      "registeredInTistory": false,
+      "note": "개발자 남승우 제작 — 배치7의 '부산체'(부산광역시청 제작, family 'Busan')와는 이름만 비슷한 별개 폰트."
+    },
+    {
+      "catalogIndex": 64,
+      "id": 68,
+      "name": "잉크립퀴드체",
+      "postFolder": "posts/2026-09-08-noonnu-font-ink-liquid/",
+      "registeredInTistory": false,
+      "note": "더페이스샵 제작. 라이선스가 BI/CI 사용 금지 + 장평·기울기 변형 금지로 이례적으로 제한적 — final.html/meta.md에 유의 문구 명시."
+    },
+    {
+      "catalogIndex": 65,
+      "id": 69,
+      "name": "가비아 솔미체",
+      "postFolder": "posts/2026-09-08-noonnu-font-gabia-solmi/",
+      "registeredInTistory": false
+    },
+    {
+      "catalogIndex": 66,
+      "id": 70,
+      "name": "가비아 봄바람체",
+      "postFolder": "posts/2026-09-08-noonnu-font-gabia-bombaram/",
+      "registeredInTistory": false,
+      "note": "가비아 솔미체와 라이선스·다운로드 링크 동일. 배치7의 'HS봄바람체 2.0'(별도 제작사)과는 이름만 비슷한 별개 폰트."
+    },
+    {
+      "catalogIndex": 67,
+      "id": 71,
+      "name": "가비아 납작블럭체",
+      "postFolder": "posts/2026-09-08-noonnu-font-gabia-napjak-block/",
+      "registeredInTistory": false
+    },
+    {
+      "catalogIndex": 68,
+      "id": 72,
+      "name": "티몬체",
+      "postFolder": "posts/2026-09-08-noonnu-font-tmon/",
+      "registeredInTistory": false
+    },
+    {
+      "catalogIndex": 69,
+      "id": 73,
+      "name": "포천오성과한음체",
+      "postFolder": "posts/2026-09-08-noonnu-font-pocheon-oseong-haneum/",
+      "registeredInTistory": false,
+      "note": "포천시청 제작, 자매 폰트 포천막걸리체(id74)와 라이선스·다운로드 링크 동일."
+    },
+    {
+      "catalogIndex": 70,
+      "id": 74,
+      "name": "포천막걸리체",
+      "postFolder": "posts/2026-09-08-noonnu-font-pocheon-makgeolli/",
+      "registeredInTistory": false
+    },
+    {
+      "catalogIndex": 71,
+      "id": 75,
+      "name": "동그라미재단체",
+      "postFolder": "posts/2026-09-08-noonnu-font-dongguraemi-foundation/",
+      "registeredInTistory": false,
+      "note": "눈누 페이지 표기는 '체' 접미사 없이 '동그라미재단'뿐(제작 동그라미재단 X 헤움디자인) — 다른 글과 표기 통일을 위해 본문에서는 '동그라미재단체'로 표기, meta.md에 부기."
+    },
+    {
+      "catalogIndex": 72,
+      "id": 76,
+      "name": "EBS훈민정음체",
+      "postFolder": "posts/2026-09-08-noonnu-font-ebs-hunminjeongeum/",
+      "registeredInTistory": false,
+      "note": "EBS 제작. EBS 사전 서면승인 없는 변형·개명 재배포 금지 조항이 있어 표에 함께 명시."
+    },
+    {
+      "catalogIndex": 73,
+      "id": 77,
+      "name": "EBS훈민정음새론체",
+      "postFolder": "posts/2026-09-08-noonnu-font-ebs-hunminjeongeum-saeron/",
+      "registeredInTistory": false,
+      "note": "[배치9] EBS 제작, EBS훈민정음체(id76)와 자매 폰트. 동일한 EBS 사전 서면승인 없는 변형·재배포 금지 조항."
+    },
+    {
+      "catalogIndex": 74,
+      "id": 78,
+      "name": "EBS주시경체",
+      "postFolder": "posts/2026-09-08-noonnu-font-ebs-jusigyeong/",
+      "registeredInTistory": false,
+      "note": "[배치9] EBS 제작, 붓글씨 필획을 살린 고전체. 동일한 EBS 라이선스 제한사항 적용."
+    },
+    {
+      "catalogIndex": 75,
+      "id": 79,
+      "name": "고양체",
+      "postFolder": "posts/2026-09-08-noonnu-font-goyang/",
+      "registeredInTistory": false,
+      "note": "[배치9] 고양시청 제작, 각진 손글씨 형태."
+    },
+    {
+      "catalogIndex": 76,
+      "id": 80,
+      "name": "고양덕양체",
+      "postFolder": "posts/2026-09-08-noonnu-font-goyang-deogyang/",
+      "registeredInTistory": false,
+      "note": "[배치9] 고양시청 제작, 고양체와 자매 폰트(라이선스·다운로드 링크 동일), 굴린 고딕."
+    },
+    {
+      "catalogIndex": 77,
+      "id": 81,
+      "name": "고양일산체",
+      "postFolder": "posts/2026-09-08-noonnu-font-goyang-ilsan/",
+      "registeredInTistory": false,
+      "note": "[배치9] 고양시청 제작, 고양체·고양덕양체와 3형제 폰트(라이선스·다운로드 링크 동일), 굴린 고딕."
+    },
+    {
+      "catalogIndex": 78,
+      "id": 82,
+      "name": "즐거운이야기체",
+      "postFolder": "posts/2026-09-08-noonnu-font-joyful-story/",
+      "registeredInTistory": false,
+      "note": "[배치9] CJ E&M(tvN) 제작. 다른 소프트웨어와 번들·재배포 시 출처 표기 필수 조항 있음."
+    },
+    {
+      "catalogIndex": 79,
+      "id": 83,
+      "name": "안경잡이체",
+      "postFolder": "posts/2026-09-08-noonnu-font-ankyongjabi/",
+      "registeredInTistory": false,
+      "note": "[배치9] Greenegg 제작. 폰트 자체의 자유로운 수정·재배포를 명시적으로 허용(유료 판매만 금지), 출처 표기는 권장 사항."
+    },
+    {
+      "catalogIndex": 80,
+      "id": 84,
+      "name": "KCC김훈체",
+      "postFolder": "posts/2026-09-08-noonnu-font-kcc-kimhun/",
+      "registeredInTistory": false,
+      "note": "[배치9] 한국저작권위원회 제작, CCL-저작자표시(CC BY) 조건 — 요약표(모두 금지)와 본문(출처표시 시 변경·재배포 허용)이 어긋남, final.html에 유의 문구 명시."
+    },
+    {
+      "catalogIndex": 81,
+      "id": 85,
+      "name": "KCC은영체",
+      "postFolder": "posts/2026-09-08-noonnu-font-kcc-eunyeong/",
+      "registeredInTistory": false,
+      "note": "[배치9] 한국저작권위원회 제작, KCC김훈체와 자매 폰트(동일 CCL-저작자표시 조건)."
+    },
+    {
+      "catalogIndex": 82,
+      "id": 86,
+      "name": "HS두꺼비체",
+      "postFolder": "posts/2026-09-08-noonnu-font-hs-dukkeobi/",
+      "registeredInTistory": false,
+      "note": "[배치9] 토끼네활자공장 제작. 자유로운 수정·재배포 허용(유료 판매만 금지), woff2 포맷."
+    },
+    {
+      "catalogIndex": 83,
+      "id": 87,
+      "name": "도서관체",
+      "postFolder": "posts/2026-09-08-noonnu-font-library/",
+      "registeredInTistory": false,
+      "note": "[배치9] 국립중앙도서관 제작. 원형 그대로 재배포는 자유, 임의 수정은 금지."
+    },
+    {
+      "catalogIndex": 84,
+      "id": 88,
+      "name": "한글누리체",
+      "postFolder": "posts/2026-09-08-noonnu-font-hangulnuri/",
+      "registeredInTistory": false,
+      "note": "[배치9] 국립한글박물관 X 윤디자인그룹 제작. 유해매체 사용 금지 조항 있음."
+    },
+    {
+      "catalogIndex": 85,
+      "id": 89,
+      "name": "디자인하우스체",
+      "postFolder": "posts/2026-09-08-noonnu-font-designhouse/",
+      "registeredInTistory": false,
+      "note": "[배치9] (주)디자인하우스 제작. 출처 표기 권장(의무 아님)."
+    },
+    {
+      "catalogIndex": 86,
+      "id": 90,
+      "name": "다래손글씨체",
+      "postFolder": "posts/2026-09-08-noonnu-font-darae-handwriting/",
+      "registeredInTistory": false,
+      "note": "[배치9] 개인 제작자 김다래. 300인 이상 대기업·공기업은 별도 사전 허락 필요 조항 있음(이례적)."
+    },
+    {
+      "catalogIndex": 87,
+      "id": 91,
+      "name": "꽃길",
+      "postFolder": "posts/2026-09-08-noonnu-font-flower-road/",
+      "registeredInTistory": false,
+      "note": "[배치9] 상상토끼 제작. 재배포는 가능하나 폰트 파일 수정·유료 재판매는 금지(디자인 결과물 수정은 자유)."
+    },
+    {
+      "catalogIndex": 88,
+      "id": 92,
+      "name": "D2Coding",
+      "postFolder": "posts/2026-09-08-noonnu-font-d2coding/",
+      "registeredInTistory": false,
+      "note": "[배치9] 네이버 제작, 고정폭 코딩 전용 폰트. 나눔글꼴 공통 라이선스(수정·재배포 자유, 유료판매만 금지)."
+    },
+    {
+      "catalogIndex": 89,
+      "id": 93,
+      "name": "신과장",
+      "postFolder": "posts/2026-09-08-noonnu-font-shin-manager/",
+      "registeredInTistory": false,
+      "note": "[배치9] 상상토끼 제작, 꽃길과 동일 라이선스 문구(재배포 가능, 폰트 파일 수정·유료 재판매 금지)."
+    },
+    {
+      "catalogIndex": 90,
+      "id": 94,
+      "name": "개미똥꾸멍",
+      "postFolder": "posts/2026-09-08-noonnu-font-gaemittongkkumeong/",
+      "registeredInTistory": false,
+      "note": "[배치9] 상상토끼 제작, 꽃길·신과장과 동일 라이선스 문구."
+    },
+    {
+      "catalogIndex": 91,
+      "id": 95,
+      "name": "신비는일곱살",
+      "postFolder": "posts/2026-09-08-noonnu-font-shinbi-seven/",
+      "registeredInTistory": false,
+      "note": "[배치9] 상상토끼 제작, 꽃길·신과장·개미똥꾸멍과 동일 라이선스 문구. id96~105는 존재하지 않아(눈누 페이지 자체가 홈으로 리다이렉트) 건너뜀 — id106부터 재개."
+    },
+    {
+      "catalogIndex": 92,
+      "id": 106,
+      "name": "검은고딕(Black Han Sans)",
+      "postFolder": "posts/2026-09-08-noonnu-font-black-han-sans/",
+      "registeredInTistory": false,
+      "note": "[배치9] ZESSTYPE 제작, Google Fonts로도 서빙. 눈누 페이지에 개별 @font-face 없이 @import만 있음(스포카 한 산스·본고딕과 동일 패턴) — 실제 CDN 확인 후 채택. SIL OFL 1.1."
+    },
+    {
+      "catalogIndex": 93,
+      "id": 107,
+      "name": "월인석보체",
+      "postFolder": "posts/2026-09-08-noonnu-font-wolin/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 옛한글 고전체. 임베딩(웹사이트·서버 폰트탑재) 명시적 금지 조항 있음(이례적)."
+    },
+    {
+      "catalogIndex": 94,
+      "id": 108,
+      "name": "간이벽온방체",
+      "postFolder": "posts/2026-09-08-noonnu-font-kanibuk/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 월인석보체와 동일 라이선스(임베딩 금지 포함)."
+    },
+    {
+      "catalogIndex": 95,
+      "id": 109,
+      "name": "법정체",
+      "postFolder": "posts/2026-09-08-noonnu-font-beopjeong/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 월인석보체·간이벽온방체와 동일 라이선스(임베딩 금지 포함)."
+    },
+    {
+      "catalogIndex": 96,
+      "id": 110,
+      "name": "대한민국 독도체",
+      "postFolder": "posts/2026-09-08-noonnu-font-dokdo/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 앞선 3종과 동일 라이선스(임베딩 금지 포함)."
+    },
+    {
+      "catalogIndex": 97,
+      "id": 111,
+      "name": "밝은체",
+      "postFolder": "posts/2026-09-08-noonnu-font-bright/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 클래식 장식 바탕체. 임베딩 금지 조항(윤디자인 고전체 시리즈 공통)."
+    },
+    {
+      "catalogIndex": 98,
+      "id": 112,
+      "name": "sn별별정직",
+      "postFolder": "posts/2026-09-08-noonnu-font-sn-byulbyul-jeongjik/",
+      "registeredInTistory": false,
+      "note": "[배치9] 개인 제작자 soner. 재배포 시 반드시 제작자 자사몰(socialecho.kr)로만 가능하다는 이례적 조건."
+    },
+    {
+      "catalogIndex": 99,
+      "id": 113,
+      "name": "한나체 Air",
+      "postFolder": "posts/2026-09-08-noonnu-font-hanna-air/",
+      "registeredInTistory": false,
+      "note": "[배치9] 우아한형제들(배달의민족) 제작. 기본 한나체(id52)는 배치8에서 코드 없어 스킵됐으나 Air 버전은 코드 존재."
+    },
+    {
+      "catalogIndex": 100,
+      "id": 115,
+      "name": "여기어때 잘난체",
+      "postFolder": "posts/2026-09-08-noonnu-font-yeogi-ottae-jalnan/",
+      "registeredInTistory": false,
+      "note": "[배치9] 여기어때컴퍼니 제작. 요약표상 임베딩·BI/CI가 조건부 허용으로 표기된 드문 사례. id114는 존재하지 않음(홈으로 리다이렉트)."
+    },
+    {
+      "catalogIndex": 101,
+      "id": 118,
+      "name": "넷마블체",
+      "postFolder": "posts/2026-09-08-noonnu-font-netmarble/",
+      "registeredInTistory": false,
+      "note": "[배치9] 넷마블 제작, 300/500/700 3가지 굵기. BI/CI 사용 명시적 금지. id116~117은 존재하지 않음."
+    },
+    {
+      "catalogIndex": 102,
+      "id": 119,
+      "name": "신영복체",
+      "postFolder": "posts/2026-09-08-noonnu-font-shin-youngbok/",
+      "registeredInTistory": false,
+      "note": "[배치9] 박윤정앤타이포랩 제작, 공유마당 등록 저작물(저작재산권 기증). 이용 시 출처 표시 조건."
+    },
+    {
+      "catalogIndex": 103,
+      "id": 120,
+      "name": "애터미체",
+      "postFolder": "posts/2026-09-08-noonnu-font-atomy/",
+      "registeredInTistory": false,
+      "note": "[배치9] 애터미 제작. BI/CI 사용 금지 + 반사회적·부정적 이미지 사용 금지 조항."
+    },
+    {
+      "catalogIndex": 104,
+      "id": 122,
+      "name": "둘기마요",
+      "postFolder": "posts/2026-09-08-noonnu-font-dulgimayo/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 105,
+      "id": 123,
+      "name": "함초롬체",
+      "postFolder": "posts/2026-09-08-noonnu-font-hamchorom/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 106,
+      "id": 124,
+      "name": "헬스셋 조릿대체",
+      "postFolder": "posts/2026-09-08-noonnu-font-healthset-joritdae/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 107,
+      "id": 126,
+      "name": "헬스셋 고딕체",
+      "postFolder": "posts/2026-09-08-noonnu-font-healthset-gothic/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 108,
+      "id": 132,
+      "name": "어비 앤체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-ann/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 109,
+      "id": 133,
+      "name": "어비 아롱체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-arong/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 110,
+      "id": 134,
+      "name": "어비 베이비체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-baby/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 111,
+      "id": 135,
+      "name": "어비 바니나니체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-banynani/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 112,
+      "id": 136,
+      "name": "어비 버찌체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-beojji/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 113,
+      "id": 137,
+      "name": "어비 봉식이체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-bongsik/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 114,
+      "id": 138,
+      "name": "어비 채은체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-chaeeun/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 115,
+      "id": 139,
+      "name": "어비 챠밍체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-charming/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 116,
+      "id": 141,
+      "name": "어비 똘영체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-ddolyoung/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 117,
+      "id": 142,
+      "name": "어비 또요체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-ddoyo/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 118,
+      "id": 143,
+      "name": "어비 동경체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-donggyeong/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 119,
+      "id": 144,
+      "name": "어비 둘둘체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-dooldool/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 120,
+      "id": 145,
+      "name": "어비 은디체",
+      "postFolder": "posts/2026-09-08-noonnu-font-uhbee-eundi/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 121,
+      "id": 209,
+      "name": "윈디라벤더",
+      "postFolder": "posts/2026-09-08-noonnu-font-windy-lavender/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 122,
+      "id": 210,
+      "name": "116수박화체",
+      "postFolder": "posts/2026-09-08-noonnu-font-116-subakhwa/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 123,
+      "id": 211,
+      "name": "116앵무부리",
+      "postFolder": "posts/2026-09-08-noonnu-font-116-angmuburi/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 124,
+      "id": 212,
+      "name": "My LOTTE체",
+      "postFolder": "posts/2026-09-08-noonnu-font-my-lotte/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 125,
+      "id": 216,
+      "name": "한나체Pro",
+      "postFolder": "posts/2026-09-08-noonnu-font-hanna-pro/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 126,
+      "id": 219,
+      "name": "닉스곤폰트",
+      "postFolder": "posts/2026-09-08-noonnu-font-nixgon/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 127,
+      "id": 223,
+      "name": "에스코어드림",
+      "postFolder": "posts/2026-09-08-noonnu-font-s-core-dream/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 128,
+      "id": 237,
+      "name": "넥센타이어",
+      "postFolder": "posts/2026-09-08-noonnu-font-nexen-tire/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 129,
+      "id": 238,
+      "name": "도스명조",
+      "postFolder": "posts/2026-09-08-noonnu-font-dos-myungjo/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 130,
+      "id": 239,
+      "name": "도스고딕",
+      "postFolder": "posts/2026-09-08-noonnu-font-dos-gothic/",
+      "registeredInTistory": false,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
+    },
+    {
+      "catalogIndex": 131,
+      "id": 240,
+      "name": "도스샘물",
+      "postFolder": "posts/2026-09-08-noonnu-font-dos-saemmul/",
+      "registeredInTistory": false,
+      "note": "[배치11] leedheo 제작, 도스명조/도스고딕과 같은 시리즈. MIT 라이선스, woff. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 132,
+      "id": 241,
+      "name": "삼국지3글꼴",
+      "postFolder": "posts/2026-09-08-noonnu-font-samgukji3/",
+      "registeredInTistory": false,
+      "note": "[배치11] leedheo 제작, 같은 시리즈. MIT 라이선스, woff. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 133,
+      "id": 242,
+      "name": "미래로글꼴",
+      "postFolder": "posts/2026-09-08-noonnu-font-miraero/",
+      "registeredInTistory": false,
+      "note": "[배치11] leedheo 제작, 같은 시리즈. MIT 라이선스, woff. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 134,
+      "id": 244,
+      "name": "한돈 삼겹살체",
+      "postFolder": "posts/2026-09-08-noonnu-font-handon-samgyeopsal/",
+      "registeredInTistory": false,
+      "note": "[배치11] 한돈자조금관리위원회 X 산돌. 기본고딕(600)/굴린고딕(300) 2굵기, woff. BI/CI 사용 명시적 금지(이례적 조건). final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 135,
+      "id": 246,
+      "name": "배스킨라빈스체",
+      "postFolder": "posts/2026-09-08-noonnu-font-baskin-robbins/",
+      "registeredInTistory": false,
+      "note": "[배치11] 비알코리아 X 헤움디자인. 400/700 2굵기, woff. BI/CI 사용 가능. \"웹폰트로 사용\" 복사 섹션이 없어 원본 @font-face(BRRA_R/BRBA_B) 그대로 사용. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 136,
+      "id": 250,
+      "name": "둥근모꼴+ Fixedsys",
+      "postFolder": "posts/2026-09-08-noonnu-font-dunggeunmo-fixedsys/",
+      "registeredInTistory": false,
+      "note": "[배치11] 길형진(orioncactus, Pretendard 제작자) 제작. 퍼블릭 도메인, woff. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 137,
+      "id": 251,
+      "name": "로커스상상고딕",
+      "postFolder": "posts/2026-09-08-noonnu-font-locus-sangsang-gothic/",
+      "registeredInTistory": false,
+      "note": "[배치11] VFX 스튜디오 로커스 제작. BI/CI 사용 가능, woff. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 138,
+      "id": 253,
+      "name": "만화진흥원체",
+      "postFolder": "posts/2026-09-08-noonnu-font-komacon/",
+      "registeredInTistory": false,
+      "note": "[배치11] 한국만화영상진흥원 X 윤디자인(KOMACON체). BI/CI 사용 가능, woff. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 139,
+      "id": 256,
+      "name": "빛고을광주체",
+      "postFolder": "posts/2026-09-08-noonnu-font-bitgoeul-gwangju/",
+      "registeredInTistory": false,
+      "note": "[배치11] 광주광역시 전용서체. 300/500/700 3굵기, woff. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 140,
+      "id": 298,
+      "name": "남양주다산체",
+      "postFolder": "posts/2026-09-08-noonnu-font-namyangju-dasan/",
+      "registeredInTistory": false,
+      "note": "[배치11] 남양주시 전용서체. 500/700 2굵기, woff. final.html \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 141,
+      "id": 300,
+      "name": "그녀-이옥선체",
+      "postFolder": "posts/2026-09-08-noonnu-font-her-leeoksun/",
+      "registeredInTistory": false,
+      "note": "[배치11] 나눔의 집 X (주)붉다. 일본군 위안부 피해 생존자 이옥선 할머니의 실제 손글씨 폰트. \"위안부 할머님 명예훼손/인권 및 사회정의에 반하는 사용 금지\" 이례적 윤리 조항 — final.html에 명시. woff. 발행 전 톤 재검토 권장(meta.md에 기재). \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 142,
+      "id": 301,
+      "name": "그녀-길원옥체",
+      "postFolder": "posts/2026-09-08-noonnu-font-her-gilwonok/",
+      "registeredInTistory": false,
+      "note": "[배치11] 나눔의 집 X (주)붉다. 그녀-이옥선체와 같은 시리즈(길원옥 할머니). 동일한 윤리 조항. woff. \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 143,
+      "id": 320,
+      "name": "빙그레 메로나체",
+      "postFolder": "posts/2026-09-08-noonnu-font-binggrae-melona/",
+      "registeredInTistory": false,
+      "note": "[배치11] 빙그레 브랜드 서체. 400/700 2굵기, woff. BI/CI 사용 명시적 금지(이례적 조건). \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 144,
+      "id": 321,
+      "name": "을지로체",
+      "postFolder": "posts/2026-09-08-noonnu-font-euljiro/",
+      "registeredInTistory": false,
+      "note": "[배치11] 우아한형제들(배달의민족). SIL OFL 1.1, woff, BI/CI 사용 가능. \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 145,
+      "id": 324,
+      "name": "리디바탕",
+      "postFolder": "posts/2026-09-08-noonnu-font-ridi-batang/",
+      "registeredInTistory": false,
+      "note": "[배치11] 리디주식회사. SIL OFL 1.1, woff, BI/CI 사용 가능. \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
+    },
+    {
+      "catalogIndex": 146,
+      "id": 326,
+      "name": "박물관문화재단클래식체",
+      "postFolder": "posts/2026-09-08-noonnu-font-museum-foundation-classic/",
+      "registeredInTistory": false,
+      "note": "[배치11] 국립박물관문화재단. 300/500/700 3굵기, woff, BI/CI 사용 가능. 페이지 본문에 숨은 컴포넌트의 잔여 텍스트(\"앗, 해당 주소의 폰트를 찾을 수 없어요\")가 섞여 있었으나 실제 데이터는 정상 확인. \"눈누\" 언급 없음, 1200x630 썸네일 검증 완료."
     }
   ],
   "nextBatchStartsAt": {
-    "catalogIndex": 32,
-    "note": "카탈로그 인덱스 32(id36, 나눔바른고딕)부터 새로 조사 시작. 단, catalogIndex 29(id33 KoPub돋움)를 이번 배치에서 실제로는 확인하지 않고 추정만으로 건너뛰었으니, 다음 배치 시작 시 KoPub돋움부터 먼저 실제 눈누 페이지를 열어 웹폰트 코드 유무를 확인한 뒤(있으면 처리, 없으면 skippedNoWebfontCode에 정식 추가) 32번으로 넘어갈 것."
+    "catalogIndex": 147,
+    "note": "배치11(2026-09-08)은 id240부터 순차 조사해 catalogIndex131~146(16개, id240,241,242,244,246,250,251,253,256,298,300,301,320,321,324,326)을 로컬에만 준비하고 종료. 스킵: id243/245/247~249/252/254~255/257~264/266~297/299/302~305/307~319/322~323/325/327~329(페이지 없음 다수 + id325 타닥타닥체는 임베딩 사용 금지라 웹폰트 용도로 부적합해 의도적 제외). 다음 배치는 id330부터(327,328,329는 이미 존재하지 않음을 확인) 순차 조사 시작."
   },
   "rulesEstablishedThisBatch": [
     "본문 텍스트 어디에도 '눈누' 사이트명을 언급하지 않는다. 태그에도 '눈누'를 넣지 않는다.",
     "썸네일 부제 문구는 그 폰트의 성격을 담은 짧고 서로 다른 한국어 문구로 직접 작성한다(눈누 기본 문구·다른 배치에서 이미 쓴 문구와 겹치지 않게).",
     "본문 인트로 문단 바로 아래에 실제 웹폰트가 라이브로 렌더링되는 샘플을 넣는다 — 스킨 전역 CSS 클래스 `.font-preview-card`/`.font-preview-text` 사용, 인라인 <style>에는 그 폰트 고유의 @font-face 선언만.",
-    "[배치5 신규] 눈누 페이지에서 실제 @font-face 웹폰트 코드를 확인하는 방법: WebFetch로는 markdown 변환 과정에서 <style> 태그 내용이 잘리거나 누락될 수 있어 신뢰하기 어렵다 — Playwright로 해당 페이지를 직접 열고 `document.documentElement.innerHTML.indexOf('font-face')` 또는 `document.body.innerText.indexOf('웹폰트로 사용')` 로 원문 그대로 잘라 확인하는 방법이 정확하다.",
-    "[배치5 신규] 일부 정부/공공기관 폰트(대한인쇄문화협회 바른바탕체·바른돋움체, 한국출판인회의 KoPub 계열 등)는 눈누 페이지 자체에 웹폰트 CDN 코드가 등록돼 있지 않다(@font-face 섹션이 아예 없음) — 이 경우 라이브 미리보기 카드를 안전하게 만들 방법이 없으므로(자체 폰트 파일 호스팅은 재배포 금지 조항과 충돌 위험) 스킵하고 skippedNoWebfontCode에 사유를 기록한다.",
-    "[배치5 신규] Google/Adobe 폰트(본고딕/본명조 등 Noto 계열)는 눈누 페이지가 종종 구식 @import(fonts.googleapis.com/earlyaccess)만 제공한다 — 이 경우 (a) 같은 폰트의 자매 폰트가 이미 jsdelivr noonfonts 패키지에 개별 @font-face로 등록돼 있는지 먼저 확인(본명조는 있었음)하고, (b) 없으면 Google Fonts 공식 css2 API(`https://fonts.googleapis.com/css2?family=...`)를 WebFetch로 직접 열어 실제 font-family 이름과 fonts.gstatic.com 해시 URL을 확인해 그대로 @font-face로 변환해 쓴다(본고딕에 적용, .ttf format으로 반환됨 — format('truetype')으로 명시).",
-    "[배치5 재확인] 자매 폰트(같은 제작사, 시리즈명이 이어지는 폰트)는 라이선스 전문과 다운로드 링크가 동일한 경우가 많다 — 다만 매번 실제 눈누 페이지를 열어 재확인하는 습관은 유지할 것(이번 배치에서도 성동고딕/성동명조, 한둥근 3형제 모두 실측 재확인 후 진행함).",
-    "[배치5 치명적 실수 — 재발 방지 필수] 로컬 썸네일 서버(bun, port 8811)로 1200x630 카드를 캡처할 때, `browser_resize`로 뷰포트를 1200x630으로 맞추는 것은 브라우저 세션 전체가 아니라 그 시점 한 번만 유효할 수 있다 — 중간에 다른 페이지 이동(예: 노트문/외부 사이트 확인 등)이 여러 번 끼면 뷰포트가 예고 없이 기본값(예: 1600x900)으로 되돌아갈 수 있다. 우리 썸네일 HTML의 body는 `width:1200px;height:630px` 고정이라, 뷰포트가 더 크면 카드가 캔버스 전체가 아니라 왼쪽 상단에만 위치하고 나머지가 흰 여백으로 남는 채로 스크린샷이 찍히는데, 카드 내부(중앙정렬된 텍스트)만 보면 정상처럼 보여 놓치기 쉽다. → 매 스크린샷 직후 반드시 PNG 파일의 실제 픽셀 크기(IHDR 청크: `buffer.readUInt32BE(16)`=width, `readUInt32BE(20)`=height)를 확인해 1200x630인지 검증하고, 다르면 그 자리에서 다시 resize→재캡처한다. 이번 배치는 이 검증을 21번(한겨레결체)부터 28번(부산체)까지 8개 파일에 대해 하지 않아 전부 1600x900으로 잘못 캡처됐고, 이미 발행된 6개 글의 대표이미지를 사용자 제보 후에야 뒤늦게 재캡처+재업로드(각 글을 /manage/post/{id}에서 열어 완료→대표이미지 삭제→새 파일 업로드→재발행)로 수정했다. 다음 배치부터는 스크린샷마다 크기 검증을 스킵하지 말 것.",
-    "[배치5 신규] 이미 공개 발행된 글의 대표이미지만 교체하는 절차: `https://daitnu.tistory.com/manage/post/{글번호}` 로 진입(수정 모드) → 완료 버튼 클릭 → 발행 다이얼로그 우측 상단 기존 썸네일 위에 마우스를 올리면 보이는 '삭제' 아이콘 버튼 클릭(대표이미지 제거, 태그 목록의 '○○ 태그 삭제'들과 이름이 겹치므로 accessibility tree에서 발행 다이얼로그 안에 있는 것만 골라야 함) → 다시 나타난 'Choose File'로 새 파일 업로드 → '공개 발행' 버튼(수정 발행).",
-    "[2026-09-07 재확인 — 근본원인 확정] \"썸네일이 중앙이 아니다\"(본고딕/본명조) 재확인 결과, 우리 썸네일 생성(1200x630 PNG) 자체는 문제가 없었다(직접 픽셀 분석으로 확인 — 텍스트 중심이 캔버스 중심에서 1px/10px 오차뿐). 진짜 원인은 Tistory/Daum이 대표이미지를 서빙할 때 쓰는 img1.daumcdn.net/thumb/R{width}x0/ CDN이 \"새 글 최초 발행 시 대표이미지 업로드\" 경로로 올린 파일만 16:9(예: 1200x630 원본 -> 1200x675) 캔버스로 강제 패딩하면서 원본을 좌상단(0,0) 기준으로 축소 배치(스케일 ~0.75, 이동 없음)해 우측/하단에 빈 여백을 만든다는 것 — R1200x0 요청으로 실측(본고딕/본명조 둘 다 1200x675, 텍스트 중심이 거의 동일한 (~449,~243)으로 나와 콘텐츠와 무관한 고정 변환임을 확인). 반면 \"기존 발행된 글의 대표이미지 교체\"(삭제 후 재업로드) 경로로 올라간 파일(예: 부산체 thumb-26)은 R1200x0 요청 시 정확히 1200x630(원본 그대로, 패딩 없음)이 나와 두 업로드 경로가 서로 다른 처리 파이프라인을 탄다는 것을 확정. **해결**: 우리 HTML 템플릿(1200x630)은 그대로 두고, 매 신규 글 발행 직후 대표이미지를 한 번 더 \"삭제 -> 같은 파일 재업로드 -> 재발행\"(기존 글 교체 절차와 동일 UI, /manage/post/{id} -> 완료 -> 썸네일 위 삭제 아이콘 -> Choose File로 같은 파일 재선택 -> 공개 발행)하면 이 패딩 버그가 사라진다. 본고딕(29)/본명조(30) 둘 다 이 절차로 재적용해 R1200x0이 1200x630으로 정상화됨을 확인, 그리드/상세 페이지 스크린샷으로도 중앙정렬 재확인 완료.",
-    "[2026-09-07 필수 절차로 승격] 위 발견에 따라 **앞으로 모든 신규 폰트 글 발행 직후, 발행 완료 후 바로 그 글의 R1200x0(img.src를 R숫자x0 패턴으로 바꿔 새 탭에서 열기) 페이지 타이틀을 확인해 세로 치수가 630(우리 템플릿 높이)과 정확히 일치하는지 검증한다** — 675처럼 다른 값이 나오면 그 즉시 같은 글에서 \"대표이미지 삭제 -> 같은 파일 재업로드 -> 재발행\"을 1회 수행하고 다시 R1200x0으로 재검증한다. 이 검증은 스크린샷 눈대중이 아니라 URL 타이틀(예: \"R1200x0 (1200×630)\")로 확정 판정한다 — 배치5에서 이 검증 없이 8개를 연달아 발행했다가 최소 2개(본고딕/본명조)가 이 버그에 걸린 채 방치됐었다."
+    "눈누 페이지에서 실제 @font-face 웹폰트 코드를 확인하는 방법: WebFetch로는 markdown 변환 과정에서 <style> 태그 내용이 잘리거나 누락될 수 있어 신뢰하기 어렵다 — Playwright로 해당 페이지를 직접 열고 `document.documentElement.innerHTML`에서 `font-face` 문자열을 찾아(정규식 `@font-face\\s*{[^}]*}`) 원문 그대로 확인하는 방법이 정확하다.",
+    "일부 정부/공공기관 폰트(대한인쇄문화협회 바른바탕체·바른돋움체 등)는 눈누 페이지 자체에 웹폰트 CDN 코드가 등록돼 있지 않다 — 이 경우 스킵하고 skippedNoWebfontCode에 사유를 기록한다. 단, [배치6 재확인] 같은 제작사·같은 시리즈(예: KoPub바탕/KoPub돋움)라도 한쪽에 코드가 없다고 다른 쪽도 없을 것이라 추정하지 말 것 — KoPub바탕(id32)은 코드가 없었지만 자매 폰트 KoPub돋움(id33)은 실제로 있었다.",
+    "[배치6 핵심 발견] '예약발행'(발행일을 '예약'으로 설정)도 그 등록 버튼('공개 발행')을 누르는 시점에 당일 공개 발행 한도(15개)를 즉시 검사한다 — 이미 오늘 15개를 발행한 상태라면 예약 등록 자체가 '하루에 새롭게 공개 발행할 수 있는 글은 최대 15개까지입니다' 알림으로 거부된다. 즉 '예약이니 지금 등록은 한도와 무관하고, 실제 카운트는 발행되는 미래 시점에 될 것'이라는 가정은 틀렸다 — 한도는 등록(제출) 시점 기준이다. 예약발행으로 여러 건을 미리 쌓아두려는 전략은 그 등록 자체가 당일 한도 내에서만 가능하므로, 당일 한도를 다 쓴 날에는 예약 등록도 다음 한도 리셋 전까지 불가능하다.",
+    "[배치6] 발행 다이얼로그의 '발행일' 항목은 기본 상태에선 '현재'/'예약' 버튼만 보이다가, '예약'을 누르면 날짜 버튼(캘린더 팝업)+시/분 spinbutton이 나타난다. 캘린더는 셀 텍스트가 정확히 그 날짜 숫자와 일치하는 button이라 `getByRole('button', {name: '8', exact: true})` 같은 정확 매칭이 필요(다른 숫자가 포함된 라벨과 혼동 방지). 시/분은 각각 별도 spinbutton으로 `.fill()`로 값을 바로 넣을 수 있다.",
+    "[배치6] 한도로 등록이 막힌 글은 '취소'로 발행 다이얼로그만 닫고 본문 편집 화면으로 돌아온 뒤 '임시저장' 버튼을 눌러 명시적으로 임시저장하면 제목/카테고리/본문/태그/(발행 다이얼로그에서 설정한 대표이미지 첨부 여부는 재확인 필요)가 보존된다 — '임시저장 개수 N개' 카운터로 저장 여부를 확인할 것.",
+    "[배치6] 파일 업로드(대표이미지 Choose File, browser_file_upload)에 절대경로를 줄 때 Playwright MCP의 허용 루트가 대소문자를 구분하는 사례가 실측됨 — 'D:\\...' 대문자 드라이브 문자로는 'outside allowed roots' 오류가 나고, 동일 경로를 소문자 'd:\\...'로 주면 정상 업로드된다. 향후 file_upload 호출 시 반드시 소문자 드라이브 문자를 사용할 것.",
+    "본문 텍스트 어디에도 '눈누' 사이트명을 언급하지 않는다 재확인, 자매 폰트(같은 제작사)는 라이선스 전문과 다운로드 링크가 같은 경우가 많지만 매번 실제 페이지를 열어 재확인하는 습관을 유지한다."
   ],
-  "localThumbServer": "bun _workspace/noonnu-thumbs/serve-thumbs.mjs (port 8811). 배치5에서 CORS 헤더(Access-Control-Allow-Origin: *)와 /draft/{파일명} 경로(→ ../noonnu-drafts/{파일명} 서빙) 두 가지를 추가했으나, 실제로는 클립보드(PowerShell Set-Clipboard/[System.Windows.Forms.Clipboard])가 재시도 루프로 결국 안정적으로 동작해 이 fetch 기반 우회는 쓰지 않았다(한 번은 fetch가 30분간 응답 없이 멈추는 사고도 있었음 — 원인 미상, 재시도하지 말고 클립보드 경로로 되돌아갈 것). 클립보드가 'Requested Clipboard operation did not succeed' 에러를 내면: PowerShell에서 Add-Type System.Windows.Forms 후 [System.Windows.Forms.Clipboard]::SetText()를 최대 8~10회 재시도 루프로 감싸면 대부분 성공한다(재시도 사이 Start-Sleep 400ms 권장) — 이 환경은 여러 세션/프로세스가 클립보드를 동시에 건드릴 수 있어 실패가 잦다.",
+  "localThumbServer": "bun _workspace/noonnu-thumbs/serve-thumbs.mjs (port 8811). 배치6 확인 결과 이미 백그라운드에서 계속 실행 중이었음(재기동 불필요) — CORS 헤더(Access-Control-Allow-Origin: *)와 /draft/{파일명} 경로 지원 유지.",
   "categoryFlow": "카테고리 선택 콤보박스 클릭 -> option '- Font' 클릭 (Design 하위)",
-  "modeFlow": "본문 우측 상단 '기본모드' 토글 버튼 클릭 -> 드롭다운(기본모드/마크다운/HTML)에서 HTML 클릭 -> confirm 다이얼로그 accept -> CodeMirror 영역 클릭이 안 먹으면 page.evaluate로 `.html-editor .CodeMirror` 엘리먼트의 `.CodeMirror.focus()`를 직접 호출해 포커스 -> Ctrl+A -> Ctrl+V (PowerShell [System.Windows.Forms.Clipboard]::SetText(), 재시도 루프 권장, UTF8 인코딩 필수 — 붙여넣기 직전에 Get-Clipboard -Raw로 길이 재확인하는 습관을 들일 것, 붙여넣기 후에도 `.CodeMirror.getValue().length`로 클립보드 길이와 일치하는지 재확인). 클립보드가 중간에 비어있는 경우(0)가 종종 있으니 붙여넣기 직전 항상 재확인.",
-  "publishFlow": "완료 버튼 클릭 -> 다이얼로그에서 '공개' 라디오 선택 -> '대표이미지 추가'(Choose File)에 로컬 png 업로드 -> '공개 발행' 버튼 클릭. (기존에 이미 발행된 글의 대표이미지만 바꿀 때는 rulesEstablishedThisBatch의 '이미 공개 발행된 글의 대표이미지만 교체하는 절차' 참고)",
-  "skinDeployFlow": "스킨(대시보드 스킨) CSS/HTML/JS를 바꿀 일이 생기면: https://daitnu.tistory.com/manage/design/skin/edit#/source/css (또는 /source/html) 이동 -> Monaco 에디터 영역 클릭 -> Ctrl+A -> (클립보드를 파일 내용으로 재설정 직후) Ctrl+V -> window.monaco.editor.getModels()[0].getValue()로 붙여넣기 결과 검증 -> '적용' 버튼 클릭 -> alert accept. 파일 업로드가 필요한 JS/CSS 에셋(예: images/content.js)은 '파일업로드' 탭에서 'Choose File'로 같은 파일명의 로컬 파일을 선택하면 서버의 기존 경로(images/폴더 포함)를 그대로 덮어쓴다."
+  "modeFlow": "본문 우측 상단 '기본모드' 토글 버튼 클릭 -> 드롭다운(기본모드/마크다운/HTML)에서 HTML 클릭 -> confirm 다이얼로그 accept -> CodeMirror 영역 클릭이 안 먹으면 page.evaluate로 `.html-editor .CodeMirror` 엘리먼트의 `.CodeMirror.focus()`를 직접 호출해 포커스 -> Ctrl+A -> Ctrl+V (PowerShell [System.Windows.Forms.Clipboard]::SetText(), 재시도 루프 권장, UTF8 인코딩 필수 — 붙여넣기 직전에 Get-Clipboard -Raw로 길이 재확인하는 습관을 들일 것, 붙여넣기 후에도 `.CodeMirror.getValue().length`로 클립보드 길이와 일치하는지 재확인). 클립보드가 중간에 비어있는 경우(0)가 종종 있으니 붙여넣기 직전 항상 재확인. [2026-09-08 정정] 이 편집기는 CodeMirror가 아니라 Monaco Editor다 — 셀렉터는 `.html-editor .CodeMirror`가 아니라 `window.monaco.editor.getModels()`로 접근(getEditors()는 이 버전에 없음, getModels()만 사용). 붙여넣기 후 길이 검증도 `model.getValue().length`로 한다(CodeMirror API와 이름은 같지만 실체가 다름). style.css처럼 원본이 LF뿐인 파일을 붙여넣으면 Monaco가 CRLF로 정규화해 붙여넣은 값의 길이가 줄바꿈 개수만큼 늘어나는 것은 정상(내용 손상 아님) — skin.html처럼 원본이 이미 CRLF인 파일은 길이가 정확히 일치한다.",
+  "publishFlow": "완료 버튼 클릭 -> 다이얼로그에서 '공개' 라디오 선택 -> (예약발행 시) '발행일'의 '예약' 버튼 클릭 -> 날짜 버튼으로 캘린더 열고 원하는 날 클릭 -> 시/분 spinbutton에 값 입력 -> '대표이미지 추가'(Choose File, 경로는 소문자 드라이브 문자 사용)에 로컬 png 업로드 -> '공개 발행' 버튼 클릭. [배치6] 이 마지막 클릭이 예약이든 즉시든 동일하게 당일 15개 한도 검사를 받는다 — 한도 초과 시 alert 후 '취소'로 닫고 '임시저장'으로 보존. (기존에 이미 발행된 글의 대표이미지만 바꿀 때는 rulesEstablishedThisBatch의 '이미 공개 발행된 글의 대표이미지만 교체하는 절차'(배치5 기록, 아래 유지) 참고.)",
+  "publishedImageReplaceFlow": "이미 공개 발행된 글의 대표이미지만 교체하는 절차: `https://daitnu.tistory.com/manage/post/{글번호}` 로 진입(수정 모드) → 완료 버튼 클릭 → 발행 다이얼로그 우측 상단 기존 썸네일 위에 마우스를 올리면 보이는 '삭제' 아이콘 버튼 클릭 → 다시 나타난 'Choose File'로 새 파일 업로드 → '공개 발행' 버튼(수정 발행).",
+  "cdnPaddingBugNote": "[2026-09-07 확정] '새 글 최초 발행 시 대표이미지 업로드' 경로는 img1.daumcdn.net CDN이 16:9로 강제 패딩하며 좌상단 앵커로 축소 배치하는 버그가 있다(R1200x0으로 실측 시 1200x675 등 어긋남). '기존 발행된 글의 대표이미지 교체'(삭제 후 재업로드) 경로는 이 버그가 없다. 예방책은 신규 글 발행 직후 대표이미지를 한 번 더 '삭제→같은 파일 재업로드→재발행'하는 것. [배치6] 이번 파일럿은 한도에 막혀 실제 발행까지 가지 못해 이 예방 절차를 실행/검증하지 못했다 — KoPub돋움을 포함해 이번에 새로 발행되는 모든 글은 발행 직후 R1200x0 재검증 및 필요시 재업로드를 반드시 수행할 것.",
+  "skinDeployFlow": "스킨(대시보드 스킨) CSS/HTML/JS를 바꿀 일이 생기면: https://daitnu.tistory.com/manage/design/skin/edit#/source/css (또는 /source/html) 이동 -> Monaco 에디터 영역 클릭 -> Ctrl+A -> (클립보드를 파일 내용으로 재설정 직후) Ctrl+V -> window.monaco.editor.getModels()[0].getValue()로 붙여넣기 결과 검증 -> '적용' 버튼 클릭 -> alert accept. 파일 업로드가 필요한 JS/CSS 에셋(예: images/content.js)은 '파일업로드' 탭에서 'Choose File'로 같은 파일명의 로컬 파일을 선택하면 서버의 기존 경로(images/폴더 포함)를 그대로 덮어쓴다.",
+  "userDecision2026_09_07": "예약발행이 당일 한도에 걸린다는 사실을 보고하자, 사용자가 확인 후 \"내일(한도 리셋 후) 평소처럼 공개 발행으로 15개 이어서 진행\"으로 확정. → 이후 배치7(같은 날 후속 세션)에서 방침이 다시 바뀜: \"이번엔 티스토리에 등록/발행하지 않는다. 대신 로컬에 posts/{날짜}-{슬러그}/final.html+meta.md 형태로 완성해두고, 나중에(한도 리셋 후) 그 파일을 열어 그대로 복사해 붙여넣기만 하면 되게 만드는 게 목표\"로 전환 — 배치7은 이 새 방침대로 티스토리 등록 시도 없이 로컬 파일 15개만 완성했다(localOnlyPrepared 참고). 다음 세션이 실제 등록할 때는: (1) KoPub돋움부터 시작(이전에 임시저장해 둔 동일 내용 글이 남아있을 수 있으니 중복 확인), (2) 나머지 14개도 각 postFolder의 final.html/meta.md/attachments/thumbnail.png를 그대로 사용해 등록, (3) catalogIndex 58(id62 미생체)부터 새 폰트 조사를 이어갈 수 있음."
 }

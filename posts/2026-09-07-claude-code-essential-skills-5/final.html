@@ -1,0 +1,88 @@
+<h2>소개</h2>
+<p><strong>Claude Code</strong>를 쓴다면 꼭 갖춰두면 좋은 스킬 5가지를 추렸습니다. 어디선가 들은 이름만 나열하지 않고, 각 스킬의 <strong>공식 GitHub 저장소</strong>를 하나씩 직접 열어 기능·설치 명령어·라이선스를 대조해 정리했습니다.</p>
+<p>다섯 개 중 네 개(Agent Browser, Find Skills, Design Taste Frontend, MCP Builder)는 전부 같은 설치 도구인 Vercel의 <code>skills</code> CLI로 설치합니다 — 스킬 저장소를 지정하면 해당 스킬 파일을 Claude Code가 읽는 자리에 복사해주는 범용 설치기입니다. GSD Core만 자체 설치 스크립트를 씁니다.</p>
+<pre><code class="language-bash">npx skills add &lt;owner/repo 또는 저장소 URL&gt; --skill "스킬-이름" --agent claude-code --yes --copy</code></pre>
+<table>
+<thead>
+<tr><th>플래그</th><th>의미</th></tr>
+</thead>
+<tbody>
+<tr><td><code>-a, --agent</code></td><td>대상 에이전트 지정(<code>claude-code</code>, <code>codex</code> 등)</td></tr>
+<tr><td><code>-s, --skill</code></td><td>저장소 안의 특정 스킬만 이름으로 지정(<code>*</code>는 전체)</td></tr>
+<tr><td><code>-g, --global</code></td><td>프로젝트 대신 사용자 디렉터리에 설치</td></tr>
+<tr><td><code>--copy</code></td><td>심링크 대신 파일을 그대로 복사</td></tr>
+<tr><td><code>-y, --yes</code></td><td>확인 프롬프트를 건너뛰고 바로 설치</td></tr>
+</tbody>
+</table>
+<p style="margin-top:calc(var(--spacing) * 4);font-size:var(--text-sm);color:var(--color-muted-foreground);">터미널을 따로 열 필요는 없습니다. <strong style="color:var(--color-foreground);">Claude Code 채팅창에 설치 명령어를 그대로 붙여넣기만 해도</strong> Claude가 셸 명령으로 인식해 실행 여부를 확인한 뒤 진행합니다. 아래 각 스킬마다 채팅창에 입력할 문장 예시를 함께 실었습니다.</p>
+
+<p style="margin-top:calc(var(--spacing) * 10);font-weight:var(--font-weight-semibold);font-size:var(--text-lg);color:var(--color-foreground);">핵심 스킬 5개</p>
+
+<div style="margin-top:calc(var(--spacing) * 6);background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);">
+<span style="display:inline-block;background:var(--color-link);color:var(--color-primary-foreground);font-size:var(--text-xs);font-weight:var(--font-weight-semibold);padding:calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);border-radius:999px;">1</span>
+<div style="margin-top:calc(var(--spacing) * 3);font-weight:var(--font-weight-semibold);font-size:var(--text-base);">Agent Browser — <code>/agent-browser</code></div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">Rust로 작성된 CDP(Chrome DevTools Protocol) 기반 브라우저 자동화 CLI입니다(Vercel Labs 개발). 기본 동작 흐름은 <code>open</code>(페이지 열기) → <code>snapshot</code>(요소 참조 확보) → <code>click @e2</code>처럼 그 참조로 클릭·입력·스크롤 조작 → <code>screenshot</code> 순서이며, 대기(wait) 등 추가 명령도 지원합니다. 화면을 구현한 직후 이 흐름 그대로 Claude가 실제 페이지를 열어 상호작용까지 자동으로 확인시킬 수 있습니다.</div>
+<pre><code class="language-bash"># 1) Claude Code용 스킬 파일 설치
+npx skills add vercel-labs/agent-browser --agent claude-code --yes --copy
+
+# 2) 실제 CLI 바이너리 설치(스킬이 내부적으로 호출)
+npm install -g agent-browser
+agent-browser install</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);">macOS라면 <code>brew install agent-browser</code>, Rust 환경이라면 <code>cargo install agent-browser</code>로도 설치할 수 있습니다(둘 다 이후 <code>agent-browser install</code>은 동일하게 필요).</div>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">채팅창 설치 요청</strong> — 아래 문장을 Claude Code 채팅창에 그대로 붙여넣으세요.</div>
+<pre><code class="language-text">agent-browser 스킬을 설치하고 싶어. npx skills add vercel-labs/agent-browser --agent claude-code --yes --copy를 실행해줘. 끝나면 이어서 npm install -g agent-browser와 agent-browser install도 실행해줘.</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">사용 예시</strong> — "로컬 개발 서버를 실행한 뒤 agent-browser로 첫 화면을 열어, 주요 버튼과 링크를 실제로 눌러 동작을 확인해 주세요."</div>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);">라이선스 Apache-2.0 · <a href="https://github.com/vercel-labs/agent-browser" target="_blank" rel="noopener" style="color:var(--color-link);">github.com/vercel-labs/agent-browser ↗</a></div>
+</div>
+
+<div style="margin-top:calc(var(--spacing) * 6);background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);">
+<span style="display:inline-block;background:var(--color-link);color:var(--color-primary-foreground);font-size:var(--text-xs);font-weight:var(--font-weight-semibold);padding:calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);border-radius:999px;">2</span>
+<div style="margin-top:calc(var(--spacing) * 3);font-weight:var(--font-weight-semibold);font-size:var(--text-base);">Find Skills</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">agent-browser와 마찬가지로 <code>vercel-labs/skills</code> 저장소에 속한 스킬로, 정확히는 "Claude가 <code>npx skills find &lt;검색어&gt;</code>를 스스로 실행하도록" 안내하는 SKILL.md입니다. 이 저장소 자체가 73개 이상의 코딩 에이전트(OpenCode, Claude Code, Codex, Cursor 등)를 지원하는 공개 스킬 생태계 CLI라, find-skills를 설치해두면 사람이 목록을 뒤지지 않고 "이런 기능이 필요하다"는 말만으로 검색·후보 비교·설치 실행까지 Claude에게 맡길 수 있습니다.</div>
+<pre><code class="language-bash">npx skills add vercel-labs/skills --skill find-skills --agent claude-code --yes --copy</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">채팅창 설치 요청</strong> — 아래 문장을 Claude Code 채팅창에 그대로 붙여넣으세요.</div>
+<pre><code class="language-text">find-skills 스킬을 설치하고 싶어. npx skills add vercel-labs/skills --skill find-skills --agent claude-code --yes --copy를 실행해줘.</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">사용 예시</strong> — "Next.js 프로젝트의 접근성과 성능을 점검하려고 합니다. 이미 공개된 스킬이 있는지 find-skills로 찾아주세요."(내부적으로 <code>npx skills find &lt;검색어&gt;</code> 형태의 검색을 수행합니다.)</div>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);">라이선스 MIT · <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener" style="color:var(--color-link);">github.com/vercel-labs/skills ↗</a></div>
+</div>
+
+<div style="margin-top:calc(var(--spacing) * 6);background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);">
+<span style="display:inline-block;background:var(--color-link);color:var(--color-primary-foreground);font-size:var(--text-xs);font-weight:var(--font-weight-semibold);padding:calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);border-radius:999px;">3</span>
+<div style="margin-top:calc(var(--spacing) * 3);font-weight:var(--font-weight-semibold);font-size:var(--text-base);">GSD (Get Stuff Done) Core</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">경량 메타-프롬프팅·컨텍스트 엔지니어링 프레임워크로, 큰 작업을 Discuss → Plan → Execute → Verify → Ship 다섯 단계로 나눠 진행합니다. 태그라인 그대로 "Git. Ship. Done." — 각 단계에서 합의된 결정 사항을 대화창이 아니라 파일에 남기는 게 핵심이라, 컨텍스트 창이 길어져 앞선 결정이 흐려지는 이른바 "context rot" 상황에서도 그 파일을 다시 읽어 정확히 같은 지점부터 이어갈 수 있습니다. Claude Code 외에 OpenCode·Antigravity CLI·Kimi CLI·Kilo·Codex·Copilot·Cursor·Windsurf 등 여러 코딩 에이전트를 지원합니다.</div>
+<pre><code class="language-bash">npx @opengsd/gsd-core@latest</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);">실행하면 대상 런타임(Claude Code / OpenCode / Antigravity 등)과 설치 범위(전역/로컬)를 대화형으로 선택합니다. 설치 후 시작 명령: 새 프로젝트는 <code>/gsd-new-project</code>, 기존 프로젝트에 적용하려면 <code>/gsd-onboard</code>.</div>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">채팅창 설치 요청</strong> — 아래 문장을 Claude Code 채팅창에 그대로 붙여넣으세요. 다만 이 설치는 런타임·범위를 직접 골라야 하는 대화형 방식이라, 채팅창에서 자동으로 끝까지 진행되지 않을 수 있습니다 — 선택 단계에서 막히면 터미널을 직접 열어 같은 명령을 실행하는 편이 확실합니다.</div>
+<pre><code class="language-text">npx @opengsd/gsd-core@latest를 실행해줘.</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);">라이선스 MIT · <a href="https://github.com/open-gsd/gsd-core" target="_blank" rel="noopener" style="color:var(--color-link);">github.com/open-gsd/gsd-core ↗</a></div>
+</div>
+
+<div style="margin-top:calc(var(--spacing) * 6);background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);">
+<span style="display:inline-block;background:var(--color-link);color:var(--color-primary-foreground);font-size:var(--text-xs);font-weight:var(--font-weight-semibold);padding:calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);border-radius:999px;">4</span>
+<div style="margin-top:calc(var(--spacing) * 3);font-weight:var(--font-weight-semibold);font-size:var(--text-base);">Design Taste Frontend — <code>/design-taste</code></div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">공식 소개 문구는 "The Anti-Slop Frontend Framework" — 생성형 AI가 만든 프런트엔드에서 자주 반복되는 정형화된 패턴(균일한 카드 배치, 특정 보라색 그라데이션 등)을 피하도록 설계됐습니다. 브리프를 읽어 디자인 언어를 자동으로 추론한 뒤, VARIANCE(변주)·MOTION(모션)·DENSITY(밀도) 세 다이얼 값으로 판단 기준을 조정합니다 — 현재 v2는 원본 v1을 대규모로 재작성한 실험 버전이며, 디자인 시스템 매핑과 GSAP 코드 스켈레톤 생성까지 지원합니다.</div>
+<pre><code class="language-bash">npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend --agent claude-code --yes --copy</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">채팅창 설치 요청</strong> — 아래 문장을 Claude Code 채팅창에 그대로 붙여넣으세요.</div>
+<pre><code class="language-text">design-taste-frontend 스킬을 설치하고 싶어. npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend --agent claude-code --yes --copy를 실행해줘.</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">사용 예시</strong> — "개발자를 위한 기술 블로그의 랜딩 페이지를 만들어 주세요. design-taste-frontend 기준을 적용하되, 먼저 이 페이지에 맞는 디자인 방향을 한 문장으로 선언하세요."</div>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);">라이선스 MIT · <a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener" style="color:var(--color-link);">github.com/Leonxlnx/taste-skill ↗</a></div>
+</div>
+
+<div style="margin-top:calc(var(--spacing) * 6);background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);">
+<span style="display:inline-block;background:var(--color-link);color:var(--color-primary-foreground);font-size:var(--text-xs);font-weight:var(--font-weight-semibold);padding:calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);border-radius:999px;">5</span>
+<div style="margin-top:calc(var(--spacing) * 3);font-weight:var(--font-weight-semibold);font-size:var(--text-base);">MCP Builder</div>
+<div style="margin-top:calc(var(--spacing) * 2);color:var(--color-muted-foreground);font-size:var(--text-sm);line-height:var(--leading-relaxed);">Anthropic이 직접 관리하는 공식 스킬로, LLM이 외부 서비스와 상호작용할 도구를 설계·구현하는 전체 절차를 안내합니다. Python 환경에서는 FastMCP, Node/TypeScript 환경에서는 공식 MCP SDK를 기준으로 삼고, 대상 API의 엔드포인트를 빠짐없이 다루면서도 호출 효율이 좋은 도구 구조를 짜는 데 초점을 둡니다 — 연동하려는 서비스의 API 문서 주소만 넘겨주면 그 문서를 참고해 서버 설계부터 구현까지 단계별로 진행합니다.</div>
+<pre><code class="language-bash">npx skills add anthropics/skills --skill mcp-builder --agent claude-code --yes --copy</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">채팅창 설치 요청</strong> — 아래 문장을 Claude Code 채팅창에 그대로 붙여넣으세요.</div>
+<pre><code class="language-text">mcp-builder 스킬을 설치하고 싶어. npx skills add anthropics/skills --skill mcp-builder --agent claude-code --yes --copy를 실행해줘.</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">사용 예시</strong> — "&lt;서비스 이름&gt;을 Claude Code에서 쓰고 싶습니다. 공식 API 문서는 &lt;문서 주소&gt;입니다. mcp-builder 절차에 따라 MCP 서버를 설계하고 구현해 주세요."</div>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);"><a href="https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md" target="_blank" rel="noopener" style="color:var(--color-link);">github.com/anthropics/skills — skills/mcp-builder/SKILL.md ↗</a></div>
+</div>
+
+<h2>참고 · 검증 기록</h2>
+<div style="background:var(--color-muted);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);font-size:var(--text-sm);line-height:var(--leading-relaxed);">
+<div><span style="color:var(--color-link);font-weight:var(--font-weight-semibold);">1차 출처</span> — 위 5개 스킬 각각의 공식 GitHub 저장소(본문 링크 참고)</div>
+<div style="margin-top:calc(var(--spacing) * 3);"><span style="color:var(--color-link);font-weight:var(--font-weight-semibold);">확인 시점</span> — 2026-09-07</div>
+<div style="margin-top:calc(var(--spacing) * 3);"><span style="color:var(--color-link);font-weight:var(--font-weight-semibold);">직접 검증한 항목</span> — 5개 저장소 각각의 README를 직접 열어 기능 설명·설치 명령어·라이선스를 원문 대조했습니다. 설치 명령의 <code>skills</code> CLI 플래그(<code>--agent</code>, <code>--skill</code>, <code>--yes</code>, <code>--copy</code> 등)는 <code>vercel-labs/skills</code> 공식 README에 문서화된 것과 일치함을 확인했습니다.</div>
+<div style="margin-top:calc(var(--spacing) * 3);color:var(--color-muted-foreground);"><span style="color:var(--color-link);font-weight:var(--font-weight-semibold);">미검증 항목</span> — 5개 스킬을 실제로 설치해 Claude Code에서 구동해보는 것까지는 하지 않았습니다(README 문서 기준 검증). GSD Core 설치 명령에 <code>--claude --global</code> 같은 추가 플래그가 붙은 출처도 있었지만, 공식 README엔 해당 플래그가 명시돼 있지 않아 본문에는 대화형 기본 명령만 실었습니다.</div>
+</div>

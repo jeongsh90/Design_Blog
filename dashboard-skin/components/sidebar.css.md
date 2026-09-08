@@ -204,3 +204,26 @@ height`는 건드리지 않는다 — 이 역시 원본과 동일(닫힌 항목�
 기본 규칙의 `height:0`으로 이미 정지해 있어 시각적 문제가 없다는 것을
 실제 원본 사이트에서 눈으로 재확인).
 
+---
+
+## 2026-09-08 수정 — 사이드바 방문자 위젯(Today/Total) 카드 2개 나열 → 리스트 행 형태로 재구성
+
+기존엔 `sidebar-stat-card` 2개를 나란히(`sidebar-stat-row`가 flex row) 놓고
+각 카드 안에서 라벨(`sidebar-stat-label`, `--text-xs`)을 값
+(`sidebar-stat-value`, `--text-sm` + semibold)보다 작게 표시했다 — 오른쪽
+`widgets` 아사이드의 위젯 목록(`widget-item`+`widget-title`, 항목 사이
+`border-top` 구분선)과는 전혀 다른 시각 언어였다.
+
+`sidebar-stat-row`를 카드 하나 단위에서 **리스트 행 하나** 단위로 재정의해
+(`sidebar-stat-list`가 바깥 카드 테두리를 갖고 그 안에 `sidebar-stat-row`
+두 개가 세로로 쌓임, 행 사이엔 `widget-item`과 동일한 패턴의
+`border-top` 구분선), 각 행 안에서 라벨(왼쪽)과 값(오른쪽)을
+`justify-content: space-between`으로 배치했다. 라벨은 `card.css`의
+`[data-slot="card-title"]`를 그대로 재사용(다만 `widgets.css`가 그
+아사이드 스코프에서 `--text-xs`로 축소해 쓰는 것과 동일한 폰트 크기·굵기를
+사이드바 스코프에도 그대로 적용) — 값도 정확히 같은 `font` 축약(굵기·
+크기·자간)을 쓰도록 맞춰 라벨/값 두 텍스트가 시각적으로 동일한 크기로
+보이게 했다(요청: "폰트사이즈는 동일하게"). 접힘 상태(`data-footer-stat=
+"collapsed"`)의 아이콘+툴팁 표시는 그대로 유지 — 이번 변경은 펼침 상태
+(`data-footer-stat="expanded"`)에만 해당한다.
+

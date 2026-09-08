@@ -159,16 +159,16 @@
               <div data-slot="tooltip-content" data-state="closed" data-side="right" role="tooltip">Today 12 · Total 1,024</div>
             </li>
             <li data-slot="sidebar-menu-item" data-footer-stat="expanded">
-              <div data-slot="sidebar-stat-row">
-                <div data-slot="sidebar-stat-card">
-                  <span data-slot="sidebar-stat-label">Today</span>
+              <ul data-slot="sidebar-stat-list">
+                <li data-slot="sidebar-stat-row">
+                  <span data-slot="card-title">Today</span>
                   <span data-slot="sidebar-stat-value">12</span>
-                </div>
-                <div data-slot="sidebar-stat-card">
-                  <span data-slot="sidebar-stat-label">Total</span>
+                </li>
+                <li data-slot="sidebar-stat-row">
+                  <span data-slot="card-title">Total</span>
                   <span data-slot="sidebar-stat-value">1,024</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </li>
             
           </ul>
@@ -675,5 +675,8 @@
 <script src="/dashboard-skin/components/smooth-scroll.js"></script>
 </body>
 </html>
+
+
+
 
 

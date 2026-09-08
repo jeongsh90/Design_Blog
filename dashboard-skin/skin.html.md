@@ -136,3 +136,15 @@ Design(하위 3개, Font만 new)/Code(신규, 이전엔 하드코딩 목록에 �
 카테고리)/Ai로 구성, 실사이트의 "하드코딩된 사이드바가 실제로는 최신
 카테고리 상태와 어긋나 있었다"는 문제 상황을 그대로 재현한다.
 
+---
+
+## 2026-09-08 수정 — 사이드바 방문자 위젯 마크업: 카드 2개 → `ul`/`li` 리스트 행
+
+`sidebar-menu-item[data-footer-stat="expanded"]` 안쪽을 `div.sidebar-stat-row`
+(flex row) > `div.sidebar-stat-card` × 2(각각 label/value 세로 쌓임)에서
+`ul[data-slot="sidebar-stat-list"]` > `li[data-slot="sidebar-stat-row"]` × 2
+(각 행 안에 라벨 `span[data-slot="card-title"]` + 값
+`span[data-slot="sidebar-stat-value"]`을 좌우로 배치)로 재구성. 상세 사유·CSS는
+`components/sidebar.css.md` 참고. 접힘 상태(`data-footer-stat="collapsed"`)의
+아이콘+`data-tooltip`/`tooltip-content` 마크업은 그대로 유지.
+

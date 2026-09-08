@@ -11,12 +11,15 @@
     var links = document.querySelectorAll("[data-pagination-link]");
     if (!links.length) return;
 
-    var here = window.location.pathname + window.location.search;
+    var currentPage = new URLSearchParams(window.location.search).get("page") || "1";
 
     Array.prototype.forEach.call(links, function (link) {
       if (!link.getAttribute("href")) return;
 
-      if (link.pathname + link.search === here) {
+      var linkPage = new URLSearchParams(link.search).get("page") || "1";
+      var isCurrent = link.pathname === window.location.pathname && linkPage === currentPage;
+
+      if (isCurrent) {
         link.setAttribute("aria-current", "page");
         link.setAttribute("data-variant", "outline");
       } else {

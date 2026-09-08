@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+html,body{margin:0;padding:0;}
+body{
+  width:1200px;height:630px;
+  background:#171717;
+  font-family:'Pretendard Variable','Pretendard',-apple-system,sans-serif;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 96px;
+  box-sizing:border-box;
+  position:relative;
+  overflow:hidden;
+}
+.grid-bg{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse 900px 500px at 30% 40%, black, transparent);
+}
+.kicker{
+  font-weight:600;
+  font-size:24px;
+  letter-spacing:0.02em;
+  color:#8ec5ff;
+  position:relative;
+}
+.title{
+  font-weight:700;
+  font-size:68px;
+  letter-spacing:-0.02em;
+  color:#fafafa;
+  margin-top:16px;
+  position:relative;
+}
+.list{
+  margin-top:44px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  position:relative;
+}
+.row{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+.num{
+  width:36px;height:36px;
+  border-radius:999px;
+  background:#8ec5ff;
+  color:#0a0a0a;
+  font-weight:700;
+  font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.name{
+  font-weight:600;
+  font-size:28px;
+  color:#fafafa;
+  letter-spacing:-0.01em;
+}
+.cmd{
+  font-family:'SFMono-Regular',Consolas,monospace;
+  font-size:20px;
+  color:#a1a1a1;
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="kicker">AI · SKILL</div>
+<div class="title">클로드 코드 필수 스킬 5개</div>
+<div class="list">
+  <div class="row"><div class="num">1</div><div class="name">Agent Browser</div><div class="cmd">/agent-browser</div></div>
+  <div class="row"><div class="num">2</div><div class="name">Find Skills</div></div>
+  <div class="row"><div class="num">3</div><div class="name">GSD Core</div></div>
+  <div class="row"><div class="num">4</div><div class="name">Design Taste Frontend</div><div class="cmd">/design-taste</div></div>
+  <div class="row"><div class="num">5</div><div class="name">MCP Builder</div></div>
+</div>
+</body>
+</html>

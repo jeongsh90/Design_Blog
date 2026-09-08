@@ -83,6 +83,7 @@
 /plugin install ruflo-swarm@ruflo
 /plugin install ruflo-rag-memory@ruflo</code></pre>
 <div style="margin-top:calc(var(--spacing) * 4);font-size:var(--text-sm);color:var(--color-muted-foreground);">이 경로로 설치하면 <code>ruflo-core</code> 플러그인이 자체 MCP 서버를 등록합니다(도구 이름은 <code>mcp__plugin_ruflo-core_ruflo__*</code> 형태). 다른 플러그인 대부분은 자체 MCP 서버를 갖지 않습니다.</div>
+<div style="margin-top:calc(var(--spacing) * 4);font-size:var(--text-sm);color:var(--color-muted-foreground);">이 슬래시 명령어들은 터미널이 아니라 <strong style="color:var(--color-foreground);">Claude Code 채팅창</strong>에 그대로 입력하는 것입니다 — 위 네 줄을 그대로 붙여넣으면 Claude Code가 바로 처리합니다.</div>
 </div>
 
 <div style="margin-top:calc(var(--spacing) * 6);background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:calc(var(--spacing) * 6);">
@@ -101,10 +102,14 @@ npx ruflo@latest init
 npm install -g ruflo@latest</code></pre>
 <div style="margin-top:calc(var(--spacing) * 4);font-size:var(--text-sm);color:var(--color-muted-foreground);">Windows에서 <code>curl ... | bash</code> 방식은 POSIX 셸(Git-Bash, WSL, MSYS)이 필요합니다. <code>'bash' is not recognized</code> 오류가 나면 <code>npx ruflo@latest init wizard</code> 쪽을 쓰면 됩니다 — 결과적으로 같은 초기화 과정을 거칩니다.</div>
 <div style="margin-top:calc(var(--spacing) * 2);font-size:var(--text-sm);color:var(--color-muted-foreground);">CLI로 설치하면 워크스페이스에 <code>.claude/</code>, <code>.claude-flow/</code>, <code>CLAUDE.md</code>, 각종 헬퍼·설정 파일이 생성되고, MCP 서버와 훅(hooks)까지 전부 자동으로 붙습니다.</div>
+<div style="margin-top:calc(var(--spacing) * 4);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">채팅창 설치 요청</strong> — 터미널을 따로 열 필요 없이, 아래 문장을 Claude Code 채팅창에 그대로 붙여넣으면 Claude가 셸 명령으로 인식해 실행 여부를 확인한 뒤 진행합니다(운영체제와 무관하게 동작하는 대화형 마법사 경로 기준).</div>
+<pre><code class="language-text">ruflo를 설치하고 싶어. npx ruflo@latest init wizard를 실행해줘.</code></pre>
 </div>
 
 <p style="margin-top:calc(var(--spacing) * 8);font-weight:var(--font-weight-semibold);">MCP 서버로 등록하고 싶다면</p>
 <pre><code class="language-bash">claude mcp add claude-flow -- npx ruflo@latest mcp start</code></pre>
+<div style="margin-top:calc(var(--spacing) * 3);font-size:var(--text-sm);color:var(--color-muted-foreground);"><strong style="color:var(--color-foreground);">채팅창 설치 요청</strong> — 아래 문장을 Claude Code 채팅창에 그대로 붙여넣으세요.</div>
+<pre><code class="language-text">Ruflo를 MCP 서버로 등록하고 싶어. claude mcp add claude-flow -- npx ruflo@latest mcp start를 실행해줘.</code></pre>
 
 <h2>사용방법</h2>
 <p>가장 인상적인 부분은 여기입니다 — 공식 문서는 이렇게 안내합니다.</p>
