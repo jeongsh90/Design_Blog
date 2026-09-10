@@ -1,0 +1,2917 @@
+[
+  {
+    "id": 468,
+    "catalogName": "노회찬체",
+    "maker": "노회찬재단",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/468",
+    "finalUrl": "https://noonnu.cc/font_page/468",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ROEHOE-CHAN",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/ROEHOE-CHAN.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ROEHOE-CHAN';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/ROEHOE-CHAN.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 '노회찬체'의 지적 재산권은 (재)평등하고공정한나라 노회찬재단에 있습니다. '노회찬체'는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며, 글꼴 자체를 유료로 판매하는 것을 제외한 상업적인 사용이 가능합니다. '노회찬체'는 미디어의 종류, 용도에 제한 없이 자유롭게 사용 및 재배포가 가능합니다. 단, 최초 배포한 폰트 파일의 수정은 금지합니다. '노회찬체'의 재배포 시에는 저작권 안내 파일을 포함하여야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 470,
+    "catalogName": "완도청정바다체",
+    "maker": "완도군",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/470",
+    "finalUrl": "https://noonnu.cc/font_page/470",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "WandocleanseaB",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandocleanseaB.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'WandocleanseaB';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandocleanseaB.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "WandocleanseaR",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandocleanseaR.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'WandocleanseaR';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandocleanseaR.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 700 라이선스 본문 - 완도군 전용서체(완도청정바다체, 완도희망체)의 지적 재산권은 완도군(www.wando.go.kr)에 있습니다. - 완도군 전용서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공됩니다. - 완도군 전용서체는 인쇄물, 웹, 모바일, 광고물, 영상자료 등 다양한 범위에서 사용가능합니다. - 완도군 전용서체를 유료 양도 및 유료 판매하는 상업적 행위를 금지합니다. - 완도군 전용서체는 임의로 수정하거나 재배포 할 수 없으며, 배포된 형태 그대로 사용해야 합니다. - 완도군 전용서체는 완도군의 이미지를 훼손할 수 있는 불법사이트나, 허위과장광고, 기타 공서양속에 반하는 인쇄/광고물에 사용을 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 471,
+    "catalogName": "완도희망체",
+    "maker": "완도군",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/471",
+    "finalUrl": "https://noonnu.cc/font_page/471",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "WandohopeR",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'WandohopeR';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "WandohopeB",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'WandohopeB';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 700 라이선스 본문 - 완도군 전용서체(완도청정바다체, 완도희망체)의 지적 재산권은 완도군(www.wando.go.kr)에 있습니다. - 완도군 전용서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공됩니다. - 완도군 전용서체는 인쇄물, 웹, 모바일, 광고물, 영상자료 등 다양한 범위에서 사용가능합니다. - 완도군 전용서체를 유료 양도 및 유료 판매하는 상업적 행위를 금지합니다. - 완도군 전용서체는 임의로 수정하거나 재배포 할 수 없으며, 배포된 형태 그대로 사용해야 합니다. - 완도군 전용서체는 완도군의 이미지를 훼손할 수 있는 불법사이트나, 허위과장광고, 기타 공서양속에 반하는 인쇄/광고물에 사용을 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 477,
+    "catalogName": "비트로 코어체",
+    "maker": "(주)학산",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/477",
+    "finalUrl": "https://noonnu.cc/font_page/477",
+    "status": 200,
+    "faceCount": 2,
+    "modern": [
+      {
+        "family": "Vitro_core",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Vitro_core';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작에 사용 금지"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 [요약] 가능: 상업적 목적의 사용(사용범위: 인쇄물, 광고물, 온라인, 영상 포함) 불가능: 스포츠관련업종(스포츠 의류, 신발 및 용품 제조업, 스포츠 서비스, 스포츠 유통)의 상업적 목적 사용, 모든 종류의 임베딩, CI, BI, 서브라이선스, 단독판매, 상표권 이용 비트로 서체(비트로 코어, 비트로 프라이드)의 지적재산권을 포함한 모든 권리는 ‘(주)학산’에게 있습니다. 비트로 서체를 다운로드 받는 사용자는 아래의 모든 라이선스 조항에 동의한 것으로 간주합니다. 비트로 서체는 개인 및 기업 사용자를 포함한 모든 사용자들에게 무료로 제공되며 온/오프라인, 상품, 광고 등 상업적 목적으로 사용할 수 있습니다. 단, 스포츠 관련업종(스포츠 의류, 신발 및 용품 제조업, 스포츠 서비스, 스포츠 유통)의 상업적 목적으로 사용을 금지합니다. 비트로 서체 자체를 유료로 판매하거나, 어떠한 형태로든 임의 수정하여 서체를 재배포 하는 것은 금지합니다. (주)학산(계열사포함)에 대하여 부정적 영향을 미칠 수 있거나 반사회적 제작물(음란물 등)에는 사용할 수 없습니다. 비트로 서체를 사용한 결과물은 (주)학산의 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 경우, 언제든지 당사에 요청하실 수 있습니다. 라이선스 전문보기",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": true,
+    "skip": "embedding banned"
+  },
+  {
+    "id": 478,
+    "catalogName": "비트로 프라이드체",
+    "maker": "(주)학산",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/478",
+    "finalUrl": "https://noonnu.cc/font_page/478",
+    "status": 200,
+    "faceCount": 2,
+    "modern": [
+      {
+        "family": "Vitro_pride",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_pride.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Vitro_pride';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_pride.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작에 사용 금지"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 [요약] 가능: 상업적 목적의 사용(사용범위: 인쇄물, 광고물, 온라인, 영상 포함) 불가능: 스포츠관련업종(스포츠 의류, 신발 및 용품 제조업, 스포츠 서비스, 스포츠 유통)의 상업적 목적 사용, 모든 종류의 임베딩, CI, BI, 서브라이선스, 단독판매, 상표권 이용 비트로 서체(비트로 코어, 비트로 프라이드)의 지적재산권을 포함한 모든 권리는 ‘(주)학산’에게 있습니다. 비트로 서체를 다운로드 받는 사용자는 아래의 모든 라이선스 조항에 동의한 것으로 간주합니다. 비트로 서체는 개인 및 기업 사용자를 포함한 모든 사용자들에게 무료로 제공되며 온/오프라인, 상품, 광고 등 상업적 목적으로 사용할 수 있습니다. 단, 스포츠 관련업종(스포츠 의류, 신발 및 용품 제조업, 스포츠 서비스, 스포츠 유통)의 상업적 목적으로 사용을 금지합니다. 비트로 서체 자체를 유료로 판매하거나, 어떠한 형태로든 임의 수정하여 서체를 재배포 하는 것은 금지합니다. (주)학산(계열사포함)에 대하여 부정적 영향을 미칠 수 있거나 반사회적 제작물(음란물 등)에는 사용할 수 없습니다. 비트로 서체를 사용한 결과물은 (주)학산의 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 경우, 언제든지 당사에 요청하실 수 있습니다. 라이선스 전문보기",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": true,
+    "skip": "embedding banned"
+  },
+  {
+    "id": 479,
+    "catalogName": "한글재민체",
+    "maker": "박재갑",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/479",
+    "finalUrl": "https://noonnu.cc/font_page/479",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Jaemin",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jaemin.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Jaemin';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jaemin.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 SIL 오픈 폰트 라이선스를 따릅니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 480,
+    "catalogName": "위메프체",
+    "maker": "위메프",
+    "catalogWeights": "3가지 굵기",
+    "url": "https://noonnu.cc/font_page/480",
+    "finalUrl": "https://noonnu.cc/font_page/480",
+    "status": 200,
+    "faceCount": 7,
+    "modern": [
+      {
+        "family": "Wemakeprice-Regular",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Regular.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Wemakeprice-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Regular.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "Wemakeprice-SemiBold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-SemiBold.woff",
+        "weight": "600",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Wemakeprice-SemiBold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-SemiBold.woff') format('woff');\n    font-weight: 600;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "Wemakeprice-Bold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Bold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Wemakeprice-Bold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Bold.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "how#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 600 700 라이선스 본문 - 위메프 전용서체 ‘위메프체’의 저작권을 포함한 모든 지식재산권은 ‘위메프’가 소유합니다. - ‘위메프체’는 개인 및 기업을 포함한 모든 사용자에게 무료로 제공되며 자유로운 사용이 가능합니다. - ‘위메프체’ 사용 시 서체의 출처 표기를 권장합니다. &lt;예시&gt; 이 페이지에는 (주)위메프가 제공한 위메프체가 적용되어 있습니다. - ‘위메프체’를 사용한 인쇄물, 광고물(온/오프라인) 등의 이미지는 ‘위메프’의 마케팅과 프로모션을 위해 활용될 수 있습니다. - 이를 원치 않는 사용자는 언제든지 당사에게 그 활용의 중단을 요청할 수 있습니다. - 단, 서체 자체의 유료 판매 행위, 임의 수정/개작 및 이를 배포하는 행위, 본 서체를 사용하여 상호, CI/BI 로고 등을 제작하거나 이를 상표로써 사용하는 행위는 어떠한 형태로든 금지합니다. - 또한 위메프의 이미지를 훼손할 수 있는 불법 사이트나 허위 과장광고, 기타 공서양속에 반하는 인쇄/광고물에 사용을 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 483,
+    "catalogName": "영양군 음식디미방체",
+    "maker": "영양군 X 헤움디자인",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/483",
+    "finalUrl": "https://noonnu.cc/font_page/483",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "dimibang_new",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/dimibang_new.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'dimibang_new';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/dimibang_new.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 영양군 음식디미방체는 누구나 무료로 다운로드 받아 사용하실 수 있습니다. 영상, 매체, 인터넷, 모바일 등 다양한 매체에서 자유롭게 사용이 가능하며, 특별한 허가 절차 없이 사용하실 수 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 484,
+    "catalogName": "코트라 고딕체",
+    "maker": "Kotra",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/484",
+    "finalUrl": "https://noonnu.cc/font_page/484",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "KOTRA_GOTHIC",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'KOTRA_GOTHIC';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 사용안내 : 개인, 기관, 기업 모두 사용 가능 (상업적 목적의 활용 가능) 단, 폰트를 임의적으로 수정하거나 재배포하는 것을 금지합니다. (kotra 홈페이지를 통해서만 배포 가능) 문의: KOTRA 고객서비스팀(02-3460-7326)",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 485,
+    "catalogName": "코트라 볼드체",
+    "maker": "Kotra",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/485",
+    "finalUrl": "https://noonnu.cc/font_page/485",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "KOTRA_BOLD-Bold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'KOTRA_BOLD-Bold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 사용안내 : 개인, 기관, 기업 모두 사용 가능 (상업적 목적의 활용 가능) 단, 폰트를 임의적으로 수정하거나 재배포하는 것을 금지합니다. (kotra 홈페이지를 통해서만 배포 가능) 문의: KOTRA 고객서비스팀(02-3460-7326)",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 486,
+    "catalogName": "코트라 손글씨체",
+    "maker": "Kotra",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/486",
+    "finalUrl": "https://noonnu.cc/font_page/486",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "KOTRA_SONGEULSSI",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_SONGEULSSI.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'KOTRA_SONGEULSSI';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_SONGEULSSI.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 사용안내 : 개인, 기관, 기업 모두 사용 가능 (상업적 목적의 활용 가능) 단, 폰트를 임의적으로 수정하거나 재배포하는 것을 금지합니다. (kotra 홈페이지를 통해서만 배포 가능) 문의: KOTRA 고객서비스팀(02-3460-7326)",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 487,
+    "catalogName": "마루 부리",
+    "maker": "네이버",
+    "catalogWeights": "5가지 굵기",
+    "url": "https://noonnu.cc/font_page/487",
+    "finalUrl": "https://noonnu.cc/font_page/487",
+    "status": 200,
+    "faceCount": 0,
+    "modern": [],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "sizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 200 300 400 600 700 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "skip": "no @font-face"
+  },
+  {
+    "id": 497,
+    "catalogName": "잘풀리는오늘체",
+    "maker": "잘풀리는집",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/497",
+    "finalUrl": "https://noonnu.cc/font_page/497",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Jal_Onuel",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Jal_Onuel';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 잘풀리는집 서체(잘풀리는 오늘체, 잘풀리는 하루체)의 지적 재산권은 잘풀리는집이 소유하고 있습니다. 잘풀리는집 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 인쇄물, 광고물, 온라인 등 상업적 목적으로 자유롭게 사용할 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 잘풀리는집 서체는 수정 및 재배포를 할 수 없으며, 배포되는 형태 그대로 사용해야 합니다. 잘풀리는집 서체를 사용한 인쇄물, 광고물(온/오프라인), 상품 등의 이미지는 잘풀리는집의 마케팅을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 문의 www.jjtissue.com / zalzip@naver.com",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 498,
+    "catalogName": "잘풀리는하루체",
+    "maker": "잘풀리는집",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/498",
+    "finalUrl": "https://noonnu.cc/font_page/498",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Jal_Haru",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Haru.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Jal_Haru';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Haru.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 잘풀리는집 서체(잘풀리는 오늘체, 잘풀리는 하루체)의 지적 재산권은 잘풀리는집이 소유하고 있습니다. 잘풀리는집 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 인쇄물, 광고물, 온라인 등 상업적 목적으로 자유롭게 사용할 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 잘풀리는집 서체는 수정 및 재배포를 할 수 없으며, 배포되는 형태 그대로 사용해야 합니다. 잘풀리는집 서체를 사용한 인쇄물, 광고물(온/오프라인), 상품 등의 이미지는 잘풀리는집의 마케팅을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 문의 www.jjtissue.com / zalzip@naver.com",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 499,
+    "catalogName": "을지로10년후체",
+    "maker": "우아한형제들",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/499",
+    "finalUrl": "https://noonnu.cc/font_page/499",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "BMEuljiro10yearslater",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/BMEuljiro10yearslater.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'BMEuljiro10yearslater';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/BMEuljiro10yearslater.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 배달의민족 폰트의 지적 재산권은 ㈜우아한형제들에 있습니다. 배달의민족 폰트는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며, 배달의민족 폰트는 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 배달의민족 폰트 라이선스 전문을 포함하기 어려울 경우, 배달의민족 폰트의 출처 표기를 권장합니다. 예) 이 페이지에는 우아한형제들에서 제공한 배달의민족 폰트가 적용되어 있습니다. 배달의민족 폰트를 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 우아한형제들(배달의민족) 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 배달의민족 폰트 라이선스 전문을 참고하시기 바랍니다. 본 폰트 소프트웨어는 SIL 오픈 폰트 라이선스 버전 1.1에 따라 라이선스 취득을 하였습니다. 본 라이선스는 하단에 복사되었고 http://scripts.sil.org/OFL의 FAQ란 에서도 열람가능 합니다. 라이선스 전문 : http://www.woowahan.com/license.html?keepThis=true&TB_iframe=true&height=620&width=659&modal=true",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 500,
+    "catalogName": "Y 너만을 비춤체",
+    "maker": "(주)케이티",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/500",
+    "finalUrl": "https://noonnu.cc/font_page/500",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Y_Spotlight",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Y_Spotlight';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 • 'Y 너만을 비춤체' 폰트의 지식재산권은 |주|케이티에 있다. • 'Y 너만을 비춤체' 폰트는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며, 폰트 사용자에 의한 재배포 또한 가능하다. 단, 폰트 파일의 수정 및 유료 판매는 금지한다. • 'Y 너만을 비춤체' 폰트는 인쇄, 웹, 영상, 임베딩, 패키지 등에 상업적 목적으로 사용이 가능하다. 단, BI/CI 용도로는 사용을 금지한다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 502,
+    "catalogName": "이랜드 초이스체",
+    "maker": "이랜드 리테일",
+    "catalogWeights": "3가지 굵기",
+    "url": "https://noonnu.cc/font_page/502",
+    "finalUrl": "https://noonnu.cc/font_page/502",
+    "status": 200,
+    "faceCount": 7,
+    "modern": [
+      {
+        "family": "ELAND_Choice_M",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_M.woff",
+        "weight": "500",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ELAND_Choice_M';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_M.woff') format('woff');\n    font-weight: 500;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "ELAND_Choice_L",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_L.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ELAND_Choice_L';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_L.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "ELAND_Choice_B",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_B.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ELAND_Choice_B';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Choice_B.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "how#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 500 700 라이선스 본문 나이스 초이스 서체의 지적 재산권은 이랜드 리테일에 있습니다. 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정, 재배포가 가능합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 504,
+    "catalogName": "이랜드 나이스체",
+    "maker": "이랜드 리테일",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/504",
+    "finalUrl": "https://noonnu.cc/font_page/504",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ELAND_Nice_M",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Nice_M.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ELAND_Nice_M';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/ELAND_Nice_M.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 나이스 초이스 서체의 지적 재산권은 이랜드 리테일에 있습니다. 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정, 재배포가 가능합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 506,
+    "catalogName": "솔뫼 김대건체",
+    "maker": "써밋디자인",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/506",
+    "finalUrl": "https://noonnu.cc/font_page/506",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "kdg_Medium",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/kdg_Medium.woff",
+        "weight": "500",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'kdg_Medium';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/kdg_Medium.woff') format('woff');\n    font-weight: 500;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "kdg_Light",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/kdg_Light.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'kdg_Light';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/kdg_Light.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 500 라이선스 본문 솔뫼 김대건 글꼴은 자유롭게 수정·변경하여 영리적·비영리적 목적으로 개인 및 기업 사용자가 모두 사용하실 수 있으나, 다만, 글꼴 폰트 파일(otf/ttf)자체를 유상으로 판매하는 것은 금지하고 있으니 유의 부탁드립니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 507,
+    "catalogName": "산돌 삼립호빵체 Basic",
+    "maker": "SPC삼립 X 산돌\u001c",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/507",
+    "finalUrl": "https://noonnu.cc/font_page/507",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "SDSamliphopangche_Basic",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'SDSamliphopangche_Basic';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Basic.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 Sandoll 삼립호빵체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며, Sandoll 삼립호빵체는 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 라이선스 전문을 포함하기 어려울 경우, Sandoll 삼립호빵체의 출처 표기를 권장합니다. 예) 이 페이지는 (주)SPC삼립에서 제공한 Sandoll 삼립호빵체가 사용되어 있습니다. This Font Software is licensed under the SIL Open Font License, Version 1.1. Sandoll 삼립호빵체의 저작권은 (주)SPC삼립과 (주)산돌이 공동 소유하고 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 508,
+    "catalogName": "산돌 삼립호빵체 Outline",
+    "maker": "SPC삼립 X 산돌\u001c",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/508",
+    "finalUrl": "https://noonnu.cc/font_page/508",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "SDSamliphopangche_Outline",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'SDSamliphopangche_Outline';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 Sandoll 삼립호빵체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며, Sandoll 삼립호빵체는 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 라이선스 전문을 포함하기 어려울 경우, Sandoll 삼립호빵체의 출처 표기를 권장합니다. 예) 이 페이지는 (주)SPC삼립에서 제공한 Sandoll 삼립호빵체가 사용되어 있습니다. This Font Software is licensed under the SIL Open Font License, Version 1.1. Sandoll 삼립호빵체의 저작권은 (주)SPC삼립과 (주)산돌이 공동 소유하고 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 510,
+    "catalogName": "아인맘 손글씨",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/510",
+    "finalUrl": "https://noonnu.cc/font_page/510",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Ainmom",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Ainmom.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Ainmom';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Ainmom.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 511,
+    "catalogName": "암스테르담",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/511",
+    "finalUrl": "https://noonnu.cc/font_page/511",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Amsterdam",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Amsterdam.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Amsterdam';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Amsterdam.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 512,
+    "catalogName": "안쌍체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/512",
+    "finalUrl": "https://noonnu.cc/font_page/512",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Anssang",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Anssang.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Anssang';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Anssang.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 513,
+    "catalogName": "아기사랑체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/513",
+    "finalUrl": "https://noonnu.cc/font_page/513",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Baby_love",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Baby_love.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Baby_love';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Baby_love.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 514,
+    "catalogName": "바른히피",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/514",
+    "finalUrl": "https://noonnu.cc/font_page/514",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Bareun_hipi",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_hipi.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Bareun_hipi';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_hipi.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 515,
+    "catalogName": "바른정신",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/515",
+    "finalUrl": "https://noonnu.cc/font_page/515",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Bareun_mental",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_mental.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Bareun_mental';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_mental.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 516,
+    "catalogName": "빵구니맘 손글씨",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/516",
+    "finalUrl": "https://noonnu.cc/font_page/516",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Bbang_gunimom",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bbang_gunimom.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Bbang_gunimom';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bbang_gunimom.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 517,
+    "catalogName": "야채장수 백금례",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/517",
+    "finalUrl": "https://noonnu.cc/font_page/517",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Beakeumrye",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beakeumrye.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Beakeumrye';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beakeumrye.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 518,
+    "catalogName": "하나되어 손글씨",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/518",
+    "finalUrl": "https://noonnu.cc/font_page/518",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Become_one",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Become_one.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Become_one';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Become_one.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 519,
+    "catalogName": "배은혜체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/519",
+    "finalUrl": "https://noonnu.cc/font_page/519",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Beeunhye",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Beeunhye';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 520,
+    "catalogName": "비상체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/520",
+    "finalUrl": "https://noonnu.cc/font_page/520",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Bisang",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Bisang.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Bisang';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Bisang.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 521,
+    "catalogName": "버드나무",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/521",
+    "finalUrl": "https://noonnu.cc/font_page/521",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Bud_tree",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Bud_tree.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Bud_tree';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Bud_tree.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 522,
+    "catalogName": "부장님 눈치체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/522",
+    "finalUrl": "https://noonnu.cc/font_page/522",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Bujangnim_nunchi",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Bujangnim_nunchi.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Bujangnim_nunchi';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Bujangnim_nunchi.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 523,
+    "catalogName": "범솜체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/523",
+    "finalUrl": "https://noonnu.cc/font_page/523",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Bumsom",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Bumsom.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Bumsom';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Bumsom.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 524,
+    "catalogName": "초딩희망",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/524",
+    "finalUrl": "https://noonnu.cc/font_page/524",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Choding_hope",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Choding_hope.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Choding_hope';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Choding_hope.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 525,
+    "catalogName": "철필글씨",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/525",
+    "finalUrl": "https://noonnu.cc/font_page/525",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Chulpil_writing",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Chulpil_writing.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Chulpil_writing';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Chulpil_writing.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 526,
+    "catalogName": "코코체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/526",
+    "finalUrl": "https://noonnu.cc/font_page/526",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Coco",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Coco.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Coco';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Coco.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 527,
+    "catalogName": "시우 귀여워",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/527",
+    "finalUrl": "https://noonnu.cc/font_page/527",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Cute_siu",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Cut_siu.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Cute_siu';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Cut_siu.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 528,
+    "catalogName": "다채사랑",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/528",
+    "finalUrl": "https://noonnu.cc/font_page/528",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Dache_love",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Dache_love.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Dache_love';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Dache_love.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 529,
+    "catalogName": "다행체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/529",
+    "finalUrl": "https://noonnu.cc/font_page/529",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Daheng",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Daheng.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Daheng';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_02@1.0/Daheng.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 530,
+    "catalogName": "다진체",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/530",
+    "finalUrl": "https://noonnu.cc/font_page/530",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Dajin",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_03@1.0/Dajin.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Dajin';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_03@1.0/Dajin.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 531,
+    "catalogName": "우리딸 손글씨",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/531",
+    "finalUrl": "https://noonnu.cc/font_page/531",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Daughter_handwriting",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_03@1.0/Daughter_handwriting.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Daughter_handwriting';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_03@1.0/Daughter_handwriting.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 532,
+    "catalogName": "따악단단",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/532",
+    "finalUrl": "https://noonnu.cc/font_page/532",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Ddakdandan",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_03@1.0/Ddakdandan.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Ddakdandan';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_03@1.0/Ddakdandan.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 533,
+    "catalogName": "또박또박",
+    "maker": "네이버",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/533",
+    "finalUrl": "https://noonnu.cc/font_page/533",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Ddobakddobak",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_03@1.0/Ddobakddobak.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Ddobakddobak';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_03@1.0/Ddobakddobak.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 네이버 나눔글꼴의 지적 재산권은 네이버와 네이버문화재단에 있습니다. 네이버 나눔글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지하며 네이버 나눔글꼴은 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어와 번들하거나 재배포 또는 판매가 가능합니다. 네이버 나눔글꼴 라이선스 전문을 포함하기 어려울 경우, 나눔글꼴의 출처 표기를 권장합니다. 예) 이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다. 네이버 나눔글꼴을 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 나눔글꼴 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 정확한 사용 조건은 아래 네이버 나눔글꼴 라이선스 전문을 참고하시기 바랍니다 라이선스 전문보기 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  }
+]

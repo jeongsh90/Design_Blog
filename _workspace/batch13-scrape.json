@@ -1,0 +1,2744 @@
+[
+  {
+    "id": 395,
+    "catalogName": "정묵바위체",
+    "maker": "상상토끼",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/395",
+    "finalUrl": "https://noonnu.cc/font_page/395",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "SangSangRock",
+        "url": "https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'SangSangRock';\n    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SangSangRockOTF.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 -사용대상 개인/기업 사용자의 상업적인 용도로 자유롭게 사용 가능합니다. -사용용도 개인/기업 사용자의 모든 상업적인 활동 작업물 제작용도로 자유롭게 사용 가능합니다. -사용제한 재배포는 가능하지만, 유료 재판매 및 폰트 파일 수정은 절대 불가합니다.(디자인 수정은 자유롭게 하세요!)",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 397,
+    "catalogName": "엄마까투리체",
+    "maker": "안동시",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/397",
+    "finalUrl": "https://noonnu.cc/font_page/397",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Katuri",
+        "url": "https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Katuri';\n    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 안동서체는 누구나 무료로 다운로드 받아 사용할 수 있습니다. 영상, 인쇄, 인터넷, 모바일 등의 다양한 매체에 자유롭게 사용이 가능하며 특별한 허가 절차 없이 사용할 수 있습니다. 다만, 안동서체를 유료로 양도하거나 판매하는 등 상업적 행위는 금지하고 있으며 전용 서체를 불법으로 변형하여 사용할 수 없습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 398,
+    "catalogName": "월영교체",
+    "maker": "안동시",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/398",
+    "finalUrl": "https://noonnu.cc/font_page/398",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Wolyeonggyo",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Wolyeonggyo.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Wolyeonggyo';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Wolyeonggyo.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 안동서체는 누구나 무료로 다운로드 받아 사용할 수 있습니다. 영상, 인쇄, 인터넷, 모바일 등의 다양한 매체에 자유롭게 사용이 가능하며 특별한 허가 절차 없이 사용할 수 있습니다. 다만, 안동서체를 유료로 양도하거나 판매하는 등 상업적 행위는 금지하고 있으며 전용 서체를 불법으로 변형하여 사용할 수 없습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 399,
+    "catalogName": "유앤피플 고딕체",
+    "maker": "㈜유앤피플",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/399",
+    "finalUrl": "https://noonnu.cc/font_page/399",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "UNPGothicKS",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/UNPGothicKS.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'UNPGothicKS';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/UNPGothicKS.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 OFL (Open Font License)",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 402,
+    "catalogName": "예스체",
+    "maker": "예스24",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/402",
+    "finalUrl": "https://noonnu.cc/font_page/402",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "YES24",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YES24.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'YES24';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YES24.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 예스24 서체(예스체, 예스 고딕, 예스 명조)의 저작권은 예스24에 있습니다. 예스24 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공됩니다. 예스24 서체는 인쇄물, 광고물, 온라인 등 상업적 목적으로 사용할 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것을 금지하며 해당 글꼴에 대한 변형 및 재배포를 할 수 없습니다. 예스24 서체를 사용한 기업의 CI/BI(회사명, 브랜드명, 상품명, 로고, 마크 등)의 제작을 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 404,
+    "catalogName": "예스 고딕",
+    "maker": "예스24",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/404",
+    "finalUrl": "https://noonnu.cc/font_page/404",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "YESGothic-Regular",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESGothic-Regular.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'YESGothic-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESGothic-Regular.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "YESGothic-Bold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESGothic-Bold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'YESGothic-Bold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESGothic-Bold.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 700 라이선스 본문 예스24 서체(예스체, 예스 고딕, 예스 명조)의 저작권은 예스24에 있습니다. 예스24 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공됩니다. 예스24 서체는 인쇄물, 광고물, 온라인 등 상업적 목적으로 사용할 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것을 금지하며 해당 글꼴에 대한 변형 및 재배포를 할 수 없습니다. 예스24 서체를 사용한 기업의 CI/BI(회사명, 브랜드명, 상품명, 로고, 마크 등)의 제작을 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 406,
+    "catalogName": "예스 명조",
+    "maker": "예스24",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/406",
+    "finalUrl": "https://noonnu.cc/font_page/406",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "YESMyoungjo-Regular",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Regular.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'YESMyoungjo-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Regular.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "YESMyoungjo-Bold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Bold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'YESMyoungjo-Bold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Bold.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 700 라이선스 본문 예스24 서체(예스체, 예스 고딕, 예스 명조)의 저작권은 예스24에 있습니다. 예스24 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공됩니다. 예스24 서체는 인쇄물, 광고물, 온라인 등 상업적 목적으로 사용할 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것을 금지하며 해당 글꼴에 대한 변형 및 재배포를 할 수 없습니다. 예스24 서체를 사용한 기업의 CI/BI(회사명, 브랜드명, 상품명, 로고, 마크 등)의 제작을 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 407,
+    "catalogName": "TT투게더",
+    "maker": "투게더그룹",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/407",
+    "finalUrl": "https://noonnu.cc/font_page/407",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "TTTogether",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'TTTogether';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "조건부 허용"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 'TT투게더체'의 지식 재산권은 주식회사 투게더그룹에 있습니다. 'TT투게더체'는 개인 및 기업, 단체 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용할 수 있습니다. 'TT투게더체'는 온/오프라인, 상품, 광고 등 모든범위에 상업적 목적으로 사용할 수 있습니다. 'TT투게더체'는 본 저작권 안내와 라이선스 전문을 포함해서 다른 소프트웨어에 임베딩 및 번들하거나 재배포가 가능합니다. 라이선스 전문을 포함하기 어려울 경우 ‘TT투게더체'의 출처 표기를 권장합니다. 예) 이 페이지에는 주식회사 투게더그룹에서 제작한 ‘TT투게더체’가 적용되어 있습니다. 'TT투게더체'는 배포되는 형태 그대로 사용해야 합니다. 그리고, 어떠한 형태로든 임의 수정 및 개작, 유료 판매를 금지합니다. 배포는 주식회사 투게더그룹의 홈페이지에서만 가능합니다. (2차 배포 금지) 'TT투게더체'를 사용한 온/오프라인, 상품, 광고 등 모든 종류의 창작물은 주식회사 투게더그룹의 프로모션을 위해 활용될 수 있습니다. Update: 2020. 1. 3 문의전화 : 02. 408. 2019 카카오채널 : @투게더그룹 * 보다 신속한 상담을 원하시는 경우 카카오채널로 문의주시기 바랍니다. 라이선스 전문보기",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 408,
+    "catalogName": "가나초콜릿체",
+    "maker": "롯데웰푸드",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/408",
+    "finalUrl": "https://noonnu.cc/font_page/408",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ghanachoco",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ghanachoco';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 가. 사용권 개인 및 기업 사용자를 포함한 모든 사용자에게 가나초콜릿체를 무료로 사용할 수 있는 권리를 드립니다. 이는 가나초콜릿체의 소유권에 대한 내용이 아니며, 사용권에 대한 내용입니다. 나. 저작권 가나초콜릿체의 지적재산권은 전적으로 롯데제과 주식회사(“롯데제과”)가 보유하고 있으며 사용자는 다양한 매체에 자유롭게 특별한 허가 절차 없이 사용할 수 있습니다. 단, 유료로 가나초콜릿체 자체를 양도하거나, 판매하는 등의 행위는 금지합니다. 가나초콜릿체를 사용한 인쇄물, 게임, 온/오프라인 광고물의 이미지는 롯데제과 프로모션을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 문의 (고객지원센터 : 080-024-6060) 다. 기능 롯데제과는 정상적인 사용환경에서 사용하는 통상적인 사용자들이 무리 없이 사용할 수 있도록 가나초콜릿체를 개발하고 테스트하였습니다. 그러나 사용자 개개인의 특수한 사용환경, 현재 또는 미래의 모든 운영 체제 등에서 항상 완벽하게 동작 한다는 보증을 해드리지 못함을 양해해 주시기 바랍니다. 하지만, 사용자가 사용상 문제점(버그)을 발견한 다음 롯데제과에 통보해 줄 경우, 문제 해결에 최선을 다해 사용자의 불편을 신속히 해결할 수 있도록 노력할 것을 약속합니다. *문의 (고객지원센터 : 080-024-6060) 라. 면책 가나초콜릿체는 저작권, 특허권, 상표권 및 기타 권리의 비침해성과 특정 목적에의 적합성을 포함한 명시적, 묵시적 보증 없이 \"있는 그대로\" 제공됩니다. 어떠한 경우에도 롯데제과는 사용자의 가나초콜릿체의 사용 및 취급과 관련하여 일반적, 특수적, 간접적, 부차적 혹은 필연적 손해를 포함하는 소송, 손해, 혹은 기타 책임에 대한 의무를 가지지 않습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 409,
+    "catalogName": "솔인써니체",
+    "maker": "솔인시스템",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/409",
+    "finalUrl": "https://noonnu.cc/font_page/409",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "SolinsunnyR",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/SolinsunnyR.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'SolinsunnyR';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/SolinsunnyR.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 - 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공됩니다. - 이 폰트는 솔인시스템 웹 퍼블리셔가 제작하였으며, 소유권은 솔인시스템 기업에게 있습니다. - 어떠한 이유로도 지적 재산권자 이외의 사용자가 수정할 수 없습니다. 배포되는 형태 그대로 사용해야 합니다. - 해당 서체를 이용해서 만들어진 저작물은\u001c폰트 저작자가 홍보 용도로 이용할 수 있습니다. 문의 Tel : 02-6749-6250 sales@solinsystem.co.kr",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 410,
+    "catalogName": "DW임팩타민체",
+    "maker": "대웅제약",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/410",
+    "finalUrl": "https://noonnu.cc/font_page/410",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "DWImpactamin",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'DWImpactamin';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 DW임팩타민체 사용 조건 및 안내 1. DW임팩타민체의 지식재산권은 (주)대웅에 있습니다. 2. DW임팩타민체는 개인 및 기업 사용자에게 무료로 제공되며, 사용자들도 다른 이에게 자유롭게 배포할 수 있습니다. 단, 이 과정에서 어떠한 이유로든 복사 및 배포의 대가로 요금을 부과할 수 없습니다. 3. DW임팩타민체는 인쇄물, 광고물 온라인 등 상업적 목적으로 사용할 수 있습니다. 4. DW임팩타민체는 (주)대웅 이외의 사용자가 수정할 수 없으며, 배포되는 형태 그대로 사용해야 합니다. · 서체 다운로드 시 연령대, 성별 정보를 입력하셔야 다운로드가 가능합니다. · 연령대, 성별 정보 이외 추가 정보는 수집하지 않으며 입력하신 정보는 마케팅 용도로만 활용됩니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 411,
+    "catalogName": "조선굵은명조",
+    "maker": "조선일보",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/411",
+    "finalUrl": "https://noonnu.cc/font_page/411",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ChosunKm",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKm.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ChosunKm';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKm.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 조선일보 전용서체 9종의 지적재산권은 (주)조선일보사에 있습니다. 조선일보 전용서체 9종은 개인 및 기업 사용자에게 무료로 제공됩니다. 사용자들은 이를 다른 이에게 자유롭게 배포할 수 있습니다. 다만 어떠한 경우에도 복사 또는 배포에 따른 대가를 요구하거나 수정해서 판매할 수 없으며, 배포된 형태 그대로 사용해야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 412,
+    "catalogName": "조선가는고딕",
+    "maker": "조선일보",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/412",
+    "finalUrl": "https://noonnu.cc/font_page/412",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ChosunSg",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ChosunSg';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 조선일보 전용서체 9종의 지적재산권은 (주)조선일보사에 있습니다. 조선일보 전용서체 9종은 개인 및 기업 사용자에게 무료로 제공됩니다. 사용자들은 이를 다른 이에게 자유롭게 배포할 수 있습니다. 다만 어떠한 경우에도 복사 또는 배포에 따른 대가를 요구하거나 수정해서 판매할 수 없으며, 배포된 형태 그대로 사용해야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 413,
+    "catalogName": "조선굵은고딕",
+    "maker": "조선일보",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/413",
+    "finalUrl": "https://noonnu.cc/font_page/413",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ChosunKg",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKg.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ChosunKg';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKg.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 조선일보 전용서체 9종의 지적재산권은 (주)조선일보사에 있습니다. 조선일보 전용서체 9종은 개인 및 기업 사용자에게 무료로 제공됩니다. 사용자들은 이를 다른 이에게 자유롭게 배포할 수 있습니다. 다만 어떠한 경우에도 복사 또는 배포에 따른 대가를 요구하거나 수정해서 판매할 수 없으며, 배포된 형태 그대로 사용해야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 414,
+    "catalogName": "조선견고딕",
+    "maker": "조선일보",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/414",
+    "finalUrl": "https://noonnu.cc/font_page/414",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ChosunBg",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ChosunBg';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 조선일보 전용서체 9종의 지적재산권은 (주)조선일보사에 있습니다. 조선일보 전용서체 9종은 개인 및 기업 사용자에게 무료로 제공됩니다. 사용자들은 이를 다른 이에게 자유롭게 배포할 수 있습니다. 다만 어떠한 경우에도 복사 또는 배포에 따른 대가를 요구하거나 수정해서 판매할 수 없으며, 배포된 형태 그대로 사용해야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 415,
+    "catalogName": "조선굴림체",
+    "maker": "조선일보",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/415",
+    "finalUrl": "https://noonnu.cc/font_page/415",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ChosunGu",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ChosunGu';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 조선일보 전용서체 9종의 지적재산권은 (주)조선일보사에 있습니다. 조선일보 전용서체 9종은 개인 및 기업 사용자에게 무료로 제공됩니다. 사용자들은 이를 다른 이에게 자유롭게 배포할 수 있습니다. 다만 어떠한 경우에도 복사 또는 배포에 따른 대가를 요구하거나 수정해서 판매할 수 없으며, 배포된 형태 그대로 사용해야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 416,
+    "catalogName": "조선궁서체",
+    "maker": "조선일보",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/416",
+    "finalUrl": "https://noonnu.cc/font_page/416",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ChosunGs",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ChosunGs';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 조선일보 전용서체 9종의 지적재산권은 (주)조선일보사에 있습니다. 조선일보 전용서체 9종은 개인 및 기업 사용자에게 무료로 제공됩니다. 사용자들은 이를 다른 이에게 자유롭게 배포할 수 있습니다. 다만 어떠한 경우에도 복사 또는 배포에 따른 대가를 요구하거나 수정해서 판매할 수 없으며, 배포된 형태 그대로 사용해야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 417,
+    "catalogName": "조선로고체",
+    "maker": "조선일보",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/417",
+    "finalUrl": "https://noonnu.cc/font_page/417",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ChosunLo",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunLo.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ChosunLo';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunLo.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 조선일보 전용서체 9종의 지적재산권은 (주)조선일보사에 있습니다. 조선일보 전용서체 9종은 개인 및 기업 사용자에게 무료로 제공됩니다. 사용자들은 이를 다른 이에게 자유롭게 배포할 수 있습니다. 다만 어떠한 경우에도 복사 또는 배포에 따른 대가를 요구하거나 수정해서 판매할 수 없으며, 배포된 형태 그대로 사용해야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 418,
+    "catalogName": "조선신명조",
+    "maker": "조선일보",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/418",
+    "finalUrl": "https://noonnu.cc/font_page/418",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ChosunSm",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'ChosunSm';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 조선일보 전용서체 9종의 지적재산권은 (주)조선일보사에 있습니다. 조선일보 전용서체 9종은 개인 및 기업 사용자에게 무료로 제공됩니다. 사용자들은 이를 다른 이에게 자유롭게 배포할 수 있습니다. 다만 어떠한 경우에도 복사 또는 배포에 따른 대가를 요구하거나 수정해서 판매할 수 없으며, 배포된 형태 그대로 사용해야 합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 419,
+    "catalogName": "교보손글씨 2019",
+    "maker": "교보문고",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/419",
+    "finalUrl": "https://noonnu.cc/font_page/419",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "KyoboHand",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'KyoboHand';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 - 유의사항 교보손글씨 2019 서체는 수정 및 변경(디지털 포맷 변경), 개작, 개명, 재배포, 유료양도, 재판매를 금지합니다. 또한 당사의 이미지를 훼손할 수 있는 불법사이트나 허위과장광고, 기타 공서양속에 반하는 인쇄/광고물에 사용을 금지합니다. 교보손글씨 2019 서체를 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 손글쓰기문화확산캠페인 홍보를 위해 활용될 수 있습니다. - 서체 사용범위 인쇄, 웹사이트, 영상, 디바이스, 서버, eBook, 임베이딩, 기타 *기타 자세한 사항은 교보문고 고객센터(1544-1900)로 문의 주시기 바랍니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 422,
+    "catalogName": "양평군체",
+    "maker": "양평군",
+    "catalogWeights": "3가지 굵기",
+    "url": "https://noonnu.cc/font_page/422",
+    "finalUrl": "https://noonnu.cc/font_page/422",
+    "status": 200,
+    "faceCount": 7,
+    "modern": [
+      {
+        "family": "3YangPyeongB",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/3YangPyeongB.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: '3YangPyeongB';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/3YangPyeongB.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "1YangPyeongL",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/1YangPyeongL.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: '1YangPyeongL';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/1YangPyeongL.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "2YangPyeongM",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/2YangPyeongM.woff",
+        "weight": "500",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: '2YangPyeongM';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/2YangPyeongM.woff') format('woff');\n    font-weight: 500;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "how#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 500 700 라이선스 본문 양평군체는 누구나 자유롭게 사용할 수 있습니다.(공공누리 제1유형 - 출처표시 조건) 다만, 유료로 판매하는 등의 행위는 금지하고 있습니다. 소통협력담당관 홍보팀 031-770-2055",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 423,
+    "catalogName": "넥슨 배찌체",
+    "maker": "넥슨",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/423",
+    "finalUrl": "https://noonnu.cc/font_page/423",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Bazzi",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Bazzi';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/Bazzi.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 - 제공되는 모든 서체의 지적 재산권을 포함한 모든 권리는 (주)넥슨코리아에 있습니다. - 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다. (상업적인 용도로 사용 가능) 단, 임의로 수정, 편집 등을 할 수 없으며 배포되는 형태 그대로 사용해야 합니다. 글꼴 자체를 유료로 판매되는 것은 금지되며, - 서체의 본 저작권 안내를 포함해서 다른 소프트웨어와 번들하거나 임베디드 폰트로 사용하실 수 있습니다. - 서체의 출처 표기를 권장합니다. - 서체를 사용한 인쇄물, 광고물(온라인 포함)은 넥슨의 프로모션을 위해 활용될 수 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 426,
+    "catalogName": "인피니티산스",
+    "maker": "위메이드",
+    "catalogWeights": "3가지 굵기",
+    "url": "https://noonnu.cc/font_page/426",
+    "finalUrl": "https://noonnu.cc/font_page/426",
+    "status": 200,
+    "faceCount": 7,
+    "modern": [
+      {
+        "family": "InfinitySans-RegularA1",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'InfinitySans-RegularA1';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "InfinitySans-CondBoldA1",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-CondBoldA1.woff",
+        "weight": "600",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'InfinitySans-CondBoldA1';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-CondBoldA1.woff') format('woff');\n    font-weight: 600;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "InfinitySans-BoldA1",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'InfinitySans-BoldA1';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-BoldA1.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "how#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 600 700 라이선스 본문 ‘인피니티 산스(Infinity Sans)’의 지식재산권은 ㈜위메이드(www.wemade.com)에 있습니다. 위메이드는 ‘인피니티 산스’를 개인 및 기업을 포함한 모든 사용자에게 무료로 제공합니다. 단, 대한민국 외에서 ‘인피니티 산스’를 다운받거나 사용하고자 하는 경우 반드시 당사의 사전 허락을 받아야 하며, 당사의 사전 허락 없이 대한민국 외에서의 복제 및 사용은 허락되지 않습니다. 위메이드는 ‘인피니티 산스’ 소프트웨어를 저작권, 특허권, 상표권 및 기타 권리의 비침해성과 특정 목적에 적합성을 포함한 명시적, 묵시적인 어떠한 종류의 보증 없이 ‘있는 그대로’ 제공합니다. 위메이드는 ‘인피니티 산스’ 글꼴 자체를 유료로 판매하는 것을 금지합니다. 또한, 임의 수정 및 2차 가공에 의한 재배포를 할 수 없으며, 배포되는형태 그대로 사용해야 합니다. 특히, 어떠한 경우에도 위메이드는 ‘인피니티 산스’의 사용 또는 이의 사용불가, 그 밖에 서체 소프트웨어의 취급과 관련하여 발생하는 모든 계약, 불법행위 혹은 다른 일로 하여금 발생하는 일반적, 특수적, 간접적, 부차적 혹은 필연적 손해를 포함하는 소송, 손해 혹은 기타 책임에 대한 의무를 일체 부담하지 않습니다. 위메이드는 ‘인피니티 산스’ 출처 표기를 권장합니다. 또한, ‘인피니티 산스’를 사용한 인쇄물, 광고물(온라인 포함)의 이미지는 위메이드 및 계열사 프로모션을 위해 활용될 수 있으며, ‘인피니티 산스’ 사용 시 이러한 활용에 동의하는 것으로 간주합니다. 위메이드는 언제든지 본 라이선스와 다른 조건으로 서체 사용을 허락하거나 서체의 배포를 중단시킬 수 있는 권리를 보유합니다. 이를 원치 않는 사용자는 언제든지 당사에 협의를 요청하실 수 있습니다. 문의(font@wemade.com)",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 427,
+    "catalogName": "넥슨 메이플스토리",
+    "maker": "넥슨",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/427",
+    "finalUrl": "https://noonnu.cc/font_page/427",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "MaplestoryOTFBold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'MaplestoryOTFBold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "MaplestoryOTFLight",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'MaplestoryOTFLight';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 700 라이선스 본문 - 제공되는 모든 서체의 지적 재산권을 포함한 모든 권리는 (주)넥슨코리아에 있습니다. - 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다. (상업적인 용도로 사용 가능) 단, 임의로 수정, 편집 등을 할 수 없으며 배포되는 형태 그대로 사용해야 합니다. 글꼴 자체를 유료로 판매되는 것은 금지되며, - 서체의 본 저작권 안내를 포함해서 다른 소프트웨어와 번들하거나 임베디드 폰트로 사용하실 수 있습니다. - 서체의 출처 표기를 권장합니다. - 서체를 사용한 인쇄물, 광고물(온라인 포함)은 넥슨의 프로모션을 위해 활용될 수 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 432,
+    "catalogName": "넥슨 Lv.1 고딕",
+    "maker": "넥슨",
+    "catalogWeights": "3가지 굵기",
+    "url": "https://noonnu.cc/font_page/432",
+    "finalUrl": "https://noonnu.cc/font_page/432",
+    "status": 200,
+    "faceCount": 7,
+    "modern": [
+      {
+        "family": "NEXON Lv1 Gothic OTF",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'NEXON Lv1 Gothic OTF';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "NEXON Lv1 Gothic OTF Light",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'NEXON Lv1 Gothic OTF Light';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "NEXON Lv1 Gothic OTF Bold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'NEXON Lv1 Gothic OTF Bold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "how#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 400 700 라이선스 본문 - 제공되는 모든 서체의 지적 재산권을 포함한 모든 권리는 (주)넥슨코리아에 있습니다. - 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다. (상업적인 용도로 사용 가능) 단, 임의로 수정, 편집 등을 할 수 없으며 배포되는 형태 그대로 사용해야 합니다. 글꼴 자체를 유료로 판매되는 것은 금지되며, - 서체의 본 저작권 안내를 포함해서 다른 소프트웨어와 번들하거나 임베디드 폰트로 사용하실 수 있습니다. - 서체의 출처 표기를 권장합니다. - 서체를 사용한 인쇄물, 광고물(온라인 포함)은 넥슨의 프로모션을 위해 활용될 수 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 435,
+    "catalogName": "넥슨 Lv.2 고딕",
+    "maker": "넥슨",
+    "catalogWeights": "3가지 굵기",
+    "url": "https://noonnu.cc/font_page/435",
+    "finalUrl": "https://noonnu.cc/font_page/435",
+    "status": 200,
+    "faceCount": 7,
+    "modern": [
+      {
+        "family": "NEXON Lv2 Gothic",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'NEXON Lv2 Gothic';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "NEXON Lv2 Gothic Light",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Light.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'NEXON Lv2 Gothic Light';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Light.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "NEXON Lv2 Gothic Bold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'NEXON Lv2 Gothic Bold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "how#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 400 700 라이선스 본문 - 제공되는 모든 서체의 지적 재산권을 포함한 모든 권리는 (주)넥슨코리아에 있습니다. - 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다. (상업적인 용도로 사용 가능) 단, 임의로 수정, 편집 등을 할 수 없으며 배포되는 형태 그대로 사용해야 합니다. 글꼴 자체를 유료로 판매되는 것은 금지되며, - 서체의 본 저작권 안내를 포함해서 다른 소프트웨어와 번들하거나 임베디드 폰트로 사용하실 수 있습니다. - 서체의 출처 표기를 권장합니다. - 서체를 사용한 인쇄물, 광고물(온라인 포함)은 넥슨의 프로모션을 위해 활용될 수 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 436,
+    "catalogName": "넥슨 풋볼고딕",
+    "maker": "넥슨",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/436",
+    "finalUrl": "https://noonnu.cc/font_page/436",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "NEXONFootballGothicBA1",
+        "url": "https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'NEXONFootballGothicBA1';\n    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "NEXONFootballGothicLA1",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicLA1.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'NEXONFootballGothicLA1';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicLA1.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 700 라이선스 본문 - 제공되는 모든 서체의 지적 재산권을 포함한 모든 권리는 (주)넥슨코리아에 있습니다. - 서체는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 사용 및 배포하실 수 있습니다. (상업적인 용도로 사용 가능) 단, 임의로 수정, 편집 등을 할 수 없으며 배포되는 형태 그대로 사용해야 합니다. 글꼴 자체를 유료로 판매되는 것은 금지되며, - 서체의 본 저작권 안내를 포함해서 다른 소프트웨어와 번들하거나 임베디드 폰트로 사용하실 수 있습니다. - 서체의 출처 표기를 권장합니다. - 서체를 사용한 인쇄물, 광고물(온라인 포함)은 넥슨의 프로모션을 위해 활용될 수 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 438,
+    "catalogName": "김포평화제목",
+    "maker": "김포시",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/438",
+    "finalUrl": "https://noonnu.cc/font_page/438",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "GimpoTitle00",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/GimpoTitle00.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'GimpoTitle00';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/GimpoTitle00.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 김포평화체는 누구나 무료로 다운로드받아 자유롭게 사용할 수 있습니다. 특별한 사용 승인 절차 없이, 영상물, 인쇄물, 웹페이지 등에서 자유롭게 활용이 가능합니다. 단, 김포평화체를 상업적으로 재판매하는 행위는 제한됩니다. 이 게시물은 \"공공누리 제 1유형(출처표시)\" 조건에 따라 자유롭게 이용이 가능합니다. 기획담당관 정책기획팀 031-980-2052",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 439,
+    "catalogName": "김포평화바탕",
+    "maker": "김포시",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/439",
+    "finalUrl": "https://noonnu.cc/font_page/439",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "GimpoBatang00",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/GimpoBatang00.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'GimpoBatang00';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/GimpoBatang00.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 김포평화체는 누구나 무료로 다운로드받아 자유롭게 사용할 수 있습니다. 특별한 사용 승인 절차 없이, 영상물, 인쇄물, 웹페이지 등에서 자유롭게 활용이 가능합니다. 단, 김포평화체를 상업적으로 재판매하는 행위는 제한됩니다. 이 게시물은 \"공공누리 제 1유형(출처표시)\" 조건에 따라 자유롭게 이용이 가능합니다. 기획담당관 정책기획팀 031-980-2052",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 440,
+    "catalogName": "62570체",
+    "maker": "국가보훈처 X 투게더그룹",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/440",
+    "finalUrl": "https://noonnu.cc/font_page/440",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "62570체",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/62570체.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\r\n    font-family: '62570체';\r\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/62570체.woff') format('woff');\r\n    font-weight: normal;\r\n    font-display: swap;\r\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "조건부 허용"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 6.25 70주년을 기념하는 서체로 개인, 기업, 단체 관계없이 누구나, 모든범위에 다 사용을 하실 수 있습니다. 메일문의: togethergroup@togethergroup.co.kr",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 441,
+    "catalogName": "아임크리수진체",
+    "maker": "발렌타인드림",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/441",
+    "finalUrl": "https://noonnu.cc/font_page/441",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "ImcreSoojin",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\r\n    font-family: 'ImcreSoojin';\r\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');\r\n    font-weight: normal;\r\n    font-display: swap;\r\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 아임크리 수진체는 인쇄, 웹사이트, 영상, 임베딩, 포장지부터 BI/CI 등 비상업적, 상업적 용도로 사용 가능한 발렌타인드림의 무료서체입니다. &lt;사용범위&gt; * 사용범위를 알고 사용하세요 * 아임크리 전용서체, 무료폰트(글꼴) 수진체의 사용범위 안내입니다. * ‘아임크리 수진체’는 인쇄, 웹사이트, 영상, 임베딩, 포장지부터 BI/CI 등 * 상업적, 비상업적 용도로 사용 가능한 발렌타인드림의 무료 서체입니다. * 단, OFL (폰트 파일의 수정, 복제, 배포)는 불가능하며 폰트 파일을 유료로 판매해서는 안 됩니다. * 사용 전 해당 내용을 잘 숙지하신 후 다운로드해 주세요. * 폰트 이용과 관련된 문의사항 있으시면, 고객센터 이메일로 보내주시기 바랍니다. 감사합니다. imcre.info@gmail.com 참고사항 아임크리 수진체'는 폰트 파일의 수정, 복제, 배포는 불가능하며(OFL) 폰트 파일을 유료로 판매해서는 안됩니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 442,
+    "catalogName": "빛의계승자체",
+    "maker": "펀플로X산돌",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/442",
+    "finalUrl": "https://noonnu.cc/font_page/442",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "HeirofLightBold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'HeirofLightBold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightBold.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "HeirofLightRegular",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'HeirofLightRegular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/HeirofLightRegular.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "조건부 허용"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 700 라이선스 본문 ‘빛의계승자체’의 지적재산권은 펀플로(www.funflow.co.kr)와 산돌 커뮤니케이션즈(www.sandoll.co.kr)에 있습니다. ‘빛의계승자체’는 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며, 상업적 목적으로도 사용하실 수 있습니다. ‘빛의계승자체’는 다음 각 호의 경우에는 권리자의 명시적인 서면 동의 없이 상업적 목적으로 사용할 수 없습니다. 1. 서체 자체의 유료 판매 2. 서체의 수정, 편집 및 재배포 3. 콘솔/PC/포터블/온라인/모바일 게임, 혹은 게임 관련 디바이스 또는 프로그램에 임베이딩하여 사용하는 행위 ‘빛의계승자체’를 사용한 모든 결과물은 당사의 빛의계승자 서체 및 게임의 프로모션을 위해 무상으로 활용될 수 있으므로, 빛의계승자체의 사용시 이러한 활용에 동의하는 것으로 간주됩니다. 이를 원치 않는 사용자는 언제든지 당사에 협의를 요청하실 수 있습니다. 문의: 펀플로(www.funflow.co.kr)",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 448,
+    "catalogName": "IBM Plex Sans",
+    "maker": "IBM",
+    "catalogWeights": "6가지 굵기",
+    "url": "https://noonnu.cc/font_page/448",
+    "finalUrl": "https://noonnu.cc/font_page/448",
+    "status": 200,
+    "faceCount": 13,
+    "modern": [
+      {
+        "family": "IBMPlexSansKR-Regular",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'IBMPlexSansKR-Regular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "IBMPlexSansKR-ExtraLight",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-ExtraLight.woff",
+        "weight": "200",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'IBMPlexSansKR-ExtraLight';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-ExtraLight.woff') format('woff');\n    font-weight: 200;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "IBMPlexSansKR-Light",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Light.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'IBMPlexSansKR-Light';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Light.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "IBMPlexSansKR-Text",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Text.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'IBMPlexSansKR-Text';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Text.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "IBMPlexSansKR-Medium",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Medium.woff",
+        "weight": "500",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'IBMPlexSansKR-Medium';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Medium.woff') format('woff');\n    font-weight: 500;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "IBMPlexSansKR-SemiBold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-SemiBold.woff",
+        "weight": "600",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'IBMPlexSansKR-SemiBold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-SemiBold.woff') format('woff');\n    font-weight: 600;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "derScroll\" data-fonts--show-target=\"fontSizeAll\"> px 200 300 400 normal 500 600 라이선스 본문 Copyright © 2017 IBM Corp. with Reserved Font Name \"Plex\" This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL ----------------------------------------------------------- SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007 ----------------------------------------------------------- 라이선스 전문 보기(영어) 라이선스 전문 보기(한글)",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 452,
+    "catalogName": "페이북 글꼴",
+    "maker": "비씨카드(주)",
+    "catalogWeights": "4가지 굵기",
+    "url": "https://noonnu.cc/font_page/452",
+    "finalUrl": "https://noonnu.cc/font_page/452",
+    "status": 200,
+    "faceCount": 9,
+    "modern": [
+      {
+        "family": "paybooc-Bold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\r\n    font-family: 'paybooc-Bold';\r\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');\r\n    font-weight: 700;\r\n    font-display: swap;\r\n}"
+      },
+      {
+        "family": "paybooc-Light",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Light.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\r\n    font-family: 'paybooc-Light';\r\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Light.woff') format('woff');\r\n    font-weight: 300;\r\n    font-display: swap;\r\n}"
+      },
+      {
+        "family": "paybooc-Medium",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Medium.woff",
+        "weight": "500",
+        "format": "woff",
+        "block": "@font-face {\r\n    font-family: 'paybooc-Medium';\r\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Medium.woff') format('woff');\r\n    font-weight: 500;\r\n    font-display: swap;\r\n}"
+      },
+      {
+        "family": "paybooc-ExtraBold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff",
+        "weight": "800",
+        "format": "woff",
+        "block": "@font-face {\r\n    font-family: 'paybooc-ExtraBold';\r\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff') format('woff');\r\n    font-weight: 800;\r\n    font-display: swap;\r\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 500 700 800 라이선스 본문 BC카드 글꼴과 페이북 글꼴의 지적재산권은 비씨카드㈜가 소유하고 있습니다. BC카드 글꼴과 페이북 글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 상업적 목적으로 자유롭게 사용할 수 있습니다. BC카드 글꼴과 페이북 글꼴을 유료로 판매하거나 어떠한 형태로든 임의 수정/개작하여 글꼴을 재배포 하는 것은 엄격히 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 456,
+    "catalogName": "비씨카드 글꼴",
+    "maker": "비씨카드(주)",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/456",
+    "finalUrl": "https://noonnu.cc/font_page/456",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "BCcardB",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.1/BCcardB.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'BCcardB';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.1/BCcardB.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "BCcardL",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.1/BCcardL.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'BCcardL';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.1/BCcardL.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 700 라이선스 본문 BC카드 글꼴과 페이북 글꼴의 지적재산권은 비씨카드㈜가 소유하고 있습니다. BC카드 글꼴과 페이북 글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 상업적 목적으로 자유롭게 사용할 수 있습니다. BC카드 글꼴과 페이북 글꼴을 유료로 판매하거나 어떠한 형태로든 임의 수정/개작하여 글꼴을 재배포 하는 것은 엄격히 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 458,
+    "catalogName": "티머니 둥근바람",
+    "maker": "티머니 X 윤디자인",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/458",
+    "finalUrl": "https://noonnu.cc/font_page/458",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "TmoneyRoundWindExtraBold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff",
+        "weight": "800",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'TmoneyRoundWindExtraBold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');\n    font-weight: 800;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "TmoneyRoundWindRegular",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'TmoneyRoundWindRegular';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 800 라이선스 본문 1. 저작권 전용서체 티머니 둥근바람(Tmoney RoundWind)의 모든 지적 재산권을 포함한 모든 권리는 ㈜티머니에 있습니다. 2. 사용범위 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공합니다.(아래 사용범위 참조) 3. 제한사항 가. 글꼴 자체를 유료로 판매, 임의 수정/개작하여 재배포하는 것은 금지하며, 배포되는 형태 그대로 사용해야 합니다. 나. 당사의 이미지를 훼손할 수 있는 불법사이트나 허위과장광고, 기타 공서양속에 반하는 인쇄/광고물에 사용을 금지합니다. 4. 기타 전용서체 티머니 둥근바람을 사용한 인쇄물, 광고물(온/오프라인) 등의 이미지는 ㈜티머니 마케팅을 위해 활용될 수 있습니다. 이를 원치 않는 사용자는 언제든지 당사에 요청하실 수 있습니다. 상세 사용규정 다운로드",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 461,
+    "catalogName": "빙그레 싸만코체",
+    "maker": "빙그레",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/461",
+    "finalUrl": "https://noonnu.cc/font_page/461",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "BinggraeSamanco-Bold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/BinggraeSamanco-Bold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\r\n    font-family: 'BinggraeSamanco-Bold';\r\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/BinggraeSamanco-Bold.woff') format('woff');\r\n    font-weight: 700;\r\n    font-display: swap;\r\n}"
+      },
+      {
+        "family": "BinggraeSamanco",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/BinggraeSamanco.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\r\n    font-family: 'BinggraeSamanco';\r\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/BinggraeSamanco.woff') format('woff');\r\n    font-weight: normal;\r\n    font-display: swap;\r\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈에 사용 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 400 700 라이선스 본문 빙그레 글꼴은 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공됩니다. *글꼴을 사고파는 행위는 절대 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 463,
+    "catalogName": "이사만루",
+    "maker": "공게임즈 X 폰트릭스",
+    "catalogWeights": "3가지 굵기",
+    "url": "https://noonnu.cc/font_page/463",
+    "finalUrl": "https://noonnu.cc/font_page/463",
+    "status": 200,
+    "faceCount": 7,
+    "modern": [
+      {
+        "family": "GongGothicMedium",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'GongGothicMedium';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "GongGothicLight",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff",
+        "weight": "300",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'GongGothicLight';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff') format('woff');\n    font-weight: 300;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "GongGothicBold",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicBold.woff",
+        "weight": "700",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'GongGothicBold';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicBold.woff') format('woff');\n    font-weight: 700;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "how#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 300 400 700 라이선스 본문 이사만루체의 지적 재산권 및 모든 권리는 (주)공게임즈에 있습니다. 상업적 용도를 포함하여 누구나 자유롭게 사용할 수 있으나, 임의로 수정하여 유료로 판매하는 것은 금지합니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 465,
+    "catalogName": "고산자",
+    "maker": "국토정보플랫폼 X 산돌",
+    "catalogWeights": null,
+    "url": "https://noonnu.cc/font_page/465",
+    "finalUrl": "https://noonnu.cc/font_page/465",
+    "status": 200,
+    "faceCount": 3,
+    "modern": [
+      {
+        "family": "Gosanja",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/Gosanja.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'Gosanja';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/Gosanja.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일의 수정·복제·배포 및 유료 판매 모두 금지"
+      ]
+    ],
+    "license": "ts--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px normal 라이선스 본문 ‘바로e맵’은 누구나 바로 사용할 수 있는 국가인터넷지도입니다. ‘바로e맵’에서는 다국어지도, 사회적약자를 위한 특수지도, 교육용 백지도 등을 지원하고 있습니다. 따라서 다양하고 정확한 맞춤형 지도를 제공하는 국가인터넷지도에 걸맞는 전용서체를 개발하게 되었습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  },
+  {
+    "id": 466,
+    "catalogName": "HS봄바람체 3.0",
+    "maker": "토끼네활자공장",
+    "catalogWeights": "2가지 굵기",
+    "url": "https://noonnu.cc/font_page/466",
+    "finalUrl": "https://noonnu.cc/font_page/466",
+    "status": 200,
+    "faceCount": 5,
+    "modern": [
+      {
+        "family": "HSBombaram3_Regular",
+        "url": "https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.1/HSBombaram3_Regular.woff",
+        "weight": "normal",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'HSBombaram3_Regular';\n    src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.1/HSBombaram3_Regular.woff') format('woff');\n    font-weight: normal;\n    font-display: swap;\n}"
+      },
+      {
+        "family": "HSBombaram3_Thin",
+        "url": "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.1/HSBombaram3_Thin.woff",
+        "weight": "100",
+        "format": "woff",
+        "block": "@font-face {\n    font-family: 'HSBombaram3_Thin';\n    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.1/HSBombaram3_Thin.woff') format('woff');\n    font-weight: 100;\n    font-display: swap;\n}"
+      }
+    ],
+    "table": [
+      [
+        "카테고리",
+        "사용 범위",
+        "허용 여부"
+      ],
+      [
+        "인쇄",
+        "브로슈어, 포스터, 책, 잡지 및 출판용 인쇄물 등",
+        "사용 가능"
+      ],
+      [
+        "웹사이트",
+        "웹페이지, 광고 배너, 메일, E-브로슈어 등",
+        "사용 가능"
+      ],
+      [
+        "포장지",
+        "판매용 상품의 패키지",
+        "사용 가능"
+      ],
+      [
+        "영상",
+        "유튜브, CF, 상업영화, 뮤직비디오, 영상 자막, 영상 오프닝/엔딩 크레딧 등",
+        "사용 가능"
+      ],
+      [
+        "임베딩",
+        "웹사이트 및 프로그램 서버 내 폰트 탑재, E-book 제작",
+        "사용 가능"
+      ],
+      [
+        "BI/CI",
+        "회사명, 브랜드명, 상품명, 로고, 마크, 슬로건, 캐치프레이즈",
+        "사용 가능"
+      ],
+      [
+        "OFL",
+        "폰트 파일 수정·복제·배포 가능 단, 폰트 파일의 유료 판매는 금지"
+      ]
+    ],
+    "license": "s--show#onResizeSliderScroll\" data-fonts--show-target=\"fontSizeAll\"> px 100 400 라이선스 본문 - 개인용, 상업용 전면 무료 사용 가능 개인 및 기업 사용자를 포함한 모든 사용자에게 무료로 제공되며 자유롭게 수정하고 재배포하실 수 있습니다. 단, 글꼴 자체를 유료로 판매하는 것은 금지합니다. 사용범위: 문서제작(비영리 교재 시험지, 무료배포 공익 홍보문서, 광고 등 마케팅용 배포문서, 단체 내부 문서, 사내 배포용 프리젠테이션, 영리 목적의 교재) 서식(증서, 원서, 신고서, 무료배포공문서식, 마케팅용 배포 문서, 단체 내부 문서및 서식) 배포용(브로슈어, 포스터, 자료작성, 보고서, 리포터, 뉴스레터, 벽면장식, 서적) 잡지/신문(일반잡지, 전문지, 중앙지(일간,스포츠,시사지), 대학지, 학술지, 학회지, 사보, 지방지, 무가지, 대학신문) 판매용 인쇄/출판물(제품포장패키지, 포장지, 티켓(영화, 연극, 공연, 스포츠), CD/DVD 커버, 자켓, 문구, 엽서, 카드) 인쇄출판(브로슈어, 소식지, 카달로그, 팜플렛, 리플렛, 현수막, 쿠폰, 명함, 전단지, 매장 내 POP물, 봉투, 메뉴판, 사용설명서, 연하장, 초대장, 카드, 엽서, 자료집, 사보, 간행물, 단행본) 도서류(참고서, 학습지, 교과서, 백과사전, 잡지, 만화책, 신문기사) 웹사이트(이메일, 웹툰, 웹페이지 이미지 제작, 이미지배너, 배너광고) 영상물(영상 광고(CF, 극장, 가상광고, 온라인 등), 영화 자막(예고편, 본편, 오프닝 엔딩 등), 공중파 및 케이블 자막, 일반 동영상) 모바일 APP(각종 스마트폰 어플리케이션 적용 (UI디자인, 임베딩) 2차 제작물(직접 판매 목적의 이미지 제작(PT템플릿, 콘텐츠 상품, 이모티콘 등), 폰트 형태를 직접적으로 이용한 상품 제작(의류, 머그컵, 물병, 수건, 에코백, 네임스티커 등) e-Learning(교육용 온라인 동영상 강좌, 플래시 강좌 등) e-Book(도서, 문서, 잡지 등을 e-Book 형식으로 제작 및 변환하여 온라인상에 배포 및 게시) CI, BI(사명, 로고, 마크, 슬로건, 캐치프레이즈 등, 브랜드명, 상품명, 각종 패키지 디자인 등) 옥내외광고물(일단 단독간판, 옥내외 간판, 옥상간판, 선전탑, 전기 이용 간판, 공공시설물 이용 광고물, 교통시설 이용 광고물, 교통수단 이용 광고물) 임베딩(각종 디바이스, 서버, 프로그램, 게임 등에 폰트파일 탑재) 상기 기재된 범위 내에서 사용할 경우 청구되는 라이센스 비용은 없으며 사용 범위에 대한 문의가 있을 경우 메일(hp0@naver.com) 부탁드립니다. 무단으로 폰트를 유료로 판매하는 행위는 저작권법, 계약법 및 기타 해당법률에 의해 민형사상의 책임이 있습니다.",
+    "downloadUrl": "https://fonts.googleapis.com",
+    "embedBanned": false,
+    "ok": true
+  }
+]

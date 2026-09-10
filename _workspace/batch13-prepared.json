@@ -1,0 +1,362 @@
+[
+  {
+    "catalogIndex": 182,
+    "id": 395,
+    "name": "정묵바위체",
+    "postFolder": "posts/2026-09-10-noonnu-font-jeongmuk-bawi/",
+    "registeredInTistory": false,
+    "slug": "jeongmuk-bawi",
+    "note": "[배치13] 상상토끼. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 183,
+    "id": 397,
+    "name": "엄마까투리체",
+    "postFolder": "posts/2026-09-10-noonnu-font-eomma-kkaturi/",
+    "registeredInTistory": false,
+    "slug": "eomma-kkaturi",
+    "note": "[배치13] 안동시. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 184,
+    "id": 398,
+    "name": "월영교체",
+    "postFolder": "posts/2026-09-10-noonnu-font-wolyeonggyo/",
+    "registeredInTistory": false,
+    "slug": "wolyeonggyo",
+    "note": "[배치13] 안동시. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 185,
+    "id": 399,
+    "name": "유앤피플 고딕체",
+    "postFolder": "posts/2026-09-10-noonnu-font-unp-gothic/",
+    "registeredInTistory": false,
+    "slug": "unp-gothic",
+    "note": "[배치13] ㈜유앤피플. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 186,
+    "id": 402,
+    "name": "예스체",
+    "postFolder": "posts/2026-09-10-noonnu-font-yes24/",
+    "registeredInTistory": false,
+    "slug": "yes24",
+    "note": "[배치13] 예스24. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 187,
+    "id": 404,
+    "name": "예스 고딕",
+    "postFolder": "posts/2026-09-10-noonnu-font-yes-gothic/",
+    "registeredInTistory": false,
+    "slug": "yes-gothic",
+    "note": "[배치13] 예스24. woff 2개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 188,
+    "id": 406,
+    "name": "예스 명조",
+    "postFolder": "posts/2026-09-10-noonnu-font-yes-myeongjo/",
+    "registeredInTistory": false,
+    "slug": "yes-myeongjo",
+    "note": "[배치13] 예스24. woff 2개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 189,
+    "id": 407,
+    "name": "TT투게더",
+    "postFolder": "posts/2026-09-10-noonnu-font-tt-together/",
+    "registeredInTistory": false,
+    "slug": "tt-together",
+    "note": "[배치13] 투게더그룹. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 190,
+    "id": 408,
+    "name": "가나초콜릿체",
+    "postFolder": "posts/2026-09-10-noonnu-font-ghana-choco/",
+    "registeredInTistory": false,
+    "slug": "ghana-choco",
+    "note": "[배치13] 롯데웰푸드. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 191,
+    "id": 409,
+    "name": "솔인써니체",
+    "postFolder": "posts/2026-09-10-noonnu-font-solin-sunny/",
+    "registeredInTistory": false,
+    "slug": "solin-sunny",
+    "note": "[배치13] 솔인시스템. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 192,
+    "id": 410,
+    "name": "DW임팩타민체",
+    "postFolder": "posts/2026-09-10-noonnu-font-dw-impactamin/",
+    "registeredInTistory": false,
+    "slug": "dw-impactamin",
+    "note": "[배치13] 대웅제약. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 193,
+    "id": 411,
+    "name": "조선굵은명조",
+    "postFolder": "posts/2026-09-10-noonnu-font-chosun-km/",
+    "registeredInTistory": false,
+    "slug": "chosun-km",
+    "note": "[배치13] 조선일보. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 194,
+    "id": 412,
+    "name": "조선가는고딕",
+    "postFolder": "posts/2026-09-10-noonnu-font-chosun-sg/",
+    "registeredInTistory": false,
+    "slug": "chosun-sg",
+    "note": "[배치13] 조선일보. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 195,
+    "id": 413,
+    "name": "조선굵은고딕",
+    "postFolder": "posts/2026-09-10-noonnu-font-chosun-kg/",
+    "registeredInTistory": false,
+    "slug": "chosun-kg",
+    "note": "[배치13] 조선일보. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 196,
+    "id": 414,
+    "name": "조선견고딕",
+    "postFolder": "posts/2026-09-10-noonnu-font-chosun-bg/",
+    "registeredInTistory": false,
+    "slug": "chosun-bg",
+    "note": "[배치13] 조선일보. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 197,
+    "id": 415,
+    "name": "조선굴림체",
+    "postFolder": "posts/2026-09-10-noonnu-font-chosun-gu/",
+    "registeredInTistory": false,
+    "slug": "chosun-gu",
+    "note": "[배치13] 조선일보. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 198,
+    "id": 416,
+    "name": "조선궁서체",
+    "postFolder": "posts/2026-09-10-noonnu-font-chosun-gs/",
+    "registeredInTistory": false,
+    "slug": "chosun-gs",
+    "note": "[배치13] 조선일보. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 199,
+    "id": 417,
+    "name": "조선로고체",
+    "postFolder": "posts/2026-09-10-noonnu-font-chosun-lo/",
+    "registeredInTistory": false,
+    "slug": "chosun-lo",
+    "note": "[배치13] 조선일보. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 200,
+    "id": 418,
+    "name": "조선신명조",
+    "postFolder": "posts/2026-09-10-noonnu-font-chosun-sm/",
+    "registeredInTistory": false,
+    "slug": "chosun-sm",
+    "note": "[배치13] 조선일보. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 201,
+    "id": 419,
+    "name": "교보손글씨 2019",
+    "postFolder": "posts/2026-09-10-noonnu-font-kyobo-hand-2019/",
+    "registeredInTistory": false,
+    "slug": "kyobo-hand-2019",
+    "note": "[배치13] 교보문고. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 202,
+    "id": 422,
+    "name": "양평군체",
+    "postFolder": "posts/2026-09-10-noonnu-font-yangpyeong/",
+    "registeredInTistory": false,
+    "slug": "yangpyeong",
+    "note": "[배치13] 양평군. woff 3개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 203,
+    "id": 423,
+    "name": "넥슨 배찌체",
+    "postFolder": "posts/2026-09-10-noonnu-font-nexon-bazzi/",
+    "registeredInTistory": false,
+    "slug": "nexon-bazzi",
+    "note": "[배치13] 넥슨. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 204,
+    "id": 426,
+    "name": "인피니티산스",
+    "postFolder": "posts/2026-09-10-noonnu-font-infinity-sans/",
+    "registeredInTistory": false,
+    "slug": "infinity-sans",
+    "note": "[배치13] 위메이드. woff 3개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 205,
+    "id": 427,
+    "name": "넥슨 메이플스토리",
+    "postFolder": "posts/2026-09-10-noonnu-font-nexon-maplestory/",
+    "registeredInTistory": false,
+    "slug": "nexon-maplestory",
+    "note": "[배치13] 넥슨. woff 2개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 206,
+    "id": 432,
+    "name": "넥슨 Lv.1 고딕",
+    "postFolder": "posts/2026-09-10-noonnu-font-nexon-lv1-gothic/",
+    "registeredInTistory": false,
+    "slug": "nexon-lv1-gothic",
+    "note": "[배치13] 넥슨. woff 3개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 207,
+    "id": 435,
+    "name": "넥슨 Lv.2 고딕",
+    "postFolder": "posts/2026-09-10-noonnu-font-nexon-lv2-gothic/",
+    "registeredInTistory": false,
+    "slug": "nexon-lv2-gothic",
+    "note": "[배치13] 넥슨. woff 3개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 208,
+    "id": 436,
+    "name": "넥슨 풋볼고딕",
+    "postFolder": "posts/2026-09-10-noonnu-font-nexon-football-gothic/",
+    "registeredInTistory": false,
+    "slug": "nexon-football-gothic",
+    "note": "[배치13] 넥슨. woff 2개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 209,
+    "id": 438,
+    "name": "김포평화제목",
+    "postFolder": "posts/2026-09-10-noonnu-font-gimpo-title/",
+    "registeredInTistory": false,
+    "slug": "gimpo-title",
+    "note": "[배치13] 김포시. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 210,
+    "id": 439,
+    "name": "김포평화바탕",
+    "postFolder": "posts/2026-09-10-noonnu-font-gimpo-batang/",
+    "registeredInTistory": false,
+    "slug": "gimpo-batang",
+    "note": "[배치13] 김포시. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 211,
+    "id": 440,
+    "name": "62570체",
+    "postFolder": "posts/2026-09-10-noonnu-font-62570/",
+    "registeredInTistory": false,
+    "slug": "62570",
+    "note": "[배치13] 국가보훈처 X 투게더그룹. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 212,
+    "id": 441,
+    "name": "아임크리수진체",
+    "postFolder": "posts/2026-09-10-noonnu-font-imcre-soojin/",
+    "registeredInTistory": false,
+    "slug": "imcre-soojin",
+    "note": "[배치13] 발렌타인드림. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 213,
+    "id": 442,
+    "name": "빛의계승자체",
+    "postFolder": "posts/2026-09-10-noonnu-font-heir-of-light/",
+    "registeredInTistory": false,
+    "slug": "heir-of-light",
+    "note": "[배치13] 펀플로X산돌. woff 2개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 214,
+    "id": 448,
+    "name": "IBM Plex Sans",
+    "postFolder": "posts/2026-09-10-noonnu-font-ibm-plex-sans-kr/",
+    "registeredInTistory": false,
+    "slug": "ibm-plex-sans-kr",
+    "note": "[배치13] IBM. woff 6개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 215,
+    "id": 452,
+    "name": "페이북 글꼴",
+    "postFolder": "posts/2026-09-10-noonnu-font-paybooc/",
+    "registeredInTistory": false,
+    "slug": "paybooc",
+    "note": "[배치13] 비씨카드(주). woff 4개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 216,
+    "id": 456,
+    "name": "비씨카드 글꼴",
+    "postFolder": "posts/2026-09-10-noonnu-font-bccard/",
+    "registeredInTistory": false,
+    "slug": "bccard",
+    "note": "[배치13] 비씨카드(주). woff 2개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 217,
+    "id": 458,
+    "name": "티머니 둥근바람",
+    "postFolder": "posts/2026-09-10-noonnu-font-tmoney-round-wind/",
+    "registeredInTistory": false,
+    "slug": "tmoney-round-wind",
+    "note": "[배치13] 티머니 X 윤디자인. woff 2개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 218,
+    "id": 461,
+    "name": "빙그레 싸만코체",
+    "postFolder": "posts/2026-09-10-noonnu-font-binggrae-samanco/",
+    "registeredInTistory": false,
+    "slug": "binggrae-samanco",
+    "note": "[배치13] 빙그레. woff 2개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 219,
+    "id": 463,
+    "name": "이사만루",
+    "postFolder": "posts/2026-09-10-noonnu-font-esamanru/",
+    "registeredInTistory": false,
+    "slug": "esamanru",
+    "note": "[배치13] 공게임즈 X 폰트릭스. woff 3개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 220,
+    "id": 465,
+    "name": "고산자",
+    "postFolder": "posts/2026-09-10-noonnu-font-gosanja/",
+    "registeredInTistory": false,
+    "slug": "gosanja",
+    "note": "[배치13] 국토정보플랫폼 X 산돌. woff 1개. final.html \"눈누\" 언급 없음."
+  },
+  {
+    "catalogIndex": 221,
+    "id": 466,
+    "name": "HS봄바람체 3.0",
+    "postFolder": "posts/2026-09-10-noonnu-font-hs-bombaram-3/",
+    "registeredInTistory": false,
+    "slug": "hs-bombaram-3",
+    "note": "[배치13] 토끼네활자공장. woff 2개. final.html \"눈누\" 언급 없음."
+  }
+]
