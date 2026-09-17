@@ -237,22 +237,30 @@
               <s_article_rep>
                 <s_index_article_rep>
                   <article data-slot="post-item">
-                    <a data-slot="post-item-inner" href="[##_article_rep_link_##]">
+                    <div data-slot="post-item-inner">
+                      <a data-slot="post-item-hitbox" href="[##_article_rep_link_##]" tabindex="-1" aria-hidden="true"></a>
                       <div data-slot="post-body">
                         <p data-slot="post-meta">
                           <span data-slot="post-category">[##_article_rep_category_##]</span>
                           <span aria-hidden="true">·</span>
                           <span data-slot="post-date">[##_article_rep_simple_date_##]</span>
                         </p>
-                        <h2 data-slot="post-title">[##_article_rep_title_##]</h2>
+                        <h2 data-slot="post-title">
+                          <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a>
+                        </h2>
                         <div data-slot="post-summary">[##_article_rep_summary_##]</div>
+                        <s_tag_label>
+                          <div data-slot="post-item-tags">
+                            <div data-slot="post-tags-list">[##_tag_label_rep_##]</div>
+                          </div>
+                        </s_tag_label>
                       </div>
                       <s_article_rep_thumbnail>
                         <div data-slot="post-thumb">
                           <img src="[##_article_rep_thumbnail_url_##]" alt="" loading="lazy" />
                         </div>
                       </s_article_rep_thumbnail>
-                    </a>
+                    </div>
                   </article>
                 </s_index_article_rep>
 

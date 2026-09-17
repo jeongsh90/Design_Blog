@@ -412,10 +412,7 @@
   }
 
 
-  function initPostTags() {
-    var list = document.querySelector('[data-slot="post-tags-list"]');
-    if (!list) return;
-
+  function normalizePostTagsList(list) {
     var links = list.querySelectorAll("a");
     if (!links.length) return;
 
@@ -430,6 +427,11 @@
     }
 
     list.setAttribute("data-tags", "normalized");
+  }
+
+  function initPostTags() {
+    var lists = document.querySelectorAll('[data-slot="post-tags-list"]');
+    Array.prototype.forEach.call(lists, normalizePostTagsList);
   }
 
 

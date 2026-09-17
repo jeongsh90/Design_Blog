@@ -475,7 +475,10 @@ const POST_REPEATS = [
     tag: "s_index_article_rep",
     count: POST_COUNT_DEFAULT,
     /* 짝수 인덱스만 썸네일 — 없는 글은 텍스트 전폭 레이아웃 검증용 */
-    conditional: { tag: "s_article_rep_thumbnail", when: (i) => i % 2 === 0 },
+    conditionals: [
+      { tag: "s_article_rep_thumbnail", when: (i) => i % 2 === 0 },
+      { tag: "s_tag_label", when: (i) => i !== 5 },
+    ],
     item: (i) => ({
       article_rep_link: `/${301 + i}`,
       article_rep_title: [
@@ -509,6 +512,15 @@ const POST_REPEATS = [
               "Figma 변수로 라이트/다크 두 벌을 한 번에 관리하는 방법.",
               "라이선스 조건까지 한 번에 확인할 수 있게 표로 정리했다.",
             ][i % 7],
+      tag_label_rep: [
+        '<a href="/tag/%EC%9B%B9%ED%8F%B0%ED%8A%B8">웹폰트</a>, <a href="/tag/%ED%95%9C%EA%B8%80%ED%8F%B0%ED%8A%B8">한글폰트</a>, <a href="/tag/%EB%AC%B4%EB%A3%8C%ED%8F%B0%ED%8A%B8">무료폰트</a>',
+        '<a href="/tag/shadcn">shadcn</a>, <a href="/tag/Tailwind">Tailwind</a>',
+        '<a href="/tag/%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6%AC">티스토리</a>, <a href="/tag/%EC%8A%A4%ED%82%A8">스킨</a>, <a href="/tag/CSS">CSS</a>',
+        '<a href="/tag/%EB%A1%9C%EA%B3%A0">로고</a>, <a href="/tag/Design">Design</a>',
+        '<a href="/tag/AI">AI</a>, <a href="/tag/%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8">프롬프트</a>',
+        "",
+        '<a href="/tag/%ED%8F%B0%ED%8A%B8">폰트</a>, <a href="/tag/%ED%95%9C%EA%B8%80%ED%8F%B0%ED%8A%B8">한글폰트</a>, <a href="/tag/%EB%AC%B4%EB%A3%8C%ED%8F%B0%ED%8A%B8">무료폰트</a>, <a href="/tag/%EC%9B%B9%ED%8F%B0%ED%8A%B8">웹폰트</a>',
+      ][i % 7],
     }),
   },
 ];
@@ -537,19 +549,20 @@ const PAGING_REPEATS = [
  *        케이스를 볼 수 없다.
  */
 function expandRepeats(html, repeats, { count: countOverride } = {}) {
-  for (const { tag, count, item, conditional } of repeats) {
+  for (const { tag, count, item, conditional, conditionals } of repeats) {
     const block = new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`, "g");
     const n = countOverride === undefined ? count : countOverride;
+    const rules = conditionals || (conditional ? [conditional] : []);
     html = html.replace(block, (_, tpl) => {
       let out = "";
       for (let i = 0; i < n; i++) {
         let one = tpl;
-        if (conditional) {
+        for (const rule of rules) {
           const cond = new RegExp(
-            `<${conditional.tag}>([\\s\\S]*?)</${conditional.tag}>`,
+            `<${rule.tag}>([\\s\\S]*?)</${rule.tag}>`,
             "g"
           );
-          one = conditional.when(i) ? one.replace(cond, "$1") : one.replace(cond, "");
+          one = rule.when(i) ? one.replace(cond, "$1") : one.replace(cond, "");
         }
         const values = item(i);
         one = one.replace(/\[##_([a-z_0-9]+)_##\]/g, (whole, key) =>

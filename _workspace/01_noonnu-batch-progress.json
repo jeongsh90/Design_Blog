@@ -1,6 +1,6 @@
 {
   "status": "catalog_local_drafts_complete_2026-09-10",
-  "note": "id584~1919 카탈로그 잔여 776건 전수 조사 완료. 채택 728(웹폰트 woff 있음)·스킵 48(임베딩 금지 27·@font-face/모던 woff 없음 21). 티스토리 미등록 로컬 초안. 다음 공개 발행은 티몬체 임시저장 이어쓰기.",
+  "note": "2026-09-16: sn별별정직~/106함초롬체 공개 발행 8건(한도 15 소진, /92~/106). 다음 초안 선두=헬스셋 조릿대체. 헬스셋 조릿대체는 한도로 미발행.",
   "previousNote_batch8": "배치8(2026-09-08) — catalogIndex 58(id62 미생체)부터 72(id76 EBS훈민정음체)까지 15개를 순회 채택, 스킵 없음. 가비아·포천시청 계열은 자매 폰트끼리 다운로드 링크·라이선스 본문이 완전히 동일. 잉크립퀴드체(더페이스샵)는 BI/CI 사용 금지 + 장평·기울기 변형 금지. EBS훈민정음체는 EBS 사전 서면승인 없는 변형·개명 재배포 금지. 동그라미재단체는 눈누 페이지 표기가 '체' 접미사 없이 '동그라미재단'뿐.",
   "previousNote_batch7": "배치7(2026-09-07, 이 세션) — 당일 티스토리 공개 발행 한도(15개)를 이미 소진한 상태라 이번 배치는 처음부터 '티스토리에 등록/발행하지 않는다'는 전제로 진행했다(사용자 지시). KoPub돋움(배치6에서 완성된 초안을 posts/ 표준 형식으로 이동) + 신규 14개(catalogIndex 32~57 구간을 순회하며 실제 @font-face 코드가 있는 것만 선별) = 총 15개 폰트를 posts/2026-09-07-noonnu-font-{slug}/final.html+meta.md+attachments/thumbnail.png(1200x630, IHDR 검증 완료) 형태로 로컬에 전부 준비했다 — 티스토리 관리자 로그인/등록/발행 시도는 전혀 하지 않음. 상세 목록은 localOnlyPrepared 참고. 이번 배치에서 새로 확인된 스킵 패턴: (1) 나눔바른고딕(id36)처럼 @font-face 코드는 있으나 src가 .eot 포맷 하나뿐이라 모던 브라우저에서 렌더링되지 않는 경우 — '코드 존재'와 '실제 렌더링 가능'은 다른 기준임을 확인. (2) 네이버 나눔글꼴 시리즈 상당수(나눔스퀘어/나눔고딕/나눔고딕코딩/나눔명조/나눔손글씨붓·펜)와 우아한형제들 한나체는 인지도와 무관하게 눈누 페이지 자체에 웹폰트 CDN이 등록돼 있지 않았다(같은 제작사·시리즈라도 개별 확인 원칙이 다시 확인됨).",
   "published": [
@@ -81,7 +81,13 @@
       "name": "빙그레체II",
       "url": "https://daitnu.tistory.com/8",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-6-binggraeii.png (부제 '더 두툼해진 빙그레의 손맛, 볼드 버전')",
-      "tags": [],
+      "tags": [
+        "빙그레체II",
+        "무료폰트",
+        "한글폰트",
+        "손글씨체",
+        "웹폰트"
+      ],
       "note": "빙그레체(index4)의 볼드 웨이트. 다운로드 링크는 빙그레체와 동일(빙그레 미디어 폰트 페이지)"
     },
     {
@@ -90,7 +96,13 @@
       "name": "한수원 한돋움체",
       "url": "https://daitnu.tistory.com/9",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-7-khnp-handot.png (부제 '안정감 있게 딱 떨어지는 공공 고딕체')",
-      "tags": [],
+      "tags": [
+        "한돋움체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
       "note": "한국수력원자력(한수원) 제작. 다운로드는 한수원 홈페이지"
     },
     {
@@ -99,7 +111,13 @@
       "name": "한수원 한울림체",
       "url": "https://daitnu.tistory.com/10",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-8-khnp-hanullim.png (부제 '또렷하고 힘 있게 울리는 굵은 고딕체')",
-      "tags": [],
+      "tags": [
+        "한울림체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
       "note": "한국수력원자력(한수원) 제작, 한돋움체보다 꽉찬 굵은 고딕. 다운로드 링크 동일"
     },
     {
@@ -108,7 +126,13 @@
       "name": "KBIZ한마음고딕체",
       "url": "https://daitnu.tistory.com/11",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-9-kbiz-hanmaum-gothic.png (부제 '군더더기 없이 반듯한 기본 고딕체')",
-      "tags": [],
+      "tags": [
+        "KBIZ한마음고딕체",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
       "note": "중소기업중앙회 X 헤움디자인 제작. 라이선스에 사용권 제한(변형·재판매 금지) 조항 추가로 명시"
     },
     {
@@ -117,7 +141,13 @@
       "name": "KBIZ한마음명조체",
       "url": "https://daitnu.tistory.com/12",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-10-kbiz-hanmaum-myungjo.png (부제 '차분하고 단정한 문서용 명조체')",
-      "tags": [],
+      "tags": [
+        "KBIZ한마음명조체",
+        "무료폰트",
+        "한글폰트",
+        "명조체",
+        "웹폰트"
+      ],
       "note": "중소기업중앙회 X 헤움디자인 제작(한마음고딕체와 자매 폰트, 다운로드 링크 동일)"
     },
     {
@@ -126,7 +156,13 @@
       "name": "경기천년바탕",
       "url": "https://daitnu.tistory.com/13",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-11-gg-millennium-batang.png (부제 '천년의 결을 담은 단정한 바탕체')",
-      "tags": [],
+      "tags": [
+        "경기천년바탕",
+        "무료폰트",
+        "한글폰트",
+        "바탕체",
+        "웹폰트"
+      ],
       "note": "경기도청 제작, 2가지 굵기(Regular/Bold). 다운로드는 경기도청 홈페이지"
     },
     {
@@ -135,7 +171,13 @@
       "name": "경기천년제목",
       "url": "https://daitnu.tistory.com/14",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-12-gg-millennium-title.png (부제 '가볍고 굵게, 자유자재로 쓰는 제목체')",
-      "tags": [],
+      "tags": [
+        "경기천년제목",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
       "note": "경기천년바탕(index10)과 자매 폰트, 경기도청 제작. 4가지 굵기(Light 300/Medium 500/Bold 700/TitleV 800). 다운로드 링크 동일"
     },
     {
@@ -144,7 +186,13 @@
       "name": "아리따돋움",
       "url": "https://daitnu.tistory.com/15",
       "thumbnail": "_workspace/noonnu-thumbs/thumb-13-arita-dotum.png (부제 '매끈하고 정갈한 브랜드 고딕체')",
-      "tags": [],
+      "tags": [
+        "아리따돋움",
+        "무료폰트",
+        "한글폰트",
+        "고딕체",
+        "웹폰트"
+      ],
       "note": "아모레퍼시픽 제작. 라이선스에 저작권 표기 문구(\"이 제작물은 아모레퍼시픽의 아리따글꼴을 사용하여 디자인 되었습니다.\", 6px 이상) 조건부 허용 조항 있음, 포장지/BI·CI 사용 금지"
     },
     {
@@ -746,6 +794,417 @@
         "웹폰트"
       ],
       "note": "[2026-09-10 발행]"
+    },
+    {
+      "index": 57,
+      "id": 72,
+      "catalogIndex": 68,
+      "name": "티몬체",
+      "url": "https://daitnu.tistory.com/62",
+      "postFolder": "posts/2026-09-08-noonnu-font-tmon/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 58,
+      "id": 73,
+      "catalogIndex": 69,
+      "name": "포천오성과한음체",
+      "url": "https://daitnu.tistory.com/63",
+      "postFolder": "posts/2026-09-08-noonnu-font-pocheon-oseong-haneum/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 59,
+      "id": 74,
+      "catalogIndex": 70,
+      "name": "포천막걸리체",
+      "url": "https://daitnu.tistory.com/64",
+      "postFolder": "posts/2026-09-08-noonnu-font-pocheon-makgeolli/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 60,
+      "id": 75,
+      "catalogIndex": 71,
+      "name": "동그라미재단체",
+      "url": "https://daitnu.tistory.com/65",
+      "postFolder": "posts/2026-09-08-noonnu-font-dongguraemi-foundation/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 61,
+      "id": 76,
+      "catalogIndex": 72,
+      "name": "EBS훈민정음체",
+      "url": "https://daitnu.tistory.com/66",
+      "postFolder": "posts/2026-09-08-noonnu-font-ebs-hunminjeongeum/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 62,
+      "id": 77,
+      "catalogIndex": 73,
+      "name": "EBS훈민정음새론체",
+      "url": "https://daitnu.tistory.com/67",
+      "postFolder": "posts/2026-09-08-noonnu-font-ebs-hunminjeongeum-saeron/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 63,
+      "id": 78,
+      "catalogIndex": 74,
+      "name": "EBS주시경체",
+      "url": "https://daitnu.tistory.com/68",
+      "postFolder": "posts/2026-09-08-noonnu-font-ebs-jusigyeong/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 64,
+      "id": 79,
+      "catalogIndex": 75,
+      "name": "고양체",
+      "url": "https://daitnu.tistory.com/69",
+      "postFolder": "posts/2026-09-08-noonnu-font-goyang/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 65,
+      "id": 80,
+      "catalogIndex": 76,
+      "name": "고양덕양체",
+      "url": "https://daitnu.tistory.com/70",
+      "postFolder": "posts/2026-09-08-noonnu-font-goyang-deogyang/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 66,
+      "id": 81,
+      "catalogIndex": 77,
+      "name": "고양일산체",
+      "url": "https://daitnu.tistory.com/71",
+      "postFolder": "posts/2026-09-08-noonnu-font-goyang-ilsan/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 67,
+      "id": 82,
+      "catalogIndex": 78,
+      "name": "즐거운이야기체",
+      "url": "https://daitnu.tistory.com/72",
+      "postFolder": "posts/2026-09-08-noonnu-font-joyful-story/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 68,
+      "id": 83,
+      "catalogIndex": 79,
+      "name": "안경잡이체",
+      "url": "https://daitnu.tistory.com/73",
+      "postFolder": "posts/2026-09-08-noonnu-font-ankyongjabi/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 69,
+      "id": 84,
+      "catalogIndex": 80,
+      "name": "KCC김훈체",
+      "url": "https://daitnu.tistory.com/74",
+      "postFolder": "posts/2026-09-08-noonnu-font-kcc-kimhun/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 70,
+      "id": 85,
+      "catalogIndex": 81,
+      "name": "KCC은영체",
+      "url": "https://daitnu.tistory.com/75",
+      "postFolder": "posts/2026-09-08-noonnu-font-kcc-eunyeong/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "index": 71,
+      "id": 86,
+      "catalogIndex": 82,
+      "name": "HS두꺼비체",
+      "url": "https://daitnu.tistory.com/76",
+      "postFolder": "posts/2026-09-08-noonnu-font-hs-dukkeobi/",
+      "note": "[2026-09-11 발행·본문수리] tinymce.setContent로 빈 본문 복구 후 공개 저장. 라이선스/표/font-face 실측 OK."
+    },
+    {
+      "catalogIndex": 83,
+      "id": 87,
+      "name": "도서관체",
+      "postFolder": "posts/2026-09-08-noonnu-font-library/",
+      "registeredInTistory": false,
+      "note": "live verified 2026-09-16; local draft pruned",
+      "status": "published",
+      "publishedAt": "2026-09-12",
+      "liveUrl": "https://daitnu.tistory.com/77",
+      "tistoryPostId": 77
+    },
+    {
+      "catalogIndex": 84,
+      "id": 88,
+      "name": "한글누리체",
+      "postFolder": "posts/2026-09-08-noonnu-font-hangulnuri/",
+      "registeredInTistory": false,
+      "note": "live verified 2026-09-16; local draft pruned",
+      "status": "published",
+      "publishedAt": "2026-09-12",
+      "liveUrl": "https://daitnu.tistory.com/78",
+      "tistoryPostId": 78
+    },
+    {
+      "catalogIndex": 85,
+      "id": 89,
+      "name": "디자인하우스체",
+      "postFolder": "posts/2026-09-08-noonnu-font-designhouse/",
+      "registeredInTistory": false,
+      "note": "live verified 2026-09-16; local draft pruned",
+      "status": "published",
+      "publishedAt": "2026-09-12",
+      "liveUrl": "https://daitnu.tistory.com/79",
+      "tistoryPostId": 79
+    },
+    {
+      "catalogIndex": 86,
+      "id": 90,
+      "name": "다래손글씨체",
+      "postFolder": "posts/2026-09-08-noonnu-font-darae-handwriting/",
+      "registeredInTistory": false,
+      "note": "live verified 2026-09-16; local draft pruned",
+      "status": "published",
+      "publishedAt": "2026-09-12",
+      "liveUrl": "https://daitnu.tistory.com/80",
+      "tistoryPostId": 80
+    },
+    {
+      "catalogIndex": 87,
+      "id": 91,
+      "name": "꽃길",
+      "postFolder": "posts/2026-09-08-noonnu-font-flower-road/",
+      "registeredInTistory": false,
+      "note": "live verified 2026-09-16; local draft pruned",
+      "status": "published",
+      "publishedAt": "2026-09-12",
+      "liveUrl": "https://daitnu.tistory.com/81",
+      "tistoryPostId": 81
+    },
+    {
+      "catalogIndex": 88,
+      "id": 92,
+      "name": "D2Coding",
+      "postFolder": "posts/2026-09-08-noonnu-font-d2coding/",
+      "registeredInTistory": false,
+      "note": "live verified 2026-09-16; local draft pruned",
+      "status": "published",
+      "publishedAt": "2026-09-12",
+      "liveUrl": "https://daitnu.tistory.com/82",
+      "tistoryPostId": 82
+    },
+    {
+      "catalogIndex": 89,
+      "id": 93,
+      "name": "신과장",
+      "postFolder": "posts/2026-09-08-noonnu-font-shin-manager/",
+      "registeredInTistory": false,
+      "note": "live verified 2026-09-16; local draft pruned",
+      "status": "published",
+      "publishedAt": "2026-09-12",
+      "liveUrl": "https://daitnu.tistory.com/83",
+      "tistoryPostId": 83
+    },
+    {
+      "catalogIndex": 90,
+      "id": 94,
+      "name": "개미똥꾸멍",
+      "postFolder": "posts/2026-09-08-noonnu-font-gaemittongkkumeong/",
+      "registeredInTistory": false,
+      "note": "live verified 2026-09-16; local draft pruned",
+      "status": "published",
+      "publishedAt": "2026-09-12",
+      "liveUrl": "https://daitnu.tistory.com/84",
+      "tistoryPostId": 84
+    },
+    {
+      "catalogIndex": 91,
+      "id": 95,
+      "name": "신비는일곱살",
+      "postFolder": "posts/2026-09-08-noonnu-font-shinbi-seven/",
+      "registeredInTistory": false,
+      "note": "[배치9] 상상토끼 제작, 꽃길·신과장·개미똥꾸멍과 동일 라이선스 문구. id96~105는 존재하지 않아(눈누 페이지 자체가 홈으로 리다이렉트) 건너뜀 — id106부터 재개.",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/92",
+      "tistoryPostId": 92
+    },
+    {
+      "catalogIndex": 92,
+      "id": 106,
+      "name": "검은고딕(Black Han Sans)",
+      "postFolder": "posts/2026-09-08-noonnu-font-black-han-sans/",
+      "registeredInTistory": false,
+      "note": "[배치9] ZESSTYPE 제작, Google Fonts로도 서빙. 눈누 페이지에 개별 @font-face 없이 @import만 있음(스포카 한 산스·본고딕과 동일 패턴) — 실제 CDN 확인 후 채택. SIL OFL 1.1.",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/93",
+      "tistoryPostId": 93
+    },
+    {
+      "catalogIndex": 93,
+      "id": 107,
+      "name": "월인석보체",
+      "postFolder": "posts/2026-09-08-noonnu-font-wolin/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 옛한글 고전체. 임베딩(웹사이트·서버 폰트탑재) 명시적 금지 조항 있음(이례적).",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/94",
+      "tistoryPostId": 94
+    },
+    {
+      "catalogIndex": 94,
+      "id": 108,
+      "name": "간이벽온방체",
+      "postFolder": "posts/2026-09-08-noonnu-font-kanibuk/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 월인석보체와 동일 라이선스(임베딩 금지 포함).",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/95",
+      "tistoryPostId": 95
+    },
+    {
+      "catalogIndex": 95,
+      "id": 109,
+      "name": "법정체",
+      "postFolder": "posts/2026-09-08-noonnu-font-beopjeong/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 월인석보체·간이벽온방체와 동일 라이선스(임베딩 금지 포함).",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/96",
+      "tistoryPostId": 96
+    },
+    {
+      "catalogIndex": 96,
+      "id": 110,
+      "name": "대한민국 독도체",
+      "postFolder": "posts/2026-09-08-noonnu-font-dokdo/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 앞선 3종과 동일 라이선스(임베딩 금지 포함).",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/97",
+      "tistoryPostId": 97
+    },
+    {
+      "catalogIndex": 97,
+      "id": 111,
+      "name": "밝은체",
+      "postFolder": "posts/2026-09-08-noonnu-font-bright/",
+      "registeredInTistory": false,
+      "note": "[배치9] 윤디자인 제작, 클래식 장식 바탕체. 임베딩 금지 조항(윤디자인 고전체 시리즈 공통).",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/98",
+      "tistoryPostId": 98
+    },
+    {
+      "catalogIndex": 98,
+      "id": 112,
+      "name": "sn별별정직",
+      "postFolder": "posts/2026-09-08-noonnu-font-sn-byulbyul-jeongjik/",
+      "registeredInTistory": true,
+      "note": "[배치9] 개인 제작자 soner. 재배포 시 반드시 제작자 자사몰(socialecho.kr)로만 가능하다는 이례적 조건. | 2026-09-16 공개 발행 https://daitnu.tistory.com/99",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/99",
+      "tistoryPostId": 99
+    },
+    {
+      "catalogIndex": 99,
+      "id": 113,
+      "name": "한나체 Air",
+      "postFolder": "posts/2026-09-08-noonnu-font-hanna-air/",
+      "registeredInTistory": true,
+      "note": "[배치9] 우아한형제들(배달의민족) 제작. 기본 한나체(id52)는 배치8에서 코드 없어 스킵됐으나 Air 버전은 코드 존재. | 2026-09-16 공개 발행 https://daitnu.tistory.com/100",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/100",
+      "tistoryPostId": 100
+    },
+    {
+      "catalogIndex": 100,
+      "id": 115,
+      "name": "여기어때 잘난체",
+      "postFolder": "posts/2026-09-08-noonnu-font-yeogi-ottae-jalnan/",
+      "registeredInTistory": true,
+      "note": "[배치9] 여기어때컴퍼니 제작. 요약표상 임베딩·BI/CI가 조건부 허용으로 표기된 드문 사례. id114는 존재하지 않음(홈으로 리다이렉트). | 2026-09-16 공개 발행 https://daitnu.tistory.com/101",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/101",
+      "tistoryPostId": 101
+    },
+    {
+      "catalogIndex": 101,
+      "id": 118,
+      "name": "넷마블체",
+      "postFolder": "posts/2026-09-08-noonnu-font-netmarble/",
+      "registeredInTistory": true,
+      "note": "[배치9] 넷마블 제작, 300/500/700 3가지 굵기. BI/CI 사용 명시적 금지. id116~117은 존재하지 않음. | 2026-09-16 공개 발행 https://daitnu.tistory.com/102",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/102",
+      "tistoryPostId": 102
+    },
+    {
+      "catalogIndex": 102,
+      "id": 119,
+      "name": "신영복체",
+      "postFolder": "posts/2026-09-08-noonnu-font-shin-youngbok/",
+      "registeredInTistory": true,
+      "note": "[배치9] 박윤정앤타이포랩 제작, 공유마당 등록 저작물(저작재산권 기증). 이용 시 출처 표시 조건. | 2026-09-16 공개 발행 https://daitnu.tistory.com/103",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/103",
+      "tistoryPostId": 103
+    },
+    {
+      "catalogIndex": 103,
+      "id": 120,
+      "name": "애터미체",
+      "postFolder": "posts/2026-09-08-noonnu-font-atomy/",
+      "registeredInTistory": true,
+      "note": "[배치9] 애터미 제작. BI/CI 사용 금지 + 반사회적·부정적 이미지 사용 금지 조항. | 2026-09-16 공개 발행 https://daitnu.tistory.com/104",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/104",
+      "tistoryPostId": 104
+    },
+    {
+      "catalogIndex": 104,
+      "id": 122,
+      "name": "둘기마요",
+      "postFolder": "posts/2026-09-08-noonnu-font-dulgimayo/",
+      "registeredInTistory": true,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인. | 2026-09-16 공개 발행 https://daitnu.tistory.com/105",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/105",
+      "tistoryPostId": 105
+    },
+    {
+      "catalogIndex": 105,
+      "id": 123,
+      "name": "함초롬체",
+      "postFolder": "posts/2026-09-08-noonnu-font-hamchorom/",
+      "registeredInTistory": true,
+      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인. | 2026-09-16 공개 발행 https://daitnu.tistory.com/106",
+      "status": "published",
+      "publishedAt": "2026-09-16",
+      "liveUrl": "https://daitnu.tistory.com/106",
+      "tistoryPostId": 106
     }
   ],
   "skippedNoWebfontCode": [
@@ -968,309 +1427,6 @@
   ],
   "pendingScheduledDrafts": [],
   "localOnlyPrepared": [
-    {
-      "catalogIndex": 68,
-      "id": 72,
-      "name": "티몬체",
-      "postFolder": "posts/2026-09-08-noonnu-font-tmon/",
-      "registeredInTistory": false,
-      "note": "[2026-09-10] 공개 발행 시도 중 당일 15개 한도 초과(이순신체·이순신돋움체·부산바다체 중복 발행 3건이 한도를 먼저 소진). 티스토리 임시저장 1건으로 본문·카테고리(Design/Font)·태그 5개 보존. 다음 등록 시 새 글로 만들지 말고 이 임시저장을 이어 공개할 것. 포천오성과한음체·포천막걸리체는 미시도."
-    },
-    {
-      "catalogIndex": 69,
-      "id": 73,
-      "name": "포천오성과한음체",
-      "postFolder": "posts/2026-09-08-noonnu-font-pocheon-oseong-haneum/",
-      "registeredInTistory": false,
-      "note": "포천시청 제작, 자매 폰트 포천막걸리체(id74)와 라이선스·다운로드 링크 동일."
-    },
-    {
-      "catalogIndex": 70,
-      "id": 74,
-      "name": "포천막걸리체",
-      "postFolder": "posts/2026-09-08-noonnu-font-pocheon-makgeolli/",
-      "registeredInTistory": false
-    },
-    {
-      "catalogIndex": 71,
-      "id": 75,
-      "name": "동그라미재단체",
-      "postFolder": "posts/2026-09-08-noonnu-font-dongguraemi-foundation/",
-      "registeredInTistory": false,
-      "note": "눈누 페이지 표기는 '체' 접미사 없이 '동그라미재단'뿐(제작 동그라미재단 X 헤움디자인) — 다른 글과 표기 통일을 위해 본문에서는 '동그라미재단체'로 표기, meta.md에 부기."
-    },
-    {
-      "catalogIndex": 72,
-      "id": 76,
-      "name": "EBS훈민정음체",
-      "postFolder": "posts/2026-09-08-noonnu-font-ebs-hunminjeongeum/",
-      "registeredInTistory": false,
-      "note": "EBS 제작. EBS 사전 서면승인 없는 변형·개명 재배포 금지 조항이 있어 표에 함께 명시."
-    },
-    {
-      "catalogIndex": 73,
-      "id": 77,
-      "name": "EBS훈민정음새론체",
-      "postFolder": "posts/2026-09-08-noonnu-font-ebs-hunminjeongeum-saeron/",
-      "registeredInTistory": false,
-      "note": "[배치9] EBS 제작, EBS훈민정음체(id76)와 자매 폰트. 동일한 EBS 사전 서면승인 없는 변형·재배포 금지 조항."
-    },
-    {
-      "catalogIndex": 74,
-      "id": 78,
-      "name": "EBS주시경체",
-      "postFolder": "posts/2026-09-08-noonnu-font-ebs-jusigyeong/",
-      "registeredInTistory": false,
-      "note": "[배치9] EBS 제작, 붓글씨 필획을 살린 고전체. 동일한 EBS 라이선스 제한사항 적용."
-    },
-    {
-      "catalogIndex": 75,
-      "id": 79,
-      "name": "고양체",
-      "postFolder": "posts/2026-09-08-noonnu-font-goyang/",
-      "registeredInTistory": false,
-      "note": "[배치9] 고양시청 제작, 각진 손글씨 형태."
-    },
-    {
-      "catalogIndex": 76,
-      "id": 80,
-      "name": "고양덕양체",
-      "postFolder": "posts/2026-09-08-noonnu-font-goyang-deogyang/",
-      "registeredInTistory": false,
-      "note": "[배치9] 고양시청 제작, 고양체와 자매 폰트(라이선스·다운로드 링크 동일), 굴린 고딕."
-    },
-    {
-      "catalogIndex": 77,
-      "id": 81,
-      "name": "고양일산체",
-      "postFolder": "posts/2026-09-08-noonnu-font-goyang-ilsan/",
-      "registeredInTistory": false,
-      "note": "[배치9] 고양시청 제작, 고양체·고양덕양체와 3형제 폰트(라이선스·다운로드 링크 동일), 굴린 고딕."
-    },
-    {
-      "catalogIndex": 78,
-      "id": 82,
-      "name": "즐거운이야기체",
-      "postFolder": "posts/2026-09-08-noonnu-font-joyful-story/",
-      "registeredInTistory": false,
-      "note": "[배치9] CJ E&M(tvN) 제작. 다른 소프트웨어와 번들·재배포 시 출처 표기 필수 조항 있음."
-    },
-    {
-      "catalogIndex": 79,
-      "id": 83,
-      "name": "안경잡이체",
-      "postFolder": "posts/2026-09-08-noonnu-font-ankyongjabi/",
-      "registeredInTistory": false,
-      "note": "[배치9] Greenegg 제작. 폰트 자체의 자유로운 수정·재배포를 명시적으로 허용(유료 판매만 금지), 출처 표기는 권장 사항."
-    },
-    {
-      "catalogIndex": 80,
-      "id": 84,
-      "name": "KCC김훈체",
-      "postFolder": "posts/2026-09-08-noonnu-font-kcc-kimhun/",
-      "registeredInTistory": false,
-      "note": "[배치9] 한국저작권위원회 제작, CCL-저작자표시(CC BY) 조건 — 요약표(모두 금지)와 본문(출처표시 시 변경·재배포 허용)이 어긋남, final.html에 유의 문구 명시."
-    },
-    {
-      "catalogIndex": 81,
-      "id": 85,
-      "name": "KCC은영체",
-      "postFolder": "posts/2026-09-08-noonnu-font-kcc-eunyeong/",
-      "registeredInTistory": false,
-      "note": "[배치9] 한국저작권위원회 제작, KCC김훈체와 자매 폰트(동일 CCL-저작자표시 조건)."
-    },
-    {
-      "catalogIndex": 82,
-      "id": 86,
-      "name": "HS두꺼비체",
-      "postFolder": "posts/2026-09-08-noonnu-font-hs-dukkeobi/",
-      "registeredInTistory": false,
-      "note": "[배치9] 토끼네활자공장 제작. 자유로운 수정·재배포 허용(유료 판매만 금지), woff2 포맷."
-    },
-    {
-      "catalogIndex": 83,
-      "id": 87,
-      "name": "도서관체",
-      "postFolder": "posts/2026-09-08-noonnu-font-library/",
-      "registeredInTistory": false,
-      "note": "[배치9] 국립중앙도서관 제작. 원형 그대로 재배포는 자유, 임의 수정은 금지."
-    },
-    {
-      "catalogIndex": 84,
-      "id": 88,
-      "name": "한글누리체",
-      "postFolder": "posts/2026-09-08-noonnu-font-hangulnuri/",
-      "registeredInTistory": false,
-      "note": "[배치9] 국립한글박물관 X 윤디자인그룹 제작. 유해매체 사용 금지 조항 있음."
-    },
-    {
-      "catalogIndex": 85,
-      "id": 89,
-      "name": "디자인하우스체",
-      "postFolder": "posts/2026-09-08-noonnu-font-designhouse/",
-      "registeredInTistory": false,
-      "note": "[배치9] (주)디자인하우스 제작. 출처 표기 권장(의무 아님)."
-    },
-    {
-      "catalogIndex": 86,
-      "id": 90,
-      "name": "다래손글씨체",
-      "postFolder": "posts/2026-09-08-noonnu-font-darae-handwriting/",
-      "registeredInTistory": false,
-      "note": "[배치9] 개인 제작자 김다래. 300인 이상 대기업·공기업은 별도 사전 허락 필요 조항 있음(이례적)."
-    },
-    {
-      "catalogIndex": 87,
-      "id": 91,
-      "name": "꽃길",
-      "postFolder": "posts/2026-09-08-noonnu-font-flower-road/",
-      "registeredInTistory": false,
-      "note": "[배치9] 상상토끼 제작. 재배포는 가능하나 폰트 파일 수정·유료 재판매는 금지(디자인 결과물 수정은 자유)."
-    },
-    {
-      "catalogIndex": 88,
-      "id": 92,
-      "name": "D2Coding",
-      "postFolder": "posts/2026-09-08-noonnu-font-d2coding/",
-      "registeredInTistory": false,
-      "note": "[배치9] 네이버 제작, 고정폭 코딩 전용 폰트. 나눔글꼴 공통 라이선스(수정·재배포 자유, 유료판매만 금지)."
-    },
-    {
-      "catalogIndex": 89,
-      "id": 93,
-      "name": "신과장",
-      "postFolder": "posts/2026-09-08-noonnu-font-shin-manager/",
-      "registeredInTistory": false,
-      "note": "[배치9] 상상토끼 제작, 꽃길과 동일 라이선스 문구(재배포 가능, 폰트 파일 수정·유료 재판매 금지)."
-    },
-    {
-      "catalogIndex": 90,
-      "id": 94,
-      "name": "개미똥꾸멍",
-      "postFolder": "posts/2026-09-08-noonnu-font-gaemittongkkumeong/",
-      "registeredInTistory": false,
-      "note": "[배치9] 상상토끼 제작, 꽃길·신과장과 동일 라이선스 문구."
-    },
-    {
-      "catalogIndex": 91,
-      "id": 95,
-      "name": "신비는일곱살",
-      "postFolder": "posts/2026-09-08-noonnu-font-shinbi-seven/",
-      "registeredInTistory": false,
-      "note": "[배치9] 상상토끼 제작, 꽃길·신과장·개미똥꾸멍과 동일 라이선스 문구. id96~105는 존재하지 않아(눈누 페이지 자체가 홈으로 리다이렉트) 건너뜀 — id106부터 재개."
-    },
-    {
-      "catalogIndex": 92,
-      "id": 106,
-      "name": "검은고딕(Black Han Sans)",
-      "postFolder": "posts/2026-09-08-noonnu-font-black-han-sans/",
-      "registeredInTistory": false,
-      "note": "[배치9] ZESSTYPE 제작, Google Fonts로도 서빙. 눈누 페이지에 개별 @font-face 없이 @import만 있음(스포카 한 산스·본고딕과 동일 패턴) — 실제 CDN 확인 후 채택. SIL OFL 1.1."
-    },
-    {
-      "catalogIndex": 93,
-      "id": 107,
-      "name": "월인석보체",
-      "postFolder": "posts/2026-09-08-noonnu-font-wolin/",
-      "registeredInTistory": false,
-      "note": "[배치9] 윤디자인 제작, 옛한글 고전체. 임베딩(웹사이트·서버 폰트탑재) 명시적 금지 조항 있음(이례적)."
-    },
-    {
-      "catalogIndex": 94,
-      "id": 108,
-      "name": "간이벽온방체",
-      "postFolder": "posts/2026-09-08-noonnu-font-kanibuk/",
-      "registeredInTistory": false,
-      "note": "[배치9] 윤디자인 제작, 월인석보체와 동일 라이선스(임베딩 금지 포함)."
-    },
-    {
-      "catalogIndex": 95,
-      "id": 109,
-      "name": "법정체",
-      "postFolder": "posts/2026-09-08-noonnu-font-beopjeong/",
-      "registeredInTistory": false,
-      "note": "[배치9] 윤디자인 제작, 월인석보체·간이벽온방체와 동일 라이선스(임베딩 금지 포함)."
-    },
-    {
-      "catalogIndex": 96,
-      "id": 110,
-      "name": "대한민국 독도체",
-      "postFolder": "posts/2026-09-08-noonnu-font-dokdo/",
-      "registeredInTistory": false,
-      "note": "[배치9] 윤디자인 제작, 앞선 3종과 동일 라이선스(임베딩 금지 포함)."
-    },
-    {
-      "catalogIndex": 97,
-      "id": 111,
-      "name": "밝은체",
-      "postFolder": "posts/2026-09-08-noonnu-font-bright/",
-      "registeredInTistory": false,
-      "note": "[배치9] 윤디자인 제작, 클래식 장식 바탕체. 임베딩 금지 조항(윤디자인 고전체 시리즈 공통)."
-    },
-    {
-      "catalogIndex": 98,
-      "id": 112,
-      "name": "sn별별정직",
-      "postFolder": "posts/2026-09-08-noonnu-font-sn-byulbyul-jeongjik/",
-      "registeredInTistory": false,
-      "note": "[배치9] 개인 제작자 soner. 재배포 시 반드시 제작자 자사몰(socialecho.kr)로만 가능하다는 이례적 조건."
-    },
-    {
-      "catalogIndex": 99,
-      "id": 113,
-      "name": "한나체 Air",
-      "postFolder": "posts/2026-09-08-noonnu-font-hanna-air/",
-      "registeredInTistory": false,
-      "note": "[배치9] 우아한형제들(배달의민족) 제작. 기본 한나체(id52)는 배치8에서 코드 없어 스킵됐으나 Air 버전은 코드 존재."
-    },
-    {
-      "catalogIndex": 100,
-      "id": 115,
-      "name": "여기어때 잘난체",
-      "postFolder": "posts/2026-09-08-noonnu-font-yeogi-ottae-jalnan/",
-      "registeredInTistory": false,
-      "note": "[배치9] 여기어때컴퍼니 제작. 요약표상 임베딩·BI/CI가 조건부 허용으로 표기된 드문 사례. id114는 존재하지 않음(홈으로 리다이렉트)."
-    },
-    {
-      "catalogIndex": 101,
-      "id": 118,
-      "name": "넷마블체",
-      "postFolder": "posts/2026-09-08-noonnu-font-netmarble/",
-      "registeredInTistory": false,
-      "note": "[배치9] 넷마블 제작, 300/500/700 3가지 굵기. BI/CI 사용 명시적 금지. id116~117은 존재하지 않음."
-    },
-    {
-      "catalogIndex": 102,
-      "id": 119,
-      "name": "신영복체",
-      "postFolder": "posts/2026-09-08-noonnu-font-shin-youngbok/",
-      "registeredInTistory": false,
-      "note": "[배치9] 박윤정앤타이포랩 제작, 공유마당 등록 저작물(저작재산권 기증). 이용 시 출처 표시 조건."
-    },
-    {
-      "catalogIndex": 103,
-      "id": 120,
-      "name": "애터미체",
-      "postFolder": "posts/2026-09-08-noonnu-font-atomy/",
-      "registeredInTistory": false,
-      "note": "[배치9] 애터미 제작. BI/CI 사용 금지 + 반사회적·부정적 이미지 사용 금지 조항."
-    },
-    {
-      "catalogIndex": 104,
-      "id": 122,
-      "name": "둘기마요",
-      "postFolder": "posts/2026-09-08-noonnu-font-dulgimayo/",
-      "registeredInTistory": false,
-      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
-    },
-    {
-      "catalogIndex": 105,
-      "id": 123,
-      "name": "함초롬체",
-      "postFolder": "posts/2026-09-08-noonnu-font-hamchorom/",
-      "registeredInTistory": false,
-      "note": "[배치10-복구] 배치10 에이전트가 세션 한도(rate limit)로 중단된 뒤 남은 결과물(final.html+meta.md는 완료, 썸네일만 누락)을 수동으로 마무리·검증. final.html에 \"눈누\" 언급 없음, 1200x630 썸네일 정상 확인."
-    },
     {
       "catalogIndex": 106,
       "id": 124,
@@ -8936,5 +9092,14 @@
     }
   ],
   "previousNote_batch15": "배치15(2026-09-10) — id534~583 전부 채택(50개, 스킵 0). 전부 네이버 클로바 나눔손글씨. catalogIndex264~313.",
-  "previousNote_batch16_rest": "배치16~(2026-09-10) — 레이트리밋(429) 재시도 후 전수 스크래핑. catalogIndex314~. 폰트명/제작사에 '눈누'가 있으면 본문 표기에서 제거."
+  "previousNote_batch16_rest": "배치16~(2026-09-10) — 레이트리밋(429) 재시도 후 전수 스크래핑. catalogIndex314~. 폰트명/제작사에 '눈누'가 있으면 본문 표기에서 제거.",
+  "previousNote_body_repair_2026_09_11": "CodeMirror setValue만으로는 티스토리 제출 시 본문이 비어 저장됨. tinymce.setContent+ed.save+#editor-tistory value 동기화 후 공개 발행으로 /62~76 복구.",
+  "previousNote_prune_published_drafts_2026_09_11": "티스토리 등록·발행 완료된 posts/ 초안 폴더와 대응 _workspace/noonnu-drafts·noonnu-thumbs를 삭제(localOnlyPrepared는 유지).",
+  "previousNote_dedupe_2026_09_16": "큐 15개 중 8개(/77-84)는 이미 공개. /85-91은 404(오기록). 미발행 7개만 등록 예정.",
+  "nextLocalDraftHead": {
+    "name": "헬스셋 조릿대체",
+    "id": 124,
+    "catalogIndex": 106,
+    "postFolder": "posts/2026-09-08-noonnu-font-healthset-joritdae/"
+  }
 }

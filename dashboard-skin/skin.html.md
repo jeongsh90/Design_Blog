@@ -148,3 +148,9 @@ Design(하위 3개, Font만 new)/Code(신규, 이전엔 하드코딩 목록에 �
 `components/sidebar.css.md` 참고. 접힘 상태(`data-footer-stat="collapsed"`)의
 아이콘+`data-tooltip`/`tooltip-content` 마크업은 그대로 유지.
 
+
+---
+
+## 2026-09-11 — 목록 카드 요약 아래 글 태그
+
+`<s_index_article_rep>` 카드에 `<s_tag_label>` + `[##_tag_label_rep_##]`를 요약(`post-summary`) 바로 아래에 추가. 태그 `<a>`가 카드 전체 링크 안에 들어가면 중첩 앵커가 되므로 `post-item-inner`를 `<a>`에서 `<div>`로 바꾸고, 카드 클릭용 투명 `post-item-hitbox` + 제목용 실제 `<a>`로 분리했다. 태그 없는 글은 서버가 `<s_tag_label>` 블록 자체를 생략한다.
